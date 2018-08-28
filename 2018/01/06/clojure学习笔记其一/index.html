@@ -1,0 +1,575 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>clojure学习笔记其一 | ESPIER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="leejoker">
+    
+
+    
+    <meta name="description" content="简述　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D 学习思路　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰">
+<meta name="keywords" content="编程语言,clojure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="clojure学习笔记其一">
+<meta property="og:url" content="http://leejoker.github.io/2018/01/06/clojure学习笔记其一/index.html">
+<meta property="og:site_name" content="ESPIER">
+<meta property="og:description" content="简述　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D 学习思路　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-09T14:23:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="clojure学习笔记其一">
+<meta name="twitter:description" content="简述　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D 学习思路　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="ESPIER">ESPIER</a></h1>
+				<h2 class="blog-motto">路漫漫其修选兮，吾将上下而求索</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:leejoker.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/01/06/clojure学习笔记其一/" title="clojure学习笔记其一" itemprop="url">clojure学习笔记其一</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-06T07:59:05.000Z" itemprop="datePublished"> 发表于 2018-01-06</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简述"><span class="toc-number">1.</span> <span class="toc-text">简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习思路"><span class="toc-number">2.</span> <span class="toc-text">学习思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语言学习的第一步"><span class="toc-number">3.</span> <span class="toc-text">语言学习的第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对于clojure的整体认知"><span class="toc-number">4.</span> <span class="toc-text">对于clojure的整体认知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说一下变量"><span class="toc-number">5.</span> <span class="toc-text">说一下变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#def的使用："><span class="toc-number">5.0.0.1.</span> <span class="toc-text">def的使用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#let的使用"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">let的使用</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇就这样吧"><span class="toc-number">6.</span> <span class="toc-text">第一篇就这样吧</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D</p>
+<h2 id="学习思路"><a href="#学习思路" class="headerlink" title="学习思路"></a>学习思路</h2><p>　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰。仔细想想，还是整理一下目前所学，也希望整理的东西能给clojure的初学者提供一定的帮助。<br>　　本系列的笔记是基于官方文档整理、补充的，如有错漏，请在评论区指出，以便及时进行修改，也有助于我自身的提升和进步。</p>
+<h2 id="语言学习的第一步"><a href="#语言学习的第一步" class="headerlink" title="语言学习的第一步"></a>语言学习的第一步</h2><p>没错，就是Hello World！</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">user=&gt; (println "Hello, Clojure!")</span><br><span class="line">Hello, Clojure!</span><br><span class="line"><span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<p>这一句是在repl中执行的，哦，差点忘了，记得安装lein哦，至于怎么装请自行百度，如果需要梯子，emmmmm，自己想办法吧，程序员或者想成为程序员的人不应该被一面墙阻拦（有人敲门，我去开一下，Σ(っ °Д °;)っ好像有哪里不对）  </p>
+<p>言归正传，输出的结果是“Hello, Clojure!”，但方法的返回值是nil，这个输出其实就是函数println的副产物。</p>
+<a id="more"></a>
+<h2 id="对于clojure的整体认知"><a href="#对于clojure的整体认知" class="headerlink" title="对于clojure的整体认知"></a>对于clojure的整体认知</h2><p>下面这一段是我从官方文档中截取的类型说明。</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 数字类型</span></span><br><span class="line"><span class="number">42</span>              <span class="comment">; Long - 64-bit integer (from -2^63 to 2^63-1)</span></span><br><span class="line">6.022e23        ; Double - double-precision 64-bit floating point</span><br><span class="line">42N             ; BigInt - arbitrary precision integer</span><br><span class="line">1.0M            ; BigDecimal - arbitrary precision fixed-point decimal</span><br><span class="line">22/7            ; Ratio</span><br><span class="line"></span><br><span class="line"><span class="comment">;; 字符类型</span></span><br><span class="line"><span class="string">"hello"</span>         <span class="comment">; String</span></span><br><span class="line">\e              ; Character</span><br><span class="line"></span><br><span class="line"><span class="comment">;; 其他类型</span></span><br><span class="line"><span class="literal">nil</span>             <span class="comment">; null value</span></span><br><span class="line"><span class="literal">true</span>            <span class="comment">; Boolean (also, false)</span></span><br><span class="line">#"[0-9]+"       ; Regular expression</span><br><span class="line"><span class="symbol">:alpha</span>          <span class="comment">; Keyword</span></span><br><span class="line"><span class="symbol">:release/alpha</span>  <span class="comment">; Keyword with namespace</span></span><br><span class="line">map             ; Symbol</span><br><span class="line">+               ; Symbol - most punctuation allowed</span><br><span class="line">clojure.core/+  ; Namespaced symbol</span><br><span class="line"></span><br><span class="line"><span class="comment">;; 集合</span></span><br><span class="line">'(1 2 3)        ; list</span><br><span class="line">[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>]         <span class="comment">; vector</span></span><br><span class="line">#&#123;1 2 3&#125;        ; set</span><br><span class="line">&#123;<span class="symbol">:a</span> <span class="number">1</span>, <span class="symbol">:b</span> <span class="number">2</span>&#125;    <span class="comment">; map</span></span><br></pre></td></tr></table></figure>
+<p>clojure所有的语句都是包含括号的，当然像集合那几个声明方式可以除外（集合那几种同样也是有普通的函数声明方式的）。  </p>
+<p>括号内的第一个值是函数体，剩下的值都是这个函数的参数。  </p>
+<p>这是clojure最基本的一个概念，也是最重要的一个概念，“函数是一等公民”  </p>
+<p>同样，当你想这样使用的时候，他会给你一个错误。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">user=&gt; (1 2 3)</span><br><span class="line">ClassCastException java.lang.Long cannot be cast to clojure.lang.IFn</span><br></pre></td></tr></table></figure>
+<p>所以你需要使用quote去让clojure知道你不想把它解读成一个函数。</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">user=&gt; (quote (1 2 3))</span><br><span class="line">(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">;; 操作同  '(1 2 3)</span></span><br><span class="line">user=&gt; '(1 2 3)</span><br><span class="line">(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>不过，这样一等公民就变成quote了，哈哈哈哈</p>
+<h2 id="说一下变量"><a href="#说一下变量" class="headerlink" title="说一下变量"></a>说一下变量</h2><p>说一下变量的一些概念吧，不然第一篇就这么草草的结束，肯定有人要说我没有干货了XD</p>
+<p>变量的定义主要包含两种，一个是def，另一个是let</p>
+<p>def类似于全局变量，可以被重新赋值</p>
+<p>let则相当于局部变量，下面给出了一些例子（感谢clojure-by-example项目提供的例子）。</p>
+<h5 id="def的使用："><a href="#def的使用：" class="headerlink" title="def的使用："></a>def的使用：</h5><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">user=&gt; (def object "light")</span><br><span class="line">#'user/object</span><br><span class="line"></span><br><span class="line">user=&gt; (println (str "God said let there be " object))</span><br><span class="line">God said let there be light</span><br><span class="line"><span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">user=&gt; (def object "darkness")</span><br><span class="line">#'user/object</span><br><span class="line"></span><br><span class="line">user=&gt; (println (str "God said let there be " object))</span><br><span class="line">God said let there be darkness</span><br><span class="line"><span class="literal">nil</span></span><br></pre></td></tr></table></figure>
+<h5 id="let的使用"><a href="#let的使用" class="headerlink" title="let的使用"></a>let的使用</h5><pre><code class="clojure">
+user&gt; (let [a "aaa"]
+        (println a))
+aaa
+<span class="literal">nil</span>
+
+user&gt; (let [a "aaa"]
+        (<span class="name"><span class="builtin-name">let</span></span> [a <span class="string">"AAA"</span>]
+          (println a)))
+
+AAA
+<span class="literal">nil</span>
+
+user&gt; (let [a "aaa"]
+        (<span class="name"><span class="builtin-name">let</span></span> [a <span class="string">"AAA"</span>]
+          (<span class="name">println</span> a))
+        (println a))
+AAA
+aaa
+<span class="literal">nil</span>
+
+user&gt; (let [a "a"]
+        (<span class="name"><span class="builtin-name">let</span></span> []
+          (println a)))
+a
+<span class="literal">nil</span>
+
+user=&gt; (let [l "light"
+             d "darkness"]
+             (<span class="name">println</span> (<span class="name"><span class="builtin-name">str</span></span> <span class="string">"God said let there be "</span> l))
+             (println (str "God also said let there be " d)))
+God said let there be light
+God also said let there be darkness
+<span class="literal">nil</span>
+
+user&gt; (let [l "light"
+            l_d (str l " and" " darkness")]
+            (println (str "God also said let there be " l_d)))
+God also said let there be light and darkness
+<span class="literal">nil</span>
+</code></pre>
+<h2 id="第一篇就这样吧"><a href="#第一篇就这样吧" class="headerlink" title="第一篇就这样吧"></a>第一篇就这样吧</h2><p>　　第一篇姑且就到这里吧，学习这种函数式语言其实最重要的是对于这种语言有一个正确的认知，然后才是各种语法和应用，如果你始终带着面向对象那种思路反而不太利于clojure的学习。<br>　　嘛~ 各位我们下一篇再见！</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/编程语言/">编程语言</a><a href="/tags/clojure/">clojure</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://leejoker.github.io/2018/01/06/clojure学习笔记其一/" data-title="clojure学习笔记其一 | ESPIER" data-tsina="1968623917" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/01/07/clojure学习笔记其二/" title="clojure学习笔记其二">
+  <strong>上一篇：</strong><br/>
+  <span>
+  clojure学习笔记其二</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/10/11/折腾hexo系列之在jacman里集成gitment评论系统/"  title="折腾hexo系列之在jacman里集成gitment评论系统">
+ <strong>下一篇：</strong><br/> 
+ <span>折腾hexo系列之在jacman里集成gitment评论系统
+</span>
+</a>
+</div>
+
+</nav>
+
+	<section id="comments" class="comment">
+  <div id="blog_comment"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  var localAddr = location.href;
+  var addrArray = localAddr.split("#");
+  var gitment = new Gitment({
+  	id:	addrArray[0],
+    owner: 'leejoker',
+    repo: 'blog_comm',
+    oauth: {
+      client_id: '14227f4f4ed0dbdb8085',
+      client_secret: 'd4836c831bfb63d13ce8af31ec0a5826f88b45b5',
+    },
+  })
+  gitment.render('blog_comment')
+  </script>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简述"><span class="toc-number">1.</span> <span class="toc-text">简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习思路"><span class="toc-number">2.</span> <span class="toc-text">学习思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语言学习的第一步"><span class="toc-number">3.</span> <span class="toc-text">语言学习的第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对于clojure的整体认知"><span class="toc-number">4.</span> <span class="toc-text">对于clojure的整体认知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说一下变量"><span class="toc-number">5.</span> <span class="toc-text">说一下变量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#def的使用："><span class="toc-number">5.0.0.1.</span> <span class="toc-text">def的使用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#let的使用"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">let的使用</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一篇就这样吧"><span class="toc-number">6.</span> <span class="toc-text">第一篇就这样吧</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/go/" title="go">go<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/clojure/" title="clojure">clojure<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexoeda/" title="hexoeda">hexoeda<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书/" title="读书">读书<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web前端/" title="web前端">web前端<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 路漫漫其修选兮，吾将上下而求索 <br/>
+			Stay hungry. Stay foolish.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1968623917" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/leejoker" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:1056650571@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="leejoker">leejoker</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'leejoker';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

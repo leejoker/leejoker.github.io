@@ -1,0 +1,522 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>bilibili-go项目源码学习笔记_1 | ESPIER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="leejoker">
+    
+
+    
+    <meta name="description" content="bilibili-go服务加载流程浅析main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：package mainimport (    &quot;github.com/go-playground/log&quot;    &quot;github.com/whiteblue/bilibili-go/service&quot;)fu">
+<meta name="keywords" content="go,bilibili">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bilibili-go项目源码学习笔记_1">
+<meta property="og:url" content="http://leejoker.github.io/2016/09/27/bilibili-go项目源码学习笔记-1/index.html">
+<meta property="og:site_name" content="ESPIER">
+<meta property="og:description" content="bilibili-go服务加载流程浅析main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：package mainimport (    &quot;github.com/go-playground/log&quot;    &quot;github.com/whiteblue/bilibili-go/service&quot;)fu">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-09T14:23:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bilibili-go项目源码学习笔记_1">
+<meta name="twitter:description" content="bilibili-go服务加载流程浅析main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：package mainimport (    &quot;github.com/go-playground/log&quot;    &quot;github.com/whiteblue/bilibili-go/service&quot;)fu">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="ESPIER">ESPIER</a></h1>
+				<h2 class="blog-motto">路漫漫其修选兮，吾将上下而求索</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:leejoker.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/" title="bilibili-go项目源码学习笔记_1" itemprop="url">bilibili-go项目源码学习笔记_1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-26T16:02:19.000Z" itemprop="datePublished"> 发表于 2016-09-27</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#bilibili-go服务加载流程浅析"><span class="toc-number">1.</span> <span class="toc-text">bilibili-go服务加载流程浅析</span></a></li></ol>
+		
+		</div>
+		
+		<h4 id="bilibili-go服务加载流程浅析"><a href="#bilibili-go服务加载流程浅析" class="headerlink" title="bilibili-go服务加载流程浅析"></a>bilibili-go服务加载流程浅析</h4><p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"github.com/go-playground/log"</span></span><br><span class="line">    <span class="string">"github.com/whiteblue/bilibili-go/service"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    app, err := service.NewApplication(<span class="string">"conf.json"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(err)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    app.Router.Run(<span class="string">":8080"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：<br><a id="more"></a></p>
+<p>首先读取了appkey和secret，<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">conf, err := ReadConfigFromFile(configFile)</span><br></pre></td></tr></table></figure></p>
+<p>设置日志，<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">cLog := console.New()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> conf.Debug &#123;</span><br><span class="line">    log.RegisterHandler(cLog, log.AllLevels...)</span><br><span class="line">    gin.SetMode(gin.DebugMode)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    log.RegisterHandler(cLog, ProdLevels...)</span><br><span class="line">    gin.SetMode(gin.ReleaseMode)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>加载了gin的中间件，<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">r := gin.New()</span><br><span class="line"></span><br><span class="line"><span class="comment">//use gzip</span></span><br><span class="line">r.Use(gin.Recovery())</span><br><span class="line">r.Use(gzip.Gzip(gzip.BestCompression))</span><br></pre></td></tr></table></figure></p>
+<p>启动了CornService用于初始化数据（主要初始化了各类别下的rank数据），<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//corn service</span></span><br><span class="line">corn := NewCornService()</span><br></pre></td></tr></table></figure></p>
+<p>创建了bilibiliClient，<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//bilibili client</span></span><br><span class="line">cli := client.NewClient(conf.Appkey, conf.Secret)</span><br></pre></td></tr></table></figure></p>
+<p>启动了缓存管理,<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">cache := NewCacheManager()</span><br></pre></td></tr></table></figure></p>
+<p>最后建立app，并执行了初始化操作,<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//建立app应用</span></span><br><span class="line">app := &amp;BiliBiliApplication&#123;Router: r, Corn: corn, Conf: conf, Client: cli, Cache: cache&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载路由</span></span><br><span class="line">ConformRoute(app)</span><br><span class="line"></span><br><span class="line">log.Info(<span class="string">"conform route"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行rank数据初始化</span></span><br><span class="line">conformTask(app)</span><br><span class="line">corn.Start()</span><br><span class="line"></span><br><span class="line">log.Info(<span class="string">"conform task"</span>)</span><br><span class="line"></span><br><span class="line">log.Info(<span class="string">"init complete, start listen..."</span>)</span><br></pre></td></tr></table></figure></p>
+<p>完整代码如下：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">NewApplication</span><span class="params">(configFile <span class="keyword">string</span>)</span> <span class="params">(*BiliBiliApplication, error)</span></span> &#123;</span><br><span class="line">    conf, err := ReadConfigFromFile(configFile)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cLog := console.New()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> conf.Debug &#123;</span><br><span class="line">        log.RegisterHandler(cLog, log.AllLevels...)</span><br><span class="line">        gin.SetMode(gin.DebugMode)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        log.RegisterHandler(cLog, ProdLevels...)</span><br><span class="line">        gin.SetMode(gin.ReleaseMode)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    log.Info(<span class="string">"conform config file"</span>)</span><br><span class="line"></span><br><span class="line">    r := gin.New()</span><br><span class="line"></span><br><span class="line">    <span class="comment">//use gzip</span></span><br><span class="line">    r.Use(gin.Recovery())</span><br><span class="line">    r.Use(gzip.Gzip(gzip.BestCompression))</span><br><span class="line"></span><br><span class="line">    <span class="comment">//corn service</span></span><br><span class="line">    corn := NewCornService()</span><br><span class="line"></span><br><span class="line">    <span class="comment">//bilibili client</span></span><br><span class="line">    cli := client.NewClient(conf.Appkey, conf.Secret)</span><br><span class="line"></span><br><span class="line">    cache := NewCacheManager()</span><br><span class="line"></span><br><span class="line">    app := &amp;BiliBiliApplication&#123;Router: r, Corn: corn, Conf: conf, Client: cli, Cache: cache&#125;</span><br><span class="line"></span><br><span class="line">    ConformRoute(app)</span><br><span class="line"></span><br><span class="line">    log.Info(<span class="string">"conform route"</span>)</span><br><span class="line"></span><br><span class="line">    conformTask(app)</span><br><span class="line">    corn.Start()</span><br><span class="line"></span><br><span class="line">    log.Info(<span class="string">"conform task"</span>)</span><br><span class="line"></span><br><span class="line">    log.Info(<span class="string">"init complete, start listen..."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过路由和初始化的rank数据，就可以获取相应的列表以及视频信息了。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/go/">go</a><a href="/tags/bilibili/">bilibili</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://leejoker.github.io/2016/09/27/bilibili-go项目源码学习笔记-1/" data-title="bilibili-go项目源码学习笔记_1 | ESPIER" data-tsina="1968623917" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/09/27/bilibili-go项目源码学习笔记-2/" title="bilibili-go项目源码学习笔记_2">
+  <strong>上一篇：</strong><br/>
+  <span>
+  bilibili-go项目源码学习笔记_2</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/09/21/对于Go语言中指针的思路整理/"  title="对于Go语言中指针的思路整理">
+ <strong>下一篇：</strong><br/> 
+ <span>对于Go语言中指针的思路整理
+</span>
+</a>
+</div>
+
+</nav>
+
+	<section id="comments" class="comment">
+  <div id="blog_comment"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  var localAddr = location.href;
+  var addrArray = localAddr.split("#");
+  var gitment = new Gitment({
+  	id:	addrArray[0],
+    owner: 'leejoker',
+    repo: 'blog_comm',
+    oauth: {
+      client_id: '14227f4f4ed0dbdb8085',
+      client_secret: 'd4836c831bfb63d13ce8af31ec0a5826f88b45b5',
+    },
+  })
+  gitment.render('blog_comment')
+  </script>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#bilibili-go服务加载流程浅析"><span class="toc-number">1.</span> <span class="toc-text">bilibili-go服务加载流程浅析</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/go/" title="go">go<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/clojure/" title="clojure">clojure<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/hexoeda/" title="hexoeda">hexoeda<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书/" title="读书">读书<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web前端/" title="web前端">web前端<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+  </div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 路漫漫其修选兮，吾将上下而求索 <br/>
+			Stay hungry. Stay foolish.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1968623917" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/leejoker" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:1056650571@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="leejoker">leejoker</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'leejoker';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
