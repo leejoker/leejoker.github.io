@@ -73,30 +73,28 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/09/27/bilibili-go项目源码学习笔记-2/" title="bilibili-go项目源码学习笔记_2" itemprop="url">bilibili-go项目源码学习笔记_2</a>
+      <a href="/2016/10/11/Ubuntu下如何添加ppa仓库/" title="Ubuntu下如何添加ppa仓库" itemprop="url">Ubuntu下如何添加ppa仓库</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-26T16:02:19.000Z" itemprop="datePublished"> 发表于 2016-09-27</time>
+    <time datetime="2016-10-11T14:41:21.000Z" itemprop="datePublished"> 发表于 2016-10-11</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
-<h5 id="参数定义"><a href="#参数定义" class="headerlink" title="参数定义"></a>参数定义</h5><p>application.go中定义了初始化时需要用到的常量和变量，  </p>
-<ol>
-<li>常量定义：  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    INDEX_CACHE        = <span class="string">"index"</span>        <span class="comment">//各类别下rank</span></span><br><span class="line">    ALL_RANK_CACHE     = <span class="string">"all_rank"</span>     <span class="comment">//总的rank</span></span><br><span class="line">    BANGUMI_CACHE      = <span class="string">"bangumi"</span>      <span class="comment">//番剧</span></span><br><span class="line">    BANGUMI_LIST_CACHE = <span class="string">"bangumi_list"</span> <span class="comment">//新番放松表</span></span><br><span class="line">    SORT_TOP_CACHE     = <span class="string">"sort-"</span>        <span class="comment">//具体某个类别rank(这个在index_cache中要用到)</span></span><br><span class="line">    LIVE_INDEX_CACHE   = <span class="string">"live_index"</span>   <span class="comment">//直播rank</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <h4 id="Ubuntu下添加ppa仓库"><a href="#Ubuntu下添加ppa仓库" class="headerlink" title="Ubuntu下添加ppa仓库"></a>Ubuntu下添加ppa仓库</h4><p>此处以安装atom为例，命令如下：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:webupd8team/atom  </span><br><span class="line">sudo apt-get update  </span><br><span class="line">sudo apt-get install atom</span><br></pre></td></tr></table></figure></p>
+<p>这样就把atom的仓库添加并安装完成了。  </p>
+<p>然而，并没有这么简单<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo: add-apt-repository : command not found</span><br></pre></td></tr></table></figure></p>
+<p>mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻    </p>
         
         
         <p class="article-more-link">
           
-            <a href="/2016/09/27/bilibili-go项目源码学习笔记-2/#more">Read More</a>
+            <a href="/2016/10/11/Ubuntu下如何添加ppa仓库/#more">Read More</a>
           
        </p>
     </div>
@@ -106,7 +104,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/go/">go</a><a href="/tags/bilibili/">bilibili</a>
+  <span></span> <a href="/tags/linux/">linux</a>
   </div>
 
 </div>
@@ -117,7 +115,7 @@
 <div class="comments-count">
 	
 	  	<span></span>
-		<a href="/2016/09/27/bilibili-go项目源码学习笔记-2/#disqus_thread" class="comments-count-link">Comments</a>
+		<a href="/2016/10/11/Ubuntu下如何添加ppa仓库/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -178,6 +176,70 @@
 	
 	  	<span></span>
 		<a href="/2016/09/27/bilibili-go项目源码学习笔记-1/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/27/bilibili-go项目源码学习笔记-2/" title="bilibili-go项目源码学习笔记_2" itemprop="url">bilibili-go项目源码学习笔记_2</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-26T16:02:19.000Z" itemprop="datePublished"> 发表于 2016-09-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
+<h5 id="参数定义"><a href="#参数定义" class="headerlink" title="参数定义"></a>参数定义</h5><p>application.go中定义了初始化时需要用到的常量和变量，  </p>
+<ol>
+<li>常量定义：  <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    INDEX_CACHE        = <span class="string">"index"</span>        <span class="comment">//各类别下rank</span></span><br><span class="line">    ALL_RANK_CACHE     = <span class="string">"all_rank"</span>     <span class="comment">//总的rank</span></span><br><span class="line">    BANGUMI_CACHE      = <span class="string">"bangumi"</span>      <span class="comment">//番剧</span></span><br><span class="line">    BANGUMI_LIST_CACHE = <span class="string">"bangumi_list"</span> <span class="comment">//新番放松表</span></span><br><span class="line">    SORT_TOP_CACHE     = <span class="string">"sort-"</span>        <span class="comment">//具体某个类别rank(这个在index_cache中要用到)</span></span><br><span class="line">    LIVE_INDEX_CACHE   = <span class="string">"live_index"</span>   <span class="comment">//直播rank</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2016/09/27/bilibili-go项目源码学习笔记-2/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/go/">go</a><a href="/tags/bilibili/">bilibili</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/09/27/bilibili-go项目源码学习笔记-2/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -332,7 +394,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
+				<li><a href="/tags/clojure/" title="clojure">clojure<sup>4</sup></a></li>
 			
 		
 			
@@ -340,7 +402,7 @@
 			
 		
 			
-				<li><a href="/tags/clojure/" title="clojure">clojure<sup>3</sup></a></li>
+				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
 			
 		
 			
@@ -352,15 +414,15 @@
 			
 		
 			
+				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
 			
 		
 			
@@ -376,6 +438,14 @@
 			
 		
 			
+				<li><a href="/tags/lein/" title="lein">lein<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nexus/" title="nexus">nexus<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
 			
 		
@@ -386,7 +456,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 

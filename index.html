@@ -73,6 +73,66 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2018/11/01/配置lein的私有依赖仓库/" title="配置lein的私有依赖仓库" itemprop="url">配置lein的私有依赖仓库</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2018-11-01T02:49:43.000Z" itemprop="datePublished"> 发表于 2018-11-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="lein与私有仓库"><a href="#lein与私有仓库" class="headerlink" title="lein与私有仓库"></a>lein与私有仓库</h2><p>lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。</p>
+<h2 id="创建profiles-clj"><a href="#创建profiles-clj" class="headerlink" title="创建profiles.clj"></a>创建profiles.clj</h2><p>在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2018/11/01/配置lein的私有依赖仓库/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/clojure/">clojure</a><a href="/tags/lein/">lein</a><a href="/tags/nexus/">nexus</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2018/11/01/配置lein的私有依赖仓库/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2018/01/21/clojure学习笔记其三/" title="clojure学习笔记其三" itemprop="url">clojure学习笔记其三</a>
   </h1>
   <p class="article-author">By
@@ -628,68 +688,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/10/11/Ubuntu下如何添加ppa仓库/" title="Ubuntu下如何添加ppa仓库" itemprop="url">Ubuntu下如何添加ppa仓库</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
-		
-  <p class="article-time">
-    <time datetime="2016-10-11T14:41:21.000Z" itemprop="datePublished"> 发表于 2016-10-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h4 id="Ubuntu下添加ppa仓库"><a href="#Ubuntu下添加ppa仓库" class="headerlink" title="Ubuntu下添加ppa仓库"></a>Ubuntu下添加ppa仓库</h4><p>此处以安装atom为例，命令如下：<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:webupd8team/atom  </span><br><span class="line">sudo apt-get update  </span><br><span class="line">sudo apt-get install atom</span><br></pre></td></tr></table></figure></p>
-<p>这样就把atom的仓库添加并安装完成了。  </p>
-<p>然而，并没有这么简单<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo: add-apt-repository : command not found</span><br></pre></td></tr></table></figure></p>
-<p>mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻    </p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/10/11/Ubuntu下如何添加ppa仓库/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/linux/">linux</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/10/11/Ubuntu下如何添加ppa仓库/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -710,7 +708,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
+				<li><a href="/tags/clojure/" title="clojure">clojure<sup>4</sup></a></li>
 			
 		
 			
@@ -718,7 +716,7 @@
 			
 		
 			
-				<li><a href="/tags/clojure/" title="clojure">clojure<sup>3</sup></a></li>
+				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
 			
 		
 			
@@ -730,15 +728,15 @@
 			
 		
 			
+				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linux/" title="linux">linux<sup>1</sup></a></li>
 			
 		
 			
@@ -754,6 +752,14 @@
 			
 		
 			
+				<li><a href="/tags/lein/" title="lein">lein<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nexus/" title="nexus">nexus<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
 			
 		
@@ -764,7 +770,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 

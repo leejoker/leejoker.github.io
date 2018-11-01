@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>《大道至简》读书笔记 | ESPIER</title>
+    <title>配置lein的私有依赖仓库 | ESPIER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="leejoker">
     
 
     
-    <meta name="description" content="编程的精义开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。   编程，是开发的一环，也就是把逻辑转化为代码的过程。   正如文中所说的那样，“程序=算法+结构”。算法是顺序，分支，循环的组合变化，结构是思想在程序中的映射。因此，代码在编程里是最为easy的一环。   嘛~~第一章大致就是说了这么一个内容，强调了在编程过程中最为重要的反而是思想，逻辑。掌握语言和转化成代">
-<meta name="keywords" content="读书">
+    <meta name="description" content="lein与私有仓库lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。 创建profiles.clj在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：">
+<meta name="keywords" content="clojure,lein,nexus">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《大道至简》读书笔记">
-<meta property="og:url" content="http://leejoker.github.io/2017/08/16/《大道至简》读书笔记/index.html">
+<meta property="og:title" content="配置lein的私有依赖仓库">
+<meta property="og:url" content="http://leejoker.github.io/2018/11/01/配置lein的私有依赖仓库/index.html">
 <meta property="og:site_name" content="ESPIER">
-<meta property="og:description" content="编程的精义开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。   编程，是开发的一环，也就是把逻辑转化为代码的过程。   正如文中所说的那样，“程序=算法+结构”。算法是顺序，分支，循环的组合变化，结构是思想在程序中的映射。因此，代码在编程里是最为easy的一环。   嘛~~第一章大致就是说了这么一个内容，强调了在编程过程中最为重要的反而是思想，逻辑。掌握语言和转化成代">
+<meta property="og:description" content="lein与私有仓库lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。 创建profiles.clj在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-09T14:23:26.000Z">
+<meta property="og:updated_time" content="2018-11-01T07:43:40.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《大道至简》读书笔记">
-<meta name="twitter:description" content="编程的精义开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。   编程，是开发的一环，也就是把逻辑转化为代码的过程。   正如文中所说的那样，“程序=算法+结构”。算法是顺序，分支，循环的组合变化，结构是思想在程序中的映射。因此，代码在编程里是最为easy的一环。   嘛~~第一章大致就是说了这么一个内容，强调了在编程过程中最为重要的反而是思想，逻辑。掌握语言和转化成代">
+<meta name="twitter:title" content="配置lein的私有依赖仓库">
+<meta name="twitter:description" content="lein与私有仓库lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。 创建profiles.clj在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：">
 
     
     
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/16/《大道至简》读书笔记/" title="《大道至简》读书笔记" itemprop="url">《大道至简》读书笔记</a>
+      <a href="/2018/11/01/配置lein的私有依赖仓库/" title="配置lein的私有依赖仓库" itemprop="url">配置lein的私有依赖仓库</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-16T04:55:14.000Z" itemprop="datePublished"> 发表于 2017-08-16</time>
+    <time datetime="2018-11-01T02:49:43.000Z" itemprop="datePublished"> 发表于 2018-11-01</time>
     
   </p>
 </header>
@@ -92,29 +92,37 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编程的精义"><span class="toc-number">1.</span> <span class="toc-text">编程的精义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#是懒人造就了方法"><span class="toc-number">2.</span> <span class="toc-text">是懒人造就了方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目管理那些事"><span class="toc-number">3.</span> <span class="toc-text">项目管理那些事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续的巴拉巴拉"><span class="toc-number">4.</span> <span class="toc-text">后续的巴拉巴拉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lein与私有仓库"><span class="toc-number">1.</span> <span class="toc-text">lein与私有仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建profiles-clj"><span class="toc-number">2.</span> <span class="toc-text">创建profiles.clj</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置nexus使用https"><span class="toc-number">3.</span> <span class="toc-text">配置nexus使用https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#keystore文件生成和转换"><span class="toc-number">4.</span> <span class="toc-text">keystore文件生成和转换</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="编程的精义"><a href="#编程的精义" class="headerlink" title="编程的精义"></a>编程的精义</h2><p>开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。  </p>
-<p>编程，是开发的一环，也就是把逻辑转化为代码的过程。  </p>
-<p>正如文中所说的那样，“程序=算法+结构”。算法是顺序，分支，循环的组合变化，结构是思想在程序中的映射。因此，代码在编程里是最为easy的一环。  </p>
-<p>嘛~~第一章大致就是说了这么一个内容，强调了在编程过程中最为重要的反而是思想，逻辑。掌握语言和转化成代码其实都是最为容易的事。PS:是不是说我只要懂得足够多就能当PPT架构师了:)  </p>
-<p>当然，这里说代码是思想的转化自然是没什么问题的，然而写代码同样是一个磨练技艺的过程，怎么写更好，怎么写更易懂，怎么写更容易维护，这也是一个程序猿需要不断去锻炼学习的。PS：这一段与原文主旨没什么关系，只是忽然想到就加上了。不过话说回来，在这方面如果能做到尽善尽美，这让接盘子的人会非常开心吧(o゜▽゜)o☆</p>
-<a id="more"></a>
-<h2 id="是懒人造就了方法"><a href="#是懒人造就了方法" class="headerlink" title="是懒人造就了方法"></a>是懒人造就了方法</h2><p>“懒人”是相对于“愚公”那种“勤快人”而言的，这里都加上了引号，主要还是因为这里都不是明面上的意思，“懒人”不是真正意义上的懒人，“勤快”也并非是什么好事。  </p>
-<p>对于开发而言，一味为了完成而做重复的工作是很可怕的，虽然结果可能没什么问题，但是其中的效率和后续要做的工作可能远高于开发时的工作量。  </p>
-<p>停下来，做一个会思考的“懒人”在开发中是很有必要的，抽象，方法的调整，不管是对于开发还是后续的维护，都是有益的</p>
-<h2 id="项目管理那些事"><a href="#项目管理那些事" class="headerlink" title="项目管理那些事"></a>项目管理那些事</h2><p>我是学管理出身的（不过是信息管理，O(∩_∩)O~），我的管理学老师曾经跟我们说过，“管理学是对人的研究”，管理学不同于其他研究性的学问，更多的关注与人的分工和人与人之间的关系。而对于一个技术出身的人，去做管理，不仅仅是角色的转变，做事方式、承担的责任都会发生变化。</p>
-<p>作为项目管理者，你就是项目的总负责人，如果项目出了问题，你就是责任的承担着，将锅甩给谁都不好使，因为别人看到的就是如此：你带的团队，你接的活，你的项目失败了！仅此而已。</p>
-<p>但往往失败都是能带来成长的，所谓失败是成功之母，不过并非对于所有人来说失败都是成功他母上的XD，只有能够从中发现问题，汲取经验的人，才能够更进一步。所以，项目失败之后不要总是埋怨这个，埋怨那个，更多的应该反思一下自己哪个环境没弄好，是核心人员选的不对？没有按照计划严格执行？团队沟通做的不好？还是自己没有起到好的带头作用？</p>
-<p>说到沟通，从我的感觉来说（毕竟还没做过大的项目呢，/(ㄒoㄒ)/~~ ），越是大的项目，越有可能发生沟通上的问题。为什么这么说呢，简单点来说，就是人多事杂。不同的模块干活的人可能有好几个，他们之间沟通可能是没问题的，但是不同模块的负责人就不一定了，可能这边一个事完了，就继续搞下一个了，但是依赖有更新，接口有变更，这个没及时提，就会造成一些问题。这个只是一个非常浅显的例子，但是实际开发中类似的事情也并非不会发生（或许会很频繁也说不定XD）。</p>
-<h2 id="后续的巴拉巴拉"><a href="#后续的巴拉巴拉" class="headerlink" title="后续的巴拉巴拉"></a>后续的巴拉巴拉</h2><p>在后续的内容里作者讨论了人、组织以及关乎项目成败的种种因素，但看完之后隔了一段时间发现还有印象的内容就只剩下“造轮子”的讨论了（莫非我没有管理人员的命ORZ）。  </p>
-<p>对于重复造轮子，可能对于很多开发者或者跟我有相似工作经验的开发者而言（我主要做的是交付项目），造轮子是件很没有意义的事情，只有快速找个轮子把任务完成才是最为关键的。  </p>
-<p>然而，用了诸多轮子之后发现，当你遇到问题，你还是不得不去把轮子拆开，看看到底里面是怎么做的，然后一通调整，最后，你会发现你把原理弄明白了，然后自己重新做了一个轮子(lll￢ω￢)。  </p>
-<p>所以说，重复造轮子并非毫无意义，当你已经成了一个大神，应对各种问题都胸有成竹，那自然重复造轮子就显得是一种时间上的浪费，这是可耻的。可是大多数人都不是大神，很多东西并没有一个成熟的体系化的解决方案，因此，自己造个轮子不但学了技术，更是对自身实力的一种磨练和提升。 </p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>其实在写最后一段内容的时候，离读完这本书已经过去了很长时间了（大概有一个月吧），很多后续内容也没有去仔细品味琢磨。不过从这本书中还是学到了很多东西，不管是技术上的还是管理上的，虽然书中并没有给出问题的解决方案（这点很遗憾），但却留出了很大的思考空间。总体而言是一本很有深度的书籍，我的水平不够就不进一步评价了，喵o(=•ェ•=)m</p>
-<p>嗯，就这样吧，实在不知道写啥了XD</p>
+		<h2 id="lein与私有仓库"><a href="#lein与私有仓库" class="headerlink" title="lein与私有仓库"></a>lein与私有仓库</h2><p>lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。</p>
+<h2 id="创建profiles-clj"><a href="#创建profiles-clj" class="headerlink" title="创建profiles.clj"></a>创建profiles.clj</h2><p>在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：<br><a id="more"></a><br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> <span class="symbol">:user</span> &#123;</span><br><span class="line">        <span class="symbol">:mirrors</span> &#123;</span><br><span class="line">                  <span class="string">"central"</span> &#123;</span><br><span class="line">                             <span class="symbol">:name</span> <span class="string">"nexus-maven"</span></span><br><span class="line">                             <span class="symbol">:url</span> <span class="string">"https://ip:port/repository/maven-central/"</span></span><br><span class="line">                             &#125;</span><br><span class="line">                  <span class="string">"clojars"</span> &#123;</span><br><span class="line">                             <span class="symbol">:name</span> <span class="string">"nexus-clojure"</span></span><br><span class="line">                             <span class="symbol">:url</span> <span class="string">"https://ip:port/repository/clojars/"</span></span><br><span class="line">                             &#125;</span><br><span class="line">                  &#125;</span><br><span class="line">	<span class="symbol">:certificates</span> [<span class="string">"path of nexus.pem"</span>]</span><br><span class="line">        &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>clojure默认是不允许使用http的仓库，因此必须使用https的链接，并在certificates里配置相应的证书，这样lein在加载依赖的时候就可以自动通过设置的maven仓库下载依赖了。</p>
+<h2 id="配置nexus使用https"><a href="#配置nexus使用https" class="headerlink" title="配置nexus使用https"></a>配置nexus使用https</h2><p>根据<a href="https://help.sonatype.com/repomanager3/security/configuring-ssl#ConfiguringSSL-HowtoEnabletheHTTPSConnector" target="_blank" rel="noopener">官方文档</a>中说明，需要进行如下步骤：  </p>
+<ol>
+<li>在$install-dir/etc/ssl/下创建keystore文件keystore.jks</li>
+<li>在$data-dir/etc/nexus.properties文件中添加 application-port-ssl=8443</li>
+<li><p>在$data-dir/etc/nexus.properties文件nexus-args属性中添加${jetty.etc}/jetty-https.xml，如下所示：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nexus-args=$&#123;jetty.etc&#125;/jetty.xml,$&#123;jetty.etc&#125;/jetty-http.xml,$&#123;jetty.etc&#125;/jetty-https.xml,$&#123;jetty.etc&#125;/jetty-requestlog.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在$install-dir/etc/jetty/jetty-https.xml中配置keystore文件的密码，如果你没有设置keystore的密码这一步就可以忽略  </p>
+</li>
+</ol>
+<p>到这一步位置其实nexus的https就已经配置好了，但是lein的certificates的证书貌似需要使用pem文件，因此需要自己转换成pem文件并放在自己指定的路径下就可以了。</p>
+<h2 id="keystore文件生成和转换"><a href="#keystore文件生成和转换" class="headerlink" title="keystore文件生成和转换"></a>keystore文件生成和转换</h2><p><a href="https://support.sonatype.com/hc/en-us/articles/213465768-SSL-Certificate-Guide?_ga=2.147340727.1454355055.1541056153-1235747970.1535598527" target="_blank" rel="noopener">官方文档</a>中其实包含证书生成的内容，我这里就进行简单的copy了 XD。  </p>
+<ol>
+<li><p>生成证书库和证书：   </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">keytool -genkeypair -keystore example.jks -storepass password -alias example.com -keyalg RSA -keysize 2048 -validity 5000 -keypass password -dname &apos;CN=*.example.com, OU=Sonatype, O=Sonatype, L=Unspecified, ST=Unspecified, C=US&apos; -ext &apos;SAN=DNS:nexus.example.com,DNS:clm.example.com,DNS:repo.example.com,DNS:www.example.com&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>转换为PKCS12证书：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">keytool -importkeystore -srckeystore example.jks -destkeystore example.p12 -deststoretype PKCS12</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将PKCS12证书转换为openssl证书：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">openssl pkcs12 -nokeys -in example.p12 -out example.pem</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过以上步骤就完成了pem证书的生成，然后在profiles.clj中certificates属性里进行配置就可以了。<br>完结撒花<em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +131,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/读书/">读书</a>
+  <span></span> <a href="/tags/clojure/">clojure</a><a href="/tags/lein/">lein</a><a href="/tags/nexus/">nexus</a>
   </div>
 
 </div>
@@ -132,7 +140,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://leejoker.github.io/2017/08/16/《大道至简》读书笔记/" data-title="《大道至简》读书笔记 | ESPIER" data-tsina="1968623917" class="share clearfix">
+	  <div data-url="http://leejoker.github.io/2018/11/01/配置lein的私有依赖仓库/" data-title="配置lein的私有依赖仓库 | ESPIER" data-tsina="1968623917" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +153,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/10/11/折腾hexo系列之在jacman里集成gitment评论系统/" title="折腾hexo系列之在jacman里集成gitment评论系统">
-  <strong>上一篇：</strong><br/>
-  <span>
-  折腾hexo系列之在jacman里集成gitment评论系统</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/21/hexoeda初版终于完成了/"  title="hexoeda初版终于完成了">
+<a href="/2018/01/21/clojure学习笔记其三/"  title="clojure学习笔记其三">
  <strong>下一篇：</strong><br/> 
- <span>hexoeda初版终于完成了
+ <span>clojure学习笔记其三
 </span>
 </a>
 </div>
@@ -190,7 +190,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#编程的精义"><span class="toc-number">1.</span> <span class="toc-text">编程的精义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#是懒人造就了方法"><span class="toc-number">2.</span> <span class="toc-text">是懒人造就了方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目管理那些事"><span class="toc-number">3.</span> <span class="toc-text">项目管理那些事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续的巴拉巴拉"><span class="toc-number">4.</span> <span class="toc-text">后续的巴拉巴拉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lein与私有仓库"><span class="toc-number">1.</span> <span class="toc-text">lein与私有仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建profiles-clj"><span class="toc-number">2.</span> <span class="toc-text">创建profiles.clj</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置nexus使用https"><span class="toc-number">3.</span> <span class="toc-text">配置nexus使用https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#keystore文件生成和转换"><span class="toc-number">4.</span> <span class="toc-text">keystore文件生成和转换</span></a></li></ol>
  
   </div>
 
