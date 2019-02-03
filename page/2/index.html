@@ -73,6 +73,66 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/17/26岁的细思极恐/" title="26岁的细思极恐" itemprop="url">26岁的细思极恐</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-17T13:53:54.000Z" itemprop="datePublished"> 发表于 2017-03-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="班车上的感慨（人总是莫名伤感233333）"><a href="#班车上的感慨（人总是莫名伤感233333）" class="headerlink" title="班车上的感慨（人总是莫名伤感233333）"></a><strong>班车上的感慨（人总是莫名伤感233333）</strong></h3><p>　　转眼间已经快工作3年了，年龄也逐渐到达了26岁，我不知道我会在IT这个行业坚持多久，或许是几年也或许是一辈子。人们总是说时光荏苒，白驹过隙。但不仔细回头想想，真的不会发现时间就这样在每天匆忙的上下班中从自己的身后溜走了。<br>　　回想过去两年的工作（我是在传统开发行业工作的，互联网接触的不多，主要还是学了没地方用QAQ），虽然在技术上逐渐成熟，也学了很多的东西（想想自己从刚毕业什么都不会，到现在当个开发组的小组长内心还是颇为自豪的23333），框架的，前端的，后端的，也踩了各种坑，但是看看前沿的论坛新闻，感觉自己离这个时代要求的能力还是有不小差距的。不能沉迷于所得的成就，人总是得向前看。<br>　　30而立，但看着自己离30岁越来越近，事业上，爱情上都是毫无建树（单身狗。。。哇的一声哭了出来），不禁心里有了些触动，这也是我写这篇博文的动机（估计没什么人愿意看我发牢骚）。</p>
+<hr>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2017/03/17/26岁的细思极恐/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/随笔/">随笔</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/17/26岁的细思极恐/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/10/11/Ubuntu下如何添加ppa仓库/" title="Ubuntu下如何添加ppa仓库" itemprop="url">Ubuntu下如何添加ppa仓库</a>
   </h1>
   <p class="article-author">By
@@ -116,66 +176,6 @@
 	
 	  	<span></span>
 		<a href="/2016/10/11/Ubuntu下如何添加ppa仓库/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/" title="bilibili-go项目源码学习笔记_1" itemprop="url">bilibili-go项目源码学习笔记_1</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
-		
-  <p class="article-time">
-    <time datetime="2016-09-26T16:02:19.000Z" itemprop="datePublished"> 发表于 2016-09-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h4 id="bilibili-go服务加载流程浅析"><a href="#bilibili-go服务加载流程浅析" class="headerlink" title="bilibili-go服务加载流程浅析"></a>bilibili-go服务加载流程浅析</h4><p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"github.com/go-playground/log"</span></span><br><span class="line">    <span class="string">"github.com/whiteblue/bilibili-go/service"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    app, err := service.NewApplication(<span class="string">"conf.json"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(err)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    app.Router.Run(<span class="string">":8080"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/go/">go</a><a href="/tags/bilibili/">bilibili</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/09/27/bilibili-go项目源码学习笔记-1/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -240,6 +240,66 @@
 	
 	  	<span></span>
 		<a href="/2016/09/27/bilibili-go项目源码学习笔记-2/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/" title="bilibili-go项目源码学习笔记_1" itemprop="url">bilibili-go项目源码学习笔记_1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-26T16:02:19.000Z" itemprop="datePublished"> 发表于 2016-09-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h4 id="bilibili-go服务加载流程浅析"><a href="#bilibili-go服务加载流程浅析" class="headerlink" title="bilibili-go服务加载流程浅析"></a>bilibili-go服务加载流程浅析</h4><p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">"github.com/go-playground/log"</span></span><br><span class="line">    <span class="string">"github.com/whiteblue/bilibili-go/service"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    app, err := service.NewApplication(<span class="string">"conf.json"</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">        log.Fatal(err)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    app.Router.Run(<span class="string">":8080"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/go/">go</a><a href="/tags/bilibili/">bilibili</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/09/27/bilibili-go项目源码学习笔记-1/#disqus_thread" class="comments-count-link">Comments</a>
 	
 </div>
 
@@ -406,11 +466,11 @@
 			
 		
 			
-				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
+				<li><a href="/tags/hexoeda/" title="hexoeda">hexoeda<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/hexoeda/" title="hexoeda">hexoeda<sup>2</sup></a></li>
+				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
 			
 		
 			
@@ -418,7 +478,7 @@
 			
 		
 			
-				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 			
@@ -426,7 +486,23 @@
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/web前端/" title="web前端">web前端<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据结构/" title="数据结构">数据结构<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
@@ -434,7 +510,7 @@
 			
 		
 			
-				<li><a href="/tags/web前端/" title="web前端">web前端<sup>1</sup></a></li>
+				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
 			
 		
 			
@@ -445,10 +521,6 @@
 				<li><a href="/tags/nexus/" title="nexus">nexus<sup>1</sup></a></li>
 			
 		
-			
-				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
-			
-		
 		</ul>
 </div>
 
@@ -456,7 +528,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
@@ -498,7 +570,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
 		
 		<a href="/about" target="_blank" title="leejoker">leejoker</a>
 		

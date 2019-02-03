@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>对于Go语言中指针的思路整理 | ESPIER</title>
+    <title>数据结构与算法学习系列（一） | ESPIER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="leejoker">
     
 
     
-    <meta name="description" content="为什么要写这个 最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯’ - ‘)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。 指针概念解析 指针的概念其实主要分为两个">
-<meta name="keywords" content="go">
+    <meta name="description" content="关于新坑和旧坑的说明我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。 什么是算法算法，这个东西其实是思">
+<meta name="keywords" content="算法,数据结构,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于Go语言中指针的思路整理">
-<meta property="og:url" content="http://leejoker.github.io/2016/09/21/对于Go语言中指针的思路整理/index.html">
+<meta property="og:title" content="数据结构与算法学习系列（一）">
+<meta property="og:url" content="http://leejoker.github.io/2019/02/03/数据结构与算法学习系列（一）/index.html">
 <meta property="og:site_name" content="ESPIER">
-<meta property="og:description" content="为什么要写这个 最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯’ - ‘)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。 指针概念解析 指针的概念其实主要分为两个">
+<meta property="og:description" content="关于新坑和旧坑的说明我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。 什么是算法算法，这个东西其实是思">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-09T14:23:26.000Z">
+<meta property="og:updated_time" content="2019-02-03T17:03:32.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对于Go语言中指针的思路整理">
-<meta name="twitter:description" content="为什么要写这个 最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯’ - ‘)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。 指针概念解析 指针的概念其实主要分为两个">
+<meta name="twitter:title" content="数据结构与算法学习系列（一）">
+<meta name="twitter:description" content="关于新坑和旧坑的说明我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。 什么是算法算法，这个东西其实是思">
 
     
     
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/09/21/对于Go语言中指针的思路整理/" title="对于Go语言中指针的思路整理" itemprop="url">对于Go语言中指针的思路整理</a>
+      <a href="/2019/02/03/数据结构与算法学习系列（一）/" title="数据结构与算法学习系列（一）" itemprop="url">数据结构与算法学习系列（一）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
 		
   <p class="article-time">
-    <time datetime="2016-09-21T04:58:24.000Z" itemprop="datePublished"> 发表于 2016-09-21</time>
+    <time datetime="2019-02-03T13:17:44.000Z" itemprop="datePublished"> 发表于 2019-02-03</time>
     
   </p>
 </header>
@@ -92,20 +92,45 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么要写这个"><span class="toc-number">1.</span> <span class="toc-text">为什么要写这个</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#指针概念解析"><span class="toc-number">2.</span> <span class="toc-text">指针概念解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于新坑和旧坑的说明"><span class="toc-number">1.</span> <span class="toc-text">关于新坑和旧坑的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是算法"><span class="toc-number">2.</span> <span class="toc-text">什么是算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是数据结构"><span class="toc-number">3.</span> <span class="toc-text">什么是数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些概念的笔记"><span class="toc-number">4.</span> <span class="toc-text">一些概念的笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几种算法的设计思路"><span class="toc-number">5.</span> <span class="toc-text">几种算法的设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本篇结语"><span class="toc-number">6.</span> <span class="toc-text">本篇结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续内容说明"><span class="toc-number">7.</span> <span class="toc-text">后续内容说明</span></a></li></ol>
 		
 		</div>
 		
-		<h5 id="为什么要写这个"><a href="#为什么要写这个" class="headerlink" title="为什么要写这个"></a>为什么要写这个</h5><hr>
-<p>最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯’ - ‘)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。</p>
-<h5 id="指针概念解析"><a href="#指针概念解析" class="headerlink" title="指针概念解析"></a>指针概念解析</h5><hr>
-<p>指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	a := <span class="number">3</span></span><br><span class="line">	b := <span class="number">5</span></span><br><span class="line">	fmt.Println(a, b) <span class="comment">//输出值：3 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+		<h2 id="关于新坑和旧坑的说明"><a href="#关于新坑和旧坑的说明" class="headerlink" title="关于新坑和旧坑的说明"></a>关于新坑和旧坑的说明</h2><p>我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。</p>
+<h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><p>算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：</p>
+<blockquote>
+<p>程序=算法+数据结构</p>
+</blockquote>
+<p>虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~</p>
 <a id="more"></a>
-<p>对于变量a而言，&amp;a就是内存中变量a的地址。那么我们如何通过内存中的地址获取到值呢，看下面代码：<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	a := <span class="number">3</span></span><br><span class="line">	c := &amp;a</span><br><span class="line">	fmt.Println(*c) <span class="comment">//输出值：3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们将a的内存地址&amp;a赋给变量c，通过<em>c就取出了地址&amp;a中的值，因此通过</em>就可以将相应地址的值取出了。</p>
-<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><hr>
-<p><em>和&amp;是一对相对的概念，&amp;代表地址，</em>代表地址对应的值，因此一个变量<br><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">a := <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<p>&amp;a代表了变量a内存地址，而a的值就可以写作*&amp;a了。怎么样，是不是很简单（本来就很简单啦，果然还是自己太笨了，╮(╯▽╰)╭）</p>
+<h2 id="什么是数据结构"><a href="#什么是数据结构" class="headerlink" title="什么是数据结构"></a>什么是数据结构</h2><p>数据结构是承载数据的（逻辑结构+存储结构）的总和，逻辑结构体现了数据元素之间的逻辑关系和元素自身的逻辑特性，而存储结构则是数据元素在存储设备上的存在形式。同时，存储结构也是逻辑结构在物理设备上的体现，存储的方式在一定程度上体现了数据元素之间的逻辑关系。</p>
+<h2 id="一些概念的笔记"><a href="#一些概念的笔记" class="headerlink" title="一些概念的笔记"></a>一些概念的笔记</h2><p>这部分算是一些基本概念的笔记，考试专用哦XD，虽然没什么太大的用处，但是也体现了数据结构和算法的一些根本原则，对于初学者而言还是有必要了解一下。</p>
+<blockquote>
+<ol>
+<li>算法是对特定问题求解步骤的一种描述，是指令的有限序列</li>
+<li>算法的五个重要特性：输入、输出、确定性、有穷性、可行性</li>
+<li>“好”算法的五个特性：正确性、健壮性、可理解性、抽象分级、高效性</li>
+<li>算法的描述方法：自然语言、流程图、程序设计语言、伪代码</li>
+<li>时间复杂度和空间复杂度</li>
+</ol>
+</blockquote>
+<p>这里简单地解释一下其中可能有迷惑的一些概念。  </p>
+<ol>
+<li>确定性：简单来说就是算法在不改变参数的前提下，其结果是确定的，不会变化的。相同的输入一定带来相同的输出。</li>
+<li>有穷性：算法一定是可以结束的，这里指的是实际应用场景下而非算法结果本身（比如我的算法是产生一个无限的素数队列，但是我实际只需要截取前几位或固定位数，那么对于我而言算法就是有穷的）。</li>
+<li>抽象分级：简单来说就是对算法不同部分的划分，哪一部分的算法是用来做什么的，其结果又用于哪个部分中作为参数。算法是一个相对整体的概念，但是中间的过程需要做出分割以便其他人能够理解和修改。</li>
+<li>流程图和伪代码：这个意思我就不解释了，但是流程图和伪代码应该多去学习和理解，尤其是流程图，在工作之后很多时候是个很好的工具，而伪代码则是在忽略语法细节时最好的代码表现形式（其实就是忘了这里咋写了，然后大概写一下，滑稽XD）。</li>
+<li>时间复杂度和空间复杂度：现在是一个硬件过剩的时代，空间复杂度往往是被大家忽略的一点，很多时候甚至会拿空间换时间，所以说时间复杂度的优化往往是性能提升的重头戏。但是！空间复杂度在整体设计上其实是很关键的一环，优秀的设计能大大缓解存储资源吃紧，提升程序效率（扩容啊啥的设计的烂的话太要命了）。还有，时间复杂度的分析要好好学哦，这里就不多说了，但是考试会考到~</li>
+</ol>
+<h2 id="几种算法的设计思路"><a href="#几种算法的设计思路" class="headerlink" title="几种算法的设计思路"></a>几种算法的设计思路</h2><ol>
+<li>蛮力法：采用一定策略依次处理求解问题的所有数据，即遍历数据集的方式，通常性能较低，用于处理较为基本的问题。</li>
+<li>分治法：将问题分解为更小的规模然后各个击破，最后合并所有子模式的结果。如二叉树的遍历，深度优先遍历，快速排序等。</li>
+<li>减治法：将问题分解为更小规模的问题，只需要解决其中一个小规模问题即可获得结果，无需合并所有子模式的结果。如插入排序，拓扑排序。</li>
+<li>贪心法：将问题分解为一系列简单局部最优选择，每一步选择都是对当前解的扩展。如哈夫曼算法，Prim算法等。</li>
+<li>动态规划法：将问题分解成若干子问题，但是子问题间并非相互独立，根据子问题间的关系动态规划函数。如FLOYD算法。</li>
+</ol>
+<h2 id="本篇结语"><a href="#本篇结语" class="headerlink" title="本篇结语"></a>本篇结语</h2><p>这一篇只是一篇引子，你可以当我又水了一篇文章，哈哈~不过，对于初学算法和数据结构的人而言，最初的认识往往是最重要的，对知识有一个完整的认识非常重要，可以让人更为明确所学的东西是什么，有什么，包含哪些内容，学习的目标或者最终达成的效果是什么，我要不要学etc. 这些其实都能从一个整体的概述中获取到。平时读书也是一样，先读一下序，看看作者或者其他人对于书的整体内容的认知是什么样的，可以迅速帮你确认这是不是你想看的内容。</p>
+<h2 id="后续内容说明"><a href="#后续内容说明" class="headerlink" title="后续内容说明"></a>后续内容说明</h2><p>如果大佬看到篇文章可以尽情吐槽我，因为确实菜啊，毕业后好多知识都还给老师了，还是从最基础的开始学习。也是帮助刚开始进行学习这些的孩纸，我会把学校的教材从头到尾捋一遍，当然会根据不同的内容进行整理哒~也希望能帮助到看到这篇文章的萌新们XD</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -114,7 +139,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/go/">go</a>
+  <span></span> <a href="/tags/算法/">算法</a><a href="/tags/数据结构/">数据结构</a><a href="/tags/Java/">Java</a>
   </div>
 
 </div>
@@ -123,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://leejoker.github.io/2016/09/21/对于Go语言中指针的思路整理/" data-title="对于Go语言中指针的思路整理 | ESPIER" data-tsina="1968623917" class="share clearfix">
+	  <div data-url="http://leejoker.github.io/2019/02/03/数据结构与算法学习系列（一）/" data-title="数据结构与算法学习系列（一） | ESPIER" data-tsina="1968623917" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -136,19 +161,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/09/27/bilibili-go项目源码学习笔记-1/" title="bilibili-go项目源码学习笔记_1">
-  <strong>上一篇：</strong><br/>
-  <span>
-  bilibili-go项目源码学习笔记_1</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/09/21/如何创建六边形按钮/"  title="如何创建六边形按钮">
+<a href="/2018/11/01/配置lein的私有依赖仓库/"  title="配置lein的私有依赖仓库">
  <strong>下一篇：</strong><br/> 
- <span>如何创建六边形按钮
+ <span>配置lein的私有依赖仓库
 </span>
 </a>
 </div>
@@ -181,7 +198,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么要写这个"><span class="toc-number">1.</span> <span class="toc-text">为什么要写这个</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#指针概念解析"><span class="toc-number">2.</span> <span class="toc-text">指针概念解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于新坑和旧坑的说明"><span class="toc-number">1.</span> <span class="toc-text">关于新坑和旧坑的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是算法"><span class="toc-number">2.</span> <span class="toc-text">什么是算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是数据结构"><span class="toc-number">3.</span> <span class="toc-text">什么是数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些概念的笔记"><span class="toc-number">4.</span> <span class="toc-text">一些概念的笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几种算法的设计思路"><span class="toc-number">5.</span> <span class="toc-text">几种算法的设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本篇结语"><span class="toc-number">6.</span> <span class="toc-text">本篇结语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续内容说明"><span class="toc-number">7.</span> <span class="toc-text">后续内容说明</span></a></li></ol>
  
   </div>
 
