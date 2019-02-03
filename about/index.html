@@ -131,7 +131,7 @@
   <script>
   var localAddr = location.href;
   var addrArray = localAddr.split("#");
-  var gitment = new Gitment({
+  const gitment = new Gitment({
   	id:	addrArray[0],
     owner: 'leejoker',
     repo: 'blog_comm',
@@ -140,7 +140,7 @@
       client_secret: 'd4836c831bfb63d13ce8af31ec0a5826f88b45b5',
     },
   })
-  gitment.render('blog_comment')
+  gitment.render('blog_comment');
   </script>
 </section>
 
