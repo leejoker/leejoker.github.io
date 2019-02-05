@@ -73,6 +73,78 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/02/04/clojure学习笔记其四/" title="clojure读书笔记其四" itemprop="url">clojure读书笔记其四</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2019-02-03T16:20:41.000Z" itemprop="datePublished"> 发表于 2019-02-04</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="这个系列还会继续的"><a href="#这个系列还会继续的" class="headerlink" title="这个系列还会继续的"></a>这个系列还会继续的</h2><p>忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种提现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。</p>
+<h2 id="说一说常用的东西"><a href="#说一说常用的东西" class="headerlink" title="说一说常用的东西"></a>说一说常用的东西</h2><p>这一节就来说一说常用的一些函数，在实际的应用中不论是刷题还是实际的开发应用，都会经常的用到，比如递归 map reduce apply 等等，这些都是接触clojure之后都会经常看到，用到的方法。那么，今天就来说说这些吧。</p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归的话在一般的语言中（没错，我说的就是Java），一般都会采用这种方式：  </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">doMethod</span><span class="params">(<span class="keyword">int</span> param)</span></span>&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    doMethod(param);</span><br><span class="line">  &#125;</span><br><span class="line">```  </span><br><span class="line">在方法内部调用方法本身实现递归，完成方法的递归调用。  </span><br><span class="line">然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。  </span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">```clojure</span><br><span class="line">(defn recur-fibo [n]</span><br><span class="line">     (letfn [(fib</span><br><span class="line">                [current next n]</span><br><span class="line">                (<span class="keyword">if</span> (zero? n)</span><br><span class="line">                    current</span><br><span class="line">                    ;recur将递归调用fib函数</span><br><span class="line">                    (<span class="function">recur <span class="title">next</span> <span class="params">(+ current next)</span> <span class="params">(dec n)</span>)))]</span></span><br><span class="line"><span class="function">    <span class="params">(fib <span class="number">0</span> <span class="number">1</span> n)</span>))</span></span><br></pre></td></tr></table></figure>
+<p>上面这个例子摘自<a href="http://www.blogjava.net/killme2008/archive/2010/07/11/325766.html" target="_blank" rel="noopener">Clojure的recur尾递归优化探秘</a>。文章主要表达的意思是，在方法实现方法实例后，每次刷新存储的参数，然后通过invoke调用方法实例实现尾递归优化。感兴趣的同学可以去仔细读一读庄晓丹大佬对于recur的解读，更为深入。</p>
+<h2 id="map-reduce-apply"><a href="#map-reduce-apply" class="headerlink" title="map reduce apply"></a>map reduce apply</h2><p>map reduce apply都是遍历执行的方法，不过map、reduce和apply的返回值不太一样。  </p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>map返回的是一个lazy sequence,根据map的文档描述中可以知道，map是遍历所有传入参数，然后将每个参数执行传入函数的结果作为随后lazy-seq的元素。  </p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">map</span></span> #(<span class="name"><span class="builtin-name">+</span></span> <span class="number">1</span> %) (<span class="name"><span class="builtin-name">range</span></span> <span class="number">10</span>))</span><br><span class="line"><span class="comment">;; user=&gt; (map #(+ 1 %) (range 10))</span></span><br><span class="line"><span class="comment">;; (1 2 3 4 5 6 7 8 9 10)</span></span><br></pre></td></tr></table></figure>
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>apply的参数有两部分，一个是执行的函数，另一部分是执行函数的参数。<br>apply会依次传入参数并执行函数。  </p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">apply</span></span> + <span class="number">1</span> [<span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>])</span><br><span class="line">(<span class="name"><span class="builtin-name">apply</span></span> + [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>])</span><br><span class="line"><span class="comment">;; user=&gt; (apply + 1 [2 3 4 5])</span></span><br><span class="line"><span class="comment">;; 15</span></span><br><span class="line"><span class="comment">;; user=&gt; (apply + [1 2 3 4 5])</span></span><br><span class="line"><span class="comment">;; 15</span></span><br></pre></td></tr></table></figure>
+<p>但是要注意，apply传入的参数必须能够是一个列表，否则会造成类型识别失败。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">user=&gt; (apply + 1 2 3 4 5)</span><br><span class="line"></span><br><span class="line">IllegalArgumentException Don't know how to create ISeq from: java.lang.Long  clojure.lang.RT.seqFrom (RT.java:542)</span><br></pre></td></tr></table></figure>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>reduce和apply类似，但是reduce中传入的函数中，函数的参数必须是两个。  </p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>])  <span class="comment">;;=&gt; 15</span></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + [])           <span class="comment">;;=&gt; 0</span></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + [<span class="number">1</span>])          <span class="comment">;;=&gt; 1</span></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + [<span class="number">1</span> <span class="number">2</span>])        <span class="comment">;;=&gt; 3</span></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + <span class="number">1</span> [])         <span class="comment">;;=&gt; 1</span></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> + <span class="number">1</span> [<span class="number">2</span> <span class="number">3</span>])      <span class="comment">;;=&gt; 6</span></span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">def</span></span> x &#123;<span class="symbol">:a</span> <span class="number">1</span> <span class="symbol">:b</span> <span class="number">2</span>&#125;)</span><br><span class="line"></span><br><span class="line">(<span class="name"><span class="builtin-name">reduce</span></span> (<span class="name"><span class="builtin-name">fn</span></span> [p [k v]]</span><br><span class="line">          (<span class="name"><span class="builtin-name">into</span></span> p &#123;k (<span class="name"><span class="builtin-name">+</span></span> <span class="number">1</span> v)&#125;))</span><br><span class="line">        &#123;&#125;</span><br><span class="line">        x)</span><br><span class="line"><span class="comment">;;=&gt; &#123;:a 2, :b 3&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>其实还有很多遍历的方法，比如在递归中用的很多的loop。还有for这个和java中的关键字长得很像的函数。但是由于我掌握的其实也很有限，在这一篇里就不再进行具体讲述了。在后续的章节里，我会逐渐加深内容的深度。这一篇就姑且到这里吧o(<em>￣▽￣</em>)ブ</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/编程语言/">编程语言</a><a href="/tags/clojure/">clojure</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2019/02/04/clojure学习笔记其四/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/02/03/数据结构与算法学习系列(一)/" title="数据结构与算法学习系列（一）" itemprop="url">数据结构与算法学习系列（一）</a>
   </h1>
   <p class="article-author">By
@@ -634,64 +706,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/21/hexoeda初版终于完成了/" title="hexoeda初版终于完成了" itemprop="url">hexoeda初版终于完成了</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-21T13:18:17.000Z" itemprop="datePublished"> 发表于 2017-03-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>　　hexoeda（编辑器终于完成了第一版），目前支持通过hexo deploy将blog自动发布的功能（目前也仅仅完成了这个ORZ，我是个懒人真是对不起了QAQ），不过能够完成也是可喜可贺，可喜可贺！！之后可能还会继续扩充功能（不过这几点也请不要有过多的期待。。。。），包括blog的列表，和对已生成blog进行修改等等。<br>　　感兴趣的话可以clone下来使用，只要修改hexo路径，build一下就ok了哟（不过记得将service包install哦），大概就是这样，哇咔咔咔咔！！！</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/hexoeda/">hexoeda</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/21/hexoeda初版终于完成了/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -712,15 +726,15 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/clojure/" title="clojure">clojure<sup>4</sup></a></li>
+				<li><a href="/tags/clojure/" title="clojure">clojure<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>4</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/go/" title="go">go<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/编程语言/" title="编程语言">编程语言<sup>3</sup></a></li>
 			
 		
 			
@@ -732,6 +746,10 @@
 			
 		
 			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
 			
 		
@@ -740,15 +758,7 @@
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/读书/" title="读书">读书<sup>1</sup></a></li>
 			
 		
 			
@@ -757,6 +767,10 @@
 		
 			
 				<li><a href="/tags/折腾hexo/" title="折腾hexo">折腾hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/读书/" title="读书">读书<sup>1</sup></a></li>
 			
 		
 			
@@ -786,7 +800,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 
