@@ -75,6 +75,71 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2019/03/07/nginx-keepalived配置热备-互为主从/" title="nginx+keepalived配置热备(互为主从)" itemprop="url">nginx+keepalived配置热备(互为主从)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
+		
+  <p class="article-time">
+    <time datetime="2019-03-07T03:06:09.000Z" itemprop="datePublished"> 发表于 2019-03-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="从开发到实施XD"><a href="#从开发到实施XD" class="headerlink" title="从开发到实施XD"></a>从开发到实施XD</h1><p>因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇<a href="https://blog.csdn.net/MassiveStars/article/details/54290055" target="_blank" rel="noopener">blog</a>,很感谢博客的作者<a href="https://blog.csdn.net/MassiveStars" target="_blank" rel="noopener">MassiveStars</a>，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。</p>
+<h1 id="配置虚拟ip"><a href="#配置虚拟ip" class="headerlink" title="配置虚拟ip"></a>配置虚拟ip</h1><h2 id="互为主从模式"><a href="#互为主从模式" class="headerlink" title="互为主从模式"></a>互为主从模式</h2><p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~ </p>
+<p><img src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="示意图"></p>
+<h2 id="主从模式"><a href="#主从模式" class="headerlink" title="主从模式"></a>主从模式</h2><p>即一个服务器为主（master），一个服务器为从（slave），在使用的时候，如果主异常则切换到从服务器，若主服务器恢复，则切回主服务器</p>
+<p>PS：这种模式的弊端就是，当由从向主切换的时候，如果从服务器正在执行操作，可能会产生错误~</p>
+<h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><p>ifconfig eth0:0 192.168.40.151 netmask 255.255.255.0 up</p>
+<p>eth0: 用ifconfig命令查到的正在使用的网络设备名称，虚拟ip的命名必须采用此规则，建立在某一网络设备下</p>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2019/03/07/nginx-keepalived配置热备-互为主从/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/运维/">运维</a><a href="/tags/学习笔记/">学习笔记</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2019/03/07/nginx-keepalived配置热备-互为主从/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2019/02/05/数据结构与算法学习系列(二)/" title="数据结构与算法学习系列(二)" itemprop="url">数据结构与算法学习系列(二)</a>
   </h1>
   <p class="article-author">By
@@ -648,65 +713,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/10/11/折腾hexo系列之在jacman里集成gitment评论系统/" title="折腾hexo系列之在jacman里集成gitment评论系统" itemprop="url">折腾hexo系列之在jacman里集成gitment评论系统</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="leejoker" target="_blank" itemprop="author">leejoker</a>
-		
-  <p class="article-time">
-    <time datetime="2017-10-10T16:09:08.000Z" itemprop="datePublished"> 发表于 2017-10-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="从disqus到gitment"><a href="#从disqus到gitment" class="headerlink" title="从disqus到gitment"></a>从disqus到gitment</h3><p>其实就易用性和使用效果上讲，disqus还是很好用的，只需要注册一个账号，在主题里配置一下就可以了，然而，disqus最大的问题还是在于<del>翻墙</del>，咳，科学上网。今天这个问题我的一个小伙伴也跟我吐槽了，毕竟不是每个人都会去弄个vpn啊，ss啊之类的东西。因此，回家之后果断搞起。  </p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2017/10/11/折腾hexo系列之在jacman里集成gitment评论系统/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/折腾hexo/">折腾hexo</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/10/11/折腾hexo系列之在jacman里集成gitment评论系统/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -739,11 +745,15 @@
 			
 		
 			
+				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/hexoeda/" title="hexoeda">hexoeda<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/bilibili/" title="bilibili">bilibili<sup>2</sup></a></li>
+				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
 			
 		
 			
@@ -755,11 +765,15 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>2</sup></a></li>
+				<li><a href="/tags/学习笔记/" title="学习笔记">学习笔记<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/atom/" title="atom">atom<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
 			
 		
 			
@@ -775,11 +789,7 @@
 			
 		
 			
-				<li><a href="/tags/lein/" title="lein">lein<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/nexus/" title="nexus">nexus<sup>1</sup></a></li>
+				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
 			
 		
 			
@@ -787,11 +797,15 @@
 			
 		
 			
-				<li><a href="/tags/配置技巧/" title="配置技巧">配置技巧<sup>1</sup></a></li>
+				<li><a href="/tags/运维/" title="运维">运维<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/随笔/" title="随笔">随笔<sup>1</sup></a></li>
+				<li><a href="/tags/lein/" title="lein">lein<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/nexus/" title="nexus">nexus<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -801,7 +815,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">4</span></li></ul>
   </div>
 
 

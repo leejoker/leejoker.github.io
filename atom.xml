@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://leejoker.github.io/"/>
-  <updated>2019-02-06T11:58:52.238Z</updated>
+  <updated>2019-03-08T01:40:46.677Z</updated>
   <id>http://leejoker.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx+keepalived配置热备(互为主从)</title>
+    <link href="http://leejoker.github.io/2019/03/07/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87-%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/"/>
+    <id>http://leejoker.github.io/2019/03/07/nginx-keepalived配置热备-互为主从/</id>
+    <published>2019-03-07T03:06:09.000Z</published>
+    <updated>2019-03-08T01:40:46.677Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;从开发到实施XD&quot;&gt;&lt;a href=&quot;#从开发到实施XD&quot; class=&quot;headerlink&quot; title=&quot;从开发到实施XD&quot;&gt;&lt;/a&gt;从开发到实施XD&lt;/h1&gt;&lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&quot;https://blog.csdn.net/MassiveStars/article/details/54290055&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&quot;https://blog.csdn.net/MassiveStars&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
+&lt;h1 id=&quot;配置虚拟ip&quot;&gt;&lt;a href=&quot;#配置虚拟ip&quot; class=&quot;headerlink&quot; title=&quot;配置虚拟ip&quot;&gt;&lt;/a&gt;配置虚拟ip&lt;/h1&gt;&lt;h2 id=&quot;互为主从模式&quot;&gt;&lt;a href=&quot;#互为主从模式&quot; class=&quot;headerlink&quot; title=&quot;互为主从模式&quot;&gt;&lt;/a&gt;互为主从模式&lt;/h2&gt;&lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~ &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&quot; alt=&quot;示意图&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;主从模式&quot;&gt;&lt;a href=&quot;#主从模式&quot; class=&quot;headerlink&quot; title=&quot;主从模式&quot;&gt;&lt;/a&gt;主从模式&lt;/h2&gt;&lt;p&gt;即一个服务器为主（master），一个服务器为从（slave），在使用的时候，如果主异常则切换到从服务器，若主服务器恢复，则切回主服务器&lt;/p&gt;
+&lt;p&gt;PS：这种模式的弊端就是，当由从向主切换的时候，如果从服务器正在执行操作，可能会产生错误~&lt;/p&gt;
+&lt;h2 id=&quot;配置方法&quot;&gt;&lt;a href=&quot;#配置方法&quot; class=&quot;headerlink&quot; title=&quot;配置方法&quot;&gt;&lt;/a&gt;配置方法&lt;/h2&gt;&lt;p&gt;ifconfig eth0:0 192.168.40.151 netmask 255.255.255.0 up&lt;/p&gt;
+&lt;p&gt;eth0: 用ifconfig命令查到的正在使用的网络设备名称，虚拟ip的命名必须采用此规则，建立在某一网络设备下&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="http://leejoker.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="学习笔记" scheme="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构与算法学习系列(二)</title>
