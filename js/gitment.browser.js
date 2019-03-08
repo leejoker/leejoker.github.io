@@ -3413,7 +3413,7 @@ var Gitment = function () {
       }, options);
 
       this.state.user.isLoggingIn = true;
-      _utils.http.post('http://211.159.177.45:3000', {
+      _utils.http.post('https://auth.baixiaotu.cc', {
         code: code,
         client_id: client_id,
         client_secret: client_secret
