@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>数据结构与算法学习系列（一） | ESPIER</title>
+    <meta property="og:title" content="数据结构与算法学习系列（一） - ESPIER">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-03T21:17:44&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-03T21:17:44&#43;08:00">
+        
+    <meta name="Keywords" content="clojure,java,go,python,ruby,多线程,RPC">
+    <meta name="description" content="数据结构与算法学习系列（一）">
+        
+    <meta name="author" content="leejoker">
+    <meta property="og:url" content="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://leejoker.github.io">
+                        ESPIER
+                    </a>
+                
+                <p class="description">一个执着于Clojure的JAVA程序猿</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://leejoker.github.io">首页</a>
+                    
+                    <a  href="http://leejoker.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://leejoker.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">数据结构与算法学习系列（一）</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年2月3日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95">算法</a></span>
+                            
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/java">Java</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            <h2 id="关于新坑和旧坑的说明">关于新坑和旧坑的说明</h2>
+
+<p>我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。</p>
+
+<h2 id="什么是算法">什么是算法</h2>
+
+<p>算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：</p>
+
+<blockquote>
+<p>程序=算法+数据结构</p>
+</blockquote>
+
+<p>虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~</p>
+
+<h2 id="什么是数据结构">什么是数据结构</h2>
+
+<p>数据结构是承载数据的（逻辑结构+存储结构）的总和，逻辑结构体现了数据元素之间的逻辑关系和元素自身的逻辑特性，而存储结构则是数据元素在存储设备上的存在形式。同时，存储结构也是逻辑结构在物理设备上的体现，存储的方式在一定程度上体现了数据元素之间的逻辑关系。</p>
+
+<h2 id="一些概念的笔记">一些概念的笔记</h2>
+
+<p>这部分算是一些基本概念的笔记，考试专用哦XD，虽然没什么太大的用处，但是也体现了数据结构和算法的一些根本原则，对于初学者而言还是有必要了解一下。</p>
+
+<blockquote>
+<ol>
+<li>算法是对特定问题求解步骤的一种描述，是指令的有限序列</li>
+<li>算法的五个重要特性：输入、输出、确定性、有穷性、可行性</li>
+<li>“好”算法的五个特性：正确性、健壮性、可理解性、抽象分级、高效性</li>
+<li>算法的描述方法：自然语言、流程图、程序设计语言、伪代码</li>
+<li>时间复杂度和空间复杂度</li>
+</ol>
+</blockquote>
+
+<p>这里简单地解释一下其中可能有迷惑的一些概念。</p>
+
+<ol>
+<li>确定性：简单来说就是算法在不改变参数的前提下，其结果是确定的，不会变化的。相同的输入一定带来相同的输出。</li>
+<li>有穷性：算法一定是可以结束的，这里指的是实际应用场景下而非算法结果本身（比如我的算法是产生一个无限的素数队列，但是我实际只需要截取前几位或固定位数，那么对于我而言算法就是有穷的）。</li>
+<li>抽象分级：简单来说就是对算法不同部分的划分，哪一部分的算法是用来做什么的，其结果又用于哪个部分中作为参数。算法是一个相对整体的概念，但是中间的过程需要做出分割以便其他人能够理解和修改。</li>
+<li>流程图和伪代码：这个意思我就不解释了，但是流程图和伪代码应该多去学习和理解，尤其是流程图，在工作之后很多时候是个很好的工具，而伪代码则是在忽略语法细节时最好的代码表现形式（其实就是忘了这里咋写了，然后大概写一下，滑稽XD）。</li>
+<li>时间复杂度和空间复杂度：现在是一个硬件过剩的时代，空间复杂度往往是被大家忽略的一点，很多时候甚至会拿空间换时间，所以说时间复杂度的优化往往是性能提升的重头戏。但是！空间复杂度在整体设计上其实是很关键的一环，优秀的设计能大大缓解存储资源吃紧，提升程序效率（扩容啊啥的设计的烂的话太要命了）。还有，时间复杂度的分析要好好学哦，这里就不多说了，但是考试会考到~</li>
+</ol>
+
+<h2 id="几种算法的设计思路">几种算法的设计思路</h2>
+
+<ol>
+<li>蛮力法：采用一定策略依次处理求解问题的所有数据，即遍历数据集的方式，通常性能较低，用于处理较为基本的问题。</li>
+<li>分治法：将问题分解为更小的规模然后各个击破，最后合并所有子模式的结果。如二叉树的遍历，深度优先遍历，快速排序等。</li>
+<li>减治法：将问题分解为更小规模的问题，只需要解决其中一个小规模问题即可获得结果，无需合并所有子模式的结果。如插入排序，拓扑排序。</li>
+<li>贪心法：将问题分解为一系列简单局部最优选择，每一步选择都是对当前解的扩展。如哈夫曼算法，Prim算法等。</li>
+<li>动态规划法：将问题分解成若干子问题，但是子问题间并非相互独立，根据子问题间的关系动态规划函数。如FLOYD算法。</li>
+</ol>
+
+<h2 id="本篇结语">本篇结语</h2>
+
+<p>这一篇只是一篇引子，你可以当我又水了一篇文章，哈哈~不过，对于初学算法和数据结构的人而言，最初的认识往往是最重要的，对知识有一个完整的认识非常重要，可以让人更为明确所学的东西是什么，有什么，包含哪些内容，学习的目标或者最终达成的效果是什么，我要不要学etc. 这些其实都能从一个整体的概述中获取到。平时读书也是一样，先读一下序，看看作者或者其他人对于书的整体内容的认知是什么样的，可以迅速帮你确认这是不是你想看的内容。</p>
+
+<h2 id="后续内容说明">后续内容说明</h2>
+
+<p>如果大佬看到篇文章可以尽情吐槽我，因为确实菜啊，毕业后好多知识都还给老师了，还是从最基础的开始学习。也是帮助刚开始进行学习这些的孩纸，我会把学校的教材从头到尾捋一遍，当然会根据不同的内容进行整理哒~也希望能帮助到看到这篇文章的萌新们XD</p>
+                        </div>
+
+                        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io">leejoker</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">配置lein的私有依赖仓库</a></li>
+        
+        <li><a href="/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/">clojure学习笔记其三</a></li>
+        
+        <li><a href="/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/">Atom配置国内源</a></li>
+        
+        <li><a href="/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/">clojure学习笔记其二</a></li>
+        
+        <li><a href="/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/">clojure学习笔记其一</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+                                
+                                <li><a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a></li>
+                                
+                                <li><a href="http://leejoker.github.io/tags/java">Java</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "leejoker/blog_comm"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://leejoker.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/" title="数据结构与算法学习系列(二)">数据结构与算法学习系列(二)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/" title="clojure读书笔记其四">clojure读书笔记其四</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/" title="数据结构与算法学习系列（一）">数据结构与算法学习系列（一）</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" title="配置lein的私有依赖仓库">配置lein的私有依赖仓库</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/" title="clojure学习笔记其三">clojure学习笔记其三</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/" title="Atom配置国内源">Atom配置国内源</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/" title="clojure学习笔记其二">clojure学习笔记其二</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/" title="clojure学习笔记其一">clojure学习笔记其一</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" title="折腾hexo系列之在jacman里集成gitment评论系统">折腾hexo系列之在jacman里集成gitment评论系统</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《大道至简》读书笔记">《大道至简》读书笔记</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/java/">java(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://leejoker.github.io/tags/atom/">atom</a>
+    
+    <a href="http://leejoker.github.io/tags/bilibili/">bilibili</a>
+    
+    <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
+    
+    <a href="http://leejoker.github.io/tags/css/">css</a>
+    
+    <a href="http://leejoker.github.io/tags/go/">go</a>
+    
+    <a href="http://leejoker.github.io/tags/hexo/">hexo</a>
+    
+    <a href="http://leejoker.github.io/tags/java/">java</a>
+    
+    <a href="http://leejoker.github.io/tags/lein/">lein</a>
+    
+    <a href="http://leejoker.github.io/tags/linux/">linux</a>
+    
+    <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
+    
+    <a href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%9D%82%E6%96%87/">杂文</a>
+    
+    <a href="http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="http://leejoker.github.io/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+    
+    <a href="http://leejoker.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/leejoker" title="leejoker&#39;s Github">leejoker&#39;s Github</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://leejoker.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://leejoker.github.io">ESPIER By leejoker</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>

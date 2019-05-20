@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on ESPIER</title>
+    <link>http://leejoker.github.io/categories/linux/</link>
+    <description>Recent content in linux on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 11 Oct 2016 22:41:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://leejoker.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu下如何添加ppa仓库</title>
+      <link>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
+
+&lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
+sudo apt-get update  
+sudo apt-get install atom 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就把atom的仓库添加并安装完成了。&lt;/p&gt;
+
+&lt;p&gt;然而，并没有这么简单&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo: add-apt-repository : command not found
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

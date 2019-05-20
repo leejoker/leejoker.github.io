@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>bilibili-go项目源码学习笔记_2 | ESPIER</title>
+    <meta property="og:title" content="bilibili-go项目源码学习笔记_2 - ESPIER">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2016-09-28T00:02:19&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2016-09-28T00:02:19&#43;08:00">
+        
+    <meta name="Keywords" content="clojure,java,go,python,ruby,多线程,RPC">
+    <meta name="description" content="bilibili-go项目源码学习笔记_2">
+        
+    <meta name="author" content="leejoker">
+    <meta property="og:url" content="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://leejoker.github.io">
+                        ESPIER
+                    </a>
+                
+                <p class="description">一个执着于Clojure的JAVA程序猿</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://leejoker.github.io">首页</a>
+                    
+                    <a  href="http://leejoker.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://leejoker.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">bilibili-go项目源码学习笔记_2</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2016年9月28日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/go">go</a></span>
+                            
+                        </div>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
+
+<h3 id="参数定义">参数定义</h3>
+
+<p>application.go中定义了初始化时需要用到的常量和变量</p>
+
+<h4 id="常量定义">常量定义：</h4>
+
+<pre><code class="language-go">const (
+    INDEX_CACHE        = &quot;index&quot;        //各类别下rank
+    ALL_RANK_CACHE     = &quot;all_rank&quot;     //总的rank
+    BANGUMI_CACHE      = &quot;bangumi&quot;      //番剧
+    BANGUMI_LIST_CACHE = &quot;bangumi_list&quot; //新番放松表
+    SORT_TOP_CACHE     = &quot;sort-&quot;        //具体某个类别rank(这个在index_cache中要用到)
+    LIVE_INDEX_CACHE   = &quot;live_index&quot;   //直播rank
+)
+</code></pre>
+
+<h4 id="全局变量定义">全局变量定义：</h4>
+
+<pre><code class="language-go">var (
+    ProdLevels = []log.Level{
+        log.InfoLevel,
+        log.NoticeLevel,
+        log.WarnLevel,
+        log.ErrorLevel,
+        log.PanicLevel,
+        log.AlertLevel,
+        log.FatalLevel,
+    }
+)
+</code></pre>
+
+<p>这里主要定义了release模式下用到的日志级别。(PS:类库引用的是&rdquo;github.com/go-playground/log&rdquo;)</p>
+
+<h4 id="结构体定义">结构体定义</h4>
+
+<pre><code class="language-go">type BiliBiliApplication struct {
+    Router *gin.Engine        //路由
+    Corn   *CornService       //初始化服务
+    Conf   *Config            //配置信息
+    Client *client.BCli       //客户端
+    Cache  *CacheManager      //缓存管理
+}
+</code></pre>
+
+<p>这里定义了Bilibili-go主体程序的结构。</p>
+
+<h3 id="初始化rank数据并注册任务">初始化rank数据并注册任务</h3>
+
+<p>application.go中使用了conformTask方法进行了数据的初始化以及任务注册</p>
+
+<pre><code class="language-go">//application.go
+conformTask(app)
+corn.Start()
+</code></pre>
+
+<p>conformTask方法如下：</p>
+
+<pre><code class="language-go">//application.go
+func conformTask(app *BiliBiliApplication) {
+    app.Corn.RegisterTask(&amp;IndexInfoTask{CornTask: CornTask{Name: &quot;index_info&quot;, Duration: 2 * time.Hour}, app: app})
+    app.Corn.RegisterTask(&amp;BangumiInfoTask{CornTask: CornTask{Name: &quot;bangumi_info&quot;, Duration: 6 * time.Hour}, app: app})
+    app.Corn.RegisterTask(&amp;BangumiListTask{CornTask: CornTask{Name: &quot;bangumi_list&quot;, Duration: 6 * time.Hour}, app: app})
+    app.Corn.RegisterTask(&amp;TopRankTask{CornTask: CornTask{Name: &quot;top_rank&quot;, Duration: 2 * time.Hour}, app: app})
+    app.Corn.RegisterTask(&amp;LiveIndexTask{CornTask: CornTask{Name: &quot;alive_index&quot;, Duration: 2 * time.Hour}, app: app})
+}
+</code></pre>
+
+<p>从方法名上看是调用了CornService中的RegisterTask(注册任务)的方法，那么，我们看一下这个RegisterTask方法到底做了些什么吧。</p>
+
+<pre><code class="language-go">//corn.go
+//execute task
+func exec(f CornTaskImpl) {
+    log.Info(&quot;invoke task, taskname: &quot;, f.GetName())
+    defer func() {
+        if r := recover(); r != nil {
+            log.Error(r)
+        }
+    }()
+
+    if err := f.Run(); err != nil {
+        f.Failure(err)
+    } else {
+        f.Success()
+    }
+    log.Info(&quot;run task end, taskname: &quot;, f.GetName())
+}
+
+//这里就是那个名为注册任务的方法
+func (c *CornService) RegisterTask(task CornTaskImpl) {
+    task.SyncLastRunTime()
+    exec(task)
+    c.tasks = append(c.tasks, task)
+}
+</code></pre>
+
+<p>不难发现，实际上这个注册任务的方法就是将task执行了一下，然后放到c.tasks数组里。</p>
+
+<p>而之后的corn.Start()方法：</p>
+
+<pre><code class="language-go">//corn.go
+func (c *CornService) syncTaskList(nowTime time.Time) {
+    for _, task := range c.tasks {                          //循环任务列表
+        //Unix timestamp =&gt; duration
+        between := time.Duration(nowTime.Unix()-task.GetLastRun().Unix()) * time.Second
+        if between &gt;= task.GetDuration() {                  //当时间间隔大于设定的时间周期则执行,并修改LastRun的值
+            task.SyncLastRunTime()
+            exec(task)
+        }
+    }
+}
+
+func (c *CornService) loop() {
+    for {
+        select {
+        case &lt;-c.done:
+            log.Info(&quot;corn loop stopped....&quot;)
+            return
+        case nowTime := &lt;-c.ticker.C:          //这里通过计时器获取到当前时间
+            go c.syncTaskList(nowTime)
+        }
+    }
+}
+
+func (c *CornService) Start() {
+    go c.loop()
+}
+</code></pre>
+
+<p>corn.Start()方法开启了一个loop线程，这个线程简单的来说就是每隔一分钟执行一次syncTaskList方法。</p>
+
+<p>到此，bilibili-go这个小项目的学习也基本上告一段落了，剩下的内容基本上都是数据获取和处理的部分。这个项目虽然很小，但是对多线程的学习，go的基础都有很大的帮助，在此也感谢WhiteBlue大大，(<em>^_^</em>)</p>
+                        </div>
+
+                        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io">leejoker</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a></li>
+        
+        <li><a href="/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">对于Go语言中指针的思路整理</a></li>
+        
+        <li><a href="/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/">如何创建六边形按钮</a></li>
+        
+        <li><a href="/about/">About Me</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://leejoker.github.io/tags/go">go</a></li>
+                                
+                                <li><a href="http://leejoker.github.io/tags/bilibili">bilibili</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "leejoker/blog_comm"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://leejoker.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/" title="数据结构与算法学习系列(二)">数据结构与算法学习系列(二)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/" title="clojure读书笔记其四">clojure读书笔记其四</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/" title="数据结构与算法学习系列（一）">数据结构与算法学习系列（一）</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" title="配置lein的私有依赖仓库">配置lein的私有依赖仓库</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/" title="clojure学习笔记其三">clojure学习笔记其三</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/" title="Atom配置国内源">Atom配置国内源</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/" title="clojure学习笔记其二">clojure学习笔记其二</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/" title="clojure学习笔记其一">clojure学习笔记其一</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" title="折腾hexo系列之在jacman里集成gitment评论系统">折腾hexo系列之在jacman里集成gitment评论系统</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《大道至简》读书笔记">《大道至简》读书笔记</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/java/">java(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://leejoker.github.io/tags/atom/">atom</a>
+    
+    <a href="http://leejoker.github.io/tags/bilibili/">bilibili</a>
+    
+    <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
+    
+    <a href="http://leejoker.github.io/tags/css/">css</a>
+    
+    <a href="http://leejoker.github.io/tags/go/">go</a>
+    
+    <a href="http://leejoker.github.io/tags/hexo/">hexo</a>
+    
+    <a href="http://leejoker.github.io/tags/java/">java</a>
+    
+    <a href="http://leejoker.github.io/tags/lein/">lein</a>
+    
+    <a href="http://leejoker.github.io/tags/linux/">linux</a>
+    
+    <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
+    
+    <a href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%9D%82%E6%96%87/">杂文</a>
+    
+    <a href="http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="http://leejoker.github.io/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+    
+    <a href="http://leejoker.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/leejoker" title="leejoker&#39;s Github">leejoker&#39;s Github</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://leejoker.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://leejoker.github.io">ESPIER By leejoker</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>
