@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>bilibili | ESPIER</title>
-    <meta property="og:title" content="bilibili - ESPIER">
+    <title>部署设计 | ESPIER</title>
+    <meta property="og:title" content="部署设计 - ESPIER">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="clojure,java,go,python,ruby,多线程,RPC">
-    <meta name="description" content="bilibili">
+    <meta name="description" content="部署设计">
         
     <meta name="author" content="leejoker">
-    <meta property="og:url" content="http://leejoker.github.io/tags/bilibili/">
+    <meta property="og:url" content="http://leejoker.github.io/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="http://leejoker.github.io/tags/bilibili/index.xml" title="ESPIER" />
+    <link rel="alternate" type="application/rss+xml+xml" href="http://leejoker.github.io/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/index.xml" title="ESPIER" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -69,7 +69,7 @@
                     
                     <h3 class="archive-title">
                         包含标签
-                        <span class="keyword">bilibili</span>
+                        <span class="keyword">部署设计</span>
                         的文章
                     </h3>
                     
@@ -78,83 +78,29 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">bilibili-go项目源码学习笔记_2</a>
+                                    <a href="http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/">Nginx&#43;keepalived配置热备（互为主从）</a>
                                 </h1>
                             </header>
                             <date class="post-meta meta-date">
-                                2016年9月28日
+                                2019年5月21日
                             </date>
                             
                             <div class="post-meta meta-category">
                                 |
                                 
-                                    <a href="http://leejoker.github.io/categories/go">go</a>
+                                    <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7">技巧</a>
                                 
                             </div>
                             
                             <div class="post-content">
-                                <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
+                                <h3 id="配置虚拟ip">配置虚拟ip</h3>
 
-<h3 id="参数定义">参数定义</h3>
+<h4 id="互为主从模式">互为主从模式</h4>
 
-<p>application.go中定义了初始化时需要用到的常量和变量</p>
+<p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~</p>
 
-<h4 id="常量定义">常量定义：</h4>
-
-<pre><code class="language-go">const (
-    INDEX_CACHE        = &quot;index&quot;        //各类别下rank
-    ALL_RANK_CACHE     = &quot;all_rank&quot;     //总的rank
-    BANGUMI_CACHE      = &quot;bangumi&quot;      //番剧
-    BANGUMI_LIST_CACHE = &quot;bangumi_list&quot; //新番放松表
-    SORT_TOP_CACHE     = &quot;sort-&quot;        //具体某个类别rank(这个在index_cache中要用到)
-    LIVE_INDEX_CACHE   = &quot;live_index&quot;   //直播rank
-)
-</code></pre>……
-                                <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2016年9月27日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="http://leejoker.github.io/categories/go">go</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
-
-<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
-
-<pre><code class="language-go">    package main
-
-    import (
-        &quot;github.com/go-playground/log&quot;
-        &quot;github.com/whiteblue/bilibili-go/service&quot;
-    )
-
-    func main() {
-        app, err := service.NewApplication(&quot;conf.json&quot;)
-        if err != nil {
-            log.Fatal(err)
-        }
-
-        app.Router.Run(&quot;:8080&quot;)
-    }
-</code></pre>
-
-<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>……
-                                <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">阅读全文</a></p>
+<p><img src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="image" /></p>……
+                                <p class="readmore"><a href="http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/">阅读全文</a></p>
                             </div>
                         </article>
                     

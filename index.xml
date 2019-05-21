@@ -6,10 +6,25 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 05 Feb 2019 22:36:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 14:13:52 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx&#43;keepalived配置热备（互为主从）</title>
+      <link>http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
+      <pubDate>Tue, 21 May 2019 14:13:52 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
+      <description>&lt;h3 id=&#34;配置虚拟ip&#34;&gt;配置虚拟ip&lt;/h3&gt;
+
+&lt;h4 id=&#34;互为主从模式&#34;&gt;互为主从模式&lt;/h4&gt;
+
+&lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>数据结构与算法学习系列(二)</title>
