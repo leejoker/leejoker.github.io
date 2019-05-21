@@ -50,13 +50,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/java/</loc>
+    <loc>http://leejoker.github.io/categories/java/</loc>
     <lastmod>2019-02-05T22:36:10+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/java/</loc>
+    <loc>http://leejoker.github.io/tags/java/</loc>
     <lastmod>2019-02-05T22:36:10+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -73,25 +73,25 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2019-02-05T22:36:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-02-05T22:36:10+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/clojure/</loc>
-    <lastmod>2019-02-04T00:20:41+00:00</lastmod>
+    <loc>http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-02-05T22:36:10+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://leejoker.github.io/categories/clojure/</loc>
+    <lastmod>2019-02-04T00:20:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://leejoker.github.io/tags/clojure/</loc>
     <lastmod>2019-02-04T00:20:41+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -162,13 +162,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/hexo/</loc>
+    <loc>http://leejoker.github.io/categories/hexo/</loc>
     <lastmod>2017-10-11T00:09:08+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/hexo/</loc>
+    <loc>http://leejoker.github.io/tags/hexo/</loc>
     <lastmod>2017-10-11T00:09:08+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -184,13 +184,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/%E8%AF%BB%E4%B9%A6/</loc>
+    <loc>http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2017-08-16T12:55:14+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/</loc>
+    <loc>http://leejoker.github.io/tags/%E8%AF%BB%E4%B9%A6/</loc>
     <lastmod>2017-08-16T12:55:14+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -201,13 +201,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/%E6%9D%82%E6%96%87/</loc>
+    <loc>http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/</loc>
     <lastmod>2017-03-17T21:53:54+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/</loc>
+    <loc>http://leejoker.github.io/tags/%E6%9D%82%E6%96%87/</loc>
     <lastmod>2017-03-17T21:53:54+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -235,13 +235,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/go/</loc>
+    <loc>http://leejoker.github.io/categories/go/</loc>
     <lastmod>2016-09-28T00:02:19+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/go/</loc>
+    <loc>http://leejoker.github.io/tags/go/</loc>
     <lastmod>2016-09-28T00:02:19+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -257,13 +257,13 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/css/</loc>
+    <loc>http://leejoker.github.io/categories/css/</loc>
     <lastmod>2016-09-21T12:55:14+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/css/</loc>
+    <loc>http://leejoker.github.io/tags/css/</loc>
     <lastmod>2016-09-21T12:55:14+00:00</lastmod>
     <priority>0</priority>
   </url>
