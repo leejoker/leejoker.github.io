@@ -6,10 +6,21 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 May 2019 14:13:52 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 09:35:11 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>记一次登录假死的异常排查</title>
+      <link>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
+      <pubDate>Tue, 28 May 2019 09:35:11 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Nginx&#43;keepalived配置热备（互为主从）</title>
