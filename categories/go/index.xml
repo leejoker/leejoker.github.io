@@ -83,13 +83,13 @@
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
 
 import (
-    &amp;quot;fmt&amp;quot;
+	&amp;quot;fmt&amp;quot;
 )
 
 func main() {
-    a := 3
-    b := 5
-    fmt.Println(a, b) //输出值：3 5
+	a := 3
+	b := 5
+	fmt.Println(a, b) //输出值：3 5
 }
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
