@@ -3,14 +3,14 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.57.1" />
+    <meta name="generator" content="Hugo 0.57.2" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ESPIER | 一个Clojure爱好者</title>
-    <meta property="og:title" content="ESPIER | 一个Clojure爱好者">
+    <title>ESPIER | 一只JAVA程序猿的日常</title>
+    <meta property="og:title" content="ESPIER | 一只JAVA程序猿的日常">
     <meta property="og:type" content="website">
-    <meta name="Keywords" content="clojure,java,go,python,ruby,多线程,RPC">
+    <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
     <meta name="description" content="上善若水，大道至简">
     <meta property="og:url" content="http://leejoker.github.io/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -41,7 +41,7 @@
                         </a>
                     </h1>
                 
-                <p class="description">一个Clojure爱好者</p>
+                <p class="description">一只JAVA程序猿的日常</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -64,6 +64,149 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" title="配置lein的私有依赖仓库" >配置lein的私有依赖仓库</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月1日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/clojure">clojure</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="lein与私有仓库">lein与私有仓库</h2>
+
+<p>lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。</p>
+
+<h2 id="创建profiles-clj">创建profiles.clj</h2>
+
+<p>在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：</p>……
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/" title="clojure学习笔记其三" >clojure学习笔记其三</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年1月21日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/clojure">clojure</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h1 id="namespace">Namespace</h1>
+
+<p>名称空间对于Clojure来说是一个逻辑上对于代码进行分组的概念，类似于Java的package，通过使用名称空间能够规避方法名冲突，有效的对代码进行管理。主要应用的话，其实就是方便代码的引入和使用了，毕竟你不可能将所有代码放到一个clj文件中。</p>
+
+<h3 id="create-ns">create-ns</h3>
+
+<pre><code class="language-clojure">user&gt; (create-ns 'clojure.by.example)
+nil
+</code></pre>
+
+<p>这样一个名称空间就建立好了，是不是so easy！</p>
+
+<h3 id="in-ns">in-ns</h3>
+
+<pre><code class="language-clojure">;; create the namespace and switch to it
+(in-ns 'first-namespace)
+</code></pre>
+
+<p>in-ns的主要作用是切换到指定的namespace中，如果这个namespace不存在，则会创建他。</p>……
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/" title="Atom配置国内源" >Atom配置国内源</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年1月15日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7">技巧</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。
+ 本方法在linux和windows下都是可用的 在$HOME/.atom目录下新建.atomrc文件 在文件内添加如下内容：
+registry=https://registry.npm.taobao.org/ strict-ssl=false   Over !……
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/" title="clojure学习笔记其二" >clojure学习笔记其二</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年1月7日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://leejoker.github.io/categories/clojure">clojure</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h1 id="今天的主题是function">今天的主题是Function</h1>
+
+<p>正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&rdquo;函数&rdquo;啦XD</p>
+
+<h2 id="那么直入主题-首先来看一下怎么定义一个函数">那么直入主题，首先来看一下怎么定义一个函数：</h2>
+
+<pre><code class="language-clojure">;;    name   params         body
+;;    -----  ------  -------------------
+(defn greet  [name]  (str &quot;Hello, &quot; name) )
+</code></pre>
+
+<p>这里我引用了<a href="https://www.clojure.org/guides/learn/functions">官方文档</a>中的说明。</p>
+
+<p>那么这个函数的使用就可以像上一篇中所说的那样：</p>
+
+<pre><code class="language-clojure">user=&gt; (greet &quot;小明&quot;)
+&quot;Hello, 小明&quot;
+</code></pre>
+
+<h2 id="你也可以给你的方法增加方法说明">你也可以给你的方法增加方法说明：</h2>
+
+<pre><code class="language-clojure">(defn greet  
+  &quot;this is the greet function for you&quot;
+  [name]  
+  (str &quot;Hello, &quot; name))
+</code></pre>……
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/">阅读全文</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -273,131 +416,6 @@ sudo apt-get install atom
                             <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" title="bilibili-go项目源码学习笔记_1" >bilibili-go项目源码学习笔记_1</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2016年9月27日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/go">go</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
-
-<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
-
-<pre><code class="language-go">    package main
-
-    import (
-        &quot;github.com/go-playground/log&quot;
-        &quot;github.com/whiteblue/bilibili-go/service&quot;
-    )
-
-    func main() {
-        app, err := service.NewApplication(&quot;conf.json&quot;)
-        if err != nil {
-            log.Fatal(err)
-        }
-
-        app.Router.Run(&quot;:8080&quot;)
-    }
-</code></pre>
-
-<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>……
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/" title="对于Go语言中指针的思路整理" >对于Go语言中指针的思路整理</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2016年9月21日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/go">go</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <h3 id="为什么要写这个">为什么要写这个</h3>
-
-<p>最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&rsquo; - &lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。</p>
-
-<h3 id="指针概念解析">指针概念解析</h3>
-
-<p>指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：</p>
-
-<pre><code class="language-go">package main
-
-import (
-	&quot;fmt&quot;
-)
-
-func main() {
-	a := 3
-	b := 5
-	fmt.Println(a, b) //输出值：3 5
-}
-</code></pre>……
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/" title="如何创建六边形按钮" >如何创建六边形按钮</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2016年9月21日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/css">CSS</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                <h2 id="div旋转">div旋转﻿</h2>……
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/about/" title="About Me" >About Me</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                1年1月1日
-                            </date>
-                            
-                            <div class="post-content">
-                                 最近在学习JAVA多线程和Clojure，然而多线程没有实战机会感觉还是有点屠龙之技的味道 在喜爱的事物上是个话痨，感觉有说不尽的话题，然而不喜欢的东西往往看都不会去看:) 喜欢看动漫，喜欢二次元文化（虽然不是死宅但是感觉越来越肥了，(╯‵□′)╯︵┻━┻） 学过java/python/nodejs/clojure/go，喜欢新鲜的事物，所以学了很多，然而学的这堆里面除了java都不是很深入┑(￣Д ￣)┍  ……
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/about/">阅读全文</a></p>
-                        </article>
-                    
                     
 
 
@@ -450,6 +468,22 @@ func main() {
 <ul class="widget-list">
     
     <li>
+        <a href="http://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%BB%E9%94%AE%E7%9A%84%E6%80%9D%E8%80%83/" title="关于数据库主键的思考">关于数据库主键的思考</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E6%97%A5%E5%B8%B82019%E5%B9%B49%E6%9C%885%E6%97%A5/" title="日常2019年9月5日">日常2019年9月5日</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8%E5%BE%AE%E6%9C%8D%E5%8A%A1/" title="什么时候用微服务">什么时候用微服务</a>
+    </li>
+    
+    <li>
         <a href="http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/" title="使用gradle打可执行jar包">使用gradle打可执行jar包</a>
     </li>
     
@@ -471,22 +505,6 @@ func main() {
     
     <li>
         <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/" title="数据结构与算法学习系列（一）">数据结构与算法学习系列（一）</a>
-    </li>
-    
-    <li>
-        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" title="配置lein的私有依赖仓库">配置lein的私有依赖仓库</a>
-    </li>
-    
-    <li>
-        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/" title="clojure学习笔记其三">clojure学习笔记其三</a>
-    </li>
-    
-    <li>
-        <a href="http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/" title="Atom配置国内源">Atom配置国内源</a>
-    </li>
-    
-    <li>
-        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/" title="clojure学习笔记其二">clojure学习笔记其二</a>
     </li>
     
 </ul>
@@ -527,6 +545,10 @@ func main() {
     </li>
     
     <li>
+        <a href="http://leejoker.github.io/categories/%E6%8A%80%E6%9C%AF%E6%9D%82%E6%96%87/">技术杂文(1)</a>
+    </li>
+    
+    <li>
         <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(1)</a>
     </li>
     
@@ -536,6 +558,10 @@ func main() {
     
     <li>
         <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/categories/%E9%9A%8F%E7%AC%94/">随笔(1)</a>
     </li>
     
 </ul>
@@ -561,6 +587,8 @@ func main() {
     
     <a href="http://leejoker.github.io/tags/java/">java</a>
     
+    <a href="http://leejoker.github.io/tags/javascript/">javascript</a>
+    
     <a href="http://leejoker.github.io/tags/lein/">lein</a>
     
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
@@ -568,6 +596,10 @@ func main() {
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
     <a href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%8A%80%E6%9C%AF%E6%9D%82%E6%96%87/">技术杂文</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">数据库设计</a>
     
     <a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
     
@@ -580,6 +612,8 @@ func main() {
     <a href="http://leejoker.github.io/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
     
     <a href="http://leejoker.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    
+    <a href="http://leejoker.github.io/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
     
 </div>
     </section>
