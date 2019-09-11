@@ -58,12 +58,12 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://leejoker.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2019-09-05T14:23:32+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://leejoker.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2019-09-05T14:23:32+08:00</lastmod>
   </url>
   
@@ -128,22 +128,22 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2019-02-05T22:36:10+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-02-05T22:36:10+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/clojure/</loc>
-    <lastmod>2019-02-04T00:20:41+00:00</lastmod>
+    <loc>http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-02-05T22:36:10+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://leejoker.github.io/tags/clojure/</loc>
+    <lastmod>2019-02-04T00:20:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://leejoker.github.io/categories/clojure/</loc>
     <lastmod>2019-02-04T00:20:41+00:00</lastmod>
   </url>
   
@@ -208,12 +208,12 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/hexo/</loc>
+    <loc>http://leejoker.github.io/tags/hexo/</loc>
     <lastmod>2017-10-11T00:09:08+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/hexo/</loc>
+    <loc>http://leejoker.github.io/categories/hexo/</loc>
     <lastmod>2017-10-11T00:09:08+00:00</lastmod>
   </url>
   
@@ -273,12 +273,12 @@
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/categories/go/</loc>
+    <loc>http://leejoker.github.io/tags/go/</loc>
     <lastmod>2016-09-28T00:02:19+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://leejoker.github.io/tags/go/</loc>
+    <loc>http://leejoker.github.io/categories/go/</loc>
     <lastmod>2016-09-28T00:02:19+00:00</lastmod>
   </url>
   
