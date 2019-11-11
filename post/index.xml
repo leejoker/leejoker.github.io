@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ESPIER</title>
@@ -6,10 +6,33 @@
     <description>Recent content in Posts on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Sep 2019 17:51:10 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 17:49:04 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>少侠与剑</title>
+      <link>http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
+      <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;
+
+&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;
+
+&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;
+
+&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;
+
+&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;
+
+&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Js整型的坑</title>
@@ -108,7 +131,7 @@
       <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
       <description>&lt;h2 id=&#34;这个系列还会继续的&#34;&gt;这个系列还会继续的&lt;/h2&gt;
 
-&lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种提现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
+&lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
 
 &lt;h2 id=&#34;说一说常用的东西&#34;&gt;说一说常用的东西&lt;/h2&gt;
 
