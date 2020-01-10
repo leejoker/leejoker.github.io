@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on ESPIER</title>
+    <link>http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Jan 2020 23:42:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yapi的安装和使用</title>
+      <link>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 10 Jan 2020 23:42:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h2 id=&#34;获取yapi源码&#34;&gt;获取Yapi源码&lt;/h2&gt;
+
+&lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/YMFE/yapi.git ~/yapi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通过npm或cnpm安装依赖：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd ~/yapi
+$ npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样准备工作就完成了一半了，接下来安装mongodb。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

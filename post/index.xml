@@ -6,10 +6,123 @@
     <description>Recent content in Posts on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 17:49:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>安装Ruby on Rails</title>
+      <link>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
+      <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
+      <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 安装gnupg2
+$ sudo apt install gnupg2
+# 安装rvm
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+
+# 替换ruby-china源
+$ echo &amp;quot;ruby_url=https://cache.ruby-china.com/pub/ruby&amp;quot; &amp;gt; ~/.rvm/user/db
+# 替换gem源
+$ gem sources -l
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+# 更新缓存
+$ gem sources -u 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mybatis中使用序列自动插入主键</title>
+      <link>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
+      <pubDate>Fri, 10 Jan 2020 23:48:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
+      <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
+
+&lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Springboot上传文件大小限制处理</title>
+      <link>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
+      <description>今天在开发过程中遇到一个文件上传的问题
+io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760  Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
+百度了一下，找到如下配置，问题得以解决，记录一下
+spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0  </description>
+    </item>
+    
+    <item>
+      <title>Yapi的安装和使用</title>
+      <link>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 10 Jan 2020 23:42:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h2 id=&#34;获取yapi源码&#34;&gt;获取Yapi源码&lt;/h2&gt;
+
+&lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/YMFE/yapi.git ~/yapi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;通过npm或cnpm安装依赖：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd ~/yapi
+$ npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样准备工作就完成了一半了，接下来安装mongodb。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置sqlite的相对路径</title>
+      <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 10 Jan 2020 23:37:16 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
+      <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
+项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
+因此对jdbc配置文件进行了修改：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
+
+&lt;p&gt;因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
+然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
+找到了崭新的db文件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spacemacs配置国内镜像</title>
+      <link>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Fri, 10 Jan 2020 23:31:17 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
+      <description>&lt;h2 id=&#34;使用spacemacs国内镜像&#34;&gt;使用Spacemacs国内镜像&lt;/h2&gt;
+
+&lt;p&gt;最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;# 基于emacs26
+cd ~
+git clone https://github.com/syl20bnr/spacemacs .emacs.d
+修改
+vim .emacs.d/core/templates/.spacemacs.template
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     
     <item>
       <title>少侠与剑</title>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rails on ESPIER</title>
+    <link>http://leejoker.github.io/tags/rails/</link>
+    <description>Recent content in rails on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://leejoker.github.io/tags/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装Ruby on Rails</title>
+      <link>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
+      <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
+      <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 安装gnupg2
+$ sudo apt install gnupg2
+# 安装rvm
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+
+# 替换ruby-china源
+$ echo &amp;quot;ruby_url=https://cache.ruby-china.com/pub/ruby&amp;quot; &amp;gt; ~/.rvm/user/db
+# 替换gem源
+$ gem sources -l
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+# 更新缓存
+$ gem sources -u 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

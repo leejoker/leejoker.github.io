@@ -6,10 +6,46 @@
     <description>Recent content in Categories on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 17:49:04 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ruby</title>
+      <link>http://leejoker.github.io/categories/ruby/</link>
+      <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://leejoker.github.io/categories/java/</link>
+      <pubDate>Fri, 10 Jan 2020 23:48:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Fri, 10 Jan 2020 23:42:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>http://leejoker.github.io/categories/emacs/</link>
+      <pubDate>Fri, 10 Jan 2020 23:31:17 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/emacs/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>杂文</title>
@@ -17,15 +53,6 @@
       <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
       
       <guid>http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>http://leejoker.github.io/categories/java/</link>
-      <pubDate>Mon, 26 Aug 2019 13:35:04 +0800</pubDate>
-      
-      <guid>http://leejoker.github.io/categories/java/</guid>
       <description></description>
     </item>
     
