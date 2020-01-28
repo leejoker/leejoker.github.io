@@ -6,10 +6,28 @@
     <description>Recent content in Categories on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate>
     
 	<atom:link href="http://leejoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>rust</title>
+      <link>http://leejoker.github.io/categories/rust/</link>
+      <pubDate>Tue, 28 Jan 2020 22:45:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技巧</title>
+      <link>http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Tue, 28 Jan 2020 22:42:42 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ruby</title>
@@ -53,15 +71,6 @@
       <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
       
       <guid>http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>技巧</title>
-      <link>http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Tue, 21 May 2019 14:13:52 +0800</pubDate>
-      
-      <guid>http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/</guid>
       <description></description>
     </item>
     
