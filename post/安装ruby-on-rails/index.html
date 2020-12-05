@@ -3,36 +3,36 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>安装Ruby on Rails | ESPIER</title>
     <meta property="og:title" content="安装Ruby on Rails - ESPIER">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2020-01-10T23:50:01&#43;08:00">
+    <meta property="article:published_time" content='2020-01-10T23:50:01&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2020-01-10T23:50:01&#43;08:00">
+    <meta property="article:modified_time" content='2020-01-10T23:50:01&#43;08:00'>
         
     <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
     <meta name="description" content="安装Ruby on Rails">
         
     <meta name="author" content="leejoker">
     <meta property="og:url" content="http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+    
     
     
 
@@ -50,8 +50,9 @@
         
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -76,114 +77,98 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">安装Ruby on Rails</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2020年1月10日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/ruby">ruby</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <h2 id="安装rvm">安装rvm</h2>
-
-<pre><code class="language-shell"># 安装gnupg2
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">安装Ruby on Rails</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月10日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/ruby'>ruby</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="安装rvm">安装rvm</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装gnupg2</span>
 $ sudo apt install gnupg2
-# 安装rvm
+<span style="color:#75715e"># 安装rvm</span>
 $ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-$ \curl -sSL https://get.rvm.io | bash -s stable
+$ <span style="color:#ae81ff">\c</span>url -sSL https://get.rvm.io | bash -s stable
 $ source ~/.bashrc
 
-# 替换ruby-china源
-$ echo &quot;ruby_url=https://cache.ruby-china.com/pub/ruby&quot; &gt; ~/.rvm/user/db
-# 替换gem源
+<span style="color:#75715e"># 替换ruby-china源</span>
+$ echo <span style="color:#e6db74">&#34;ruby_url=https://cache.ruby-china.com/pub/ruby&#34;</span> &gt; ~/.rvm/user/db
+<span style="color:#75715e"># 替换gem源</span>
 $ gem sources -l
 $ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-# 更新缓存
+<span style="color:#75715e"># 更新缓存</span>
 $ gem sources -u 
-</code></pre>
-
-<h2 id="安装rbenv">安装rbenv</h2>
-
+</code></pre></div><h2 id="安装rbenv">安装rbenv</h2>
 <p>当然如果网络不佳，安装不了rvm，也可以使用rbenv</p>
-
-<pre><code class="language-shell"># rbenv源码
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># rbenv源码</span>
 $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-# 用来编译安装 ruby
+<span style="color:#75715e"># 用来编译安装 ruby</span>
 $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-# 用来管理 gemset, 可选, 因为有 bundler 也没什么必要
+<span style="color:#75715e"># 用来管理 gemset, 可选, 因为有 bundler 也没什么必要</span>
 $ git clone https://github.com/jamis/rbenv-gemset.git  ~/.rbenv/plugins/rbenv-gemset
-# 通过 rbenv update 命令来更新 rbenv 以及所有插件, 推荐
+<span style="color:#75715e"># 通过 rbenv update 命令来更新 rbenv 以及所有插件, 推荐</span>
 $ git clone https://github.com/rkh/rbenv-update.git ~/.rbenv/plugins/rbenv-update
-# 使用 Ruby China 的镜像安装 Ruby, 国内用户推荐
+<span style="color:#75715e"># 使用 Ruby China 的镜像安装 Ruby, 国内用户推荐</span>
 $ git clone https://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbenv-china-mirror
 
-# 将下面的内容放入 .bashrc
-export PATH=&quot;$HOME/.rbenv/bin:$PATH&quot;
-eval &quot;$(rbenv init -)&quot;
+<span style="color:#75715e"># 将下面的内容放入 .bashrc</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.rbenv/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>rbenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 
 $ source ~/.bashrc
-</code></pre>
-
-<h2 id="安装ruby">安装Ruby</h2>
-
+</code></pre></div><h2 id="安装ruby">安装Ruby</h2>
 <h3 id="rvm">rvm</h3>
-
-<pre><code class="language-shell"># 列出ruby已知版本
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 列出ruby已知版本</span>
 $ rvm list known
-# 安装
+<span style="color:#75715e"># 安装</span>
 $ rvm install 2.7.0 --disable-binary
-# 切换版本，并设为默认
+<span style="color:#75715e"># 切换版本，并设为默认</span>
 $ rvm use 2.7.0 --default
-# 卸载
+<span style="color:#75715e"># 卸载</span>
 $ rvm remove 1.8.7
-</code></pre>
-
-<p>rbenv</p>
-
-<pre><code class="language-shell">#更新rbenv及插件
+</code></pre></div><p>rbenv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#更新rbenv及插件</span>
 $ rbenv update
-# 列出所有 ruby 版本
+<span style="color:#75715e"># 列出所有 ruby 版本</span>
 $ rbenv install --list
-# 安装 2.7.0
+<span style="color:#75715e"># 安装 2.7.0</span>
 $ rbenv install 2.7.0
-# 卸载 2.7.0
+<span style="color:#75715e"># 卸载 2.7.0</span>
 $ rbenv uninstall 2.7.0
-</code></pre>
-
-<h2 id="安装rails">安装Rails</h2>
-
-<pre><code class="language-shell">$ gem install rails
-# 安装完成后查看rails版本
+</code></pre></div><h2 id="安装rails">安装Rails</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gem install rails
+<span style="color:#75715e"># 安装完成后查看rails版本</span>
 $ rails -v
-</code></pre>
-
-<h2 id="写在最后">写在最后</h2>
-
+</code></pre></div><h2 id="写在最后">写在最后</h2>
 <p>安装过程中如果存在依赖或者其他问题，请自觉检索吧，这个不同机器可能会有不同的情况。本文内容大量参考了<a href="https://ruby-china.org/wiki">ruby-china的wiki</a>，十分感谢~</p>
-                        </div>
+        </div>
 
-                        
+        
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io/">leejoker</a></li>
@@ -195,7 +180,7 @@ $ rails -v
 
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -215,19 +200,19 @@ $ rails -v
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://leejoker.github.io/tags/ruby">ruby</a></li>
-                                
-                                <li><a href="http://leejoker.github.io/tags/rails">rails</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/ruby'>ruby</a></li>
+                
+                <li><a href='/tags/rails'>rails</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -242,11 +227,65 @@ $ rails -v
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
@@ -257,6 +296,10 @@ $ rails -v
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
     
     <li>
         <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
@@ -294,80 +337,48 @@ $ rails -v
         <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/" title="少侠与剑">少侠与剑</a>
     </li>
     
-    <li>
-        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/emacs/">emacs(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/java/">java(7)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/ruby/">ruby(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/rust/">rust(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://leejoker.github.io/tags/atom/">atom</a>
@@ -376,7 +387,7 @@ $ rails -v
     
     <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
     
-    <a href="http://leejoker.github.io/tags/css/">css</a>
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
     
     <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
     
@@ -399,6 +410,8 @@ $ rails -v
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
     
     <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
     
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
@@ -451,55 +464,9 @@ $ rails -v
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'GA ID', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

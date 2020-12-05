@@ -3,36 +3,36 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>Nginx&#43;keepalived配置热备（互为主从） | ESPIER</title>
     <meta property="og:title" content="Nginx&#43;keepalived配置热备（互为主从） - ESPIER">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-05-21T14:13:52&#43;08:00">
+    <meta property="article:published_time" content='2019-05-21T14:13:52&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2019-05-21T14:13:52&#43;08:00">
+    <meta property="article:modified_time" content='2019-05-21T14:13:52&#43;08:00'>
         
     <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
     <meta name="description" content="Nginx&#43;keepalived配置热备（互为主从）">
         
     <meta name="author" content="leejoker">
     <meta property="og:url" content="http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+    
     
     
 
@@ -50,8 +50,9 @@
         
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -76,399 +77,358 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">Nginx&#43;keepalived配置热备（互为主从）</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2019年5月21日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7">技巧</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <h2 id="从开发到实施xd">从开发到实施XD</h2>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">Nginx&#43;keepalived配置热备（互为主从）</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年5月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E6%8A%80%E5%B7%A7'>技巧</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="从开发到实施xd">从开发到实施XD</h2>
 <p>因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇<a href="https://blog.csdn.net/MassiveStars/article/details/54290055">blog</a>,很感谢博客的作者<a href="https://blog.csdn.net/MassiveStars">MassiveStars</a>，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。</p>
-
 <h2 id="配置虚拟ip">配置虚拟IP</h2>
-
 <h4 id="互为主从模式">互为主从模式</h4>
-
 <p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~</p>
-
-<p><img src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="image" /></p>
-
+<p>
+        <img class="mx-auto" alt="image" src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" />   
+    </p>
 <h4 id="主从模式">主从模式</h4>
-
 <p>即一个服务器为主（master），一个服务器为从（slave），在使用的时候，如果主异常则切换到从服务器，若主服务器恢复，则切回主服务器</p>
-
 <p>PS：这种模式的弊端就是，当由从向主切换的时候，如果从服务器正在执行操作，可能会产生错误~</p>
-
 <h4 id="配置方法">配置方法</h4>
-
 <p>ifconfig eth0:0 192.168.40.151 netmask 255.255.255.0 up</p>
-
 <p>eth0: 用ifconfig命令查到的正在使用的网络设备名称，虚拟ip的命名必须采用此规则，建立在某一网络设备下</p>
-
 <h3 id="配置nginx">配置nginx</h3>
-
 <h4 id="安装nginx">安装nginx</h4>
-
 <p>PS:我用的是ubuntu和opensuse，centos应该类似，建议上网把包down下来编译安装，这样更靠谱一些，当然，用yum安装也没有问题，方法类似</p>
-
-<pre><code class="language-shell">#安装nginx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#安装nginx</span>
 leejoker@ubuntu:~$ sudo apt-get install nginx
-</code></pre>
-
-<h4 id="配置nginx服务">配置nginx服务</h4>
-
-<pre><code class="language-shell">
-#接下来是配置nginx
+</code></pre></div><h4 id="配置nginx服务">配置nginx服务</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e">#接下来是配置nginx</span>
 leejoker@ubuntu:~$ sudo vim /etc/nginx/nginx.conf
 
-#PS:这里说明一下，不同的发行版，默认配置可能不同，我是现将默认配置进行了备份，然后重新写了一份，贴上自己的当前配置
+<span style="color:#75715e">#PS:这里说明一下，不同的发行版，默认配置可能不同，我是现将默认配置进行了备份，然后重新写了一份，贴上自己的当前配置</span>
 
-#user  nobody;
+<span style="color:#75715e">#user  nobody;</span>
 worker_processes  1;
 
-#error_log  logs/error.log;
-#error_log  logs/error.log  notice;
-#error_log  logs/error.log  info;
+<span style="color:#75715e">#error_log  logs/error.log;</span>
+<span style="color:#75715e">#error_log  logs/error.log  notice;</span>
+<span style="color:#75715e">#error_log  logs/error.log  info;</span>
 
-#pid        logs/nginx.pid;
+<span style="color:#75715e">#pid        logs/nginx.pid;</span>
 
 
-events {
+events <span style="color:#f92672">{</span>
     worker_connections  1024;
-}
+<span style="color:#f92672">}</span>
 
 
-http {
+http <span style="color:#f92672">{</span>
     include       mime.types;
     default_type  application/octet-stream;
 
-    #log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
-    #                  '$status $body_bytes_sent &quot;$http_referer&quot; '
-    #                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+    <span style="color:#75715e">#log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;</span>
+    <span style="color:#75715e">#                  &#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;</span>
+    <span style="color:#75715e">#                  &#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;</span>
 
-    #access_log  logs/access.log  main;
+    <span style="color:#75715e">#access_log  logs/access.log  main;</span>
 
     sendfile        on;
-    #tcp_nopush     on;
+    <span style="color:#75715e">#tcp_nopush     on;</span>
 
-    #keepalive_timeout  0;
+    <span style="color:#75715e">#keepalive_timeout  0;</span>
     keepalive_timeout  65;
 
-    #gzip  on;
+    <span style="color:#75715e">#gzip  on;</span>
 
-    server {
-        listen          8080;               #本地端口
-        server_name     192.168.40.151;     #本地域名
-        location / {                        #代理配置
+    server <span style="color:#f92672">{</span>
+        listen          8080;               <span style="color:#75715e">#本地端口</span>
+        server_name     192.168.40.151;     <span style="color:#75715e">#本地域名</span>
+        location / <span style="color:#f92672">{</span>                        <span style="color:#75715e">#代理配置</span>
             proxy_pass          http://192.168.17.71:7003;
             proxy_redirect      off;
             proxy_set_header    X-Real-IP       $remote_addr;
             proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
-        }
+        <span style="color:#f92672">}</span>
 
-        #charset koi8-r;
+        <span style="color:#75715e">#charset koi8-r;</span>
 
-        #access_log  logs/host.access.log  main;
+        <span style="color:#75715e">#access_log  logs/host.access.log  main;</span>
 
-        #error_page  404              /404.html;
+        <span style="color:#75715e">#error_page  404              /404.html;</span>
 
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
+        <span style="color:#75715e"># redirect server error pages to the static page /50x.html</span>
+        <span style="color:#75715e">#</span>
+        error_page   <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span>  /50x.html;
+        location <span style="color:#f92672">=</span> /50x.html <span style="color:#f92672">{</span>
             root   html;
-        }
+        <span style="color:#f92672">}</span>
 
-        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-        #
-        #location ~ \.php$ {
-        #    proxy_pass   http://127.0.0.1;
-        #}
+        <span style="color:#75715e"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+        <span style="color:#75715e">#</span>
+        <span style="color:#75715e">#location ~ \.php$ {</span>
+        <span style="color:#75715e">#    proxy_pass   http://127.0.0.1;</span>
+        <span style="color:#75715e">#}</span>
 
-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-        #
-        #location ~ \.php$ {
-        #    root           html;
-        #    fastcgi_pass   127.0.0.1:9000;
-        #    fastcgi_index  index.php;
-        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-        #    include        fastcgi_params;
-        #}
+        <span style="color:#75715e"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+        <span style="color:#75715e">#</span>
+        <span style="color:#75715e">#location ~ \.php$ {</span>
+        <span style="color:#75715e">#    root           html;</span>
+        <span style="color:#75715e">#    fastcgi_pass   127.0.0.1:9000;</span>
+        <span style="color:#75715e">#    fastcgi_index  index.php;</span>
+        <span style="color:#75715e">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+        <span style="color:#75715e">#    include        fastcgi_params;</span>
+        <span style="color:#75715e">#}</span>
 
-        # deny access to .htaccess files, if Apache's document root
-        # concurs with nginx's one
-        #
-        #location ~ /\.ht {
-        #    deny  all;
-        #}
-    }
-
-
-    # another virtual host using mix of IP-, name-, and port-based configuration
-    #
-    #server {
-    #    listen       8000;
-    #    listen       somename:8080;
-    #    server_name  somename  alias  another.alias;
-
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
+        <span style="color:#75715e"># deny access to .htaccess files, if Apache&#39;s document root</span>
+        <span style="color:#75715e"># concurs with nginx&#39;s one</span>
+        <span style="color:#75715e">#</span>
+        <span style="color:#75715e">#location ~ /\.ht {</span>
+        <span style="color:#75715e">#    deny  all;</span>
+        <span style="color:#75715e">#}</span>
+    <span style="color:#f92672">}</span>
 
 
-    # HTTPS server
-    #
-    #server {
-    #    listen       443 ssl;
-    #    server_name  localhost;
+    <span style="color:#75715e"># another virtual host using mix of IP-, name-, and port-based configuration</span>
+    <span style="color:#75715e">#</span>
+    <span style="color:#75715e">#server {</span>
+    <span style="color:#75715e">#    listen       8000;</span>
+    <span style="color:#75715e">#    listen       somename:8080;</span>
+    <span style="color:#75715e">#    server_name  somename  alias  another.alias;</span>
 
-    #    ssl_certificate      cert.pem;
-    #    ssl_certificate_key  cert.key;
+    <span style="color:#75715e">#    location / {</span>
+    <span style="color:#75715e">#        root   html;</span>
+    <span style="color:#75715e">#        index  index.html index.htm;</span>
+    <span style="color:#75715e">#    }</span>
+    <span style="color:#75715e">#}</span>
 
-    #    ssl_session_cache    shared:SSL:1m;
-    #    ssl_session_timeout  5m;
 
-    #    ssl_ciphers  HIGH:!aNULL:!MD5;
-    #    ssl_prefer_server_ciphers  on;
+    <span style="color:#75715e"># HTTPS server</span>
+    <span style="color:#75715e">#</span>
+    <span style="color:#75715e">#server {</span>
+    <span style="color:#75715e">#    listen       443 ssl;</span>
+    <span style="color:#75715e">#    server_name  localhost;</span>
 
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
+    <span style="color:#75715e">#    ssl_certificate      cert.pem;</span>
+    <span style="color:#75715e">#    ssl_certificate_key  cert.key;</span>
 
-}
+    <span style="color:#75715e">#    ssl_session_cache    shared:SSL:1m;</span>
+    <span style="color:#75715e">#    ssl_session_timeout  5m;</span>
 
-</code></pre>
+    <span style="color:#75715e">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span>
+    <span style="color:#75715e">#    ssl_prefer_server_ciphers  on;</span>
 
-<p>基本上这样就配置完了，本地域名（一般为dns可以解析的域名，自己测试的时候使用的ip）。</p>
+    <span style="color:#75715e">#    location / {</span>
+    <span style="color:#75715e">#        root   html;</span>
+    <span style="color:#75715e">#        index  index.html index.htm;</span>
+    <span style="color:#75715e">#    }</span>
+    <span style="color:#75715e">#}</span>
 
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>基本上这样就配置完了，本地域名（一般为dns可以解析的域名，自己测试的时候使用的ip）。</p>
 <h4 id="启动nginx">启动nginx</h4>
-
-<pre><code class="language-shell">
-#启动nginx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#75715e">#启动nginx</span>
 leejoker@ubuntu:~$ sudo nginx
 
-</code></pre>
-
-<h3 id="配置keepalived">配置keepalived</h3>
-
+</code></pre></div><h3 id="配置keepalived">配置keepalived</h3>
 <h4 id="安装keepalived">安装keepalived</h4>
-
-<pre><code class="language-shell">#安装keepalived
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#安装keepalived</span>
 leejoker@ubuntu:~$ sudo apt-get install keepalived
-</code></pre>
-
-<h4 id="配置keepalived-1">配置keepalived</h4>
-
-<p>先来个图<img src="https://i.loli.net/2018/03/20/5ab10082736b0.png" alt="image" /></p>
-
+</code></pre></div><h4 id="配置keepalived-1">配置keepalived</h4>
+<p>先来个图
+        <img class="mx-auto" alt="image" src="https://i.loli.net/2018/03/20/5ab10082736b0.png" />   
+    </p>
 <h5 id="这是第一台机器的配置">这是第一台机器的配置</h5>
-
 <p>创建配置文件：sudo vim /etc/keepalived/keepalived.conf</p>
-
-<pre><code class="language-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 global_defs
-{
+<span style="color:#f92672">{</span>
     notification_email
-    {
+    <span style="color:#f92672">{</span>
        1056650571@qq.com
-    }
+    <span style="color:#f92672">}</span>
     notification_email_from 1056650571@qq.com
     smtp_server 127.0.0.1
-    stmp_connect_timeout 30
+    stmp_connect_timeout <span style="color:#ae81ff">30</span>
     router_id LVS_DEVEL
-}
+<span style="color:#f92672">}</span>
 
-vrrp_script Monitor_Nginx {
-    script &quot;/usr/local/keepalived/scripts/monitor_nginx.sh&quot;
-    interval 2
-    weight 2
-}
+vrrp_script Monitor_Nginx <span style="color:#f92672">{</span>
+    script <span style="color:#e6db74">&#34;/usr/local/keepalived/scripts/monitor_nginx.sh&#34;</span>
+    interval <span style="color:#ae81ff">2</span>
+    weight <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">}</span>
 
-# 虚拟IP1, 本机作为Master
-vrrp_instance VI_1 {
+<span style="color:#75715e"># 虚拟IP1, 本机作为Master</span>
+vrrp_instance VI_1 <span style="color:#f92672">{</span>
     state MASTER
-    interface ens33             #这里就是图上的那个，你的配置文件中用到的网络设备全部写这个
-    virtual_router_id 151
-    priority 100
-    advert_int 1
-    track_interface {
+    interface ens33             <span style="color:#75715e">#这里就是图上的那个，你的配置文件中用到的网络设备全部写这个</span>
+    virtual_router_id <span style="color:#ae81ff">151</span>
+    priority <span style="color:#ae81ff">100</span>
+    advert_int <span style="color:#ae81ff">1</span>
+    track_interface <span style="color:#f92672">{</span>
         ens33
-    }
+    <span style="color:#f92672">}</span>
 
-    authentication {    #这个是两个keepalived之间通信的凭证
+    authentication <span style="color:#f92672">{</span>    <span style="color:#75715e">#这个是两个keepalived之间通信的凭证</span>
         auth_type PASS
-        auth_pass 123456
-    }
-    virtual_ipaddress {
-        192.168.40.151      #这里填写本机配置的虚拟ip
-    }
-    track_script {
+        auth_pass <span style="color:#ae81ff">123456</span>
+    <span style="color:#f92672">}</span>
+    virtual_ipaddress <span style="color:#f92672">{</span>
+        192.168.40.151      <span style="color:#75715e">#这里填写本机配置的虚拟ip</span>
+    <span style="color:#f92672">}</span>
+    track_script <span style="color:#f92672">{</span>
         Monitor_Nginx
-    }
+    <span style="color:#f92672">}</span>
 
-}
+<span style="color:#f92672">}</span>
 
-# 虚拟IP2, 本机作为Backup
-vrrp_instance VI_2 {
+<span style="color:#75715e"># 虚拟IP2, 本机作为Backup</span>
+vrrp_instance VI_2 <span style="color:#f92672">{</span>
     state BACKUP
-    interface ens33         #这里是本机作为backup时用到的网络设备
-    virtual_router_id 152
-    priority 100
-    advert_int 1
-    track_interface {
+    interface ens33         <span style="color:#75715e">#这里是本机作为backup时用到的网络设备</span>
+    virtual_router_id <span style="color:#ae81ff">152</span>
+    priority <span style="color:#ae81ff">100</span>
+    advert_int <span style="color:#ae81ff">1</span>
+    track_interface <span style="color:#f92672">{</span>
         ens33
-    }
+    <span style="color:#f92672">}</span>
 
-    authentication {
+    authentication <span style="color:#f92672">{</span>
         auth_type PASS
-        auth_pass 123456
-    }
-    virtual_ipaddress {
-        192.168.40.152      #这里是本机作为backup时的虚拟ip
-    }
-    track_script {
+        auth_pass <span style="color:#ae81ff">123456</span>
+    <span style="color:#f92672">}</span>
+    virtual_ipaddress <span style="color:#f92672">{</span>
+        192.168.40.152      <span style="color:#75715e">#这里是本机作为backup时的虚拟ip</span>
+    <span style="color:#f92672">}</span>
+    track_script <span style="color:#f92672">{</span>
         Monitor_Nginx
-    }
+    <span style="color:#f92672">}</span>
 
-}
+<span style="color:#f92672">}</span>
 
 
-</code></pre>
-
-<h5 id="第二台的配置">第二台的配置</h5>
-
-<pre><code class="language-shell">
+</code></pre></div><h5 id="第二台的配置">第二台的配置</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 global_defs
-{
+<span style="color:#f92672">{</span>
     notification_email
-    {
+    <span style="color:#f92672">{</span>
        123456@qq.com
-    }
+    <span style="color:#f92672">}</span>
     notification_email_from 123456@qq.com
     smtp_server 127.0.0.1
-    stmp_connect_timeout 30
+    stmp_connect_timeout <span style="color:#ae81ff">30</span>
     router_id LVS_DEVEL
-}
+<span style="color:#f92672">}</span>
 
-vrrp_script Monitor_Nginx {
-    script &quot;/usr/local/keepalived/scripts/monitor_nginx.sh&quot;
-    interval 2
-    weight 2
-}
+vrrp_script Monitor_Nginx <span style="color:#f92672">{</span>
+    script <span style="color:#e6db74">&#34;/usr/local/keepalived/scripts/monitor_nginx.sh&#34;</span>
+    interval <span style="color:#ae81ff">2</span>
+    weight <span style="color:#ae81ff">2</span>
+<span style="color:#f92672">}</span>
 
-# 虚拟IP1, 本机作为BACKUP
-vrrp_instance VI_1 {
+<span style="color:#75715e"># 虚拟IP1, 本机作为BACKUP</span>
+vrrp_instance VI_1 <span style="color:#f92672">{</span>
     state BACKUP
     interface eth0
-    virtual_router_id 151
-    priority 100
-    advert_int 1
-    track_interface {
+    virtual_router_id <span style="color:#ae81ff">151</span>
+    priority <span style="color:#ae81ff">100</span>
+    advert_int <span style="color:#ae81ff">1</span>
+    track_interface <span style="color:#f92672">{</span>
         eth0
-    }
+    <span style="color:#f92672">}</span>
 
-    authentication {
+    authentication <span style="color:#f92672">{</span>
         auth_type PASS
-        auth_pass 123456
-    }
-    virtual_ipaddress {
+        auth_pass <span style="color:#ae81ff">123456</span>
+    <span style="color:#f92672">}</span>
+    virtual_ipaddress <span style="color:#f92672">{</span>
         192.168.40.151
-    }
-    track_script {
+    <span style="color:#f92672">}</span>
+    track_script <span style="color:#f92672">{</span>
         Monitor_Nginx
-    }
-}
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-# 虚拟IP2, 本机作为Master
-vrrp_instance VI_2 {
+<span style="color:#75715e"># 虚拟IP2, 本机作为Master</span>
+vrrp_instance VI_2 <span style="color:#f92672">{</span>
     state MASTER
     interface eth0
-    virtual_router_id 152
-    priority 100
-    advert_int 1
-    track_interface {
+    virtual_router_id <span style="color:#ae81ff">152</span>
+    priority <span style="color:#ae81ff">100</span>
+    advert_int <span style="color:#ae81ff">1</span>
+    track_interface <span style="color:#f92672">{</span>
         eth0
-    }
+    <span style="color:#f92672">}</span>
 
-    authentication {
+    authentication <span style="color:#f92672">{</span>
         auth_type PASS
-        auth_pass 123456
-    }
-    virtual_ipaddress {
+        auth_pass <span style="color:#ae81ff">123456</span>
+    <span style="color:#f92672">}</span>
+    virtual_ipaddress <span style="color:#f92672">{</span>
         192.168.40.152
-    }
-    track_script {
+    <span style="color:#f92672">}</span>
+    track_script <span style="color:#f92672">{</span>
         Monitor_Nginx
-    }
+    <span style="color:#f92672">}</span>
 
-}
+<span style="color:#f92672">}</span>
 
 
-</code></pre>
-
-<p>配置的内容类似，只不过网络设备上有些差异，就不多说了。</p>
-
+</code></pre></div><p>配置的内容类似，只不过网络设备上有些差异，就不多说了。</p>
 <h4 id="启动keepalived">启动keepalived</h4>
-
-<pre><code class="language-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 sudo /usr/sbin/keepalived -f /etc/keepalived/keepalived.conf
 
-</code></pre>
-
-<p>PS:声明一下，关于keepalived的日志网上大多都是说在/var/log/messages下，不过我今天使用的发行版，日志都是和系统日志混在一起的，所以查阅日志的话请自行百度。</p>
-
+</code></pre></div><p>PS:声明一下，关于keepalived的日志网上大多都是说在/var/log/messages下，不过我今天使用的发行版，日志都是和系统日志混在一起的，所以查阅日志的话请自行百度。</p>
 <p>PS:补上我的日志文件路径：/var/log/syslog (ubuntu) 和 jounalctl       (opensuse)</p>
-
 <h3 id="最后补上nginx监控脚本">最后补上nginx监控脚本</h3>
-
-<pre><code class="language-shell"># 监控nginx进程，若nginx主进程不存在则启动nginx
-# 若5s后nginx进程还是不存在的话kill掉keepalived进程,防止nginx没运行该主机的keepalived还接管虚拟IP
-#!/bin/bash
-if [ &quot;$(ps -ef | grep &quot;nginx: master process&quot;| grep -v grep )&quot; == &quot;&quot; ]
-        then
-        /usr/sbin/nginx # 路径请以实际安装路径为准
-        sleep 5
-        if [ &quot;$(ps -ef | grep &quot;nginx: master process&quot;| grep -v grep )&quot; == &quot;&quot; ]
-        then
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 监控nginx进程，若nginx主进程不存在则启动nginx</span>
+<span style="color:#75715e"># 若5s后nginx进程还是不存在的话kill掉keepalived进程,防止nginx没运行该主机的keepalived还接管虚拟IP</span>
+<span style="color:#75715e">#!/bin/bash</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -ef | grep <span style="color:#e6db74">&#34;nginx: master process&#34;</span>| grep -v grep <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>
+        <span style="color:#66d9ef">then</span>
+        /usr/sbin/nginx <span style="color:#75715e"># 路径请以实际安装路径为准</span>
+        sleep <span style="color:#ae81ff">5</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>ps -ef | grep <span style="color:#e6db74">&#34;nginx: master process&#34;</span>| grep -v grep <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>
+        <span style="color:#66d9ef">then</span>
                   killall keepalived
-        fi
-fi
-</code></pre>
-
-<h3 id="总结">总结</h3>
-
+        <span style="color:#66d9ef">fi</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><h3 id="总结">总结</h3>
 <p>按照上面这样配置基本上就完成了互为主从模式的配置，单纯主从模式只是去掉其中的一部分配置，具体可以百度进行参考，就不在这里赘述了。</p>
-                        </div>
+        </div>
 
-                        
+        
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io/">leejoker</a></li>
@@ -480,7 +440,7 @@ fi
 
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -500,19 +460,19 @@ fi
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://leejoker.github.io/tags/linux">linux</a></li>
-                                
-                                <li><a href="http://leejoker.github.io/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1">部署设计</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/linux'>linux</a></li>
+                
+                <li><a href='/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1'>部署设计</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -527,11 +487,65 @@ fi
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
@@ -542,6 +556,10 @@ fi
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
     
     <li>
         <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
@@ -579,80 +597,48 @@ fi
         <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/" title="少侠与剑">少侠与剑</a>
     </li>
     
-    <li>
-        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/emacs/">emacs(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/java/">java(7)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/ruby/">ruby(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/rust/">rust(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://leejoker.github.io/tags/atom/">atom</a>
@@ -661,7 +647,7 @@ fi
     
     <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
     
-    <a href="http://leejoker.github.io/tags/css/">css</a>
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
     
     <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
     
@@ -684,6 +670,8 @@ fi
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
     
     <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
     
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
@@ -736,55 +724,9 @@ fi
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'GA ID', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

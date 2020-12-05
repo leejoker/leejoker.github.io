@@ -6,11 +6,7 @@
     <description>Recent content in emacs on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:31:17 +0800</lastBuildDate>
-    
-	<atom:link href="http://leejoker.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jan 2020 23:31:17 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spacemacs配置国内镜像</title>
       <link>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
@@ -18,15 +14,13 @@
       
       <guid>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
       <description>&lt;h2 id=&#34;使用spacemacs国内镜像&#34;&gt;使用Spacemacs国内镜像&lt;/h2&gt;
-
 &lt;p&gt;最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;# 基于emacs26
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 基于emacs26
 cd ~
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
 修改
 vim .emacs.d/core/templates/.spacemacs.template
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

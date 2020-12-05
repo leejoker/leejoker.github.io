@@ -6,11 +6,7 @@
     <description>Recent content in java on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate>
-    
-	<atom:link href="http://leejoker.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mybatis中使用序列自动插入主键</title>
       <link>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
@@ -18,13 +14,9 @@
       
       <guid>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
       <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
-
 &lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;useGeneratedKeys=&amp;#34;true&amp;#34; keyProperty=&amp;#34;id&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,9 +26,9 @@
       
       <guid>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
       <description>今天在开发过程中遇到一个文件上传的问题
-io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760  Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
+io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
 百度了一下，找到如下配置，问题得以解决，记录一下
-spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0  </description>
+spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0 </description>
     </item>
     
     <item>
@@ -48,12 +40,8 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
 项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
 因此对jdbc配置文件进行了修改：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
-
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
 &lt;p&gt;因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
 然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
 找到了崭新的db文件。&lt;/p&gt;</description>
@@ -66,7 +54,6 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       
       <guid>http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
 &lt;p&gt;最近的一个项目里面需要使用gradle打一个可执行的jar包，在网上看了一堆帖子照着做最后都不是很成功，最后终于参考StackOverflow上的帖子搞定了可执行jar包的打包脚本，因此做一个笔记对这个进行一下记录。&lt;/p&gt;</description>
     </item>
     
@@ -77,7 +64,6 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       
       <guid>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
 &lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
     </item>
     
@@ -88,31 +74,22 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       
       <guid>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</guid>
       <description>&lt;h1 id=&#34;线性表&#34;&gt;线性表&lt;/h1&gt;
-
-&lt;p&gt;线性表是一个存储相同类型数据元素的有限序列。&lt;br /&gt;
+&lt;p&gt;线性表是一个存储相同类型数据元素的有限序列。&lt;br&gt;
 这里面需要关注的两个点就是，相同类型的数据、有限序列。&lt;/p&gt;
-
 &lt;p&gt;线性表包含两种类型：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。&lt;/li&gt;
 &lt;li&gt;链表。使用一组任意的存储单元存放线性表的元素。&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h1 id=&#34;顺序表&#34;&gt;顺序表&lt;/h1&gt;
-
 &lt;h2 id=&#34;顺序表的特性&#34;&gt;顺序表的特性&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，&lt;strong&gt;计算任意一个元素的存储地址的时间是相等的&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;由于上述特性，顺序表具有随机存取的特性。&lt;/li&gt;
 &lt;li&gt;顺序表存取操作的时间复杂度为O(1)。&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;h2 id=&#34;顺序表的实现&#34;&gt;顺序表的实现&lt;/h2&gt;
-
 &lt;p&gt;下面就是一个简单的顺序表的实现：&lt;/p&gt;</description>
     </item>
     
@@ -123,17 +100,12 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       
       <guid>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</guid>
       <description>&lt;h2 id=&#34;关于新坑和旧坑的说明&#34;&gt;关于新坑和旧坑的说明&lt;/h2&gt;
-
 &lt;p&gt;我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。&lt;/p&gt;
-
 &lt;h2 id=&#34;什么是算法&#34;&gt;什么是算法&lt;/h2&gt;
-
 &lt;p&gt;算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;程序=算法+数据结构&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~&lt;/p&gt;</description>
     </item>
     

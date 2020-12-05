@@ -3,36 +3,36 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>clojure学习笔记其二 | ESPIER</title>
     <meta property="og:title" content="clojure学习笔记其二 - ESPIER">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2018-01-07T16:02:17&#43;08:00">
+    <meta property="article:published_time" content='2018-01-07T16:02:17&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2018-01-07T16:02:17&#43;08:00">
+    <meta property="article:modified_time" content='2018-01-07T16:02:17&#43;08:00'>
         
     <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
     <meta name="description" content="clojure学习笔记其二">
         
     <meta name="author" content="leejoker">
     <meta property="og:url" content="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+    
     
     
 
@@ -50,8 +50,9 @@
         
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -76,372 +77,303 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">clojure学习笔记其二</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2018年1月7日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/clojure">clojure</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <h1 id="今天的主题是function">今天的主题是Function</h1>
-
-<p>正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&rdquo;函数&rdquo;啦XD</p>
-
-<h2 id="那么直入主题-首先来看一下怎么定义一个函数">那么直入主题，首先来看一下怎么定义一个函数：</h2>
-
-<pre><code class="language-clojure">;;    name   params         body
-;;    -----  ------  -------------------
-(defn greet  [name]  (str &quot;Hello, &quot; name) )
-</code></pre>
-
-<p>这里我引用了<a href="https://www.clojure.org/guides/learn/functions">官方文档</a>中的说明。</p>
-
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">clojure学习笔记其二</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2018年1月7日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/clojure'>clojure</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="今天的主题是function">今天的主题是Function</h1>
+<p>正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&ldquo;函数&quot;啦XD</p>
+<h2 id="那么直入主题首先来看一下怎么定义一个函数">那么直入主题，首先来看一下怎么定义一个函数：</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;;    name   params         body</span>
+<span style="color:#75715e">;;    -----  ------  -------------------</span>
+(<span style="color:#66d9ef">defn </span>greet  [name]  (str <span style="color:#e6db74">&#34;Hello, &#34;</span> name) )
+</code></pre></div><p>这里我引用了<a href="https://www.clojure.org/guides/learn/functions">官方文档</a>中的说明。</p>
 <p>那么这个函数的使用就可以像上一篇中所说的那样：</p>
-
-<pre><code class="language-clojure">user=&gt; (greet &quot;小明&quot;)
-&quot;Hello, 小明&quot;
-</code></pre>
-
-<h2 id="你也可以给你的方法增加方法说明">你也可以给你的方法增加方法说明：</h2>
-
-<pre><code class="language-clojure">(defn greet  
-  &quot;this is the greet function for you&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">user=&gt; (<span style="color:#a6e22e">greet</span> <span style="color:#e6db74">&#34;小明&#34;</span>)
+<span style="color:#e6db74">&#34;Hello, 小明&#34;</span>
+</code></pre></div><h2 id="你也可以给你的方法增加方法说明">你也可以给你的方法增加方法说明：</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>greet  
+  <span style="color:#e6db74">&#34;this is the greet function for you&#34;</span>
   [name]  
-  (str &quot;Hello, &quot; name))
-</code></pre>
-
-<h2 id="文档说明可以用doc函数去查看">文档说明可以用doc函数去查看:</h2>
-
-<pre><code class="language-clojure">(doc greet)
-;;----------------------------------
+  (str <span style="color:#e6db74">&#34;Hello, &#34;</span> name))
+</code></pre></div><h2 id="文档说明可以用doc函数去查看">文档说明可以用doc函数去查看:</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(doc greet)
+<span style="color:#75715e">;;----------------------------------</span>
 user/greet
 ([name])
   this is the greet function for you
-</code></pre>
-
-<h2 id="函数是支持定义多种参数列表的">函数是支持定义多种参数列表的</h2>
-
-<pre><code class="language-clojure">(defn messenger
-  ([]     (messenger &quot;Hello world!&quot;))
+</code></pre></div><h2 id="函数是支持定义多种参数列表的">函数是支持定义多种参数列表的</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>messenger
+  ([]     (<span style="color:#a6e22e">messenger</span> <span style="color:#e6db74">&#34;Hello world!&#34;</span>))
   ([msg]  (println msg)))
-</code></pre>
-
-<p>当传入不同的参数的时候，会根据参数列表执行不同的函数体。</p>
-
+</code></pre></div><p>当传入不同的参数的时候，会根据参数列表执行不同的函数体。</p>
 <p>但执行的方法没有匹配的参数列表时：</p>
-
-<pre><code class="language-clojure">(messenger &quot;aaa&quot; &quot;bbbb&quot;)
-ArityException Wrong number of args (2) passed to: user/messenger  clojure.lang.AFn.throwArity (AFn.java:429)
-</code></pre>
-
-<p>那么怎么实现上面这种不定参数的问题呢，那就需要用到 &amp; 符号：</p>
-
-<pre><code class="language-clojure">(defn messenger [greeting &amp; who]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">messenger</span> <span style="color:#e6db74">&#34;aaa&#34;</span> <span style="color:#e6db74">&#34;bbbb&#34;</span>)
+ArityException Wrong number of args (<span style="color:#ae81ff">2</span>) passed to<span style="color:#960050;background-color:#1e0010">:</span> user/messenger  clojure.lang.AFn.throwArity (<span style="color:#a6e22e">AFn.java</span><span style="color:#e6db74">:429</span>)
+</code></pre></div><p>那么怎么实现上面这种不定参数的问题呢，那就需要用到 &amp; 符号：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>messenger [greeting <span style="color:#f92672">&amp;</span> who]
   (println greeting who))
 
-(messenger &quot;aaa&quot; &quot;bbbb&quot; &quot;cccc&quot; &quot;dddd&quot;)
-;;------------------------------------------------------
-aaa (bbbb cccc dddd)
-</code></pre>
-
-<p>或许和你的预期不同，clojuer将&amp;符号后面的参数认为是一个列表，因此在打印的时候是按照列表打印的，而没有与第一个参数作为同一个列表。</p>
-
+(<span style="color:#a6e22e">messenger</span> <span style="color:#e6db74">&#34;aaa&#34;</span> <span style="color:#e6db74">&#34;bbbb&#34;</span> <span style="color:#e6db74">&#34;cccc&#34;</span> <span style="color:#e6db74">&#34;dddd&#34;</span>)
+<span style="color:#75715e">;;------------------------------------------------------</span>
+aaa (<span style="color:#a6e22e">bbbb</span> cccc dddd)
+</code></pre></div><p>或许和你的预期不同，clojuer将&amp;符号后面的参数认为是一个列表，因此在打印的时候是按照列表打印的，而没有与第一个参数作为同一个列表。</p>
 <h2 id="匿名函数">匿名函数</h2>
-
 <p>匿名函数有两种写法：</p>
-
-<pre><code class="language-clojure">;; 写法一
-((fn [x] (println &quot;Hello, &quot; x)) &quot;Leejoker!&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; 写法一</span>
+((<span style="color:#66d9ef">fn </span>[x] (println <span style="color:#e6db74">&#34;Hello, &#34;</span> x)) <span style="color:#e6db74">&#34;Leejoker!&#34;</span>)
 Hello,  Leejoker!
 user=&gt;
 nil
-;;------------------------------------------------------
-;; 写法二
-(#(println &quot;Hello, &quot; %) &quot;Leejoker!&quot;)
+<span style="color:#75715e">;;------------------------------------------------------</span>
+<span style="color:#75715e">;; 写法二</span>
+(<span style="color:#f92672">#</span>(println <span style="color:#e6db74">&#34;Hello, &#34;</span> %) <span style="color:#e6db74">&#34;Leejoker!&#34;</span>)
 Hello,  Leejoker!
 user=&gt;
 nil
-</code></pre>
+</code></pre></div><p>那让我们看一下这两种写法的组成吧：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;;    anonymous params         body</span>
+<span style="color:#75715e">;;    --------  ------  -------------------</span>
+  (<span style="color:#66d9ef">fn </span>          [name]  (str <span style="color:#e6db74">&#34;Hello, &#34;</span> name) )
 
-<p>那让我们看一下这两种写法的组成吧：</p>
+<span style="color:#75715e">;;    anonymous       body    params</span>
+<span style="color:#75715e">;;    --------  ------------ -------  </span>
+<span style="color:#f92672">#</span>(             (str <span style="color:#e6db74">&#34;Hello, &#34;</span> %1 %2 %<span style="color:#f92672">&amp;</span>))
 
-<pre><code class="language-clojure">;;    anonymous params         body
-;;    --------  ------  -------------------
-  (fn           [name]  (str &quot;Hello, &quot; name) )
+<span style="color:#75715e">;; 同样，匿名函数里也可以用 &amp; 来定义不定参数列表</span>
+</code></pre></div><p>当然，你也可以把匿名函数绑定一个函数名：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>greet (<span style="color:#66d9ef">fn </span>[x] (println <span style="color:#e6db74">&#34;Hello, &#34;</span> x)))
+<span style="color:#75715e">;; 或者是这样</span>
+(<span style="color:#66d9ef">def </span>greet <span style="color:#f92672">#</span>(println <span style="color:#e6db74">&#34;Hello, &#34;</span> %))
 
-;;    anonymous       body    params
-;;    --------  ------------ -------  
-#(             (str &quot;Hello, &quot; %1 %2 %&amp;))
-
-;; 同样，匿名函数里也可以用 &amp; 来定义不定参数列表
-</code></pre>
-
-<p>当然，你也可以把匿名函数绑定一个函数名：</p>
-
-<pre><code class="language-clojure">(def greet (fn [x] (println &quot;Hello, &quot; x)))
-;; 或者是这样
-(def greet #(println &quot;Hello, &quot; %))
-
-;;-------------------------------------------------------
-(greet &quot;lala&quot;)
+<span style="color:#75715e">;;-------------------------------------------------------</span>
+(<span style="color:#a6e22e">greet</span> <span style="color:#e6db74">&#34;lala&#34;</span>)
 Hello,  lala
 user=&gt;
 nil
-</code></pre>
-
-<h2 id="好用的apply">好用的apply</h2>
-
+</code></pre></div><h2 id="好用的apply">好用的apply</h2>
 <p>apply可以使一个函数依次调用一个列表中的参数：</p>
-
-<pre><code class="language-clojure">(defn plot [a b]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>plot [a b]
   (apply + a b))
 
-(plot 1 '(2 3 4 5))
-;;----------------------------------------
+(<span style="color:#a6e22e">plot</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span> <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span>))
+<span style="color:#75715e">;;----------------------------------------</span>
 user=&gt;
-15
-</code></pre>
-
-<h2 id="closure">closure</h2>
-
+<span style="color:#ae81ff">15</span>
+</code></pre></div><h2 id="closure">closure</h2>
 <p>clojure的总用看官方文档说应该是用来突破参数作用范围的，这里理解的可能不是很透彻，也希望有大大能够指正，下面是从<a href="https://www.clojure.org/guides/learn/functions#_closures">官方文档</a>中拿来的例子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>messenger-builder [greeting]
+  (<span style="color:#66d9ef">fn </span>[who] (println greeting who))) <span style="color:#75715e">; closes over greeting</span>
 
-<pre><code class="language-clojure">(defn messenger-builder [greeting]
-  (fn [who] (println greeting who))) ; closes over greeting
+<span style="color:#75715e">;; greeting provided here, then goes out of scope</span>
+(<span style="color:#66d9ef">def </span>hello-er (<span style="color:#a6e22e">messenger-builder</span> <span style="color:#e6db74">&#34;Hello&#34;</span>))
 
-;; greeting provided here, then goes out of scope
-(def hello-er (messenger-builder &quot;Hello&quot;))
-
-;; greeting value still available because hello-er is a closure
-(hello-er &quot;world!&quot;)
-;; Hello world!
-</code></pre>
-
-<h2 id="java-function">java function</h2>
-
+<span style="color:#75715e">;; greeting value still available because hello-er is a closure</span>
+(<span style="color:#a6e22e">hello-er</span> <span style="color:#e6db74">&#34;world!&#34;</span>)
+<span style="color:#75715e">;; Hello world!</span>
+</code></pre></div><h2 id="java-function">java function</h2>
 <p>最后一部分就是java方法的调用了：</p>
-
-<pre><code class="language-clojure">(defn getlen [obj] (.length obj))
-;;--------------------------------------------
-(getlen &quot;123&quot;)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>getlen [obj] (<span style="color:#a6e22e">.length</span> obj))
+<span style="color:#75715e">;;--------------------------------------------</span>
+(<span style="color:#a6e22e">getlen</span> <span style="color:#e6db74">&#34;123&#34;</span>)
 user=&gt;
-3
-</code></pre>
-
-<p>下面是官方文档给出的调用方式：</p>
-
+<span style="color:#ae81ff">3</span>
+</code></pre></div><p>下面是官方文档给出的调用方式：</p>
 <table>
 <thead>
 <tr>
-<th align="center">Task</th>
-<th align="center">JAVA</th>
-<th align="center">Clojure</th>
+<th style="text-align:center">Task</th>
+<th style="text-align:center">JAVA</th>
+<th style="text-align:center">Clojure</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="center">实例化</td>
-<td align="center">Object obj = new Object(&ldquo;foo&rdquo;)</td>
-<td align="center">(def obj (Object. &ldquo;foo&rdquo;))</td>
+<td style="text-align:center">实例化</td>
+<td style="text-align:center">Object obj = new Object(&ldquo;foo&rdquo;)</td>
+<td style="text-align:center">(def obj (Object. &ldquo;foo&rdquo;))</td>
 </tr>
-
 <tr>
-<td align="center">实例方法调用</td>
-<td align="center">obj.toString()</td>
-<td align="center">(.toString obj)</td>
+<td style="text-align:center">实例方法调用</td>
+<td style="text-align:center">obj.toString()</td>
+<td style="text-align:center">(.toString obj)</td>
 </tr>
-
 <tr>
-<td align="center">实例属性值</td>
-<td align="center">obj.field</td>
-<td align="center">(.-field obj)</td>
+<td style="text-align:center">实例属性值</td>
+<td style="text-align:center">obj.field</td>
+<td style="text-align:center">(.-field obj)</td>
 </tr>
-
 <tr>
-<td align="center">静态方法</td>
-<td align="center">Math.sqrt(25)</td>
-<td align="center">(Math/sqrt 25)</td>
+<td style="text-align:center">静态方法</td>
+<td style="text-align:center">Math.sqrt(25)</td>
+<td style="text-align:center">(Math/sqrt 25)</td>
 </tr>
-
 <tr>
-<td align="center">静态属性</td>
-<td align="center">Math.PI</td>
-<td align="center">Math/PI</td>
+<td style="text-align:center">静态属性</td>
+<td style="text-align:center">Math.PI</td>
+<td style="text-align:center">Math/PI</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="官方文档中习题">官方文档中习题</h2>
-
 <ol>
-<li><p>Define a function greet that takes not arguments and prints &ldquo;Hello&rdquo;. Replace the _ with the implementation:</p>
+<li>Define a function greet that takes not arguments and prints &ldquo;Hello&rdquo;. Replace the _ with the implementation:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>greet [] _)
+<span style="color:#75715e">;;---------------------------------</span>
+(<span style="color:#66d9ef">defn </span>greet [] (println <span style="color:#e6db74">&#34;Hello&#34;</span>))
+</code></pre></div><ol start="2">
+<li>Redefine greet using def, first with the fn special form and then with the #() reader macro.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; using fn</span>
+(<span style="color:#66d9ef">def </span>greet __)
 
-<pre><code class="language-clojure">(defn greet [] _)
-;;---------------------------------
-(defn greet [] (println &quot;Hello&quot;))
-</code></pre></li>
-
-<li><p>Redefine greet using def, first with the fn special form and then with the #() reader macro.</p>
-
-<pre><code class="language-clojure">;; using fn
-(def greet __)
-
-;; using #()
-(def greet __)
-;;------------------------------------------------
-(def greet (fn [] (println &quot;Hello&quot;)))
-(def greet #(println &quot;Hello&quot;))
-</code></pre></li>
-
-<li><p>Define a function greeting which:</p>
-
+<span style="color:#75715e">;; using #()</span>
+(<span style="color:#66d9ef">def </span>greet __)
+<span style="color:#75715e">;;------------------------------------------------</span>
+(<span style="color:#66d9ef">def </span>greet (<span style="color:#66d9ef">fn </span>[] (println <span style="color:#e6db74">&#34;Hello&#34;</span>)))
+(<span style="color:#66d9ef">def </span>greet <span style="color:#f92672">#</span>(println <span style="color:#e6db74">&#34;Hello&#34;</span>))
+</code></pre></div><ol start="3">
+<li>Define a function greeting which:</li>
+</ol>
 <ul>
 <li>Given no arguments, returns &ldquo;Hello, World!&rdquo;</li>
 <li>Given one argument x, returns &ldquo;Hello, x!&rdquo;</li>
-
-<li><p>Given two arguments x and y, returns &ldquo;x, y!&rdquo;</p>
-
-<pre><code class="language-clojure">;; Hint use the str function to concatenate strings
+<li>Given two arguments x and y, returns &ldquo;x, y!&rdquo;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; Hint use the str function to concatenate strings</span>
 (doc str)
 
-(defn greeting ___)
+(<span style="color:#66d9ef">defn </span>greeting ___)
 
-;; For testing
-(assert (= &quot;Hello, World!&quot; (greeting)))
-(assert (= &quot;Hello, Clojure!&quot; (greeting &quot;Clojure&quot;)))
-(assert (= &quot;Good morning, Clojure!&quot; (greeting &quot;Good morning&quot; &quot;Clojure&quot;)))
-;;-----------------------------------------------------------
-(defn greeting
-([] (str &quot;Hello, World!&quot;))
-([param] (str &quot;Hello, &quot; param &quot;!&quot;))
-([param1 param2] (str param1 &quot;, &quot; param2 &quot;!&quot;)))
-</code></pre></li>
-</ul></li>
-
-<li><p>Define a function do-nothing which takes a single argument x and returns it, unchanged.</p>
-
-<pre><code class="language-clojure">(defn do-nothing [x] ___)
-;;--------------------------------
-(defn do-nothing [x] x)
-</code></pre></li>
-
-<li><p>Define a function always-thing which takes any number of arguments, ignores all of them, and returns the keyword :thing.</p>
-
-<pre><code class="language-clojure">(defn always-thing [__] ___)
-;;---------------------------------
-(defn always-thing [&amp; args] :thing)
-;; ps:
-;;      &amp; 符号后面必须有空格才能识别
-;;      &amp;args 这样写无效
-</code></pre></li>
-
-<li><p>Define a function make-thingy which takes a single argument x. It should return another function, which takes any number of arguments and always returns x.</p>
-
-<pre><code class="language-clojure">(defn make-thingy [x] ___)
-
-;; Tests
-(let [n (rand-int Integer/MAX_VALUE)
-   f (make-thingy n)]
-(assert (= n (f)))
-(assert (= n (f :foo)))
-(assert (= n (apply f :foo (range)))))
-
-;;---------------------------------------------------------
-(defn make-thingy [x] (fn [&amp; args] x))
-</code></pre></li>
-
-<li><p>Define a function triplicate which takes another function and calls it three times, without any arguments.</p>
-
-<pre><code class="language-clojure">(defn triplicate [f] ___)
-
-;;----------------------------------
-(defn triplicate [f] (f) (f) (f))
-
-;;PS:
-;;    在网上查了一下，问题的翻译是定义一个函数，参数是另一个函数，并在函数体
-;;    中调用3次，大概是这么个意思，刚开始看了好长时间都没明白过来要我做什么，汗
-</code></pre></li>
-
-<li><p>Define a function opposite which takes a single argument f. It should return another function which takes any number of arguments, applies f on them, and then calls not on the result. The not function in Clojure does logical negation.</p>
-
-<pre><code class="language-clojure">(defn opposite [f]
-(fn [&amp; args] ___))
-;;-----------------------------
-(defn opposite [f]
-(fn [&amp; args] (not (apply f args))))
-</code></pre></li>
-
-<li><p>Define a function triplicate2 which takes another function and any number of arguments, then calls that function three times on those arguments. Re-use the function you defined in the earlier triplicate exercise.</p>
-
-<pre><code class="language-clojure">(defn triplicate2 [f &amp; args]
-(triplicate ___))
-;;--------------------------------
-(defn triplicate2 [f &amp; args]
-(triplicate (fn [] (apply f args))))
-</code></pre></li>
-
-<li><p>Using the java.lang.Math class (Math/pow, Math/cos, Math/sin, Math/PI), demonstrate the following mathematical facts: <em>The cosine of pi is -1</em> For some x, sin(x)^2 + cos(x)^2 = 1</p>
-
-<pre><code class="language-clojure">(= 1.0 (+ (Math/pow (Math/sin Math/PI) 2) (Math/pow (Math/cos Math/PI) 2)))
-
-(= -1.0 (Math/cos Math/PI))
-</code></pre></li>
-
-<li><p>Define a function that takes an HTTP URL as a string, fetches that URL from the web, and returns the content as a string.</p>
-
-<pre><code class="language-clojure">; Hint: Using the java.net.URL class and its openStream method.
-; Then use the Clojure slurp function to get the content as a string.
-(defn http-get [url] ___)
-(assert (.contains (http-get &quot;http://www.w3.org&quot;) &quot;html&quot;))
-;;-----------------------------------------------------------
-(defn http-get [url]
-(slurp (.openStream (java.net.URL. url))))
-</code></pre></li>
-
-<li><p>Define a function one-less-arg that takes two arguments: * f, a function * x, a value and returns another function which calls f on x plus any additional arguments.</p>
-
-<pre><code class="language-clojure">(defn one-less-arg [f x]
-(fn [&amp; args] ___))
-;;-----------------------------
-(defn one-less-arg [f x]
-(fn [&amp; args] (apply f x args)))
-</code></pre></li>
-
-<li><p>Define a function two-fns which takes two functions as arguments, f and g. It returns another function which takes one argument, calls g on it, then calls f on the result, and returns that.</p>
-
-<pre><code class="language-clojure">(defn two-fns [f g]
-___)
-;;----------------------------
-(defn two-fns [f g]
-(fn [x] (f (g x))))
-</code></pre></li>
+<span style="color:#75715e">;; For testing</span>
+(assert (= <span style="color:#e6db74">&#34;Hello, World!&#34;</span> (<span style="color:#a6e22e">greeting</span>)))
+(assert (= <span style="color:#e6db74">&#34;Hello, Clojure!&#34;</span> (<span style="color:#a6e22e">greeting</span> <span style="color:#e6db74">&#34;Clojure&#34;</span>)))
+(assert (= <span style="color:#e6db74">&#34;Good morning, Clojure!&#34;</span> (<span style="color:#a6e22e">greeting</span> <span style="color:#e6db74">&#34;Good morning&#34;</span> <span style="color:#e6db74">&#34;Clojure&#34;</span>)))
+<span style="color:#75715e">;;-----------------------------------------------------------</span>
+(<span style="color:#66d9ef">defn </span>greeting
+ ([] (str <span style="color:#e6db74">&#34;Hello, World!&#34;</span>))
+ ([param] (str <span style="color:#e6db74">&#34;Hello, &#34;</span> param <span style="color:#e6db74">&#34;!&#34;</span>))
+ ([param1 param2] (str param1 <span style="color:#e6db74">&#34;, &#34;</span> param2 <span style="color:#e6db74">&#34;!&#34;</span>)))
+</code></pre></div><ol start="4">
+<li>Define a function do-nothing which takes a single argument x and returns it, unchanged.</li>
 </ol>
-                        </div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>do-nothing [x] ___)
+<span style="color:#75715e">;;--------------------------------</span>
+(<span style="color:#66d9ef">defn </span>do-nothing [x] x)
+</code></pre></div><ol start="5">
+<li>Define a function always-thing which takes any number of arguments, ignores all of them, and returns the keyword :thing.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>always-thing [__] ___)
+<span style="color:#75715e">;;---------------------------------</span>
+(<span style="color:#66d9ef">defn </span>always-thing [<span style="color:#f92672">&amp;</span> args] <span style="color:#e6db74">:thing</span>)
+<span style="color:#75715e">;; ps:</span>
+<span style="color:#75715e">;;      &amp; 符号后面必须有空格才能识别</span>
+<span style="color:#75715e">;;      &amp;args 这样写无效</span>
+</code></pre></div><ol start="6">
+<li>Define a function make-thingy which takes a single argument x. It should return another function, which takes any number of arguments and always returns x.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>make-thingy [x] ___)
 
-                        
+<span style="color:#75715e">;; Tests</span>
+(<span style="color:#66d9ef">let </span>[n (rand-int Integer/MAX_VALUE)
+     f (<span style="color:#a6e22e">make-thingy</span> n)]
+ (assert (= n (<span style="color:#a6e22e">f</span>)))
+ (assert (= n (<span style="color:#a6e22e">f</span> <span style="color:#e6db74">:foo</span>)))
+ (assert (= n (apply f <span style="color:#e6db74">:foo</span> (<span style="color:#a6e22e">range</span>)))))
+
+<span style="color:#75715e">;;---------------------------------------------------------</span>
+(<span style="color:#66d9ef">defn </span>make-thingy [x] (<span style="color:#66d9ef">fn </span>[<span style="color:#f92672">&amp;</span> args] x))
+</code></pre></div><ol start="7">
+<li>Define a function triplicate which takes another function and calls it three times, without any arguments.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>triplicate [f] ___)
+
+<span style="color:#75715e">;;----------------------------------</span>
+(<span style="color:#66d9ef">defn </span>triplicate [f] (<span style="color:#a6e22e">f</span>) (<span style="color:#a6e22e">f</span>) (<span style="color:#a6e22e">f</span>))
+
+<span style="color:#75715e">;;PS:</span>
+<span style="color:#75715e">;;    在网上查了一下，问题的翻译是定义一个函数，参数是另一个函数，并在函数体</span>
+<span style="color:#75715e">;;    中调用3次，大概是这么个意思，刚开始看了好长时间都没明白过来要我做什么，汗</span>
+</code></pre></div><ol start="8">
+<li>Define a function opposite which takes a single argument f. It should return another function which takes any number of arguments, applies f on them, and then calls not on the result. The not function in Clojure does logical negation.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>opposite [f]
+ (<span style="color:#66d9ef">fn </span>[<span style="color:#f92672">&amp;</span> args] ___))
+<span style="color:#75715e">;;-----------------------------</span>
+(<span style="color:#66d9ef">defn </span>opposite [f]
+ (<span style="color:#66d9ef">fn </span>[<span style="color:#f92672">&amp;</span> args] (not (apply f args))))
+</code></pre></div><ol start="9">
+<li>Define a function triplicate2 which takes another function and any number of arguments, then calls that function three times on those arguments. Re-use the function you defined in the earlier triplicate exercise.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>triplicate2 [f <span style="color:#f92672">&amp;</span> args]
+ (<span style="color:#a6e22e">triplicate</span> ___))
+<span style="color:#75715e">;;--------------------------------</span>
+(<span style="color:#66d9ef">defn </span>triplicate2 [f <span style="color:#f92672">&amp;</span> args]
+ (<span style="color:#a6e22e">triplicate</span> (<span style="color:#66d9ef">fn </span>[] (apply f args))))
+</code></pre></div><ol start="10">
+<li>Using the java.lang.Math class (Math/pow, Math/cos, Math/sin, Math/PI), demonstrate the following mathematical facts: <em>The cosine of pi is -1</em> For some x, sin(x)^2 + cos(x)^2 = 1</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(= <span style="color:#ae81ff">1.0</span> (+ (<span style="color:#a6e22e">Math/pow</span> (<span style="color:#a6e22e">Math/sin</span> Math/PI) <span style="color:#ae81ff">2</span>) (<span style="color:#a6e22e">Math/pow</span> (<span style="color:#a6e22e">Math/cos</span> Math/PI) <span style="color:#ae81ff">2</span>)))
+
+(= <span style="color:#ae81ff">-1.0</span> (<span style="color:#a6e22e">Math/cos</span> Math/PI))
+</code></pre></div><ol start="11">
+<li>Define a function that takes an HTTP URL as a string, fetches that URL from the web, and returns the content as a string.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">; Hint: Using the java.net.URL class and its openStream method.</span>
+<span style="color:#75715e">; Then use the Clojure slurp function to get the content as a string.</span>
+(<span style="color:#66d9ef">defn </span>http-get [url] ___)
+(assert (<span style="color:#a6e22e">.contains</span> (<span style="color:#a6e22e">http-get</span> <span style="color:#e6db74">&#34;http://www.w3.org&#34;</span>) <span style="color:#e6db74">&#34;html&#34;</span>))
+<span style="color:#75715e">;;-----------------------------------------------------------</span>
+(<span style="color:#66d9ef">defn </span>http-get [url]
+  (slurp (<span style="color:#a6e22e">.openStream</span> (<span style="color:#a6e22e">java.net.URL.</span> url))))
+</code></pre></div><ol start="12">
+<li>Define a function one-less-arg that takes two arguments: * f, a function * x, a value and returns another function which calls f on x plus any additional arguments.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>one-less-arg [f x]
+  (<span style="color:#66d9ef">fn </span>[<span style="color:#f92672">&amp;</span> args] ___))
+<span style="color:#75715e">;;-----------------------------</span>
+(<span style="color:#66d9ef">defn </span>one-less-arg [f x]
+  (<span style="color:#66d9ef">fn </span>[<span style="color:#f92672">&amp;</span> args] (apply f x args)))
+</code></pre></div><ol start="13">
+<li>Define a function two-fns which takes two functions as arguments, f and g. It returns another function which takes one argument, calls g on it, then calls f on the result, and returns that.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>two-fns [f g]
+  ___)
+<span style="color:#75715e">;;----------------------------</span>
+(<span style="color:#66d9ef">defn </span>two-fns [f g]
+  (<span style="color:#66d9ef">fn </span>[x] (<span style="color:#a6e22e">f</span> (<span style="color:#a6e22e">g</span> x))))
+</code></pre></div>
+        </div>
+
+        
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io/">leejoker</a></li>
@@ -453,7 +385,7 @@ ___)
 
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -473,19 +405,19 @@ ___)
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://leejoker.github.io/tags/clojure">clojure</a></li>
-                                
-                                <li><a href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/clojure'>clojure</a></li>
+                
+                <li><a href='/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0'>学习笔记</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -500,11 +432,65 @@ ___)
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
@@ -515,6 +501,10 @@ ___)
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
     
     <li>
         <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
@@ -552,80 +542,48 @@ ___)
         <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/" title="少侠与剑">少侠与剑</a>
     </li>
     
-    <li>
-        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/emacs/">emacs(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/java/">java(7)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/ruby/">ruby(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/rust/">rust(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://leejoker.github.io/tags/atom/">atom</a>
@@ -634,7 +592,7 @@ ___)
     
     <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
     
-    <a href="http://leejoker.github.io/tags/css/">css</a>
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
     
     <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
     
@@ -657,6 +615,8 @@ ___)
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
     
     <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
     
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
@@ -709,55 +669,9 @@ ___)
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'GA ID', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

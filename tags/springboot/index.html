@@ -3,9 +3,11 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>springboot | ESPIER</title>
     <meta property="og:title" content="springboot - ESPIER">
@@ -17,17 +19,17 @@
         
     <meta name="author" content="leejoker">
     <meta property="og:url" content="http://leejoker.github.io/tags/springboot/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
     <link rel="alternate" type="application/rss+xml+xml" href="http://leejoker.github.io/tags/springboot/index.xml" title="ESPIER" />
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+    
     
     
 
@@ -47,7 +49,7 @@
 
 
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -72,61 +74,104 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <h3 class="archive-title">
+        包含标签
+        <span class="keyword">springboot</span>
+        的文章
+    </h3>
+    
 
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">springboot</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">Springboot上传文件大小限制处理</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="http://leejoker.github.io/categories/java">java</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                今天在开发过程中遇到一个文件上传的问题
-io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760  Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">Springboot上传文件大小限制处理</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2020年1月10日
+        </date>
+        
+        <div class="post-meta meta-category">
+            |
+            
+            <a href='/categories/java'>java</a>
+            
+        </div>
+        
+        <div class="post-content">
+            今天在开发过程中遇到一个文件上传的问题
+io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
 百度了一下，找到如下配置，问题得以解决，记录一下
-spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0  ……
-                                <p class="readmore"><a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
+spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0 ……
+            <p class="readmore"><a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">阅读全文</a></p>
+        </div>
+    </article>
+    
 
-                    
+    
 
+
+
+
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 
 
                 </div>
-            </div>
 
-            <div id="secondary">
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
@@ -137,6 +182,10 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
     
     <li>
         <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
@@ -174,80 +223,48 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
         <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/" title="少侠与剑">少侠与剑</a>
     </li>
     
-    <li>
-        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/emacs/">emacs(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/java/">java(7)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/ruby/">ruby(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/rust/">rust(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://leejoker.github.io/tags/atom/">atom</a>
@@ -256,7 +273,7 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
     
     <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
     
-    <a href="http://leejoker.github.io/tags/css/">css</a>
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
     
     <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
     
@@ -279,6 +296,8 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
     
     <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
     
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
@@ -331,40 +350,9 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'GA ID', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
-
 </body>
+
 </html>

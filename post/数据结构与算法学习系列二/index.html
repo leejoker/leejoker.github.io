@@ -3,36 +3,36 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.59.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
 
     <title>数据结构与算法学习系列(二) | ESPIER</title>
     <meta property="og:title" content="数据结构与算法学习系列(二) - ESPIER">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-02-05T22:36:10&#43;08:00">
+    <meta property="article:published_time" content='2019-02-05T22:36:10&#43;08:00'>
         
         
-    <meta property="article:modified_time" content="2019-02-05T22:36:10&#43;08:00">
+    <meta property="article:modified_time" content='2019-02-05T22:36:10&#43;08:00'>
         
     <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
     <meta name="description" content="数据结构与算法学习系列(二)">
         
     <meta name="author" content="leejoker">
     <meta property="og:url" content="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-        <link rel="stylesheet" href="/css/prism.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-
-
+    
+    
+    
     
     
 
@@ -50,8 +50,9 @@
         
 </head>
 
+
 <body>
-<header id="header" class="clearfix">
+    <header id="header" class="clearfix">
     <div class="container">
         <div class="col-group">
             <div class="site-name ">
@@ -76,247 +77,227 @@
     </div>
 </header>
 
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title">数据结构与算法学习系列(二)</h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            2019年2月5日
-                        </date>
-                        
-                        <div class="post-meta">
-                            <span>|</span>
-                            
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95">算法</a></span>
-                            
-                                <span class="meta-category"><a href="http://leejoker.github.io/categories/java">Java</a></span>
-                            
-                        </div>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            <h1 id="线性表">线性表</h1>
-
-<p>线性表是一个存储相同类型数据元素的有限序列。<br />
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">数据结构与算法学习系列(二)</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2019年2月5日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/%E7%AE%97%E6%B3%95'>算法</a></span>
+            
+            <span class="meta-category"><a href='/categories/java'>Java</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h1 id="线性表">线性表</h1>
+<p>线性表是一个存储相同类型数据元素的有限序列。<br>
 这里面需要关注的两个点就是，相同类型的数据、有限序列。</p>
-
 <p>线性表包含两种类型：</p>
-
 <ul>
 <li>顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。</li>
 <li>链表。使用一组任意的存储单元存放线性表的元素。</li>
 </ul>
-
-<hr />
-
+<hr>
 <h1 id="顺序表">顺序表</h1>
-
 <h2 id="顺序表的特性">顺序表的特性</h2>
-
 <ol>
 <li>顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，<strong>计算任意一个元素的存储地址的时间是相等的</strong></li>
 <li>由于上述特性，顺序表具有随机存取的特性。</li>
 <li>顺序表存取操作的时间复杂度为O(1)。</li>
 </ol>
-
 <h2 id="顺序表的实现">顺序表的实现</h2>
-
 <p>下面就是一个简单的顺序表的实现：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SeqList</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//长度
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> length <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#75715e">//数据存储
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> Object<span style="color:#f92672">[]</span> datas<span style="color:#f92672">;</span>
+    <span style="color:#75715e">//声明线性表最大长度
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> MAXSIZE <span style="color:#f92672">=</span> 100<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">
-public class SeqList {
-    //长度
-    private int length = 0;
-    //数据存储
-    private Object[] datas;
-    //声明线性表最大长度
-    private final int MAXSIZE = 100;
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">SeqList</span><span style="color:#f92672">(</span>Object<span style="color:#f92672">[]</span> datas<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> len<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>len <span style="color:#f92672">&gt;</span> MAXSIZE<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;初始化失败，长度超过允许的最大值&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#75715e">//这里使用最大长度去初始化线性表
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">datas</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[</span>MAXSIZE<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> len<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">datas</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> datas<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> len<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    public SeqList(Object[] datas, int len) throws Exception {
-        if (len &gt; MAXSIZE) {
-            throw new Exception(&quot;初始化失败，长度超过允许的最大值&quot;);
-        }
-        //这里使用最大长度去初始化线性表
-        this.datas = new Object[MAXSIZE];
-        for (int i = 0; i &lt; len; i++) {
-            this.datas[i] = datas[i];
-            this.length = len;
-        }
-    }
+    <span style="color:#75715e">//获取坐标为i的元素
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">||</span> i <span style="color:#f92672">&gt;</span> length <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;查找位置错误&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">datas</span><span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    //获取坐标为i的元素
-    public Object get(int i) throws Exception {
-        if (i &lt; 0 || i &gt; length - 1) {
-            throw new Exception(&quot;查找位置错误&quot;);
-        } else {
-            return this.datas[i];
-        }
-    }
+    <span style="color:#75715e">//根据值获取index
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getIndex</span><span style="color:#f92672">(</span>Object data<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> length<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>data<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>datas<span style="color:#f92672">[</span>i<span style="color:#f92672">]))</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">return</span> i<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    //根据值获取index
-    public int getIndex(Object data) {
-        for (int i = 0; i &lt; length; i++) {
-            if (data.equals(datas[i])) {
-                return i;
-            }
-        }
-        return -1;
-    }
+    <span style="color:#75715e">//插入操作
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">insert</span><span style="color:#f92672">(</span>Object data<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> index<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>index <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">||</span> index <span style="color:#f92672">&gt;</span> length<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;插入位置错误&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>index <span style="color:#f92672">&gt;=</span> MAXSIZE<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;上溢&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> length <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;</span> index<span style="color:#f92672">;</span> i<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+                datas<span style="color:#f92672">[</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> datas<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+            <span style="color:#f92672">}</span>
+            datas<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> data<span style="color:#f92672">;</span>
+            length<span style="color:#f92672">++;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    //插入操作
-    public void insert(Object data, int index) throws Exception {
-        if (index &lt; 0 || index &gt; length) {
-            throw new Exception(&quot;插入位置错误&quot;);
-        } else if (index &gt;= MAXSIZE) {
-            throw new Exception(&quot;上溢&quot;);
-        } else {
-            for (int i = length - 1; i &gt; index; i--) {
-                datas[i + 1] = datas[i];
-            }
-            datas[index] = data;
-            length++;
-        }
-    }
+    <span style="color:#75715e">//删除操作
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> index<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>index <span style="color:#f92672">&lt;</span> 0 <span style="color:#f92672">||</span> index <span style="color:#f92672">&gt;</span> length<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除位置错误&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>length <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Exception<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;下溢&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;删除的元素为：&#34;</span> <span style="color:#f92672">+</span> datas<span style="color:#f92672">[</span>index<span style="color:#f92672">].</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> index<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> length<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                datas<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> datas<span style="color:#f92672">[</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">];</span>
+            <span style="color:#f92672">}</span>
+            length<span style="color:#f92672">--;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    //删除操作
-    public void delete(int index) throws Exception {
-        if (index &lt; 0 || index &gt; length) {
-            throw new Exception(&quot;删除位置错误&quot;);
-        } else if (length == 0) {
-            throw new Exception(&quot;下溢&quot;);
-        } else {
-            System.out.println(&quot;删除的元素为：&quot; + datas[index].toString());
-            for (int i = index; i &lt; length; i++) {
-                datas[i] = datas[i + 1];
-            }
-            length--;
-        }
-    }
+    <span style="color:#75715e">//判空
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>length <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    //判空
-    public boolean isEmpty() {
-        if (length == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    <span style="color:#75715e">//遍历
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> length<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>datas<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    //遍历
-    public void printList() {
-        for (int i = 0; i &lt; length; i++) {
-            System.out.println(datas[i]);
-        }
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getLength</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> length<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-    public int getLength() {
-        return length;
-    }
-}
-
-</code></pre>
-
-<p>我们知道，Java中ArrayList类就是一个顺序表，其实现的基本原理也和上述代码差不多，但是ArrayList是包含一个自动增长的机制的，下面我们就简单分析一下这个自增长机制。</p>
-
+</code></pre></div><p>我们知道，Java中ArrayList类就是一个顺序表，其实现的基本原理也和上述代码差不多，但是ArrayList是包含一个自动增长的机制的，下面我们就简单分析一下这个自增长机制。</p>
 <h3 id="arraylist的自增长">ArrayList的自增长</h3>
-
 <p>首先说一下ArrayList的初始化：</p>
-
-<pre><code class="language-java">
- private static final int DEFAULT_CAPACITY = 10;
- private static final Object[] EMPTY_ELEMENTDATA = {};
- private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
- transient Object[] elementData; // non-private to simplify nested class access
-
- public ArrayList(int initialCapacity) {
-     if (initialCapacity &gt; 0) {
-         this.elementData = new Object[initialCapacity];
-     } else if (initialCapacity == 0) {
-         this.elementData = EMPTY_ELEMENTDATA;
-     } else {
-         throw new IllegalArgumentException(&quot;Illegal Capacity: &quot;+
-                                            initialCapacity);
-     }
- }
-
-
- public ArrayList() {
-     this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
- }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+ <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> DEFAULT_CAPACITY <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
+ <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Object<span style="color:#f92672">[]</span> EMPTY_ELEMENTDATA <span style="color:#f92672">=</span> <span style="color:#f92672">{};</span>
+ <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Object<span style="color:#f92672">[]</span> DEFAULTCAPACITY_EMPTY_ELEMENTDATA <span style="color:#f92672">=</span> <span style="color:#f92672">{};</span>
+ <span style="color:#66d9ef">transient</span> Object<span style="color:#f92672">[]</span> elementData<span style="color:#f92672">;</span> <span style="color:#75715e">// non-private to simplify nested class access
+</span><span style="color:#75715e"></span>
+ <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ArrayList</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> initialCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">elementData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object<span style="color:#f92672">[</span>initialCapacity<span style="color:#f92672">];</span>
+     <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">elementData</span> <span style="color:#f92672">=</span> EMPTY_ELEMENTDATA<span style="color:#f92672">;</span>
+     <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+         <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Illegal Capacity: &#34;</span><span style="color:#f92672">+</span>
+                                            initialCapacity<span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+ <span style="color:#f92672">}</span>
 
 
- public ArrayList(Collection&lt;? extends E&gt; c) {
-     elementData = c.toArray();
-     if ((size = elementData.length) != 0) {
-         // c.toArray might (incorrectly) not return Object[] (see 6260652)
-         if (elementData.getClass() != Object[].class)
-             elementData = Arrays.copyOf(elementData, size, Object[].class);
-     } else {
-         // replace with empty array.
-         this.elementData = EMPTY_ELEMENTDATA;
-     }
- }
-
-</code></pre>
-
-<p>从构造函数可以看出，默认生成的是一个空的数组，默认的容量是10。</p>
-
-<pre><code class="language-java">
-   public boolean add(E e) {
-      ensureCapacityInternal(size + 1);  //新增一个元素时，根据当前长度扩容
-      elementData[size++] = e;
-      return true;
-   }
-
-   private void ensureCapacityInternal(int minCapacity) {
-      if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
-        minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);  //当前数组为空时，根据传入的长度和默认容量确认应该采用哪个值进行容量需求的确认
-      }
-
-      ensureExplicitCapacity(minCapacity);
-   }
-
-   private void ensureExplicitCapacity(int minCapacity) {
-      modCount++;
-
-      if (minCapacity - elementData.length &gt; 0)       //当容量需求大于当前长度时（这个是存储的数组的长度，而非实际存储内容的size），执行增长
-          grow(minCapacity);
-   }
+ <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ArrayList</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">elementData</span> <span style="color:#f92672">=</span> DEFAULTCAPACITY_EMPTY_ELEMENTDATA<span style="color:#f92672">;</span>
+ <span style="color:#f92672">}</span>
 
 
-   private void grow(int minCapacity) {
-      // overflow-conscious code
-      int oldCapacity = elementData.length;
-      int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1);     //增长策略为  newCapacity = oldCapacity+(oldCapacity/2)
-      if (newCapacity - minCapacity &lt; 0)
-          newCapacity = minCapacity;                          //如果增长后仍不满足需求，则使用实际需求容量
-      if (newCapacity - MAX_ARRAY_SIZE &gt; 0)
-          newCapacity = hugeCapacity(minCapacity);
-      // minCapacity is usually close to size, so this is a win:
-      elementData = Arrays.copyOf(elementData, newCapacity);
-   }
-</code></pre>
+ <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ArrayList</span><span style="color:#f92672">(</span>Collection<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> E<span style="color:#f92672">&gt;</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     elementData <span style="color:#f92672">=</span> c<span style="color:#f92672">.</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
+     <span style="color:#66d9ef">if</span> <span style="color:#f92672">((</span>size <span style="color:#f92672">=</span> elementData<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         <span style="color:#75715e">// c.toArray might (incorrectly) not return Object[] (see 6260652)
+</span><span style="color:#75715e"></span>         <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>elementData<span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">()</span> <span style="color:#f92672">!=</span> Object<span style="color:#f92672">[].</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+             elementData <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOf</span><span style="color:#f92672">(</span>elementData<span style="color:#f92672">,</span> size<span style="color:#f92672">,</span> Object<span style="color:#f92672">[].</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+         <span style="color:#75715e">// replace with empty array.
+</span><span style="color:#75715e"></span>         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">elementData</span> <span style="color:#f92672">=</span> EMPTY_ELEMENTDATA<span style="color:#f92672">;</span>
+     <span style="color:#f92672">}</span>
+ <span style="color:#f92672">}</span>
 
-<p>以上就是ArrayList的自动增长的策略了，简单点来说就是先判断当前容量是否满足插入，如果不满足，执行扩容（扩容策略为 新容量=原容量 + （原容量/2）），如果仍不满足，就是用当前需要的容量值作为扩容结果。（没有考虑超过MAX_ARRAY_SIZE的情况）</p>
+</code></pre></div><p>从构造函数可以看出，默认生成的是一个空的数组，默认的容量是10。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>E e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      ensureCapacityInternal<span style="color:#f92672">(</span>size <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>  <span style="color:#75715e">//新增一个元素时，根据当前长度扩容
+</span><span style="color:#75715e"></span>      elementData<span style="color:#f92672">[</span>size<span style="color:#f92672">++]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
 
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ensureCapacityInternal</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> minCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>elementData <span style="color:#f92672">==</span> DEFAULTCAPACITY_EMPTY_ELEMENTDATA<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        minCapacity <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>DEFAULT_CAPACITY<span style="color:#f92672">,</span> minCapacity<span style="color:#f92672">);</span>  <span style="color:#75715e">//当前数组为空时，根据传入的长度和默认容量确认应该采用哪个值进行容量需求的确认
+</span><span style="color:#75715e"></span>      <span style="color:#f92672">}</span>
+
+      ensureExplicitCapacity<span style="color:#f92672">(</span>minCapacity<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ensureExplicitCapacity</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> minCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      modCount<span style="color:#f92672">++;</span>
+
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>minCapacity <span style="color:#f92672">-</span> elementData<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span>       <span style="color:#75715e">//当容量需求大于当前长度时（这个是存储的数组的长度，而非实际存储内容的size），执行增长
+</span><span style="color:#75715e"></span>          grow<span style="color:#f92672">(</span>minCapacity<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+
+
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grow</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> minCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#75715e">// overflow-conscious code
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> oldCapacity <span style="color:#f92672">=</span> elementData<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+      <span style="color:#66d9ef">int</span> newCapacity <span style="color:#f92672">=</span> oldCapacity <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>oldCapacity <span style="color:#f92672">&gt;&gt;</span> 1<span style="color:#f92672">);</span>     <span style="color:#75715e">//增长策略为  newCapacity = oldCapacity+(oldCapacity/2)
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newCapacity <span style="color:#f92672">-</span> minCapacity <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span>
+          newCapacity <span style="color:#f92672">=</span> minCapacity<span style="color:#f92672">;</span>                          <span style="color:#75715e">//如果增长后仍不满足需求，则使用实际需求容量
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newCapacity <span style="color:#f92672">-</span> MAX_ARRAY_SIZE <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span>
+          newCapacity <span style="color:#f92672">=</span> hugeCapacity<span style="color:#f92672">(</span>minCapacity<span style="color:#f92672">);</span>
+      <span style="color:#75715e">// minCapacity is usually close to size, so this is a win:
+</span><span style="color:#75715e"></span>      elementData <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOf</span><span style="color:#f92672">(</span>elementData<span style="color:#f92672">,</span> newCapacity<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+</code></pre></div><p>以上就是ArrayList的自动增长的策略了，简单点来说就是先判断当前容量是否满足插入，如果不满足，执行扩容（扩容策略为 新容量=原容量 + （原容量/2）），如果仍不满足，就是用当前需要的容量值作为扩容结果。（没有考虑超过MAX_ARRAY_SIZE的情况）</p>
 <h1 id="结语">结语</h1>
-
 <p>线性表先写到这里吧，后面一篇就是把链表的部分补完，如果有什么问题，请路过的大佬予以补充~如果有人提问请在下方评论区提问，么么哒~</p>
-                        </div>
+        </div>
 
-                        
+        
 <div class="post-archive">
     <ul class="post-copyright">
         <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io/">leejoker</a></li>
@@ -328,7 +309,7 @@ public class SeqList {
 
 
 
-                        
+        
 
 <div class="post-archive">
     <h2>See Also</h2>
@@ -348,21 +329,21 @@ public class SeqList {
 </div>
 
 
-                        <div class="post-meta meta-tags">
-                            
-                            <ul class="clearfix">
-                                
-                                <li><a href="http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95">算法</a></li>
-                                
-                                <li><a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a></li>
-                                
-                                <li><a href="http://leejoker.github.io/tags/java">Java</a></li>
-                                
-                            </ul>
-                            
-                        </div>
-                    </article>
-                    
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/%E7%AE%97%E6%B3%95'>算法</a></li>
+                
+                <li><a href='/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84'>数据结构</a></li>
+                
+                <li><a href='/tags/java'>Java</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
     
 
     
@@ -377,11 +358,65 @@ public class SeqList {
       </script>
     </div>
     
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
                 </div>
-            </div>
-            <div id="secondary">
+
+                <div id="secondary">
     <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
       <input type="text" name="q" maxlength="20" placeholder="Search">
       <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
@@ -392,6 +427,10 @@ public class SeqList {
     <section class="widget">
         <h3 class="widget-title">最近文章</h3>
 <ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
     
     <li>
         <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
@@ -429,80 +468,48 @@ public class SeqList {
         <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/" title="少侠与剑">少侠与剑</a>
     </li>
     
-    <li>
-        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/" title="Js整型的坑">Js整型的坑</a>
-    </li>
-    
 </ul>
     </section>
 
     
 
     <section class="widget">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
 <ul class="widget-list">
     
-    <li>
-        <a href="http://leejoker.github.io/categories/clojure/">clojure(5)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/css/">css(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/emacs/">emacs(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/go/">go(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/hexo/">hexo(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/java/">java(7)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/linux/">linux(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/ruby/">ruby(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/rust/">rust(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧(3)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (3)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法(2)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
     
-    <li>
-        <a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书(1)</a>
-    </li>
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
     
 </ul>
     </section>
 
     <section class="widget">
-        <h3 class="widget-title">标签</h3>
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
 <div class="tagcloud">
     
     <a href="http://leejoker.github.io/tags/atom/">atom</a>
@@ -511,7 +518,7 @@ public class SeqList {
     
     <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
     
-    <a href="http://leejoker.github.io/tags/css/">css</a>
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
     
     <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
     
@@ -534,6 +541,8 @@ public class SeqList {
     <a href="http://leejoker.github.io/tags/linux/">linux</a>
     
     <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
     
     <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
     
@@ -586,55 +595,9 @@ public class SeqList {
         </ul>
     </section>
 </div>
+            </div>
         </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-    <script type="text/javascript">
-    
-    (function(){
-        $("pre code").parent().addClass("line-numbers")
-    }())
-
-    window.MathJax = {
-        tex2jax: {
-            inlineMath: [ ['$','$'] ],
-            processEscapes: true
-        }
-    };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'GA ID', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-<script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-
-
-
-
 </body>
+
 </html>

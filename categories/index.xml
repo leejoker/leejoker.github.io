@@ -6,10 +6,15 @@
     <description>Recent content in Categories on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://leejoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 05 Dec 2020 22:59:12 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>http://leejoker.github.io/categories/linux/</link>
+      <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>rust</title>
@@ -107,15 +112,6 @@
       <pubDate>Wed, 16 Aug 2017 12:55:14 +0000</pubDate>
       
       <guid>http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>http://leejoker.github.io/categories/linux/</link>
-      <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
-      
-      <guid>http://leejoker.github.io/categories/linux/</guid>
       <description></description>
     </item>
     

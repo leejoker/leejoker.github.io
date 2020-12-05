@@ -6,10 +6,20 @@
     <description>Recent content in linux on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 May 2019 09:35:11 +0800</lastBuildDate>
-    
-	<atom:link href="http://leejoker.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 05 Dec 2020 22:59:12 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装mysql8</title>
+      <link>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
+      <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
+      <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
+&lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
+&lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%E6%B8%AC%E8%A9%A6%E7%89%88%E6%9C%AC-%E7%89%88%E6%9C%AC%E6%97%A5%E8%AA%8C&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻&lt;/p&gt;
+&lt;p&gt;无果，&lt;strong&gt;&amp;quot;[docker] 一遍、死んで见る&amp;quot;&lt;/strong&gt;，docker 卒！&lt;/p&gt;
+&lt;p&gt;vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>记一次登录假死的异常排查</title>
@@ -18,7 +28,6 @@
       
       <guid>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
 &lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
     </item>
     
@@ -29,16 +38,13 @@
       
       <guid>http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
       <description>&lt;h2 id=&#34;从开发到实施xd&#34;&gt;从开发到实施XD&lt;/h2&gt;
-
 &lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
-
 &lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
-
 &lt;h4 id=&#34;互为主从模式&#34;&gt;互为主从模式&lt;/h4&gt;
-
 &lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;
+        &lt;img class=&#34;mx-auto&#34; alt=&#34;image&#34; src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; /&gt;   
+    &lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,22 +54,14 @@
       
       <guid>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
-
 &lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
 sudo apt-get update  
 sudo apt-get install atom 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;这样就把atom的仓库添加并安装完成了。&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就把atom的仓库添加并安装完成了。&lt;/p&gt;
 &lt;p&gt;然而，并没有这么简单&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo: add-apt-repository : command not found
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻&lt;/p&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo: add-apt-repository : command not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻&lt;/p&gt;</description>
     </item>
     
   </channel>
