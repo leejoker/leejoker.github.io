@@ -42,9 +42,7 @@
 &lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
 &lt;h4 id=&#34;互为主从模式&#34;&gt;互为主从模式&lt;/h4&gt;
 &lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~&lt;/p&gt;
-&lt;p&gt;
-        &lt;img class=&#34;mx-auto&#34; alt=&#34;image&#34; src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; /&gt;   
-    &lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
