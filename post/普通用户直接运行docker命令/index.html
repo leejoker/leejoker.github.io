@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.79.1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>普通用户直接运行docker命令 - ESPIER</title>
+    <meta property="og:title" content="普通用户直接运行docker命令 - ESPIER">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2020-12-29T18:13:05&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2020-12-29T18:13:05&#43;08:00">
+        
+    <meta name="description" content="普通用户直接运行docker命令">
+        
+    <meta name="author" content="leejoker">
+    <meta property="og:url" content="http://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://leejoker.github.io/">
+                        ESPIER
+                    </a>
+                
+                <p class="description">一只JAVA程序猿的日常</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://leejoker.github.io/">博客</a>
+                    
+                    <a  href="http://leejoker.github.io/archives/" title="归档">
+                        归档
+                    </a>
+                    
+                    <a  href="http://leejoker.github.io/about/" title="关于">
+                        关于
+                    </a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">普通用户直接运行docker命令</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2020年12月29日
+                            18:13
+                        </date>
+                        
+                        <div class="post-meta meta-category">
+                            ，归类于
+                            
+                                <a href="/categories/linux">linux</a>
+                            
+                        </div>
+                        <aside id="toc" class="dismissed">
+                            <span class="toc-title">目录 <a href="#" class="toc-dismiss"></a></span>
+                            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#具体操作">具体操作</a></li>
+    <li><a href="#补充说明">补充说明</a></li>
+  </ul>
+</nav>
+                        </aside><div class="post-content">
+                            <h2 id="具体操作">具体操作</h2>
+<ol>
+<li>添加docker group</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo groupadd docker
+</code></pre></div><ol start="3">
+<li>添加用户到group</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo gpasswd -a <span style="color:#e6db74">${</span>USER<span style="color:#e6db74">}</span> docker
+</code></pre></div><ol start="3">
+<li>重启服务</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo service docker restart
+</code></pre></div><h2 id="补充说明">补充说明</h2>
+<p>这种方式适用于当root用户或者使用sudo可以执行，但普通用户无法执行的场景，不仅限于docker这一个服务，其他服务遇到此类情况的时候也不妨试一试~</p>
+                        </div>
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="/tags/linux">linux</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+                    <div id="comments"><span class="widget-title">评论</span>
+  <script src="https://utteranc.es/client.js"
+          repo="leejoker/blog_comm"
+          issue-term="title"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script></div>
+
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        
+    
+<form id="search" method="POST" action="https://duckduckgo.com/">
+    
+    <input type="text" name="q" maxlength="255" placeholder="搜索...">
+    
+    <input type="hidden" name="sites" value="http://leejoker.github.io/">
+    
+    <input type="hidden" name="kp" value="-2">
+    
+    <input type="hidden" name="kh" value="1">
+    
+    <input type="hidden" name="kl" value="wt-wt">
+    
+    <input type="hidden" name="kg" value="p">
+    
+    <input type="hidden" name="kaf" value="1">
+    
+    
+    <input type="hidden" name="k1" value="-1">
+
+    
+
+    
+    
+    <input type="hidden" name="k7" value="#ffffff">
+    
+    <input type="hidden" name="kj" value="#ffffff">
+    
+    <input type="hidden" name="ky" value="#eaeaea">
+    
+    <input type="hidden" name="kx" value="#6E7173">
+    
+    <input type="hidden" name="k8" value="#444">
+    
+    <input type="hidden" name="k9" value="#6E7173">
+    
+    <input type="hidden" name="kaa" value="#6E7173">
+    
+    <input type="hidden" name="kae" value="#6E7173">
+
+    
+    
+    <input type="hidden" name="ko" value="1">
+    
+    <input type="hidden" name="kt" value="n">
+    
+    <input type="hidden" name="ka" value="g">
+    
+    <input type="hidden" name="ks" value="l">
+    
+    <input type="hidden" name="kv" value="1">
+
+    <button type="submit" class="submit icon-search"></button>
+</form>
+
+
+
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a href="/categories/clojure">
+                    clojure (5)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/css">
+                    css (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/emacs">
+                    emacs (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/go">
+                    go (3)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/hexo">
+                    hexo (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/java">
+                    java (7)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/linux">
+                    linux (3)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/ruby">
+                    ruby (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/rust">
+                    rust (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/%E5%B7%A5%E5%85%B7">
+                    工具 (1)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/%E6%8A%80%E5%B7%A7">
+                    技巧 (4)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/%E6%9D%82%E6%96%87">
+                    杂文 (2)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/%E7%AE%97%E6%B3%95">
+                    算法 (2)
+                </a>
+            </li>
+            
+            <li>
+                <a href="/categories/%E8%AF%BB%E4%B9%A6">
+                    读书 (1)
+                </a>
+            </li>
+            
+        </ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-title">友情链接</h3>
+        <ul class="widget-list">
+            
+            <li>
+                <a rel="noreferrer noopener nofollow" href="https://github.com/leejoker" title="leejoker&#39;s Github">leejoker&#39;s Github</a>
+            </li>
+            
+        </ul>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+      &copy; 2020 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a> &amp; <a rel="nofollow noreferer noopener" href="https://github.com/JokerQyou/maupassant-hugo">maupassant theme</a>.
+    </div>
+</footer>
+
+<script type="text/javascript" src="/js/app.js" defer></script>
+
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' defer></script>
+
+
+</body>
+</html>
