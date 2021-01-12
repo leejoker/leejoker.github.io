@@ -6,7 +6,24 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Dec 2020 18:13:05 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 12:57:25 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows端口转发</title>
+      <link>http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Mon, 11 Jan 2021 12:57:25 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>&lt;h2 id=&#34;windows下转发虚拟机中的服务&#34;&gt;windows下转发虚拟机中的服务&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;PC C:\Users\leejoker&amp;gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这个命令即可实现将虚拟机中的服务映射出去。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务&lt;/li&gt;
+&lt;li&gt;listenaddress：物理机监听的地址，本机ip&lt;/li&gt;
+&lt;li&gt;connectport：虚拟机中服务暴露给本机的端口&lt;/li&gt;
+&lt;li&gt;connect address：虚拟机映射到本机的ip地址&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>普通用户直接运行docker命令</title>
       <link>http://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</link>

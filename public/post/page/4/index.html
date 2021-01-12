@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.79.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -64,6 +64,51 @@
                 <div class="res-cons">
                     
 
+                    
+                        <article class="post">
+                            <header>
+                                <h2 class="post-title">
+                                    <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a>
+                                </h2>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2016年9月27日
+                                00:02
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                ，归类于
+                                
+                                    <a href="/categories/go">go</a>
+                                
+                            </div>
+                            
+                            
+                            <div class="post-content summary auto">
+                                
+                                
+                                    <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
+<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+    <span style="color:#f92672">import</span> (
+        <span style="color:#e6db74">&#34;github.com/go-playground/log&#34;</span>
+        <span style="color:#e6db74">&#34;github.com/whiteblue/bilibili-go/service&#34;</span>
+    )
+
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+        <span style="color:#a6e22e">app</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">NewApplication</span>(<span style="color:#e6db74">&#34;conf.json&#34;</span>)
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+        }
+
+        <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Router</span>.<span style="color:#a6e22e">Run</span>(<span style="color:#e6db74">&#34;:8080&#34;</span>)
+    }
+</code></pre></div><p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>
+                                
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">阅读全文</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -294,6 +339,12 @@
             </li>
             
             <li>
+                <a href="/categories/windows">
+                    windows (1)
+                </a>
+            </li>
+            
+            <li>
                 <a href="/categories/%E5%B7%A5%E5%85%B7">
                     工具 (1)
                 </a>
@@ -351,7 +402,7 @@
 </div>
 <footer id="footer">
     <div class="container">
-      &copy; 2020 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
+      &copy; 2021 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a> &amp; <a rel="nofollow noreferer noopener" href="https://github.com/JokerQyou/maupassant-hugo">maupassant theme</a>.
     </div>
 </footer>
