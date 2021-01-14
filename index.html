@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.79.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,6 +63,42 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h2 class="post-title">
+                                    <a href="http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">Windows端口转发</a>
+                                </h2>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2021年1月11日
+                                12:57
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                ，归类于
+                                
+                                    <a href="/categories/windows">windows</a>
+                                
+                            </div>
+                            
+                            
+                            <div class="post-content summary auto">
+                                
+                                
+                                    <h2 id="windows下转发虚拟机中的服务">windows下转发虚拟机中的服务</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PC C:\Users\leejoker&gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
+</code></pre></div><p>这个命令即可实现将虚拟机中的服务映射出去。</p>
+<ul>
+<li>listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务</li>
+<li>listenaddress：物理机监听的地址，本机ip</li>
+<li>connectport：虚拟机中服务暴露给本机的端口</li>
+<li>connect address：虚拟机映射到本机的ip地址</li>
+</ul>
+                                
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">阅读全文</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -333,40 +369,6 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
                             <p class="readmore"><a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">Yapi的安装和使用</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                                23:42
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/%E5%B7%A5%E5%85%B7">工具</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h2 id="获取yapi源码">获取Yapi源码</h2>
-<p>在github上获取最新的<a href="https://github.com/YMFE/yapi">yapi源码</a>：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/YMFE/yapi.git ~/yapi
-</code></pre></div><p>通过npm或cnpm安装依赖：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/yapi
-$ npm install
-</code></pre></div><p>这样准备工作就完成了一半了，接下来安装mongodb。</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">阅读全文</a></p>
-                        </article>
-                    
 
                     
 
@@ -525,6 +527,12 @@ $ npm install
             </li>
             
             <li>
+                <a href="/categories/windows">
+                    windows (1)
+                </a>
+            </li>
+            
+            <li>
                 <a href="/categories/%E5%B7%A5%E5%85%B7">
                     工具 (1)
                 </a>
@@ -582,7 +590,7 @@ $ npm install
 </div>
 <footer id="footer">
     <div class="container">
-      &copy; 2020 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
+      &copy; 2021 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a> &amp; <a rel="nofollow noreferer noopener" href="https://github.com/JokerQyou/maupassant-hugo">maupassant theme</a>.
     </div>
 </footer>

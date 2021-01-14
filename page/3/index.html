@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.79.1" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,6 +63,43 @@
 
             <div class="col-8" id="main">
                 <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h2 class="post-title">
+                                    <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">数据结构与算法学习系列（一）</a>
+                                </h2>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月3日
+                                21:17
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                ，归类于
+                                
+                                    <a href="/categories/%E7%AE%97%E6%B3%95">算法</a>
+                                
+                                    <a href="/categories/java">Java</a>
+                                
+                            </div>
+                            
+                            
+                            <div class="post-content summary auto">
+                                
+                                
+                                    <h2 id="关于新坑和旧坑的说明">关于新坑和旧坑的说明</h2>
+<p>我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。</p>
+<h2 id="什么是算法">什么是算法</h2>
+<p>算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：</p>
+<blockquote>
+<p>程序=算法+数据结构</p>
+</blockquote>
+<p>虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~</p>
+                                
+                            </div>
+                            <p class="readmore"><a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">阅读全文</a></p>
+                        </article>
                     
                         <article class="post">
                             <header>
@@ -373,46 +410,6 @@ sudo apt-get install atom
                             <p class="readmore"><a href="http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/">阅读全文</a></p>
                         </article>
                     
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">bilibili-go项目源码学习笔记_2</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2016年9月28日
-                                00:02
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/go">go</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
-<h3 id="参数定义">参数定义</h3>
-<p>application.go中定义了初始化时需要用到的常量和变量</p>
-<h4 id="常量定义">常量定义：</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> (
-    <span style="color:#a6e22e">INDEX_CACHE</span>        = <span style="color:#e6db74">&#34;index&#34;</span>        <span style="color:#75715e">//各类别下rank
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ALL_RANK_CACHE</span>     = <span style="color:#e6db74">&#34;all_rank&#34;</span>     <span style="color:#75715e">//总的rank
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BANGUMI_CACHE</span>      = <span style="color:#e6db74">&#34;bangumi&#34;</span>      <span style="color:#75715e">//番剧
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BANGUMI_LIST_CACHE</span> = <span style="color:#e6db74">&#34;bangumi_list&#34;</span> <span style="color:#75715e">//新番放松表
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">SORT_TOP_CACHE</span>     = <span style="color:#e6db74">&#34;sort-&#34;</span>        <span style="color:#75715e">//具体某个类别rank(这个在index_cache中要用到)
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">LIVE_INDEX_CACHE</span>   = <span style="color:#e6db74">&#34;live_index&#34;</span>   <span style="color:#75715e">//直播rank
-</span><span style="color:#75715e"></span>)
-</code></pre></div>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">阅读全文</a></p>
-                        </article>
-                    
 
                     
 
@@ -575,6 +572,12 @@ sudo apt-get install atom
             </li>
             
             <li>
+                <a href="/categories/windows">
+                    windows (1)
+                </a>
+            </li>
+            
+            <li>
                 <a href="/categories/%E5%B7%A5%E5%85%B7">
                     工具 (1)
                 </a>
@@ -632,7 +635,7 @@ sudo apt-get install atom
 </div>
 <footer id="footer">
     <div class="container">
-      &copy; 2020 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
+      &copy; 2021 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a> &amp; <a rel="nofollow noreferer noopener" href="https://github.com/JokerQyou/maupassant-hugo">maupassant theme</a>.
     </div>
 </footer>
