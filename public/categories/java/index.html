@@ -1,518 +1,694 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-
-    <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.80.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>java - ESPIER</title>
-    <meta property="og:title" content="java - ESPIER">
-    <meta property="og:type" content="article">
-        
-        
-    <meta name="description" content="java">
-        
-    <meta name="author" content="leejoker">
-    <meta property="og:url" content="http://leejoker.github.io/categories/java/">
-
-    <link rel="alternate" type="application/rss&#43;xml" href="http://leejoker.github.io/categories/java/index.xml" title="ESPIER">
-    <link rel="stylesheet" href="/css/normalize.css">
     
-    <link rel="stylesheet" href="/css/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.80.0" />
 
-    </head>
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
 
 
-<body>
-<header id="header" class="clearfix">
-    <div class="container">
-        <div class="col-group">
-            <div class="site-name ">
-                
-                    <a id="logo" href="http://leejoker.github.io/">
-                        ESPIER
-                    </a>
-                
-                <p class="description">一只JAVA程序猿的日常</p>
-            </div>
-            <div>
-                <nav id="nav-menu" class="clearfix">
-                    <a  href="http://leejoker.github.io/">博客</a>
-                    
-                    <a  href="http://leejoker.github.io/archives/" title="归档">
-                        归档
-                    </a>
-                    
-                    <a  href="http://leejoker.github.io/about/" title="关于">
-                        关于
-                    </a>
-                    
-                </nav>
-            </div>
+<title>java - ESPIER</title>
+
+
+<meta name="author" content="leejoker" />
+
+
+<meta name="description" content="上善若水，大道至简" />
+
+
+
+<meta property="og:title" content="java" />
+<meta name="twitter:title" content="java" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://leejoker.github.io/categories/java/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2020-01-10T23:48:01+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+<link rel="stylesheet" href="http://leejoker.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'GA ID');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="http://leejoker.github.io/">ESPIER</a>
+            
+            <span class="title-sub">一只JAVA程序猿的日常</span>
+            
         </div>
     </div>
 </header>
 
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
 
-<div id="body">
-    <div class="container">
-        <div class="col-group">
 
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h1>
-                        分类
-                        <span class="keyword">java</span>
-                        中的文章
-                    </h1>
-                    
 
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/">Mybatis中使用序列自动插入主键</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                                23:48
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/java">java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h2 id="mapper中的使用">Mapper中的使用</h2>
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/">clojure学习笔记其五</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-11</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">java</a>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        Java与clojure语法对比 一切从Hello Word开始 Java System.out.println(&#34;Hello World&#34;); Clojure (println &#34;Hello World&#34;) 循环操作 1.循环执行方法，针对每一项进行处理，返回处理后的列表 Java for(int i = 0; i &lt; items.size(); i++) { doSomething(items.get(i)); } return items; or
+return items.stream().forEach(item -&gt; doSomet hing(item)); Clojure (map do-something items) 2. 
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">Windows端口转发</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-11</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/windows">windows</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="windows下转发虚拟机中的服务">windows下转发虚拟机中的服务</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">PC C:\Users\leejoker&gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
+</code></pre></div><p>这个命令即可实现将虚拟机中的服务映射出去。</p>
+<ul>
+<li>listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务</li>
+<li>listenaddress：物理机监听的地址，本机ip</li>
+<li>connectport：虚拟机中服务暴露给本机的端口</li>
+<li>connect address：虚拟机映射到本机的ip地址</li>
+</ul>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/">普通用户直接运行docker命令</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-29</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="具体操作">具体操作</h2>
+<ol>
+<li>添加docker group</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo groupadd docker
+</code></pre></div>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/">IDEA升级2020.3后lombok编译报错</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-07</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/idea">idea</a>&nbsp;<a href="/tags/%E6%8A%80%E5%B7%A7">技巧</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>IDEA升级到2020.3后，使用lombok会报以下错误：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">java: You aren<span style="color:#960050;background-color:#1e0010">&#39;</span>t using a compiler supported by lombok, so lombok will not work and has been disabled.
+  Your processor is: com.sun.proxy.$Proxy24
+  Lombok supports: sun/apple javac 1.6, ECJ
+</code></pre></div>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/">Ubuntu安装mysql8</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-05</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/mysql">mysql</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h3 id="起因">起因</h3>
+<p>最开始是因为出差要跑公司的项目，为了省事在笔记本上装了<a href="https://www.docker.com/products/docker-desktop" target="_blank">Docker Desktop for Windows</a>和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。</p>
+<p>然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了<a href="https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%e6%b8%ac%e8%a9%a6%e7%89%88%e6%9c%ac-%e7%89%88%e6%9c%ac%e6%97%a5%e8%aa%8c" target="_blank">BlueStacks Hyper-V(测试版本)</a>！</p>
+<p>当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻</p>
+<p>无果，<strong>&quot;[docker] 一遍、死んで见る&quot;</strong>，docker 卒！</p>
+<p>vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/">Rustup代理设置</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-28</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/rust">rust</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>由于公司的网络问题，我用CCProxy挂了一个代理在能上网的机器上，利用代理上网。这两天对rust感兴趣，于是就开始按照官网的说明安装rustup。</p>
+<p>然后，问题来了！挂的代理居然不能访问！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  <span style="color:#75715e"># vim /etc/environment</span>
+  <span style="color:#ae81ff">1</span> PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/game
+</span><span style="color:#e6db74">  2 http_proxy=&#34;</span>http://ip:port<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  3 https_proxy=&#34;</span>https://ip:port<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  4 ftp_proxy=&#34;</span>ftp://ip:port<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  5 socks_proxy=&#34;</span>socks://ip:port<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">  6 no_proxy=&#34;</span>localhost,127.0.0.1,localaddress,.localdomain.com<span style="color:#e6db74">&#34;
+</span></code></pre></div>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/">Idea中的Git无法正常忽略</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-28</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/idea">idea</a>&nbsp;<a href="/tags/%E6%8A%80%E5%B7%A7">技巧</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。
+$ cd $YOUR_PROJECT_DIR $ git rm -r --cached . $ git add . $ git commit -m &#39;update .gitignore&#39; 
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/">安装Ruby on Rails</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/ruby">ruby</a>&nbsp;<a href="/tags/rails">rails</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="安装rvm">安装rvm</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装gnupg2</span>
+$ sudo apt install gnupg2
+<span style="color:#75715e"># 安装rvm</span>
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ <span style="color:#ae81ff">\c</span>url -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+
+<span style="color:#75715e"># 替换ruby-china源</span>
+$ echo <span style="color:#e6db74">&#34;ruby_url=https://cache.ruby-china.com/pub/ruby&#34;</span> &gt; ~/.rvm/user/db
+<span style="color:#75715e"># 替换gem源</span>
+$ gem sources -l
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+<span style="color:#75715e"># 更新缓存</span>
+$ gem sources -u 
+</code></pre></div>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/">Mybatis中使用序列自动插入主键</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/mybatis">mybatis</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="mapper中的使用">Mapper中的使用</h2>
 <p>在insert中增加下面两个属性，useGeneratedKeys和keyProperty</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">useGeneratedKeys=&#34;true&#34; keyProperty=&#34;id&#34;
 </code></pre></div><p>如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">Springboot上传文件大小限制处理</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                                23:45
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/java">java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    今天在开发过程中遇到一个文件上传的问题
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">Springboot上传文件大小限制处理</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">java</a>&nbsp;<a href="/tags/springboot">springboot</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        今天在开发过程中遇到一个文件上传的问题
 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
 百度了一下，找到如下配置，问题得以解决，记录一下
 spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0 
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/">配置sqlite的相对路径</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2020年1月10日
-                                23:37
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/java">java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <p>一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
-项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
-因此对jdbc配置文件进行了修改：</p>
-<pre><code class="language-properties" data-lang="properties">    jdbc.url=jdbc:sqlite:blog.db
-</code></pre><p>db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ</p>
-<p>因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
-然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
-找到了崭新的db文件。</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/">使用gradle打可执行jar包</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年8月26日
-                                13:35
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/java">java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h2 id="前言">前言</h2>
-<p>最近的一个项目里面需要使用gradle打一个可执行的jar包，在网上看了一堆帖子照着做最后都不是很成功，最后终于参考StackOverflow上的帖子搞定了可执行jar包的打包脚本，因此做一个笔记对这个进行一下记录。</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/">记一次登录假死的异常排查</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年5月28日
-                                09:35
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/java">java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h2 id="前言">前言</h2>
-<p>事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/">数据结构与算法学习系列(二)</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年2月5日
-                                22:36
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/%E7%AE%97%E6%B3%95">算法</a>
-                                
-                                    <a href="/categories/java">Java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h1 id="线性表">线性表</h1>
-<p>线性表是一个存储相同类型数据元素的有限序列。<br>
-这里面需要关注的两个点就是，相同类型的数据、有限序列。</p>
-<p>线性表包含两种类型：</p>
-<ul>
-<li>顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。</li>
-<li>链表。使用一组任意的存储单元存放线性表的元素。</li>
-</ul>
-<hr>
-<h1 id="顺序表">顺序表</h1>
-<h2 id="顺序表的特性">顺序表的特性</h2>
-<ol>
-<li>顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，<strong>计算任意一个元素的存储地址的时间是相等的</strong></li>
-<li>由于上述特性，顺序表具有随机存取的特性。</li>
-<li>顺序表存取操作的时间复杂度为O(1)。</li>
-</ol>
-<h2 id="顺序表的实现">顺序表的实现</h2>
-<p>下面就是一个简单的顺序表的实现：</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/">阅读全文</a></p>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h2 class="post-title">
-                                    <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">数据结构与算法学习系列（一）</a>
-                                </h2>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年2月3日
-                                21:17
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                ，归类于
-                                
-                                    <a href="/categories/%E7%AE%97%E6%B3%95">算法</a>
-                                
-                                    <a href="/categories/java">Java</a>
-                                
-                            </div>
-                            
-                            
-                            <div class="post-content summary auto">
-                                
-                                
-                                    <h2 id="关于新坑和旧坑的说明">关于新坑和旧坑的说明</h2>
-<p>我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。</p>
-<h2 id="什么是算法">什么是算法</h2>
-<p>算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：</p>
-<blockquote>
-<p>程序=算法+数据结构</p>
-</blockquote>
-<p>虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~</p>
-                                
-                            </div>
-                            <p class="readmore"><a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/">阅读全文</a></p>
-                        </article>
-                    
-
-                    
-
-
-
-
-                </div>
-            </div>
-
-            <div id="secondary">
-    <section class="widget">
-        
-    
-<form id="search" method="POST" action="https://duckduckgo.com/">
-    
-    <input type="text" name="q" maxlength="255" placeholder="搜索...">
-    
-    <input type="hidden" name="sites" value="http://leejoker.github.io/">
-    
-    <input type="hidden" name="kp" value="-2">
-    
-    <input type="hidden" name="kh" value="1">
-    
-    <input type="hidden" name="kl" value="wt-wt">
-    
-    <input type="hidden" name="kg" value="p">
-    
-    <input type="hidden" name="kaf" value="1">
-    
-    
-    <input type="hidden" name="k1" value="-1">
-
-    
-
-    
-    
-    <input type="hidden" name="k7" value="#ffffff">
-    
-    <input type="hidden" name="kj" value="#ffffff">
-    
-    <input type="hidden" name="ky" value="#eaeaea">
-    
-    <input type="hidden" name="kx" value="#6E7173">
-    
-    <input type="hidden" name="k8" value="#444">
-    
-    <input type="hidden" name="k9" value="#6E7173">
-    
-    <input type="hidden" name="kaa" value="#6E7173">
-    
-    <input type="hidden" name="kae" value="#6E7173">
-
-    
-    
-    <input type="hidden" name="ko" value="1">
-    
-    <input type="hidden" name="kt" value="n">
-    
-    <input type="hidden" name="ka" value="g">
-    
-    <input type="hidden" name="ks" value="l">
-    
-    <input type="hidden" name="kv" value="1">
-
-    <button type="submit" class="submit icon-search"></button>
-</form>
-
-
-
-    </section>
-
-    <section class="widget">
-        <h3 class="widget-title">分类</h3>
-        <ul class="widget-list">
-            
-            <li>
-                <a href="/categories/clojure">
-                    clojure (5)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/css">
-                    css (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/emacs">
-                    emacs (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/go">
-                    go (3)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/hexo">
-                    hexo (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/java">
-                    java (7)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/linux">
-                    linux (3)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/ruby">
-                    ruby (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/rust">
-                    rust (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/windows">
-                    windows (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/%E5%B7%A5%E5%85%B7">
-                    工具 (1)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/%E6%8A%80%E5%B7%A7">
-                    技巧 (4)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/%E6%9D%82%E6%96%87">
-                    杂文 (2)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/%E7%AE%97%E6%B3%95">
-                    算法 (2)
-                </a>
-            </li>
-            
-            <li>
-                <a href="/categories/%E8%AF%BB%E4%B9%A6">
-                    读书 (1)
-                </a>
-            </li>
-            
-        </ul>
-    </section>
-
-    
-    <section class="widget">
-        <h3 class="widget-title">友情链接</h3>
-        <ul class="widget-list">
-            
-            <li>
-                <a rel="noreferrer noopener nofollow" href="https://github.com/leejoker" title="leejoker&#39;s Github">leejoker&#39;s Github</a>
-            </li>
-            
-        </ul>
-    </section>
-    
-
-    <section class="widget">
-        <h3 class="widget-title">其它</h3>
-        <ul class="widget-list">
-            <li><a href="/index.xml">文章 RSS</a></li>
-        </ul>
-    </section>
-</div>
-        </div>
     </div>
 </div>
-<footer id="footer">
-    <div class="container">
-      &copy; 2021 <a rel="nofollow" href="http://leejoker.github.io/">ESPIER</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io">Hugo</a> &amp; <a rel="nofollow noreferer noopener" href="https://github.com/JokerQyou/maupassant-hugo">maupassant theme</a>.
+
+
+
+
+
+
+
+
+<div class="pagination">
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item pag-current">
+        <a href="/categories/java/">1</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/categories/java/page/2/">2</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/categories/java/page/3/">3</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/categories/java/page/4/">4</a>
+    </div>
+    
+    
+    
+    <div class="pag-next">
+        <a href="/categories/java/page/2/"><i class="iconfont icon-chevron-forward-circle-sharp"></i></i></a>
+    </div>
+    
+    
+    <div class="pag-last">
+        <a href="/categories/java/page/4/"><i class="iconfont icon-caret-forward-circle-sharp"></i></a>
+    </div>
+    
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/atom/">atom</a>
+            </span>
+            
+            <span>
+                <a href="/tags/bilibili/">bilibili</a>
+            </span>
+            
+            <span>
+                <a href="/tags/clojure/">clojure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/emacs/">emacs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/go/">go</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gradle/">gradle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/hexo/">hexo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/idea/">idea</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/jdbc/">jdbc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/lein/">lein</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mybatis/">mybatis</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mysql/">mysql</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nexus/">nexus</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rails/">rails</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ruby/">ruby</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/springboot/">springboot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/windows/">windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%9D%82%E6%96%87/">杂文</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/atom/">atom</a>
+            </span>
+            
+            <span>
+                <a href="/tags/bilibili/">bilibili</a>
+            </span>
+            
+            <span>
+                <a href="/tags/clojure/">clojure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/emacs/">emacs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/go/">go</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gradle/">gradle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/hexo/">hexo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/idea/">idea</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/jdbc/">jdbc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/lein/">lein</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mybatis/">mybatis</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mysql/">mysql</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nexus/">nexus</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rails/">rails</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ruby/">ruby</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/springboot/">springboot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/windows/">windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%9D%82%E6%96%87/">杂文</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2021
+                <a href="http://leejoker.github.io/">leejoker</a>
+                
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
     </div>
 </footer>
 
-<script type="text/javascript" src="/js/app.js" defer></script>
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
-<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' defer></script>
 
+
+<script defer src="/assets/js/fuji.min.js"></script>
 
 
 </body>
+
 </html>

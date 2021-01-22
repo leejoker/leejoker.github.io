@@ -6,7 +6,17 @@
     <description>Recent content in clojure on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 04 Feb 2019 00:20:41 +0000</lastBuildDate><atom:link href="http://leejoker.github.io/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 12:58:14 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure学习笔记其五</title>
+      <link>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Mon, 11 Jan 2021 12:58:14 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</guid>
+      <description>Java与clojure语法对比 一切从Hello Word开始 Java System.out.println(&amp;#34;Hello World&amp;#34;); Clojure (println &amp;#34;Hello World&amp;#34;) 循环操作 1.循环执行方法，针对每一项进行处理，返回处理后的列表 Java for(int i = 0; i &amp;lt; items.size(); i++) { doSomething(items.get(i)); } return items; or
+return items.stream().forEach(item -&amp;gt; doSomet hing(item)); Clojure (map do-something items) 2. </description>
+    </item>
+    
     <item>
       <title>clojure读书笔记其四</title>
       <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
@@ -69,7 +79,7 @@ nil
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;;    name   params         body&lt;/span&gt;
 &lt;span style=&#34;color:#75715e&#34;&gt;;;    -----  ------  -------------------&lt;/span&gt;
 (&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet  [name]  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; name) )
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
 &lt;p&gt;那么这个函数的使用就可以像上一篇中所说的那样：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user=&amp;gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;小明&amp;#34;&lt;/span&gt;)
 &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, 小明&amp;#34;&lt;/span&gt;

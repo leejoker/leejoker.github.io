@@ -5,8 +5,18 @@
     <link>http://leejoker.github.io/tags/java/</link>
     <description>Recent content in java on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 11 Jan 2021 12:58:14 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure学习笔记其五</title>
+      <link>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Mon, 11 Jan 2021 12:58:14 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</guid>
+      <description>&lt;h2 id=&#34;java与clojure语法对比&#34;&gt;Java与clojure语法对比&lt;/h2&gt;
+&lt;p&gt;OK，今天我们来~打牌~，不对，讲Clojure。（最近看水无月菌的视频有点多XD）&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Mybatis中使用序列自动插入主键</title>
       <link>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
@@ -15,8 +25,9 @@
       <guid>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
       <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
 &lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;useGeneratedKeys=&amp;#34;true&amp;#34; keyProperty=&amp;#34;id&amp;#34;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -25,10 +36,7 @@
       <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
       
       <guid>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
-      <description>今天在开发过程中遇到一个文件上传的问题
-io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
-百度了一下，找到如下配置，问题得以解决，记录一下
-spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0 </description>
+      <description>今天在开发过程中遇到一个文件上传的问题 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。 百度了一下，找到如下配置，问题得以解决，记录一下 spring:</description>
     </item>
     
     <item>
@@ -40,8 +48,9 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
 项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
 因此对jdbc配置文件进行了修改：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
 &lt;p&gt;因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
 然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
 找到了崭新的db文件。&lt;/p&gt;</description>
@@ -54,8 +63,9 @@ spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求�
       
       <guid>http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
       <description>&lt;h2 id=&#34;js整型的坑&#34;&gt;JS整型的坑&lt;/h2&gt;
-&lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; alt=&#34;存储格式示意图，取自wiki&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34; target=&#34;_blank&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img class=&#34;img-zoomable&#34; src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; alt=&#34;存储格式示意图，取自wiki&#34; /&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
