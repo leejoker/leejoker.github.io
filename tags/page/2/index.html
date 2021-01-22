@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.80.0" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+
+
+<title>Tags - ESPIER</title>
+
+
+<meta name="author" content="leejoker" />
+
+
+<meta name="description" content="上善若水，大道至简" />
+
+
+
+<meta property="og:title" content="Tags" />
+<meta name="twitter:title" content="Tags" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://leejoker.github.io/tags/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-01-11T12:58:14+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+<link rel="stylesheet" href="http://leejoker.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'GA ID');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
+
+
+</head>
+
+<body data-theme="auto">
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="http://leejoker.github.io/">ESPIER</a>
+            
+            <span class="title-sub">一只JAVA程序猿的日常</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+
+
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">Yapi的安装和使用</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7">工具</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="获取yapi源码">获取Yapi源码</h2>
+<p>在github上获取最新的<a href="https://github.com/YMFE/yapi" target="_blank">yapi源码</a>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/YMFE/yapi.git ~/yapi
+</code></pre></div><p>通过npm或cnpm安装依赖：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/yapi
+$ npm install
+</code></pre></div><p>这样准备工作就完成了一半了，接下来安装mongodb。</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/">配置sqlite的相对路径</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">“java&#34;</a>&nbsp;<a href="/tags/jdbc">jdbc</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
+项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
+因此对jdbc配置文件进行了修改：</p>
+<pre><code class="language-properties" data-lang="properties">    jdbc.url=jdbc:sqlite:blog.db
+</code></pre><p>db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ</p>
+<p>因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
+然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
+找到了崭新的db文件。</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">Spacemacs配置国内镜像</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/emacs">emacs</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="使用spacemacs国内镜像">使用Spacemacs国内镜像</h2>
+<p>最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># 基于emacs26
+cd ~
+git clone https://github.com/syl20bnr/spacemacs .emacs.d
+修改
+vim .emacs.d/core/templates/.spacemacs.template
+</code></pre></div>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/">少侠与剑</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-10-30</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E6%9D%82%E6%96%87">杂文</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <blockquote>
+<p>十年磨一剑，霜刃未曾试</p>
+<p>　　　　　　　　　　　——贾岛</p>
+</blockquote>
+<h3 id="亮剑">亮剑</h3>
+<p>　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“</p>
+<p>　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。</p>
+<p>　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。</p>
+<p>　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/">Js整型的坑</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-09-05</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">java</a>&nbsp;<a href="/tags/javascript">javascript</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="js整型的坑">JS整型的坑</h2>
+<p>昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format" target="_blank">IEEE 754 双精度浮点格式</a>规范，采用了双精度存储，占用64bit。如图所示：</p>
+<p><img class="img-zoomable" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png" alt="存储格式示意图，取自wiki" />
+</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/">使用gradle打可执行jar包</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-08-26</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/gradle">gradle</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="前言">前言</h2>
+<p>最近的一个项目里面需要使用gradle打一个可执行的jar包，在网上看了一堆帖子照着做最后都不是很成功，最后终于参考StackOverflow上的帖子搞定了可执行jar包的打包脚本，因此做一个笔记对这个进行一下记录。</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/">记一次登录假死的异常排查</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-05-28</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="前言">前言</h2>
+<p>事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/">Nginx&#43;keepalived配置热备（互为主从）</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-05-21</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1">部署设计</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="从开发到实施xd">从开发到实施XD</h2>
+<p>因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇<a href="https://blog.csdn.net/MassiveStars/article/details/54290055" target="_blank">blog</a>,很感谢博客的作者<a href="https://blog.csdn.net/MassiveStars" target="_blank">MassiveStars</a>，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。</p>
+<h2 id="配置虚拟ip">配置虚拟IP</h2>
+<h4 id="互为主从模式">互为主从模式</h4>
+<p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~</p>
+<p><img class="img-zoomable" src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="image" />
+</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/">数据结构与算法学习系列(二)</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-02-05</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95">算法</a>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h1 id="线性表">线性表</h1>
+<p>线性表是一个存储相同类型数据元素的有限序列。<br>
+这里面需要关注的两个点就是，相同类型的数据、有限序列。</p>
+<p>线性表包含两种类型：</p>
+<ul>
+<li>顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。</li>
+<li>链表。使用一组任意的存储单元存放线性表的元素。</li>
+</ul>
+<hr>
+<h1 id="顺序表">顺序表</h1>
+<h2 id="顺序表的特性">顺序表的特性</h2>
+<ol>
+<li>顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，<strong>计算任意一个元素的存储地址的时间是相等的</strong></li>
+<li>由于上述特性，顺序表具有随机存取的特性。</li>
+<li>顺序表存取操作的时间复杂度为O(1)。</li>
+</ol>
+<h2 id="顺序表的实现">顺序表的实现</h2>
+<p>下面就是一个简单的顺序表的实现：</p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/">clojure读书笔记其四</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-02-04</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="这个系列还会继续的">这个系列还会继续的</h2>
+<p>忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。</p>
+<h2 id="说一说常用的东西">说一说常用的东西</h2>
+<p>这一节就来说一说常用的一些函数，在实际的应用中不论是刷题还是实际的开发应用，都会经常的用到，比如递归 map reduce apply 等等，这些都是接触clojure之后都会经常看到，用到的方法。那么，今天就来说说这些吧。</p>
+<h2 id="递归">递归</h2>
+<p>递归的话在一般的语言中（没错，我说的就是Java），一般都会采用这种方式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">doMethod</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> param<span style="color:#f92672">){</span>
+    <span style="color:#75715e">// do something
+</span><span style="color:#75715e"></span>    doMethod<span style="color:#f92672">(</span>param<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div><p>在方法内部调用方法本身实现递归，完成方法的递归调用。<br>
+然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="pagination">
+    
+    <div class="pag-first">
+        <a href="/tags/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
+    </div>
+    
+    
+    <div class="pag-previous">
+        <a href="/tags/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/tags/">1</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item pag-current">
+        <a href="/tags/page/2/">2</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/tags/page/3/">3</a>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="pag-item">
+        <a href="/tags/page/4/">4</a>
+    </div>
+    
+    
+    
+    <div class="pag-next">
+        <a href="/tags/page/3/"><i class="iconfont icon-chevron-forward-circle-sharp"></i></i></a>
+    </div>
+    
+    
+    <div class="pag-last">
+        <a href="/tags/page/4/"><i class="iconfont icon-caret-forward-circle-sharp"></i></a>
+    </div>
+    
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/atom/">atom</a>
+            </span>
+            
+            <span>
+                <a href="/tags/bilibili/">bilibili</a>
+            </span>
+            
+            <span>
+                <a href="/tags/clojure/">clojure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/emacs/">emacs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/go/">go</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gradle/">gradle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/hexo/">hexo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/idea/">idea</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/jdbc/">jdbc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/lein/">lein</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mybatis/">mybatis</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mysql/">mysql</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nexus/">nexus</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rails/">rails</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ruby/">ruby</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/springboot/">springboot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/windows/">windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%9D%82%E6%96%87/">杂文</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+</aside>
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/atom/">atom</a>
+            </span>
+            
+            <span>
+                <a href="/tags/bilibili/">bilibili</a>
+            </span>
+            
+            <span>
+                <a href="/tags/clojure/">clojure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/emacs/">emacs</a>
+            </span>
+            
+            <span>
+                <a href="/tags/go/">go</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gradle/">gradle</a>
+            </span>
+            
+            <span>
+                <a href="/tags/hexo/">hexo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/idea/">idea</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">java</a>
+            </span>
+            
+            <span>
+                <a href="/tags/javascript/">javascript</a>
+            </span>
+            
+            <span>
+                <a href="/tags/jdbc/">jdbc</a>
+            </span>
+            
+            <span>
+                <a href="/tags/lein/">lein</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mybatis/">mybatis</a>
+            </span>
+            
+            <span>
+                <a href="/tags/mysql/">mysql</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nexus/">nexus</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rails/">rails</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ruby/">ruby</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/springboot/">springboot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/windows/">windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E6%9D%82%E6%96%87/">杂文</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2021
+                <a href="http://leejoker.github.io/">leejoker</a>
+                
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+</body>
+
+</html>
