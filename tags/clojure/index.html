@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://leejoker.github.io/tags/clojure/" /><meta property="og:image" content="http://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2019-02-04T00:20:41+00:00" />
+<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-03-04T09:34:40+08:00" />
 
 
 <style>
@@ -113,6 +113,31 @@
 </div>
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/">配置Clojure国内仓库</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-04</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;274 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="在项目中设置国内仓库">在项目中设置国内仓库</h2>
+<p>修改project.clj，参考如下内容进行设置</p>
+<pre><code class="language-clojure">(defproject project-name 
+  :dependencies [[org.clojure/clojure &quot;1.10.0&quot;]]
+  
+  :repositories [[&quot;central&quot; &quot;http://maven.aliyun.com/nexus/content/groups/public&quot;]
+                 [&quot;clojars&quot; &quot;https://mirrors.tuna.tsinghua.edu.cn/clojars/&quot;]])
+ 
+;; 这个是官方的启用非严格检查方案
+(require 'cemerick.pomegranate.aether)
+(cemerick.pomegranate.aether/register-wagon-factory!
+ &quot;http&quot; #(org.apache.maven.wagon.providers.http.HttpWagon.))
+</code></pre>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">

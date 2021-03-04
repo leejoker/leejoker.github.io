@@ -6,7 +6,28 @@
     <description>Recent content in clojure on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Feb 2019 00:20:41 +0000</lastBuildDate><atom:link href="http://leejoker.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 09:34:40 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>配置Clojure国内仓库</title>
+      <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 04 Mar 2021 09:34:40 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h2 id=&#34;在项目中设置国内仓库&#34;&gt;在项目中设置国内仓库&lt;/h2&gt;
+&lt;p&gt;修改project.clj，参考如下内容进行设置&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defproject project-name 
+  :dependencies [[org.clojure/clojure &amp;quot;1.10.0&amp;quot;]]
+  
+  :repositories [[&amp;quot;central&amp;quot; &amp;quot;http://maven.aliyun.com/nexus/content/groups/public&amp;quot;]
+                 [&amp;quot;clojars&amp;quot; &amp;quot;https://mirrors.tuna.tsinghua.edu.cn/clojars/&amp;quot;]])
+ 
+;; 这个是官方的启用非严格检查方案
+(require &#39;cemerick.pomegranate.aether)
+(cemerick.pomegranate.aether/register-wagon-factory!
+ &amp;quot;http&amp;quot; #(org.apache.maven.wagon.providers.http.HttpWagon.))
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
     <item>
       <title>clojure读书笔记其四</title>
       <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
