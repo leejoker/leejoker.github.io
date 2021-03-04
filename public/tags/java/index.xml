@@ -6,17 +6,7 @@
     <description>Recent content in java on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Jan 2021 12:58:14 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>clojure学习笔记其五</title>
-      <link>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</link>
-      <pubDate>Mon, 11 Jan 2021 12:58:14 +0800</pubDate>
-      
-      <guid>http://leejoker.github.io/post/java%E4%B8%8Eclojure%E8%AF%AD%E6%B3%95%E5%AF%B9%E6%AF%94/</guid>
-      <description>&lt;h2 id=&#34;java与clojure语法对比&#34;&gt;Java与clojure语法对比&lt;/h2&gt;
-&lt;p&gt;OK，今天我们来~打牌~，不对，讲Clojure。（最近看水无月菌的视频有点多XD）&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mybatis中使用序列自动插入主键</title>
       <link>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
