@@ -13,8 +13,7 @@
       <pubDate>Mon, 08 Mar 2021 10:29:00 +0800</pubDate>
       
       <guid>http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
-      <description>&lt;h2 id=&#34;ubuntu添加vscode源&#34;&gt;Ubuntu添加vscode源&lt;/h2&gt;
-&lt;ul&gt;
+      <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo echo &amp;quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list
