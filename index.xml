@@ -6,7 +6,28 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 09:34:40 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu添加vscode源</title>
+      <link>http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
+      <pubDate>Mon, 08 Mar 2021 10:29:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
+      <description>&lt;h2 id=&#34;ubuntu添加vscode源&#34;&gt;Ubuntu添加vscode源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo echo &amp;quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加gpg公钥&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &amp;gt; /etc/apt/trusted.gpg.d/microsoft.gpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>配置Clojure国内仓库</title>
       <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>

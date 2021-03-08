@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://leejoker.github.io/tags/linux/" /><meta property="og:image" content="http://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2020-12-29T18:13:05+08:00" />
+<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-03-08T10:29:00+08:00" />
 
 
 <style>
@@ -113,6 +113,31 @@
 </div>
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/">Ubuntu添加vscode源</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-08</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;149 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/ubuntu">ubuntu</a>&nbsp;<a href="/tags/vscode">vscode</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="ubuntu添加vscode源">Ubuntu添加vscode源</h2>
+<ul>
+<li>
+<p>添加apt源到/etc/apt/sources.list文件</p>
+<pre><code class="language-shell">$ sudo echo &quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&quot; &gt;&gt; /etc/apt/sources.list
+</code></pre>
+</li>
+<li>
+<p>添加gpg公钥</p>
+<pre><code class="language-shell">$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; /etc/apt/trusted.gpg.d/microsoft.gpg
+</code></pre>
+</li>
+</ul>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -345,6 +370,14 @@ sudo apt-get install atom
             </span>
             
             <span>
+                <a href="/tags/ubuntu/">ubuntu</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+            <span>
                 <a href="/tags/windows/">windows</a>
             </span>
             
@@ -529,6 +562,14 @@ sudo apt-get install atom
             
             <span>
                 <a href="/tags/springboot/">springboot</a>
+            </span>
+            
+            <span>
+                <a href="/tags/ubuntu/">ubuntu</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
             </span>
             
             <span>
