@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
@@ -193,12 +193,12 @@ public class OkHttpResponseInterceptor implements Interceptor {
 @ConditionalOnClass(Feign.class)
 @AutoConfigureBefore(FeignLoadBalancerAutoConfiguration.class)
 public class FeignOkHttpConfig {
-   
+
     @Autowired
     private OkHttpResponseInterceptor okHttpResponseInterceptor;
-   
+
     private okhttp3.OkHttpClient okHttpClient;
-   
+
     @Bean
     @ConditionalOnMissingBean(ConnectionPool.class)
     public ConnectionPool httpClientConnectionPool(
@@ -209,7 +209,7 @@ public class FeignOkHttpConfig {
         TimeUnit ttlUnit = httpClientProperties.getTimeToLiveUnit();
         return connectionPoolFactory.create(maxTotalConnections, timeToLive, ttlUnit);
     }
-   
+
     @Bean
     @ConditionalOnMissingBean(okhttp3.OkHttpClient.class)
     public okhttp3.OkHttpClient okHttpClient(OkHttpClientFactory httpClientFactory,
@@ -230,7 +230,7 @@ public class FeignOkHttpConfig {
                 .build();
         return this.okHttpClient;
     }
-   
+
     @PreDestroy
     public void destroy() {
         if (this.okHttpClient != null) {
@@ -276,7 +276,7 @@ protected static class OkHttpFeignConfiguration {
      OkHttpFeignLoadBalancerConfiguration.class,
      DefaultFeignLoadBalancerConfiguration.class })
 public class FeignLoadBalancerAutoConfiguration {
-   
+
 }
 </code></pre>
 <p>不难发现，这个配置加载是在FeignAutoConfiguration之前的，因此，这个类对于我们而言更为关键。</p>
@@ -294,15 +294,15 @@ public class FeignLoadBalancerAutoConfiguration {
 @ConditionalOnBean(BlockingLoadBalancerClient.class)
 @Import(OkHttpFeignConfiguration.class)
 class OkHttpFeignLoadBalancerConfiguration {
-   
- @Bean
- @ConditionalOnMissingBean
- public Client feignClient(okhttp3.OkHttpClient okHttpClient,
+
+	@Bean
+	@ConditionalOnMissingBean
+	public Client feignClient(okhttp3.OkHttpClient okHttpClient,
          BlockingLoadBalancerClient loadBalancerClient) {
      OkHttpClient delegate = new OkHttpClient(okHttpClient);
      return new FeignBlockingLoadBalancerClient(delegate, loadBalancerClient);
- }
-   
+	}
+
 }
 </code></pre>
 <p>可以看出，这个配置类只生成了Client这个Bean，对于FeignAutoConfiguration中需要的剩下的Bean显然是不够的，因此，剩下的内容应该都在</p>
@@ -315,22 +315,22 @@ class OkHttpFeignLoadBalancerConfiguration {
 <pre><code class="language-java">@Configuration(proxyBeanMethods = false)
 @ConditionalOnMissingBean(okhttp3.OkHttpClient.class)
 public class OkHttpFeignConfiguration {
-   
- private okhttp3.OkHttpClient okHttpClient;
-   
- @Bean
- @ConditionalOnMissingBean(ConnectionPool.class)
- public ConnectionPool httpClientConnectionPool(
+
+	private okhttp3.OkHttpClient okHttpClient;
+
+	@Bean
+	@ConditionalOnMissingBean(ConnectionPool.class)
+	public ConnectionPool httpClientConnectionPool(
          FeignHttpClientProperties httpClientProperties,
          OkHttpClientConnectionPoolFactory connectionPoolFactory) {
      Integer maxTotalConnections = httpClientProperties.getMaxConnections();
      Long timeToLive = httpClientProperties.getTimeToLive();
      TimeUnit ttlUnit = httpClientProperties.getTimeToLiveUnit();
      return connectionPoolFactory.create(maxTotalConnections, timeToLive, ttlUnit);
- }
-   
- @Bean
- public okhttp3.OkHttpClient client(OkHttpClientFactory httpClientFactory,
+	}
+
+	@Bean
+	public okhttp3.OkHttpClient client(OkHttpClientFactory httpClientFactory,
          ConnectionPool connectionPool,
          FeignHttpClientProperties httpClientProperties) {
      Boolean followRedirects = httpClientProperties.isFollowRedirects();
@@ -340,15 +340,15 @@ public class OkHttpFeignConfiguration {
              .connectTimeout(connectTimeout, TimeUnit.MILLISECONDS)
              .followRedirects(followRedirects).connectionPool(connectionPool).build();
      return this.okHttpClient;
- }
-   
- @PreDestroy
- public void destroy() {
+	}
+
+	@PreDestroy
+	public void destroy() {
      if (this.okHttpClient != null) {
          this.okHttpClient.dispatcher().executorService().shutdown();
          this.okHttpClient.connectionPool().evictAll();
      }
- }
+	}
 }
 </code></pre>
 <p>很显然，这个类才是我们需要替换的，而且这个配置类的加载条件很简单</p>

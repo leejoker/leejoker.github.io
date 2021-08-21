@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
@@ -133,7 +133,7 @@
 <br>
 填写的重点主要在“Authorization callback URL”，这里应该填你的blog的域名（比如我的就是https://leejoker.github.io）<br>
 注册好之后会获得一个client id和client secret，这个就是用来配置gitment评论与你 GitHub账户关联的信息 。（这个没记住也不要紧，之后也可以在github的settings/Developer settings中找到滴XD）
-[1]: <a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a>        &ldquo;注册OAuth Application&rdquo;</p>
+[1]: <a href="https://github.com/settings/applications/new" target="_blank">https://github.com/settings/applications/new</a>        &ldquo;注册OAuth Application&rdquo;</p>
 <hr>
 <h4 id="在主题中配置gitment">在主题中配置gitment</h4>
 <p>我使用的是jacman主题，网上配置gitment的教程大多都是next主题的，因此，特地折腾了一番才配好。当然，使用next主题的同学请自行百度/谷歌教程。</p>
@@ -160,7 +160,7 @@
 
 </code></pre>
 <p>这里有一点需要注意的就是“blog_comment”这个id，之前[作者的blog] [2]中的代码用的是“container”作为id的，但是jacman这个主题用来包裹整个文本的div的id就是container，因此，必须修改id才行，否则评论就会出现在正文的正上方(╯‵□′)╯︵┻━┻
-[2]: <a href="https://imsun.net/posts/gitment-introduction/">https://imsun.net/posts/gitment-introduction/</a>          &ldquo;Gitment：使用 GitHub Issues 搭建评论系统&rdquo;</p>
+[2]: <a href="https://imsun.net/posts/gitment-introduction/" target="_blank">https://imsun.net/posts/gitment-introduction/</a>          &ldquo;Gitment：使用 GitHub Issues 搭建评论系统&rdquo;</p>
 <hr>
 <h4 id="初始化评论">初始化评论</h4>
 <p>将配置好的blog发布到github上之后，打开你的任意一篇文章，在最下面点击初始化评论按钮即可。不过这里很不幸的是，你每一篇blog都要手动初始化一下，很蛋疼，目前还没有找到解决的办法，希望后续能解决这个问题。</p>

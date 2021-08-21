@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://leejoker.github.io/post/" /><meta property="og:image" content="http://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-04-06T09:42:23+08:00" />
+<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-08-11T10:27:10+08:00" />
 
 
 <style>
@@ -109,6 +109,34 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/">安装Ruby on Rails</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;437 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/ruby">ruby</a>&nbsp;<a href="/tags/rails">rails</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="安装rvm">安装rvm</h2>
+<pre><code class="language-shell"># 安装gnupg2
+$ sudo apt install gnupg2
+# 安装rvm
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+
+# 替换ruby-china源
+$ echo &quot;ruby_url=https://cache.ruby-china.com/pub/ruby&quot; &gt; ~/.rvm/user/db
+# 替换gem源
+$ gem sources -l
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+# 更新缓存
+$ gem sources -u 
+</code></pre>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -264,25 +292,6 @@ vim .emacs.d/core/templates/.spacemacs.template
     <div class="post-item post-summary markdown-body">
         <h2 id="前言">前言</h2>
 <p>事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="http://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/">Nginx&#43;keepalived配置热备（互为主从）</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-05-21</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1765 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1">部署设计</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="从开发到实施xd">从开发到实施XD</h2>
-<p>因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇<a href="https://blog.csdn.net/MassiveStars/article/details/54290055" target="_blank">blog</a>,很感谢博客的作者<a href="https://blog.csdn.net/MassiveStars" target="_blank">MassiveStars</a>，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。</p>
-<h2 id="配置虚拟ip">配置虚拟IP</h2>
-<h4 id="互为主从模式">互为主从模式</h4>
-<p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~</p>
-<p><img class="img-zoomable" src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="image" />
-</p>
     </div>
 </div>
 
