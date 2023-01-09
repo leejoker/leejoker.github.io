@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>windows on ESPIER</title>
-    <link>http://leejoker.github.io/tags/windows/</link>
+    <link>https://leejoker.top/tags/windows/</link>
     <description>Recent content in windows on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Jan 2021 12:57:25 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 12:57:25 +0800</lastBuildDate><atom:link href="https://leejoker.top/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows端口转发</title>
-      <link>http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <link>https://leejoker.top/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
       <pubDate>Mon, 11 Jan 2021 12:57:25 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <guid>https://leejoker.top/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
       <description>&lt;h2 id=&#34;windows下转发虚拟机中的服务&#34;&gt;windows下转发虚拟机中的服务&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PC C:\Users\leejoker&amp;gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
 &lt;/code&gt;&lt;/pre&gt;

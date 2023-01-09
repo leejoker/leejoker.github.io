@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jdbc on ESPIER</title>
-    <link>http://leejoker.github.io/tags/jdbc/</link>
+    <link>https://leejoker.top/tags/jdbc/</link>
     <description>Recent content in jdbc on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:37:16 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2020 23:37:16 +0800</lastBuildDate><atom:link href="https://leejoker.top/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置sqlite的相对路径</title>
-      <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
+      <link>https://leejoker.top/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Fri, 10 Jan 2020 23:37:16 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
+      <guid>https://leejoker.top/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
 项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
 因此对jdbc配置文件进行了修改：&lt;/p&gt;

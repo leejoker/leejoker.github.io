@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
@@ -30,7 +30,7 @@
 <meta property="og:title" content="clojure读书笔记其四" />
 <meta name="twitter:title" content="clojure读书笔记其四" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/" /><meta property="og:description" content="这个系列还会继续的
+<meta property="og:url" content="https://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/" /><meta property="og:description" content="这个系列还会继续的
 忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。
 说一说常用的东西
 这一节就来说一说常用的一些函数，在实际的应用中不论是刷题还是实际的开发应用，都会经常的用到，比如递归 map reduce apply 等等，这些都是接触clojure之后都会经常看到，用到的方法。那么，今天就来说说这些吧。
@@ -55,9 +55,9 @@
   }
 
 在方法内部调用方法本身实现递归，完成方法的递归调用。
-然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。" /><meta property="og:image" content="http://leejoker.github.io/img/og.png" />
+然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。" /><meta property="og:image" content="https://leejoker.top/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2019-02-04T00:20:41+00:00" /><meta property="article:modified_time" content="2019-02-04T00:20:41+00:00" />
+<meta name="twitter:image" content="https://leejoker.top/img/og.png" /><meta property="article:published_time" content="2019-02-04T00:20:41+00:00" /><meta property="article:modified_time" content="2019-02-04T00:20:41+00:00" />
 
 
 <style>
@@ -74,7 +74,7 @@
 
 
 
-<link rel="stylesheet" href="http://leejoker.github.io/assets/css/fuji.min.css" />
+<link rel="stylesheet" href="https://leejoker.top/assets/css/fuji.min.css" />
 
 
 
@@ -111,7 +111,7 @@
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
-            <a class="title-main" href="http://leejoker.github.io/">ESPIER</a>
+            <a class="title-main" href="https://leejoker.top/">ESPIER</a>
             
             <span class="title-sub">一只JAVA程序猿的日常</span>
             
@@ -137,7 +137,7 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/">clojure读书笔记其四</a>
+        <a href="https://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/">clojure读书笔记其四</a>
     </h2>
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-02-04</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1144 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a>&nbsp;</span>
@@ -692,8 +692,8 @@ IllegalArgumentException Don't know how to create ISeq from: java.lang.Long  clo
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2021
-                <a href="http://leejoker.github.io/">leejoker</a>
+            <span>&copy; 2016-2023
+                <a href="https://leejoker.top/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
