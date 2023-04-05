@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习笔记 on ESPIER</title>
+    <link>http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 学习笔记 on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 04 Feb 2019 00:20:41 +0000</lastBuildDate><atom:link href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure读书笔记其四</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
+      <pubDate>Mon, 04 Feb 2019 00:20:41 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
+      <description>&lt;h2 id=&#34;这个系列还会继续的&#34;&gt;这个系列还会继续的&lt;/h2&gt;
+&lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
+&lt;h2 id=&#34;说一说常用的东西&#34;&gt;说一说常用的东西&lt;/h2&gt;
+&lt;p&gt;这一节就来说一说常用的一些函数，在实际的应用中不论是刷题还是实际的开发应用，都会经常的用到，比如递归 map reduce apply 等等，这些都是接触clojure之后都会经常看到，用到的方法。那么，今天就来说说这些吧。&lt;/p&gt;
+&lt;h2 id=&#34;递归&#34;&gt;递归&lt;/h2&gt;
+&lt;p&gt;递归的话在一般的语言中（没错，我说的就是Java），一般都会采用这种方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doMethod&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; param&lt;span style=&#34;color:#f92672&#34;&gt;){&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// do something
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    doMethod&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;param&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在方法内部调用方法本身实现递归，完成方法的递归调用。&lt;br&gt;
+然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其三</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
+      <pubDate>Sun, 21 Jan 2018 15:47:33 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
+      <description>&lt;h1 id=&#34;namespace&#34;&gt;Namespace&lt;/h1&gt;
+&lt;p&gt;名称空间对于Clojure来说是一个逻辑上对于代码进行分组的概念，类似于Java的package，通过使用名称空间能够规避方法名冲突，有效的对代码进行管理。主要应用的话，其实就是方便代码的引入和使用了，毕竟你不可能将所有代码放到一个clj文件中。&lt;/p&gt;
+&lt;h3 id=&#34;create-ns&#34;&gt;create-ns&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user&amp;gt; (create-ns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.by.example&lt;/span&gt;)
+nil
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样一个名称空间就建立好了，是不是so easy！&lt;/p&gt;
+&lt;h3 id=&#34;in-ns&#34;&gt;in-ns&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; create the namespace and switch to it&lt;/span&gt;
+(in-ns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;first-namespace&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;in-ns的主要作用是切换到指定的namespace中，如果这个namespace不存在，则会创建他。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其二</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
+      <pubDate>Sun, 07 Jan 2018 16:02:17 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
+      <description>&lt;h1 id=&#34;今天的主题是function&#34;&gt;今天的主题是Function&lt;/h1&gt;
+&lt;p&gt;正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&amp;ldquo;函数&amp;quot;啦XD&lt;/p&gt;
+&lt;h2 id=&#34;那么直入主题首先来看一下怎么定义一个函数&#34;&gt;那么直入主题，首先来看一下怎么定义一个函数：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;;    name   params         body&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;;    -----  ------  -------------------&lt;/span&gt;
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet  [name]  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; name) )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
+&lt;p&gt;那么这个函数的使用就可以像上一篇中所说的那样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user=&amp;gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;小明&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, 小明&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;你也可以给你的方法增加方法说明&#34;&gt;你也可以给你的方法增加方法说明：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet  
+  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this is the greet function for you&amp;#34;&lt;/span&gt;
+  [name]  
+  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; name))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其一</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
+      <pubDate>Sat, 06 Jan 2018 15:59:05 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
+      <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;
+&lt;p&gt;　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D&lt;/p&gt;
+&lt;h2 id=&#34;学习思路&#34;&gt;学习思路&lt;/h2&gt;
+&lt;p&gt;　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰。仔细想想，还是整理一下目前所学，也希望整理的东西能给clojure的初学者提供一定的帮助。&lt;br&gt;
+　　本系列的笔记是基于官方文档整理、补充的，如有错漏，请在评论区指出，以便及时进行修改，也有助于我自身的提升和进步。&lt;/p&gt;
+&lt;h2 id=&#34;语言学习的第一步&#34;&gt;语言学习的第一步&lt;/h2&gt;
+&lt;p&gt;没错，就是Hello World！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user=&amp;gt; (println &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, Clojure!&amp;#34;&lt;/span&gt;)
+Hello, Clojure!
+nil
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这一句是在repl中执行的，哦，差点忘了，记得安装lein哦，至于怎么装请自行百度，如果需要梯子，emmmmm，自己想办法吧，程序员或者想成为程序员的人不应该被一面墙阻拦（有人敲门，我去开一下，Σ(っ °Д °;)っ好像有哪里不对）&lt;/p&gt;
+&lt;p&gt;言归正传，输出的结果是“Hello, Clojure!”，但方法的返回值是nil，这个输出其实就是函数println的副产物。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

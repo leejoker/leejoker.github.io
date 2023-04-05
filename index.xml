@@ -135,8 +135,8 @@
       
       <guid>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
       <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
-&lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34; target=&#34;_blank&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
-&lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%e6%b8%ac%e8%a9%a6%e7%89%88%e6%9c%ac-%e7%89%88%e6%9c%ac%e6%97%a5%e8%aa%8c&#34; target=&#34;_blank&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
+&lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%E6%B8%AC%E8%A9%A6%E7%89%88%E6%9C%AC-%E7%89%88%E6%9C%AC%E6%97%A5%E8%AA%8C&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻&lt;/p&gt;
 &lt;p&gt;无果，&lt;strong&gt;&amp;quot;[docker] 一遍、死んで见る&amp;quot;&lt;/strong&gt;，docker 卒！&lt;/p&gt;
 &lt;p&gt;vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！&lt;/p&gt;</description>
@@ -222,7 +222,7 @@ $ gem sources -u
       
       <guid>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;h2 id=&#34;获取yapi源码&#34;&gt;获取Yapi源码&lt;/h2&gt;
-&lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34; target=&#34;_blank&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
+&lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/YMFE/yapi.git ~/yapi
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;通过npm或cnpm安装依赖：&lt;/p&gt;
@@ -289,9 +289,8 @@ vim .emacs.d/core/templates/.spacemacs.template
       
       <guid>http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
       <description>&lt;h2 id=&#34;js整型的坑&#34;&gt;JS整型的坑&lt;/h2&gt;
-&lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34; target=&#34;_blank&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img class=&#34;img-zoomable&#34; src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; alt=&#34;存储格式示意图，取自wiki&#34; /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; alt=&#34;存储格式示意图，取自wiki&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -321,12 +320,11 @@ vim .emacs.d/core/templates/.spacemacs.template
       
       <guid>http://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
       <description>&lt;h2 id=&#34;从开发到实施xd&#34;&gt;从开发到实施XD&lt;/h2&gt;
-&lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34; target=&#34;_blank&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
+&lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
 &lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
 &lt;h4 id=&#34;互为主从模式&#34;&gt;互为主从模式&lt;/h4&gt;
 &lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~&lt;/p&gt;
-&lt;p&gt;&lt;img class=&#34;img-zoomable&#34; src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; alt=&#34;image&#34; /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -446,7 +444,7 @@ nil
 ;;    -----  ------  -------------------
 (defn greet  [name]  (str &amp;quot;Hello, &amp;quot; name) )
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
+&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
 &lt;p&gt;那么这个函数的使用就可以像上一篇中所说的那样：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;user=&amp;gt; (greet &amp;quot;小明&amp;quot;)
 &amp;quot;Hello, 小明&amp;quot;

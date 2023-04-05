@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on ESPIER</title>
+    <link>http://leejoker.github.io/categories/rust/</link>
+    <description>Recent content in rust on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rustup代理设置</title>
+      <link>http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 28 Jan 2020 22:45:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;p&gt;由于公司的网络问题，我用CCProxy挂了一个代理在能上网的机器上，利用代理上网。这两天对rust感兴趣，于是就开始按照官网的说明安装rustup。&lt;/p&gt;
+&lt;p&gt;然后，问题来了！挂的代理居然不能访问！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;# vim /etc/environment&lt;/span&gt;
+  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/game
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  2 http_proxy=&amp;#34;&lt;/span&gt;http://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  3 https_proxy=&amp;#34;&lt;/span&gt;https://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  4 ftp_proxy=&amp;#34;&lt;/span&gt;ftp://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  5 socks_proxy=&amp;#34;&lt;/span&gt;socks://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  6 no_proxy=&amp;#34;&lt;/span&gt;localhost,127.0.0.1,localaddress,.localdomain.com&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

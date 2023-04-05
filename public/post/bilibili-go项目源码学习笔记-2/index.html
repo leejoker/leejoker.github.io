@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>bilibili-go项目源码学习笔记_2 | ESPIER</title>
+    <meta property="og:title" content="bilibili-go项目源码学习笔记_2 - ESPIER">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2016-09-28T00:02:19&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2016-09-28T00:02:19&#43;08:00'>
+        
+    <meta name="Keywords" content="java,clojure,groovy,go,python,多线程,RPC">
+    <meta name="description" content="bilibili-go项目源码学习笔记_2">
+        
+    <meta name="author" content="leejoker">
+    <meta property="og:url" content="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?589f0dbb99213979cc58aaed37bb3611";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+        
+</head>
+
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://leejoker.github.io/">
+                        ESPIER
+                    </a>
+                
+                <p class="description">一只JAVA程序猿的日常</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://leejoker.github.io/">首页</a>
+                    
+                    <a  href="http://leejoker.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://leejoker.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">bilibili-go项目源码学习笔记_2</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2016年9月28日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/go'>go</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
+<h3 id="参数定义">参数定义</h3>
+<p>application.go中定义了初始化时需要用到的常量和变量</p>
+<h4 id="常量定义">常量定义：</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> (
+    <span style="color:#a6e22e">INDEX_CACHE</span>        = <span style="color:#e6db74">&#34;index&#34;</span>        <span style="color:#75715e">//各类别下rank
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ALL_RANK_CACHE</span>     = <span style="color:#e6db74">&#34;all_rank&#34;</span>     <span style="color:#75715e">//总的rank
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BANGUMI_CACHE</span>      = <span style="color:#e6db74">&#34;bangumi&#34;</span>      <span style="color:#75715e">//番剧
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BANGUMI_LIST_CACHE</span> = <span style="color:#e6db74">&#34;bangumi_list&#34;</span> <span style="color:#75715e">//新番放松表
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">SORT_TOP_CACHE</span>     = <span style="color:#e6db74">&#34;sort-&#34;</span>        <span style="color:#75715e">//具体某个类别rank(这个在index_cache中要用到)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">LIVE_INDEX_CACHE</span>   = <span style="color:#e6db74">&#34;live_index&#34;</span>   <span style="color:#75715e">//直播rank
+</span><span style="color:#75715e"></span>)
+</code></pre></div><h4 id="全局变量定义">全局变量定义：</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> (
+    <span style="color:#a6e22e">ProdLevels</span> = []<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Level</span>{
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">NoticeLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">WarnLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">ErrorLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">PanicLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">AlertLevel</span>,
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">FatalLevel</span>,
+    }
+)
+</code></pre></div><p>这里主要定义了release模式下用到的日志级别。(PS:类库引用的是&quot;github.com/go-playground/log&quot;)</p>
+<h4 id="结构体定义">结构体定义</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">BiliBiliApplication</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Router</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">gin</span>.<span style="color:#a6e22e">Engine</span>        <span style="color:#75715e">//路由
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Corn</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">CornService</span>       <span style="color:#75715e">//初始化服务
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Conf</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">Config</span>            <span style="color:#75715e">//配置信息
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Client</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">BCli</span>       <span style="color:#75715e">//客户端
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Cache</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">CacheManager</span>      <span style="color:#75715e">//缓存管理
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>这里定义了Bilibili-go主体程序的结构。</p>
+<h3 id="初始化rank数据并注册任务">初始化rank数据并注册任务</h3>
+<p>application.go中使用了conformTask方法进行了数据的初始化以及任务注册</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">//application.go
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">conformTask</span>(<span style="color:#a6e22e">app</span>)
+<span style="color:#a6e22e">corn</span>.<span style="color:#a6e22e">Start</span>()
+</code></pre></div><p>conformTask方法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">//application.go
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">conformTask</span>(<span style="color:#a6e22e">app</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">BiliBiliApplication</span>) {
+    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Corn</span>.<span style="color:#a6e22e">RegisterTask</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">IndexInfoTask</span>{<span style="color:#a6e22e">CornTask</span>: <span style="color:#a6e22e">CornTask</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;index_info&#34;</span>, <span style="color:#a6e22e">Duration</span>: <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Hour</span>}, <span style="color:#a6e22e">app</span>: <span style="color:#a6e22e">app</span>})
+    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Corn</span>.<span style="color:#a6e22e">RegisterTask</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">BangumiInfoTask</span>{<span style="color:#a6e22e">CornTask</span>: <span style="color:#a6e22e">CornTask</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;bangumi_info&#34;</span>, <span style="color:#a6e22e">Duration</span>: <span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Hour</span>}, <span style="color:#a6e22e">app</span>: <span style="color:#a6e22e">app</span>})
+    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Corn</span>.<span style="color:#a6e22e">RegisterTask</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">BangumiListTask</span>{<span style="color:#a6e22e">CornTask</span>: <span style="color:#a6e22e">CornTask</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;bangumi_list&#34;</span>, <span style="color:#a6e22e">Duration</span>: <span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Hour</span>}, <span style="color:#a6e22e">app</span>: <span style="color:#a6e22e">app</span>})
+    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Corn</span>.<span style="color:#a6e22e">RegisterTask</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">TopRankTask</span>{<span style="color:#a6e22e">CornTask</span>: <span style="color:#a6e22e">CornTask</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;top_rank&#34;</span>, <span style="color:#a6e22e">Duration</span>: <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Hour</span>}, <span style="color:#a6e22e">app</span>: <span style="color:#a6e22e">app</span>})
+    <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">Corn</span>.<span style="color:#a6e22e">RegisterTask</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">LiveIndexTask</span>{<span style="color:#a6e22e">CornTask</span>: <span style="color:#a6e22e">CornTask</span>{<span style="color:#a6e22e">Name</span>: <span style="color:#e6db74">&#34;alive_index&#34;</span>, <span style="color:#a6e22e">Duration</span>: <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Hour</span>}, <span style="color:#a6e22e">app</span>: <span style="color:#a6e22e">app</span>})
+}
+</code></pre></div><p>从方法名上看是调用了CornService中的RegisterTask(注册任务)的方法，那么，我们看一下这个RegisterTask方法到底做了些什么吧。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">//corn.go
+</span><span style="color:#75715e">//execute task
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">f</span> <span style="color:#a6e22e">CornTaskImpl</span>) {
+    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;invoke task, taskname: &#34;</span>, <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">GetName</span>())
+    <span style="color:#66d9ef">defer</span> <span style="color:#66d9ef">func</span>() {
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> recover(); <span style="color:#a6e22e">r</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">r</span>)
+        }
+    }()
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Run</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Failure</span>(<span style="color:#a6e22e">err</span>)
+    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Success</span>()
+    }
+    <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;run task end, taskname: &#34;</span>, <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">GetName</span>())
+}
+
+<span style="color:#75715e">//这里就是那个名为注册任务的方法
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CornService</span>) <span style="color:#a6e22e">RegisterTask</span>(<span style="color:#a6e22e">task</span> <span style="color:#a6e22e">CornTaskImpl</span>) {
+    <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">SyncLastRunTime</span>()
+    <span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">task</span>)
+    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">tasks</span> = append(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">tasks</span>, <span style="color:#a6e22e">task</span>)
+}
+</code></pre></div><p>不难发现，实际上这个注册任务的方法就是将task执行了一下，然后放到c.tasks数组里。</p>
+<p>而之后的corn.Start()方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">//corn.go
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CornService</span>) <span style="color:#a6e22e">syncTaskList</span>(<span style="color:#a6e22e">nowTime</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Time</span>) {
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">task</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">tasks</span> {                          <span style="color:#75715e">//循环任务列表
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//Unix timestamp =&gt; duration
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">between</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Duration</span>(<span style="color:#a6e22e">nowTime</span>.<span style="color:#a6e22e">Unix</span>()<span style="color:#f92672">-</span><span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">GetLastRun</span>().<span style="color:#a6e22e">Unix</span>()) <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">between</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">GetDuration</span>() {                  <span style="color:#75715e">//当时间间隔大于设定的时间周期则执行,并修改LastRun的值
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">SyncLastRunTime</span>()
+            <span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">task</span>)
+        }
+    }
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CornService</span>) <span style="color:#a6e22e">loop</span>() {
+    <span style="color:#66d9ef">for</span> {
+        <span style="color:#66d9ef">select</span> {
+        <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">done</span>:
+            <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Info</span>(<span style="color:#e6db74">&#34;corn loop stopped....&#34;</span>)
+            <span style="color:#66d9ef">return</span>
+        <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">nowTime</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">ticker</span>.<span style="color:#a6e22e">C</span>:          <span style="color:#75715e">//这里通过计时器获取到当前时间
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">syncTaskList</span>(<span style="color:#a6e22e">nowTime</span>)
+        }
+    }
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">CornService</span>) <span style="color:#a6e22e">Start</span>() {
+    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">loop</span>()
+}
+</code></pre></div><p>corn.Start()方法开启了一个loop线程，这个线程简单的来说就是每隔一分钟执行一次syncTaskList方法。</p>
+<p>到此，bilibili-go这个小项目的学习也基本上告一段落了，剩下的内容基本上都是数据获取和处理的部分。这个项目虽然很小，但是对多线程的学习，go的基础都有很大的帮助，在此也感谢WhiteBlue大大，(<em>^_^</em>)</p>
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="http://leejoker.github.io/">leejoker</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a></li>
+        
+        <li><a href="/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">对于Go语言中指针的思路整理</a></li>
+        
+        <li><a href="/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/">如何创建六边形按钮</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/go'>go</a></li>
+                
+                <li><a href='/tags/bilibili'>bilibili</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "leejoker/blog_comm"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2020 <a href="http://leejoker.github.io/">ESPIER By leejoker</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='//www.google.com/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://leejoker.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/" title="IDEA升级2020.3后lombok编译报错">IDEA升级2020.3后lombok编译报错</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" title="Ubuntu安装mysql8">Ubuntu安装mysql8</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/" title="Rustup代理设置">Rustup代理设置</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/" title="Idea中的Git无法正常忽略">Idea中的Git无法正常忽略</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/" title="安装Ruby on Rails">安装Ruby on Rails</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/" title="Mybatis中使用序列自动插入主键">Mybatis中使用序列自动插入主键</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/" title="Springboot上传文件大小限制处理">Springboot上传文件大小限制处理</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" title="Yapi的安装和使用">Yapi的安装和使用</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/" title="配置sqlite的相对路径">配置sqlite的相对路径</a>
+    </li>
+    
+    <li>
+        <a href="http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/" title="Spacemacs配置国内镜像">Spacemacs配置国内镜像</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="http://leejoker.github.io/categories/clojure/">clojure (5)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/css/">CSS (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/emacs/">emacs (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/go/">go (3)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/hexo/">hexo (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/java/">java (7)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/linux/">linux (2)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/ruby/">ruby (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/rust/">rust (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/%E5%B7%A5%E5%85%B7/">工具 (1)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/%E6%8A%80%E5%B7%A7/">技巧 (4)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/%E6%9D%82%E6%96%87/">杂文 (2)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/%E7%AE%97%E6%B3%95/">算法 (2)</a></li>
+    
+    <li><a href="http://leejoker.github.io/categories/%E8%AF%BB%E4%B9%A6/">读书 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="http://leejoker.github.io/tags/atom/">atom</a>
+    
+    <a href="http://leejoker.github.io/tags/bilibili/">bilibili</a>
+    
+    <a href="http://leejoker.github.io/tags/clojure/">clojure</a>
+    
+    <a href="http://leejoker.github.io/tags/css/">CSS</a>
+    
+    <a href="http://leejoker.github.io/tags/emacs/">emacs</a>
+    
+    <a href="http://leejoker.github.io/tags/go/">go</a>
+    
+    <a href="http://leejoker.github.io/tags/gradle/">gradle</a>
+    
+    <a href="http://leejoker.github.io/tags/hexo/">hexo</a>
+    
+    <a href="http://leejoker.github.io/tags/idea/">idea</a>
+    
+    <a href="http://leejoker.github.io/tags/java/">java</a>
+    
+    <a href="http://leejoker.github.io/tags/javascript/">javascript</a>
+    
+    <a href="http://leejoker.github.io/tags/jdbc/">jdbc</a>
+    
+    <a href="http://leejoker.github.io/tags/lein/">lein</a>
+    
+    <a href="http://leejoker.github.io/tags/linux/">linux</a>
+    
+    <a href="http://leejoker.github.io/tags/mybatis/">mybatis</a>
+    
+    <a href="http://leejoker.github.io/tags/mysql/">mysql</a>
+    
+    <a href="http://leejoker.github.io/tags/nexus/">nexus</a>
+    
+    <a href="http://leejoker.github.io/tags/rails/">rails</a>
+    
+    <a href="http://leejoker.github.io/tags/ruby/">ruby</a>
+    
+    <a href="http://leejoker.github.io/tags/rust/">rust</a>
+    
+    <a href="http://leejoker.github.io/tags/springboot/">springboot</a>
+    
+    <a href="http://leejoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    
+    <a href="http://leejoker.github.io/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    
+    <a href="http://leejoker.github.io/tags/%E6%9D%82%E6%96%87/">杂文</a>
+    
+    <a href="http://leejoker.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="http://leejoker.github.io/tags/%E8%AF%BB%E4%B9%A6/">读书</a>
+    
+    <a href="http://leejoker.github.io/tags/%E9%83%A8%E7%BD%B2%E8%AE%BE%E8%AE%A1/">部署设计</a>
+    
+    <a href="http://leejoker.github.io/tags/%E9%85%8D%E7%BD%AE/">配置</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://github.com/leejoker" title="leejoker&#39;s Github">leejoker&#39;s Github</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://leejoker.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
