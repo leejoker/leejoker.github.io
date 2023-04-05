@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
 
 
 <title>bilibili-go项目源码学习笔记_2 - ESPIER</title>
@@ -74,6 +75,7 @@ const (
 
 
 
+
 <link rel="stylesheet" href="http://leejoker.github.io/assets/css/fuji.min.css" />
 
 
@@ -92,9 +94,15 @@ const (
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
 
 
+
+
+
 </head>
 
-<body data-theme="auto">
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
     <script data-cfasync="false">
   
   var fujiThemeData = localStorage.getItem('fuji_data-theme');
@@ -108,6 +116,7 @@ const (
     }
   }
 </script>
+
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
@@ -117,16 +126,6 @@ const (
             
         </div>
     </div>
-
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?589f0dbb99213979cc58aaed37bb3611";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>        
 </header>
 
     <main>
@@ -140,7 +139,11 @@ const (
         <a href="http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">bilibili-go项目源码学习笔记_2</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-28</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;977 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-28</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;977 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
 
     </div>
     
@@ -495,6 +498,7 @@ func (c *CornService) Start() {
   </ul>
 </nav></div>
 </aside>
+
         </div>
         <div class="btn">
     <div class="btn-menu" id="btn-menu">
@@ -720,10 +724,10 @@ func (c *CornService) Start() {
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2021
+            <span>&copy; 2016-2023
                 <a href="http://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
-                | 基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
                                                     target="_blank">Hugo</a> 构建
             </span>
@@ -733,13 +737,14 @@ func (c *CornService) Start() {
 
     
 <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
 
 
 <script defer src="/assets/js/fuji.min.js"></script>
+
 
 
 </body>

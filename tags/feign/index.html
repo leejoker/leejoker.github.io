@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.89.4" />
 
 
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
 
 
 <title>feign - ESPIER</title>
@@ -24,6 +25,7 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
+<link rel="alternate" type="application/rss+xml" href="http://leejoker.github.io/tags/feign/index.xml" title="ESPIER" />
 
 <meta property="og:title" content="feign" />
 <meta name="twitter:title" content="feign" />
@@ -47,6 +49,7 @@
 
 
 
+
 <link rel="stylesheet" href="http://leejoker.github.io/assets/css/fuji.min.css" />
 
 
@@ -65,9 +68,15 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
 
 
+
+
+
 </head>
 
-<body data-theme="auto">
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
     <script data-cfasync="false">
   
   var fujiThemeData = localStorage.getItem('fuji_data-theme');
@@ -81,6 +90,7 @@
     }
   }
 </script>
+
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
@@ -90,16 +100,6 @@
             
         </div>
     </div>
-
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?589f0dbb99213979cc58aaed37bb3611";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>        
 </header>
 
     <main>
@@ -109,35 +109,32 @@
                 
 
 <div class="page-info">
-    <span>拥有标签 feign 的文章：</span>
+  <span>拥有标签 feign 的文章：</span>
 </div>
 
 
 
 <div class="post">
-    <h2 class="post-item post-title">
-        <a href="http://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Feign使用okhttp3的正确姿势</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-04-06</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1650 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/springcloud">springcloud</a>&nbsp;<a href="/tags/feign">feign</a>&nbsp;</span>
+  <h2 class="post-item post-title">
+    <a href="http://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Feign使用okhttp3的正确姿势</a>
+  </h2>
+  <div class="post-item post-meta">
+    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-04-06</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="首先来吐槽一波">首先来吐槽一波(╯‵□′)╯︵┻━┻</h2>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1650 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/springcloud">springcloud</a>&nbsp;<a href="/tags/feign">feign</a>&nbsp;</span>
+
+  </div>
+  <div class="post-item post-summary markdown-body">
+    <h2 id="首先来吐槽一波">首先来吐槽一波(╯‵□′)╯︵┻━┻</h2>
 <p>本来呢，我是想加一层feign的interceptor处理feign里request请求的返回信息的，比如只提取ResponseBody中的data啥的。后来想起来feign默认使用的是jdk的HttpURLConnection，而且feign本身是支持替换okhttp的，于是打算搞起~</p>
 <p>可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻</p>
 <p>最后，还是自己操刀，从源码看吧。</p>
 <p>遂有此文~</p>
 <p>百毒，淦！</p>
-    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -332,6 +329,7 @@
     
     
 </aside>
+
         </div>
         <div class="btn">
     <div class="btn-menu" id="btn-menu">
@@ -541,10 +539,10 @@
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2021
+            <span>&copy; 2016-2023
                 <a href="http://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
-                | 基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
                                                     target="_blank">Hugo</a> 构建
             </span>
@@ -554,13 +552,14 @@
 
     
 <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
 
 
 <script defer src="/assets/js/fuji.min.js"></script>
+
 
 
 </body>

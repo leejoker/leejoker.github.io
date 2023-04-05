@@ -1,1 +1,3 @@
 User-agent: *
+
+Sitemap: http://leejoker.github.io/sitemap.xml

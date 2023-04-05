@@ -61,7 +61,7 @@ nil
 ;;    -----  ------  -------------------
 (defn greet  [name]  (str &amp;quot;Hello, &amp;quot; name) )
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
+&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34; target=&#34;_blank&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
 &lt;p&gt;那么这个函数的使用就可以像上一篇中所说的那样：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;user=&amp;gt; (greet &amp;quot;小明&amp;quot;)
 &amp;quot;Hello, 小明&amp;quot;
