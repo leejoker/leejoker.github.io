@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on ESPIER</title>
-    <link>http://leejoker.github.io/tags/linux/</link>
+    <link>https://leejoker.github.io/tags/linux/</link>
     <description>Recent content in linux on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu添加vscode源</title>
-      <link>http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
+      <link>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
       <pubDate>Mon, 08 Mar 2021 10:29:00 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
+      <guid>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>普通用户直接运行docker命令</title>
-      <link>http://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</link>
+      <link>https://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 29 Dec 2020 18:13:05 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;h2 id=&#34;具体操作&#34;&gt;具体操作&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;添加docker group&lt;/li&gt;
@@ -43,10 +43,10 @@
     
     <item>
       <title>Ubuntu安装mysql8</title>
-      <link>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
+      <link>https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
       <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
+      <guid>https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
       <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
 &lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34; target=&#34;_blank&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
 &lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%e6%b8%ac%e8%a9%a6%e7%89%88%e6%9c%ac-%e7%89%88%e6%9c%ac%e6%97%a5%e8%aa%8c&#34; target=&#34;_blank&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
@@ -57,20 +57,20 @@
     
     <item>
       <title>记一次登录假死的异常排查</title>
-      <link>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
+      <link>https://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
       <pubDate>Tue, 28 May 2019 09:35:11 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
+      <guid>https://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx&#43;keepalived配置热备（互为主从）</title>
-      <link>http://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
+      <link>https://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
       <pubDate>Tue, 21 May 2019 14:13:52 +0800</pubDate>
       
-      <guid>http://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
+      <guid>https://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
       <description>&lt;h2 id=&#34;从开发到实施xd&#34;&gt;从开发到实施XD&lt;/h2&gt;
 &lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34; target=&#34;_blank&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
 &lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
@@ -82,10 +82,10 @@
     
     <item>
       <title>Ubuntu下如何添加ppa仓库</title>
-      <link>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
+      <link>https://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
       <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
       
-      <guid>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
+      <guid>https://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
 &lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
