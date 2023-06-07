@@ -2,17 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ESPIER</title>
-    <link>https://leejoker.github.io/post/</link>
+    <link>http://leejoker.top/post/</link>
     <description>Recent content in Posts on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Aug 2021 10:27:10 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="http://leejoker.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Msys2启动加速</title>
+      <link>http://leejoker.top/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</link>
+      <pubDate>Wed, 07 Jun 2023 17:24:58 +0800</pubDate>
+      
+      <guid>http://leejoker.top/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</guid>
+      <description>msys2启动加速 msys2安装以后，每次启动都需要等待很久，查了一下，配置如下： $ mkpasswd -c &amp;gt; /etc/passwd # 修改 /etc/nsswitch.conf， passwd所在行进行如下修改： passwd: files db &amp;lt;- files</description>
+    </item>
+    
     <item>
       <title>关于运动减肥的一些经验之谈</title>
-      <link>https://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</link>
+      <link>http://leejoker.top/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</link>
       <pubDate>Wed, 11 Aug 2021 10:27:10 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</guid>
+      <guid>http://leejoker.top/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</guid>
       <description>&lt;h1 id=&#34;篇首语&#34;&gt;篇首语&lt;/h1&gt;
 &lt;p&gt;　　好久没写博客了，最近公司的事情搞得我一个头两个大，不禁感慨，PM真的不是人干的活啊（当PM的小伙伴别打我 XD）。&lt;/p&gt;
 &lt;p&gt;　　算了，闲话少叙，还是说说为啥写减肥吧。&lt;/p&gt;
@@ -21,10 +30,10 @@
     
     <item>
       <title>Feign使用okhttp3的正确姿势</title>
-      <link>https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
+      <link>http://leejoker.top/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
       <pubDate>Tue, 06 Apr 2021 09:42:23 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
+      <guid>http://leejoker.top/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
       <description>&lt;h2 id=&#34;首先来吐槽一波&#34;&gt;首先来吐槽一波(╯‵□′)╯︵┻━┻&lt;/h2&gt;
 &lt;p&gt;本来呢，我是想加一层feign的interceptor处理feign里request请求的返回信息的，比如只提取ResponseBody中的data啥的。后来想起来feign默认使用的是jdk的HttpURLConnection，而且feign本身是支持替换okhttp的，于是打算搞起~&lt;/p&gt;
 &lt;p&gt;可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻&lt;/p&gt;
@@ -35,10 +44,10 @@
     
     <item>
       <title>Ubuntu添加vscode源</title>
-      <link>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
+      <link>http://leejoker.top/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
       <pubDate>Mon, 08 Mar 2021 10:29:00 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
+      <guid>http://leejoker.top/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;
@@ -55,10 +64,10 @@
     
     <item>
       <title>配置Clojure国内仓库</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>
       <pubDate>Thu, 04 Mar 2021 09:34:40 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h2 id=&#34;在项目中设置国内仓库&#34;&gt;在项目中设置国内仓库&lt;/h2&gt;
 &lt;p&gt;修改project.clj，参考如下内容进行设置&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defproject project-name 
@@ -76,10 +85,10 @@
     
     <item>
       <title>Windows端口转发</title>
-      <link>https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <link>http://leejoker.top/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
       <pubDate>Mon, 11 Jan 2021 12:57:25 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <guid>http://leejoker.top/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
       <description>&lt;h2 id=&#34;windows下转发虚拟机中的服务&#34;&gt;windows下转发虚拟机中的服务&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PC C:\Users\leejoker&amp;gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
 &lt;/code&gt;&lt;/pre&gt;
@@ -94,10 +103,10 @@
     
     <item>
       <title>普通用户直接运行docker命令</title>
-      <link>https://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</link>
+      <link>http://leejoker.top/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Tue, 29 Dec 2020 18:13:05 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</guid>
+      <guid>http://leejoker.top/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;h2 id=&#34;具体操作&#34;&gt;具体操作&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;添加docker group&lt;/li&gt;
@@ -108,10 +117,10 @@
     
     <item>
       <title>IDEA升级2020.3后lombok编译报错</title>
-      <link>https://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</link>
+      <link>http://leejoker.top/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</link>
       <pubDate>Mon, 07 Dec 2020 10:31:06 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</guid>
+      <guid>http://leejoker.top/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</guid>
       <description>&lt;p&gt;IDEA升级到2020.3后，使用lombok会报以下错误：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;java: You aren&#39;t using a compiler supported by lombok, so lombok will not work and has been disabled.
   Your processor is: com.sun.proxy.$Proxy24
@@ -121,10 +130,10 @@
     
     <item>
       <title>Ubuntu安装mysql8</title>
-      <link>https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
+      <link>http://leejoker.top/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
       <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
+      <guid>http://leejoker.top/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
       <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
 &lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34; target=&#34;_blank&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
 &lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%e6%b8%ac%e8%a9%a6%e7%89%88%e6%9c%ac-%e7%89%88%e6%9c%ac%e6%97%a5%e8%aa%8c&#34; target=&#34;_blank&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
@@ -135,10 +144,10 @@
     
     <item>
       <title>Rustup代理设置</title>
-      <link>https://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
+      <link>http://leejoker.top/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Tue, 28 Jan 2020 22:45:00 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>http://leejoker.top/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
       <description>&lt;p&gt;由于公司的网络问题，我用CCProxy挂了一个代理在能上网的机器上，利用代理上网。这两天对rust感兴趣，于是就开始按照官网的说明安装rustup。&lt;/p&gt;
 &lt;p&gt;然后，问题来了！挂的代理居然不能访问！&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  # vim /etc/environment
@@ -153,19 +162,19 @@
     
     <item>
       <title>Idea中的Git无法正常忽略</title>
-      <link>https://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</link>
+      <link>http://leejoker.top/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</link>
       <pubDate>Tue, 28 Jan 2020 22:42:42 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</guid>
+      <guid>http://leejoker.top/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</guid>
       <description>这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。 $ cd $YOUR_PROJECT_DIR $ git rm -r --cached . $ git add . $ git commit -m &#39;update</description>
     </item>
     
     <item>
       <title>安装Ruby on Rails</title>
-      <link>https://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
+      <link>http://leejoker.top/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
       <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
+      <guid>http://leejoker.top/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
       <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 安装gnupg2
 $ sudo apt install gnupg2
@@ -186,10 +195,10 @@ $ gem sources -u
     
     <item>
       <title>Mybatis中使用序列自动插入主键</title>
-      <link>https://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
+      <link>http://leejoker.top/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
       <pubDate>Fri, 10 Jan 2020 23:48:01 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
+      <guid>http://leejoker.top/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
       <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
 &lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;
@@ -199,19 +208,19 @@ $ gem sources -u
     
     <item>
       <title>Springboot上传文件大小限制处理</title>
-      <link>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
+      <link>http://leejoker.top/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
       <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
+      <guid>http://leejoker.top/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
       <description>今天在开发过程中遇到一个文件上传的问题 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。 百度了一下，找到如下配置，问题得以解决，记录一下 spring:</description>
     </item>
     
     <item>
       <title>Yapi的安装和使用</title>
-      <link>https://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>http://leejoker.top/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 10 Jan 2020 23:42:00 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://leejoker.top/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;h2 id=&#34;获取yapi源码&#34;&gt;获取Yapi源码&lt;/h2&gt;
 &lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34; target=&#34;_blank&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ git clone https://github.com/YMFE/yapi.git ~/yapi
@@ -225,10 +234,10 @@ $ npm install
     
     <item>
       <title>配置sqlite的相对路径</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
       <pubDate>Fri, 10 Jan 2020 23:37:16 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
       <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
 项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
 因此对jdbc配置文件进行了修改：&lt;/p&gt;
@@ -242,10 +251,10 @@ $ npm install
     
     <item>
       <title>Spacemacs配置国内镜像</title>
-      <link>https://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
+      <link>http://leejoker.top/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
       <pubDate>Fri, 10 Jan 2020 23:31:17 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
+      <guid>http://leejoker.top/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
       <description>&lt;h2 id=&#34;使用spacemacs国内镜像&#34;&gt;使用Spacemacs国内镜像&lt;/h2&gt;
 &lt;p&gt;最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;# 基于emacs26
@@ -258,10 +267,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>少侠与剑</title>
-      <link>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
+      <link>http://leejoker.top/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
       <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
+      <guid>http://leejoker.top/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;
 &lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;
@@ -275,10 +284,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>Js整型的坑</title>
-      <link>https://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</link>
+      <link>http://leejoker.top/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</link>
       <pubDate>Thu, 05 Sep 2019 17:51:10 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
+      <guid>http://leejoker.top/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
       <description>&lt;h2 id=&#34;js整型的坑&#34;&gt;JS整型的坑&lt;/h2&gt;
 &lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34; target=&#34;_blank&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img class=&#34;img-zoomable&#34; src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; alt=&#34;存储格式示意图，取自wiki&#34; /&gt;
@@ -287,30 +296,30 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>使用gradle打可执行jar包</title>
-      <link>https://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</link>
+      <link>http://leejoker.top/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</link>
       <pubDate>Mon, 26 Aug 2019 13:35:04 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</guid>
+      <guid>http://leejoker.top/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;最近的一个项目里面需要使用gradle打一个可执行的jar包，在网上看了一堆帖子照着做最后都不是很成功，最后终于参考StackOverflow上的帖子搞定了可执行jar包的打包脚本，因此做一个笔记对这个进行一下记录。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>记一次登录假死的异常排查</title>
-      <link>https://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
+      <link>http://leejoker.top/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
       <pubDate>Tue, 28 May 2019 09:35:11 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
+      <guid>http://leejoker.top/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx&#43;keepalived配置热备（互为主从）</title>
-      <link>https://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
+      <link>http://leejoker.top/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
       <pubDate>Tue, 21 May 2019 14:13:52 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
+      <guid>http://leejoker.top/post/nginx-keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
       <description>&lt;h2 id=&#34;从开发到实施xd&#34;&gt;从开发到实施XD&lt;/h2&gt;
 &lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34; target=&#34;_blank&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
 &lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
@@ -322,10 +331,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>数据结构与算法学习系列(二)</title>
-      <link>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</link>
+      <link>http://leejoker.top/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</link>
       <pubDate>Tue, 05 Feb 2019 22:36:10 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</guid>
+      <guid>http://leejoker.top/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</guid>
       <description>&lt;h1 id=&#34;线性表&#34;&gt;线性表&lt;/h1&gt;
 &lt;p&gt;线性表是一个存储相同类型数据元素的有限序列。&lt;br&gt;
 这里面需要关注的两个点就是，相同类型的数据、有限序列。&lt;/p&gt;
@@ -348,10 +357,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>clojure读书笔记其四</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
       <pubDate>Mon, 04 Feb 2019 00:20:41 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
       <description>&lt;h2 id=&#34;这个系列还会继续的&#34;&gt;这个系列还会继续的&lt;/h2&gt;
 &lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
 &lt;h2 id=&#34;说一说常用的东西&#34;&gt;说一说常用的东西&lt;/h2&gt;
@@ -369,10 +378,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>数据结构与算法学习系列（一）</title>
-      <link>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</link>
+      <link>http://leejoker.top/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</link>
       <pubDate>Sun, 03 Feb 2019 21:17:44 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</guid>
+      <guid>http://leejoker.top/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</guid>
       <description>&lt;h2 id=&#34;关于新坑和旧坑的说明&#34;&gt;关于新坑和旧坑的说明&lt;/h2&gt;
 &lt;p&gt;我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。&lt;/p&gt;
 &lt;h2 id=&#34;什么是算法&#34;&gt;什么是算法&lt;/h2&gt;
@@ -385,10 +394,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>配置lein的私有依赖仓库</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
       <pubDate>Thu, 01 Nov 2018 10:49:43 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h2 id=&#34;lein与私有仓库&#34;&gt;lein与私有仓库&lt;/h2&gt;
 &lt;p&gt;lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。&lt;/p&gt;
 &lt;h2 id=&#34;创建profilesclj&#34;&gt;创建profiles.clj&lt;/h2&gt;
@@ -397,10 +406,10 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <item>
       <title>clojure学习笔记其三</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
       <pubDate>Sun, 21 Jan 2018 15:47:33 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
       <description>&lt;h1 id=&#34;namespace&#34;&gt;Namespace&lt;/h1&gt;
 &lt;p&gt;名称空间对于Clojure来说是一个逻辑上对于代码进行分组的概念，类似于Java的package，通过使用名称空间能够规避方法名冲突，有效的对代码进行管理。主要应用的话，其实就是方便代码的引入和使用了，毕竟你不可能将所有代码放到一个clj文件中。&lt;/p&gt;
 &lt;h3 id=&#34;create-ns&#34;&gt;create-ns&lt;/h3&gt;
@@ -417,19 +426,19 @@ nil
     
     <item>
       <title>Atom配置国内源</title>
-      <link>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
+      <link>http://leejoker.top/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
       <pubDate>Mon, 15 Jan 2018 15:48:19 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
+      <guid>http://leejoker.top/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
       <description>配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。 本方法在linux</description>
     </item>
     
     <item>
       <title>clojure学习笔记其二</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
       <pubDate>Sun, 07 Jan 2018 16:02:17 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
       <description>&lt;h1 id=&#34;今天的主题是function&#34;&gt;今天的主题是Function&lt;/h1&gt;
 &lt;p&gt;正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&amp;ldquo;函数&amp;quot;啦XD&lt;/p&gt;
 &lt;h2 id=&#34;那么直入主题首先来看一下怎么定义一个函数&#34;&gt;那么直入主题，首先来看一下怎么定义一个函数：&lt;/h2&gt;
@@ -452,10 +461,10 @@ nil
     
     <item>
       <title>clojure学习笔记其一</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
       <pubDate>Sat, 06 Jan 2018 15:59:05 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
       <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;
 &lt;p&gt;　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D&lt;/p&gt;
 &lt;h2 id=&#34;学习思路&#34;&gt;学习思路&lt;/h2&gt;
@@ -473,20 +482,20 @@ nil
     
     <item>
       <title>折腾hexo系列之在jacman里集成gitment评论系统</title>
-      <link>https://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://leejoker.top/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Wed, 11 Oct 2017 00:09:08 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://leejoker.top/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
       <description>&lt;h3 id=&#34;从disqus到gitment&#34;&gt;从disqus到gitment&lt;/h3&gt;
 &lt;p&gt;其实就易用性和使用效果上讲，disqus还是很好用的，只需要注册一个账号，在主题里配置一下就可以了，然而，disqus最大的问题还是在于&lt;del&gt;翻墙&lt;/del&gt;，咳，科学上网。今天这个问题我的一个小伙伴也跟我吐槽了，毕竟不是每个人都会去弄个vpn啊，ss啊之类的东西。因此，回家之后果断搞起。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>《大道至简》读书笔记</title>
-      <link>https://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <link>http://leejoker.top/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 16 Aug 2017 12:55:14 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://leejoker.top/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;编程的精义&#34;&gt;编程的精义&lt;/h2&gt;
 &lt;p&gt;开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。&lt;/p&gt;
 &lt;p&gt;编程，是开发的一环，也就是把逻辑转化为代码的过程。&lt;/p&gt;
@@ -497,10 +506,10 @@ nil
     
     <item>
       <title>26岁的细思极恐</title>
-      <link>https://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</link>
+      <link>http://leejoker.top/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</link>
       <pubDate>Fri, 17 Mar 2017 21:53:54 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</guid>
+      <guid>http://leejoker.top/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</guid>
       <description>&lt;h3 id=&#34;班车上的感慨人总是莫名伤感233333&#34;&gt;&lt;strong&gt;班车上的感慨（人总是莫名伤感233333）&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;　　转眼间已经快工作3年了，年龄也逐渐到达了26岁，我不知道我会在IT这个行业坚持多久，或许是几年也或许是一辈子。人们总是说时光荏苒，白驹过隙。但不仔细回头想想，真的不会发现时间就这样在每天匆忙的上下班中从自己的身后溜走了。
 　　回想过去两年的工作（我是在传统开发行业工作的，互联网接触的不多，主要还是学了没地方用QAQ），虽然在技术上逐渐成熟，也学了很多的东西（想想自己从刚毕业什么都不会，到现在当个开发组的小组长内心还是颇为自豪的23333），框架的，前端的，后端的，也踩了各种坑，但是看看前沿的论坛新闻，感觉自己离这个时代要求的能力还是有不小差距的。不能沉迷于所得的成就，人总是得向前看。
@@ -510,10 +519,10 @@ nil
     
     <item>
       <title>Ubuntu下如何添加ppa仓库</title>
-      <link>https://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
       <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
 &lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
@@ -529,10 +538,10 @@ sudo apt-get install atom
     
     <item>
       <title>bilibili-go项目源码学习笔记_2</title>
-      <link>https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</link>
+      <link>http://leejoker.top/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</link>
       <pubDate>Wed, 28 Sep 2016 00:02:19 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</guid>
+      <guid>http://leejoker.top/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</guid>
       <description>&lt;p&gt;这一篇主要说明application.go的主要构成和其中用到方法的主要作用。&lt;/p&gt;
 &lt;h3 id=&#34;参数定义&#34;&gt;参数定义&lt;/h3&gt;
 &lt;p&gt;application.go中定义了初始化时需要用到的常量和变量&lt;/p&gt;
@@ -550,10 +559,10 @@ sudo apt-get install atom
     
     <item>
       <title>bilibili-go项目源码学习笔记_1</title>
-      <link>https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</link>
+      <link>http://leejoker.top/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</link>
       <pubDate>Tue, 27 Sep 2016 00:02:19 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</guid>
+      <guid>http://leejoker.top/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</guid>
       <description>&lt;h4 id=&#34;bilibili-go服务加载流程浅析&#34;&gt;bilibili-go服务加载流程浅析&lt;/h4&gt;
 &lt;p&gt;main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;    package main
@@ -577,10 +586,10 @@ sudo apt-get install atom
     
     <item>
       <title>对于Go语言中指针的思路整理</title>
-      <link>https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</link>
+      <link>http://leejoker.top/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</link>
       <pubDate>Wed, 21 Sep 2016 12:58:24 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</guid>
+      <guid>http://leejoker.top/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</guid>
       <description>&lt;h3 id=&#34;为什么要写这个&#34;&gt;为什么要写这个&lt;/h3&gt;
 &lt;p&gt;最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&amp;rsquo; - &amp;lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。&lt;/p&gt;
 &lt;h3 id=&#34;指针概念解析&#34;&gt;指针概念解析&lt;/h3&gt;
@@ -601,10 +610,10 @@ func main() {
     
     <item>
       <title>如何创建六边形按钮</title>
-      <link>https://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</link>
+      <link>http://leejoker.top/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</link>
       <pubDate>Wed, 21 Sep 2016 12:55:14 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</guid>
+      <guid>http://leejoker.top/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</guid>
       <description>&lt;h2 id=&#34;div旋转&#34;&gt;div旋转﻿&lt;/h2&gt;</description>
     </item>
     

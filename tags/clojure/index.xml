@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clojure on ESPIER</title>
-    <link>https://leejoker.github.io/tags/clojure/</link>
+    <link>http://leejoker.top/tags/clojure/</link>
     <description>Recent content in clojure on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 04 Mar 2021 09:34:40 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 09:34:40 +0800</lastBuildDate><atom:link href="http://leejoker.top/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置Clojure国内仓库</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</link>
       <pubDate>Thu, 04 Mar 2021 09:34:40 +0800</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h2 id=&#34;在项目中设置国内仓库&#34;&gt;在项目中设置国内仓库&lt;/h2&gt;
 &lt;p&gt;修改project.clj，参考如下内容进行设置&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(defproject project-name 
@@ -30,10 +30,10 @@
     
     <item>
       <title>clojure读书笔记其四</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
       <pubDate>Mon, 04 Feb 2019 00:20:41 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
       <description>&lt;h2 id=&#34;这个系列还会继续的&#34;&gt;这个系列还会继续的&lt;/h2&gt;
 &lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
 &lt;h2 id=&#34;说一说常用的东西&#34;&gt;说一说常用的东西&lt;/h2&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>配置lein的私有依赖仓库</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
       <pubDate>Thu, 01 Nov 2018 10:49:43 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h2 id=&#34;lein与私有仓库&#34;&gt;lein与私有仓库&lt;/h2&gt;
 &lt;p&gt;lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。&lt;/p&gt;
 &lt;h2 id=&#34;创建profilesclj&#34;&gt;创建profiles.clj&lt;/h2&gt;
@@ -63,10 +63,10 @@
     
     <item>
       <title>clojure学习笔记其三</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
       <pubDate>Sun, 21 Jan 2018 15:47:33 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
       <description>&lt;h1 id=&#34;namespace&#34;&gt;Namespace&lt;/h1&gt;
 &lt;p&gt;名称空间对于Clojure来说是一个逻辑上对于代码进行分组的概念，类似于Java的package，通过使用名称空间能够规避方法名冲突，有效的对代码进行管理。主要应用的话，其实就是方便代码的引入和使用了，毕竟你不可能将所有代码放到一个clj文件中。&lt;/p&gt;
 &lt;h3 id=&#34;create-ns&#34;&gt;create-ns&lt;/h3&gt;
@@ -83,10 +83,10 @@ nil
     
     <item>
       <title>clojure学习笔记其二</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
       <pubDate>Sun, 07 Jan 2018 16:02:17 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
       <description>&lt;h1 id=&#34;今天的主题是function&#34;&gt;今天的主题是Function&lt;/h1&gt;
 &lt;p&gt;正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&amp;ldquo;函数&amp;quot;啦XD&lt;/p&gt;
 &lt;h2 id=&#34;那么直入主题首先来看一下怎么定义一个函数&#34;&gt;那么直入主题，首先来看一下怎么定义一个函数：&lt;/h2&gt;
@@ -109,10 +109,10 @@ nil
     
     <item>
       <title>clojure学习笔记其一</title>
-      <link>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
+      <link>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
       <pubDate>Sat, 06 Jan 2018 15:59:05 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
+      <guid>http://leejoker.top/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
       <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;
 &lt;p&gt;　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D&lt;/p&gt;
 &lt;h2 id=&#34;学习思路&#34;&gt;学习思路&lt;/h2&gt;

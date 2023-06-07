@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>atom on ESPIER</title>
-    <link>https://leejoker.github.io/tags/atom/</link>
+    <link>http://leejoker.top/tags/atom/</link>
     <description>Recent content in atom on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 15 Jan 2018 15:48:19 +0000</lastBuildDate><atom:link href="https://leejoker.github.io/tags/atom/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Jan 2018 15:48:19 +0000</lastBuildDate><atom:link href="http://leejoker.top/tags/atom/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Atom配置国内源</title>
-      <link>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
+      <link>http://leejoker.top/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
       <pubDate>Mon, 15 Jan 2018 15:48:19 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
+      <guid>http://leejoker.top/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
       <description>配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。 本方法在linux</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lein on ESPIER</title>
-    <link>https://leejoker.github.io/tags/lein/</link>
+    <link>http://leejoker.top/tags/lein/</link>
     <description>Recent content in lein on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Nov 2018 10:49:43 +0000</lastBuildDate><atom:link href="https://leejoker.github.io/tags/lein/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Nov 2018 10:49:43 +0000</lastBuildDate><atom:link href="http://leejoker.top/tags/lein/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>配置lein的私有依赖仓库</title>
-      <link>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
+      <link>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
       <pubDate>Thu, 01 Nov 2018 10:49:43 +0000</pubDate>
       
-      <guid>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
       <description>&lt;h2 id=&#34;lein与私有仓库&#34;&gt;lein与私有仓库&lt;/h2&gt;
 &lt;p&gt;lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。&lt;/p&gt;
 &lt;h2 id=&#34;创建profilesclj&#34;&gt;创建profiles.clj&lt;/h2&gt;

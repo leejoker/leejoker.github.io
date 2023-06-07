@@ -31,7 +31,7 @@
 <meta property="og:title" content="对于Go语言中指针的思路整理" />
 <meta name="twitter:title" content="对于Go语言中指针的思路整理" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/" /><meta property="og:description" content="为什么要写这个
+<meta property="og:url" content="http://leejoker.top/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/" /><meta property="og:description" content="为什么要写这个
 最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&rsquo; - &lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。
 指针概念解析
 指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：
@@ -62,9 +62,9 @@ func main() {
 	b := 5
 	fmt.Println(a, b) //输出值：3 5
 }
-" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
+" /><meta property="og:image" content="http://leejoker.top/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2016-09-21T12:58:24+00:00" /><meta property="article:modified_time" content="2016-09-21T12:58:24+00:00" />
+<meta name="twitter:image" content="http://leejoker.top/img/og.png" /><meta property="article:published_time" content="2016-09-21T12:58:24+00:00" /><meta property="article:modified_time" content="2016-09-21T12:58:24+00:00" />
 
 
 <style>
@@ -82,7 +82,7 @@ func main() {
 
 
 
-<link rel="stylesheet" href="https://leejoker.github.io/scss/fuji.scss" integrity="" />
+<link rel="stylesheet" href="http://leejoker.top/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
 
 
 
@@ -126,22 +126,12 @@ func main() {
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
-            <a class="title-main" href="https://leejoker.github.io">ESPIER</a>
+            <a class="title-main" href="http://leejoker.top/">ESPIER</a>
             
             <span class="title-sub">一只JAVA程序猿的日常</span>
             
         </div>
     </div>
-
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?589f0dbb99213979cc58aaed37bb3611";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>        
 </header>
 
     <main>
@@ -152,7 +142,7 @@ func main() {
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">对于Go语言中指针的思路整理</a>
+        <a href="http://leejoker.top/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">对于Go语言中指针的思路整理</a>
     </h2>
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-21</span>
@@ -345,6 +335,10 @@ func main() {
             </span>
             
             <span>
+                <a href="/tags/msys2/">msys2</a>
+            </span>
+            
+            <span>
                 <a href="/tags/mybatis/">mybatis</a>
             </span>
             
@@ -385,7 +379,7 @@ func main() {
             </span>
             
             <span>
-                <a href="/tags/windows/">windows</a>
+                <a href="/tags/windows/">Windows</a>
             </span>
             
             <span>
@@ -558,6 +552,10 @@ func main() {
             </span>
             
             <span>
+                <a href="/tags/msys2/">msys2</a>
+            </span>
+            
+            <span>
                 <a href="/tags/mybatis/">mybatis</a>
             </span>
             
@@ -598,7 +596,7 @@ func main() {
             </span>
             
             <span>
-                <a href="/tags/windows/">windows</a>
+                <a href="/tags/windows/">Windows</a>
             </span>
             
             <span>
@@ -667,7 +665,7 @@ func main() {
         <div class="col-12 footer">
             
             <span>&copy; 2016-2023
-                <a href="https://leejoker.github.io">leejoker</a>
+                <a href="http://leejoker.top/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
