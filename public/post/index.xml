@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ESPIER</title>
+    <link>http://leejoker.github.io/post/</link>
+    <description>Recent content in Posts on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 07 Dec 2020 10:31:06 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDEA升级2020.3后lombok编译报错</title>
+      <link>http://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Mon, 07 Dec 2020 10:31:06 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/</guid>
+      <description>&lt;p&gt;IDEA升级到2020.3后，使用lombok会报以下错误：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;java: You aren&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;t using a compiler supported by lombok, so lombok will not work and has been disabled.
+  Your processor is: com.sun.proxy.$Proxy24
+  Lombok supports: sun/apple javac 1.6, ECJ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装mysql8</title>
+      <link>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
+      <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
+      <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
+&lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
+&lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%E6%B8%AC%E8%A9%A6%E7%89%88%E6%9C%AC-%E7%89%88%E6%9C%AC%E6%97%A5%E8%AA%8C&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻&lt;/p&gt;
+&lt;p&gt;无果，&lt;strong&gt;&amp;quot;[docker] 一遍、死んで见る&amp;quot;&lt;/strong&gt;，docker 卒！&lt;/p&gt;
+&lt;p&gt;vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rustup代理设置</title>
+      <link>http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 28 Jan 2020 22:45:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;p&gt;由于公司的网络问题，我用CCProxy挂了一个代理在能上网的机器上，利用代理上网。这两天对rust感兴趣，于是就开始按照官网的说明安装rustup。&lt;/p&gt;
+&lt;p&gt;然后，问题来了！挂的代理居然不能访问！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;# vim /etc/environment&lt;/span&gt;
+  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/game
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  2 http_proxy=&amp;#34;&lt;/span&gt;http://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  3 https_proxy=&amp;#34;&lt;/span&gt;https://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  4 ftp_proxy=&amp;#34;&lt;/span&gt;ftp://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  5 socks_proxy=&amp;#34;&lt;/span&gt;socks://ip:port&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  6 no_proxy=&amp;#34;&lt;/span&gt;localhost,127.0.0.1,localaddress,.localdomain.com&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Idea中的Git无法正常忽略</title>
+      <link>http://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Tue, 28 Jan 2020 22:42:42 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</guid>
+      <description>这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。
+$ cd $YOUR_PROJECT_DIR $ git rm -r --cached . $ git add . $ git commit -m &amp;#39;update .gitignore&amp;#39; </description>
+    </item>
+    
+    <item>
+      <title>安装Ruby on Rails</title>
+      <link>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
+      <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
+      <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 安装gnupg2&lt;/span&gt;
+$ sudo apt install gnupg2
+&lt;span style=&#34;color:#75715e&#34;&gt;# 安装rvm&lt;/span&gt;
+$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ &lt;span style=&#34;color:#ae81ff&#34;&gt;\c&lt;/span&gt;url -sSL https://get.rvm.io | bash -s stable
+$ source ~/.bashrc
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# 替换ruby-china源&lt;/span&gt;
+$ echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ruby_url=https://cache.ruby-china.com/pub/ruby&amp;#34;&lt;/span&gt; &amp;gt; ~/.rvm/user/db
+&lt;span style=&#34;color:#75715e&#34;&gt;# 替换gem源&lt;/span&gt;
+$ gem sources -l
+$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+&lt;span style=&#34;color:#75715e&#34;&gt;# 更新缓存&lt;/span&gt;
+$ gem sources -u 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mybatis中使用序列自动插入主键</title>
+      <link>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
+      <pubDate>Fri, 10 Jan 2020 23:48:01 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
+      <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
+&lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;useGeneratedKeys=&amp;#34;true&amp;#34; keyProperty=&amp;#34;id&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Springboot上传文件大小限制处理</title>
+      <link>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
+      <description>今天在开发过程中遇到一个文件上传的问题
+io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。
+百度了一下，找到如下配置，问题得以解决，记录一下
+spring: servlet: multipart: # 文件最大限制 max-file-size: 1024MB # 请求最大限制 max-request-size: 1024MB enabled: true # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存 file-size-threshold: 0 </description>
+    </item>
+    
+    <item>
+      <title>Yapi的安装和使用</title>
+      <link>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 10 Jan 2020 23:42:00 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h2 id=&#34;获取yapi源码&#34;&gt;获取Yapi源码&lt;/h2&gt;
+&lt;p&gt;在github上获取最新的&lt;a href=&#34;https://github.com/YMFE/yapi&#34;&gt;yapi源码&lt;/a&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ git clone https://github.com/YMFE/yapi.git ~/yapi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过npm或cnpm安装依赖：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ cd ~/yapi
+$ npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样准备工作就完成了一半了，接下来安装mongodb。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置sqlite的相对路径</title>
+      <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Fri, 10 Jan 2020 23:37:16 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/</guid>
+      <description>&lt;p&gt;一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
+项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
+因此对jdbc配置文件进行了修改：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-properties&#34; data-lang=&#34;properties&#34;&gt;    jdbc.url=jdbc:sqlite:blog.db
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ&lt;/p&gt;
+&lt;p&gt;因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
+然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
+找到了崭新的db文件。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spacemacs配置国内镜像</title>
+      <link>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Fri, 10 Jan 2020 23:31:17 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/</guid>
+      <description>&lt;h2 id=&#34;使用spacemacs国内镜像&#34;&gt;使用Spacemacs国内镜像&lt;/h2&gt;
+&lt;p&gt;最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;# 基于emacs26
+cd ~
+git clone https://github.com/syl20bnr/spacemacs .emacs.d
+修改
+vim .emacs.d/core/templates/.spacemacs.template
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>少侠与剑</title>
+      <link>http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
+      <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;
+&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;
+&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;
+&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;
+&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;
+&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Js整型的坑</title>
+      <link>http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</link>
+      <pubDate>Thu, 05 Sep 2019 17:51:10 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/</guid>
+      <description>&lt;h2 id=&#34;js整型的坑&#34;&gt;JS整型的坑&lt;/h2&gt;
+&lt;p&gt;昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循&lt;a href=&#34;https://en.wikipedia.org/wiki/Double-precision_floating-point_format&#34;&gt;IEEE 754 双精度浮点格式&lt;/a&gt;规范，采用了双精度存储，占用64bit。如图所示：&lt;/p&gt;
+&lt;p&gt;
+        &lt;img class=&#34;mx-auto&#34; alt=&#34;存储格式示意图，取自wiki&#34; src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png&#34; /&gt;   
+    &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用gradle打可执行jar包</title>
+      <link>http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</link>
+      <pubDate>Mon, 26 Aug 2019 13:35:04 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E4%BD%BF%E7%94%A8gradle%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8Cjar%E5%8C%85/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近的一个项目里面需要使用gradle打一个可执行的jar包，在网上看了一堆帖子照着做最后都不是很成功，最后终于参考StackOverflow上的帖子搞定了可执行jar包的打包脚本，因此做一个笔记对这个进行一下记录。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>记一次登录假死的异常排查</title>
+      <link>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</link>
+      <pubDate>Tue, 28 May 2019 09:35:11 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BB%E5%BD%95%E5%81%87%E6%AD%BB%E7%9A%84%E5%BC%82%E5%B8%B8%E6%8E%92%E6%9F%A5/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;事件的起因源自一次客户现场的调试，调试到一半，客户说办公系统突然登录不进去了Σ(っ °Д °;)っ，当时因为手头上的事还没有搞定，就顺手把客户的tomcat重启了，然后似乎就一切正常，我也没有太放在心上。然鹅，事情并没有这么简单。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx&#43;keepalived配置热备（互为主从）</title>
+      <link>http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</link>
+      <pubDate>Tue, 21 May 2019 14:13:52 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/nginx&#43;keepalived%E9%85%8D%E7%BD%AE%E7%83%AD%E5%A4%87%E4%BA%92%E4%B8%BA%E4%B8%BB%E4%BB%8E/</guid>
+      <description>&lt;h2 id=&#34;从开发到实施xd&#34;&gt;从开发到实施XD&lt;/h2&gt;
+&lt;p&gt;因为公司一个小项目要求有负载和热备，于是翻了很多网上的教程，于是找到了这一篇&lt;a href=&#34;https://blog.csdn.net/MassiveStars/article/details/54290055&#34;&gt;blog&lt;/a&gt;,很感谢博客的作者&lt;a href=&#34;https://blog.csdn.net/MassiveStars&#34;&gt;MassiveStars&lt;/a&gt;，这篇博客也使我学到了不少关于nginx配置的知识，毕竟以前连nginx都没有碰过XD。本博客大部分内容可能和作者的博客内容雷同，毕竟只是作为笔记存在的东西，侵删。&lt;/p&gt;
+&lt;h2 id=&#34;配置虚拟ip&#34;&gt;配置虚拟IP&lt;/h2&gt;
+&lt;h4 id=&#34;互为主从模式&#34;&gt;互为主从模式&lt;/h4&gt;
+&lt;p&gt;互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~&lt;/p&gt;
+&lt;p&gt;
+        &lt;img class=&#34;mx-auto&#34; alt=&#34;image&#34; src=&#34;https://i.loli.net/2018/03/20/5ab0b2be2b782.png&#34; /&gt;   
+    &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据结构与算法学习系列(二)</title>
+      <link>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</link>
+      <pubDate>Tue, 05 Feb 2019 22:36:10 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/</guid>
+      <description>&lt;h1 id=&#34;线性表&#34;&gt;线性表&lt;/h1&gt;
+&lt;p&gt;线性表是一个存储相同类型数据元素的有限序列。&lt;br&gt;
+这里面需要关注的两个点就是，相同类型的数据、有限序列。&lt;/p&gt;
+&lt;p&gt;线性表包含两种类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。&lt;/li&gt;
+&lt;li&gt;链表。使用一组任意的存储单元存放线性表的元素。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;顺序表&#34;&gt;顺序表&lt;/h1&gt;
+&lt;h2 id=&#34;顺序表的特性&#34;&gt;顺序表的特性&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，&lt;strong&gt;计算任意一个元素的存储地址的时间是相等的&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;由于上述特性，顺序表具有随机存取的特性。&lt;/li&gt;
+&lt;li&gt;顺序表存取操作的时间复杂度为O(1)。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;顺序表的实现&#34;&gt;顺序表的实现&lt;/h2&gt;
+&lt;p&gt;下面就是一个简单的顺序表的实现：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure读书笔记其四</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</link>
+      <pubDate>Mon, 04 Feb 2019 00:20:41 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E5%9B%9B/</guid>
+      <description>&lt;h2 id=&#34;这个系列还会继续的&#34;&gt;这个系列还会继续的&lt;/h2&gt;
+&lt;p&gt;忽然发现我之前已经建立了这篇博客，心想姑且把这篇完成吧，后续更高级的内容等我琢磨明白了再放出来。这个系列并不是一个单纯学习教程，更是我对Clojure认知的一种体现吧，说实话从java这种语言跳到clojure上还是有挺多问题的，至少思维方式可能就需要进行蛮大的转变，后续估计还会在读一些SICP之类的内容去逐渐加深自己对于LISP这个深坑的理解。&lt;/p&gt;
+&lt;h2 id=&#34;说一说常用的东西&#34;&gt;说一说常用的东西&lt;/h2&gt;
+&lt;p&gt;这一节就来说一说常用的一些函数，在实际的应用中不论是刷题还是实际的开发应用，都会经常的用到，比如递归 map reduce apply 等等，这些都是接触clojure之后都会经常看到，用到的方法。那么，今天就来说说这些吧。&lt;/p&gt;
+&lt;h2 id=&#34;递归&#34;&gt;递归&lt;/h2&gt;
+&lt;p&gt;递归的话在一般的语言中（没错，我说的就是Java），一般都会采用这种方式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;doMethod&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; param&lt;span style=&#34;color:#f92672&#34;&gt;){&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;// do something
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    doMethod&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;param&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在方法内部调用方法本身实现递归，完成方法的递归调用。&lt;br&gt;
+然而，在clojure中这种方式虽然可以，但却会造成堆栈的溢出（因为Clojure的尾递归优化不是用的原函数名,而是使用的recur，使用原函数名会不断产生新的实例从而造成堆栈溢出）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数据结构与算法学习系列（一）</title>
+      <link>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</link>
+      <pubDate>Sun, 03 Feb 2019 21:17:44 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</guid>
+      <description>&lt;h2 id=&#34;关于新坑和旧坑的说明&#34;&gt;关于新坑和旧坑的说明&lt;/h2&gt;
+&lt;p&gt;我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。&lt;/p&gt;
+&lt;h2 id=&#34;什么是算法&#34;&gt;什么是算法&lt;/h2&gt;
+&lt;p&gt;算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程序=算法+数据结构&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>配置lein的私有依赖仓库</title>
+      <link>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Thu, 01 Nov 2018 10:49:43 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h2 id=&#34;lein与私有仓库&#34;&gt;lein与私有仓库&lt;/h2&gt;
+&lt;p&gt;lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。&lt;/p&gt;
+&lt;h2 id=&#34;创建profilesclj&#34;&gt;创建profiles.clj&lt;/h2&gt;
+&lt;p&gt;在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其三</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</link>
+      <pubDate>Sun, 21 Jan 2018 15:47:33 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%89/</guid>
+      <description>&lt;h1 id=&#34;namespace&#34;&gt;Namespace&lt;/h1&gt;
+&lt;p&gt;名称空间对于Clojure来说是一个逻辑上对于代码进行分组的概念，类似于Java的package，通过使用名称空间能够规避方法名冲突，有效的对代码进行管理。主要应用的话，其实就是方便代码的引入和使用了，毕竟你不可能将所有代码放到一个clj文件中。&lt;/p&gt;
+&lt;h3 id=&#34;create-ns&#34;&gt;create-ns&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user&amp;gt; (create-ns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;clojure.by.example&lt;/span&gt;)
+nil
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样一个名称空间就建立好了，是不是so easy！&lt;/p&gt;
+&lt;h3 id=&#34;in-ns&#34;&gt;in-ns&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;; create the namespace and switch to it&lt;/span&gt;
+(in-ns &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;first-namespace&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;in-ns的主要作用是切换到指定的namespace中，如果这个namespace不存在，则会创建他。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Atom配置国内源</title>
+      <link>http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
+      <pubDate>Mon, 15 Jan 2018 15:48:19 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
+      <description>配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。
+ 本方法在linux和windows下都是可用的 在**$HOME/.atom**目录下新建**.atomrc**文件 在文件内添加如下内容：  registry=https://registry.npm.taobao.org/ strict-ssl=false Over !</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其二</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</link>
+      <pubDate>Sun, 07 Jan 2018 16:02:17 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/</guid>
+      <description>&lt;h1 id=&#34;今天的主题是function&#34;&gt;今天的主题是Function&lt;/h1&gt;
+&lt;p&gt;正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&amp;ldquo;函数&amp;quot;啦XD&lt;/p&gt;
+&lt;h2 id=&#34;那么直入主题首先来看一下怎么定义一个函数&#34;&gt;那么直入主题，首先来看一下怎么定义一个函数：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;;;    name   params         body&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;;;    -----  ------  -------------------&lt;/span&gt;
+(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet  [name]  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; name) )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里我引用了&lt;a href=&#34;https://www.clojure.org/guides/learn/functions&#34;&gt;官方文档&lt;/a&gt;中的说明。&lt;/p&gt;
+&lt;p&gt;那么这个函数的使用就可以像上一篇中所说的那样：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user=&amp;gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;greet&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;小明&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, 小明&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;你也可以给你的方法增加方法说明&#34;&gt;你也可以给你的方法增加方法说明：&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;defn &lt;/span&gt;greet  
+  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;this is the greet function for you&amp;#34;&lt;/span&gt;
+  [name]  
+  (str &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, &amp;#34;&lt;/span&gt; name))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>clojure学习笔记其一</title>
+      <link>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</link>
+      <pubDate>Sat, 06 Jan 2018 15:59:05 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%B8%80/</guid>
+      <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;
+&lt;p&gt;　　学习clojure的起因主要还是想学习lisp语言吧。由于既想学lisp现阶段又无法脱离jvm这个大的框架,所以就发现了clojure语言，然后就踏上了“自虐”的不归路:D&lt;/p&gt;
+&lt;h2 id=&#34;学习思路&#34;&gt;学习思路&lt;/h2&gt;
+&lt;p&gt;　　在刚开始学习的过程中，我看了很多相关的教程、博客，但总是感觉不得其门而入，简单来说就是找不到这门语言的学习思路。大体是因为clojure和传统的C type语言思路不同吧，再加上语法糖太多，导致各种磕磕碰碰。仔细想想，还是整理一下目前所学，也希望整理的东西能给clojure的初学者提供一定的帮助。&lt;br&gt;
+　　本系列的笔记是基于官方文档整理、补充的，如有错漏，请在评论区指出，以便及时进行修改，也有助于我自身的提升和进步。&lt;/p&gt;
+&lt;h2 id=&#34;语言学习的第一步&#34;&gt;语言学习的第一步&lt;/h2&gt;
+&lt;p&gt;没错，就是Hello World！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;user=&amp;gt; (println &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, Clojure!&amp;#34;&lt;/span&gt;)
+Hello, Clojure!
+nil
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这一句是在repl中执行的，哦，差点忘了，记得安装lein哦，至于怎么装请自行百度，如果需要梯子，emmmmm，自己想办法吧，程序员或者想成为程序员的人不应该被一面墙阻拦（有人敲门，我去开一下，Σ(っ °Д °;)っ好像有哪里不对）&lt;/p&gt;
+&lt;p&gt;言归正传，输出的结果是“Hello, Clojure!”，但方法的返回值是nil，这个输出其实就是函数println的副产物。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>折腾hexo系列之在jacman里集成gitment评论系统</title>
+      <link>http://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Wed, 11 Oct 2017 00:09:08 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E6%8A%98%E8%85%BEhexo%E7%B3%BB%E5%88%97%E4%B9%8B%E5%9C%A8jacman%E9%87%8C%E9%9B%86%E6%88%90gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;h3 id=&#34;从disqus到gitment&#34;&gt;从disqus到gitment&lt;/h3&gt;
+&lt;p&gt;其实就易用性和使用效果上讲，disqus还是很好用的，只需要注册一个账号，在主题里配置一下就可以了，然而，disqus最大的问题还是在于&lt;del&gt;翻墙&lt;/del&gt;，咳，科学上网。今天这个问题我的一个小伙伴也跟我吐槽了，毕竟不是每个人都会去弄个vpn啊，ss啊之类的东西。因此，回家之后果断搞起。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>《大道至简》读书笔记</title>
+      <link>http://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 16 Aug 2017 12:55:14 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;编程的精义&#34;&gt;编程的精义&lt;/h2&gt;
+&lt;p&gt;开发是一个阐述思想的过程，把想法转化成逻辑，最后变成代码，就是整个开发的过程。&lt;/p&gt;
+&lt;p&gt;编程，是开发的一环，也就是把逻辑转化为代码的过程。&lt;/p&gt;
+&lt;p&gt;正如文中所说的那样，“程序=算法+结构”。算法是顺序，分支，循环的组合变化，结构是思想在程序中的映射。因此，代码在编程里是最为easy的一环。&lt;/p&gt;
+&lt;p&gt;嘛~~第一章大致就是说了这么一个内容，强调了在编程过程中最为重要的反而是思想，逻辑。掌握语言和转化成代码其实都是最为容易的事。PS:是不是说我只要懂得足够多就能当PPT架构师了:)&lt;/p&gt;
+&lt;p&gt;当然，这里说代码是思想的转化自然是没什么问题的，然而写代码同样是一个磨练技艺的过程，怎么写更好，怎么写更易懂，怎么写更容易维护，这也是一个程序猿需要不断去锻炼学习的。PS：这一段与原文主旨没什么关系，只是忽然想到就加上了。不过话说回来，在这方面如果能做到尽善尽美，这让接盘子的人会非常开心吧(o゜▽゜)o☆&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>26岁的细思极恐</title>
+      <link>http://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</link>
+      <pubDate>Fri, 17 Mar 2017 21:53:54 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</guid>
+      <description>&lt;h3 id=&#34;班车上的感慨人总是莫名伤感233333&#34;&gt;&lt;strong&gt;班车上的感慨（人总是莫名伤感233333）&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;　　转眼间已经快工作3年了，年龄也逐渐到达了26岁，我不知道我会在IT这个行业坚持多久，或许是几年也或许是一辈子。人们总是说时光荏苒，白驹过隙。但不仔细回头想想，真的不会发现时间就这样在每天匆忙的上下班中从自己的身后溜走了。
+　　回想过去两年的工作（我是在传统开发行业工作的，互联网接触的不多，主要还是学了没地方用QAQ），虽然在技术上逐渐成熟，也学了很多的东西（想想自己从刚毕业什么都不会，到现在当个开发组的小组长内心还是颇为自豪的23333），框架的，前端的，后端的，也踩了各种坑，但是看看前沿的论坛新闻，感觉自己离这个时代要求的能力还是有不小差距的。不能沉迷于所得的成就，人总是得向前看。
+　　30而立，但看着自己离30岁越来越近，事业上，爱情上都是毫无建树（单身狗。。。哇的一声哭了出来），不禁心里有了些触动，这也是我写这篇博文的动机（估计没什么人愿意看我发牢骚）。&lt;/p&gt;
+&lt;hr&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下如何添加ppa仓库</title>
+      <link>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
+&lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
+sudo apt-get update  
+sudo apt-get install atom 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就把atom的仓库添加并安装完成了。&lt;/p&gt;
+&lt;p&gt;然而，并没有这么简单&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo: add-apt-repository : command not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>bilibili-go项目源码学习笔记_2</title>
+      <link>http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</link>
+      <pubDate>Wed, 28 Sep 2016 00:02:19 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/</guid>
+      <description>&lt;p&gt;这一篇主要说明application.go的主要构成和其中用到方法的主要作用。&lt;/p&gt;
+&lt;h3 id=&#34;参数定义&#34;&gt;参数定义&lt;/h3&gt;
+&lt;p&gt;application.go中定义了初始化时需要用到的常量和变量&lt;/p&gt;
+&lt;h4 id=&#34;常量定义&#34;&gt;常量定义：&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; (
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;INDEX_CACHE&lt;/span&gt;        = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//各类别下rank
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;ALL_RANK_CACHE&lt;/span&gt;     = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;all_rank&amp;#34;&lt;/span&gt;     &lt;span style=&#34;color:#75715e&#34;&gt;//总的rank
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;BANGUMI_CACHE&lt;/span&gt;      = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bangumi&amp;#34;&lt;/span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;//番剧
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;BANGUMI_LIST_CACHE&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bangumi_list&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;//新番放松表
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;SORT_TOP_CACHE&lt;/span&gt;     = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;sort-&amp;#34;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//具体某个类别rank(这个在index_cache中要用到)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;LIVE_INDEX_CACHE&lt;/span&gt;   = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;live_index&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#75715e&#34;&gt;//直播rank
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>bilibili-go项目源码学习笔记_1</title>
+      <link>http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</link>
+      <pubDate>Tue, 27 Sep 2016 00:02:19 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/</guid>
+      <description>&lt;h4 id=&#34;bilibili-go服务加载流程浅析&#34;&gt;bilibili-go服务加载流程浅析&lt;/h4&gt;
+&lt;p&gt;main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+    &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/go-playground/log&amp;#34;&lt;/span&gt;
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/whiteblue/bilibili-go/service&amp;#34;&lt;/span&gt;
+    )
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;service&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewApplication&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;conf.json&amp;#34;&lt;/span&gt;)
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Fatal&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;)
+        }
+
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Router&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Run&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;:8080&amp;#34;&lt;/span&gt;)
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在application.go中，使用了gin作为web框架，并依次执行了以下操作：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>对于Go语言中指针的思路整理</title>
+      <link>http://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</link>
+      <pubDate>Wed, 21 Sep 2016 12:58:24 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</guid>
+      <description>&lt;h3 id=&#34;为什么要写这个&#34;&gt;为什么要写这个&lt;/h3&gt;
+&lt;p&gt;最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&#39; - &amp;lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。&lt;/p&gt;
+&lt;h3 id=&#34;指针概念解析&#34;&gt;指针概念解析&lt;/h3&gt;
+&lt;p&gt;指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (
+	&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+)
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;a&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;b&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//输出值：3 5
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何创建六边形按钮</title>
+      <link>http://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</link>
+      <pubDate>Wed, 21 Sep 2016 12:55:14 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/</guid>
+      <description>&lt;h2 id=&#34;div旋转&#34;&gt;div旋转﻿&lt;/h2&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

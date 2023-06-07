@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on ESPIER</title>
+    <link>http://leejoker.github.io/categories/linux/</link>
+    <description>Recent content in linux on ESPIER</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 05 Dec 2020 22:59:12 +0800</lastBuildDate><atom:link href="http://leejoker.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu安装mysql8</title>
+      <link>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</link>
+      <pubDate>Sat, 05 Dec 2020 22:59:12 +0800</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/</guid>
+      <description>&lt;h3 id=&#34;起因&#34;&gt;起因&lt;/h3&gt;
+&lt;p&gt;最开始是因为出差要跑公司的项目，为了省事在笔记本上装了&lt;a href=&#34;https://www.docker.com/products/docker-desktop&#34;&gt;Docker Desktop for Windows&lt;/a&gt;和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。&lt;/p&gt;
+&lt;p&gt;然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了&lt;a href=&#34;https://support.bluestacks.com/hc/zh-tw/articles/360049701852-BlueStacks-Hyper-V-%E6%B8%AC%E8%A9%A6%E7%89%88%E6%9C%AC-%E7%89%88%E6%9C%AC%E6%97%A5%E8%AA%8C&#34;&gt;BlueStacks Hyper-V(测试版本)&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻&lt;/p&gt;
+&lt;p&gt;无果，&lt;strong&gt;&amp;quot;[docker] 一遍、死んで见る&amp;quot;&lt;/strong&gt;，docker 卒！&lt;/p&gt;
+&lt;p&gt;vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下如何添加ppa仓库</title>
+      <link>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Tue, 11 Oct 2016 22:41:21 +0000</pubDate>
+      
+      <guid>http://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/</guid>
+      <description>&lt;h4 id=&#34;ubuntu下添加ppa仓库&#34;&gt;Ubuntu下添加ppa仓库&lt;/h4&gt;
+&lt;p&gt;此处以安装atom为例，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo add-apt-repository ppa:webupd8team/atom  
+sudo apt-get update  
+sudo apt-get install atom 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就把atom的仓库添加并安装完成了。&lt;/p&gt;
+&lt;p&gt;然而，并没有这么简单&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo: add-apt-repository : command not found
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
