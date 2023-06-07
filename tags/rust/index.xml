@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rust on ESPIER</title>
-    <link>http://leejoker.top/tags/rust/</link>
+    <link>https://leejoker.github.io/tags/rust/</link>
     <description>Recent content in rust on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate><atom:link href="http://leejoker.top/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rustup代理设置</title>
-      <link>http://leejoker.top/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
+      <link>https://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</link>
       <pubDate>Tue, 28 Jan 2020 22:45:00 +0800</pubDate>
       
-      <guid>http://leejoker.top/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
+      <guid>https://leejoker.github.io/post/rustup%E4%BB%A3%E7%90%86%E8%AE%BE%E7%BD%AE/</guid>
       <description>&lt;p&gt;由于公司的网络问题，我用CCProxy挂了一个代理在能上网的机器上，利用代理上网。这两天对rust感兴趣，于是就开始按照官网的说明安装rustup。&lt;/p&gt;
 &lt;p&gt;然后，问题来了！挂的代理居然不能访问！&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;  # vim /etc/environment

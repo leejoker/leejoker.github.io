@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.111.2">
+<meta name="generator" content="Hugo 0.113.0">
 
 
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
 
 
 <title>配置lein的私有依赖仓库 - ESPIER</title>
@@ -30,16 +31,16 @@
 <meta property="og:title" content="配置lein的私有依赖仓库" />
 <meta name="twitter:title" content="配置lein的私有依赖仓库" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" /><meta property="og:description" content="lein与私有仓库
+<meta property="og:url" content="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/" /><meta property="og:description" content="lein与私有仓库
 lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。
 创建profiles.clj
 在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：" />
 <meta name="twitter:description" content="lein与私有仓库
 lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。
 创建profiles.clj
-在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：" /><meta property="og:image" content="http://leejoker.top/img/og.png" />
+在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.top/img/og.png" /><meta property="article:published_time" content="2018-11-01T10:49:43+00:00" /><meta property="article:modified_time" content="2018-11-01T10:49:43+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2018-11-01T10:49:43+00:00" /><meta property="article:modified_time" content="2018-11-01T10:49:43+00:00" />
 
 
 <style>
@@ -56,7 +57,8 @@ lein在new一个新的项目的时候都会从maven或者clojars上下载对应�
 
 
 
-<link rel="stylesheet" href="http://leejoker.top/scss/fuji.scss" />
+
+<link rel="stylesheet" href="https://leejoker.github.io/scss/fuji.scss" integrity="" />
 
 
 
@@ -74,9 +76,15 @@ lein在new一个新的项目的时候都会从maven或者clojars上下载对应�
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
 
 
+
+
+
 </head>
 
-<body data-theme="auto">
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
     <script data-cfasync="false">
   
   var fujiThemeData = localStorage.getItem('fuji_data-theme');
@@ -90,10 +98,11 @@ lein在new一个新的项目的时候都会从maven或者clojars上下载对应�
     }
   }
 </script>
+
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
-            <a class="title-main" href="http://leejoker.top/">ESPIER</a>
+            <a class="title-main" href="https://leejoker.github.io">ESPIER</a>
             
             <span class="title-sub">一只JAVA程序猿的日常</span>
             
@@ -119,10 +128,14 @@ lein在new一个新的项目的时候都会从maven或者clojars上下载对应�
 <article>
     
     <h2 class="post-item post-title">
-        <a href="http://leejoker.top/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">配置lein的私有依赖仓库</a>
+        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">配置lein的私有依赖仓库</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-01</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;900 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/lein">lein</a>&nbsp;<a href="/tags/nexus">nexus</a>&nbsp;</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-01</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;900 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/lein">lein</a>&nbsp;<a href="/tags/nexus">nexus</a>&nbsp;</span>
 
     </div>
     
@@ -429,6 +442,7 @@ DNS:'www.example.com'
   </ul>
 </nav></div>
 </aside>
+
         </div>
         <div class="btn">
     <div class="btn-menu" id="btn-menu">
@@ -653,9 +667,9 @@ DNS:'www.example.com'
         <div class="col-12 footer">
             
             <span>&copy; 2016-2023
-                <a href="http://leejoker.top/">leejoker</a>
+                <a href="https://leejoker.github.io">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
-                | 基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
                                                     target="_blank">Hugo</a> 构建
             </span>
@@ -664,14 +678,15 @@ DNS:'www.example.com'
 </footer>
 
     
-<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
 
 
 
-<script defer src="/assets/js/fuji.min.js"></script>
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
 
 
 </body>

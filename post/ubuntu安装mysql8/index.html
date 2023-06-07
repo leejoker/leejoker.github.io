@@ -9,10 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.111.2">
+<meta name="generator" content="Hugo 0.113.0">
 
 
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
 
 
 <title>Ubuntu安装mysql8 - ESPIER</title>
@@ -30,7 +31,7 @@
 <meta property="og:title" content="Ubuntu安装mysql8" />
 <meta name="twitter:title" content="Ubuntu安装mysql8" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://leejoker.top/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" /><meta property="og:description" content="起因
+<meta property="og:url" content="https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/" /><meta property="og:description" content="起因
 最开始是因为出差要跑公司的项目，为了省事在笔记本上装了Docker Desktop for Windows和docker版本的mysql，因为docker依赖hyper-v虚拟化，所以我就把他打开了。
 然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了BlueStacks Hyper-V(测试版本)！
 当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻
@@ -41,9 +42,9 @@ vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" />
 然后。。。我就发现，mumu模拟器居然不支持在开启hyper-v环境下启动，(╯‵□′)╯︵┻━┻，于是我几番折腾，找到了BlueStacks Hyper-V(测试版本)！
 当时我非常开心，以为终于找到了解决方案，于是开始安装FGO，运行，闪退。。。运行，闪退。。。。(╯‵□′)╯︵┻━┻
 无果，&quot;[docker] 一遍、死んで见る&quot;，docker 卒！
-vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" /><meta property="og:image" content="http://leejoker.top/img/og.png" />
+vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.top/img/og.png" /><meta property="article:published_time" content="2020-12-05T22:59:12+08:00" /><meta property="article:modified_time" content="2020-12-05T22:59:12+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2020-12-05T22:59:12+08:00" /><meta property="article:modified_time" content="2020-12-05T22:59:12+08:00" />
 
 
 <style>
@@ -60,7 +61,8 @@ vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" />
 
 
 
-<link rel="stylesheet" href="http://leejoker.top/scss/fuji.scss" />
+
+<link rel="stylesheet" href="https://leejoker.github.io/scss/fuji.scss" integrity="" />
 
 
 
@@ -78,9 +80,15 @@ vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA%20ID"></script>
 
 
+
+
+
 </head>
 
-<body data-theme="auto">
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
     <script data-cfasync="false">
   
   var fujiThemeData = localStorage.getItem('fuji_data-theme');
@@ -94,10 +102,11 @@ vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" />
     }
   }
 </script>
+
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
-            <a class="title-main" href="http://leejoker.top/">ESPIER</a>
+            <a class="title-main" href="https://leejoker.github.io">ESPIER</a>
             
             <span class="title-sub">一只JAVA程序猿的日常</span>
             
@@ -123,10 +132,14 @@ vagrant搞起！谁也阻挡不了我玩FGO，现在可是无限池！！！" />
 <article>
     
     <h2 class="post-item post-title">
-        <a href="http://leejoker.top/post/ubuntu%E5%AE%89%E8%A3%85mysql8/">Ubuntu安装mysql8</a>
+        <a href="https://leejoker.github.io/post/ubuntu%E5%AE%89%E8%A3%85mysql8/">Ubuntu安装mysql8</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-05</span><span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;719 字</span><span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/mysql">mysql</a>&nbsp;</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-05</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;719 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/mysql">mysql</a>&nbsp;</span>
 
     </div>
     
@@ -438,6 +451,7 @@ exit
   </ul>
 </nav></div>
 </aside>
+
         </div>
         <div class="btn">
     <div class="btn-menu" id="btn-menu">
@@ -665,9 +679,9 @@ exit
         <div class="col-12 footer">
             
             <span>&copy; 2016-2023
-                <a href="http://leejoker.top/">leejoker</a>
+                <a href="https://leejoker.github.io">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
-                | 基于 <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
                                                     target="_blank">Hugo</a> 构建
             </span>
@@ -676,14 +690,15 @@ exit
 </footer>
 
     
-<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.0/lazysizes.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
 
 
 
-<script defer src="/assets/js/fuji.min.js"></script>
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
 
 
 </body>
