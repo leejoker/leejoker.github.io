@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>msys2 on ESPIER</title>
-    <link>http://leejoker.top/tags/msys2/</link>
+    <link>https://leejoker.github.io/tags/msys2/</link>
     <description>Recent content in msys2 on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="http://leejoker.top/tags/msys2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/msys2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Msys2启动加速</title>
-      <link>http://leejoker.top/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</link>
+      <link>https://leejoker.github.io/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Wed, 07 Jun 2023 17:24:58 +0800</pubDate>
       
-      <guid>http://leejoker.top/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</guid>
+      <guid>https://leejoker.github.io/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</guid>
       <description>msys2启动加速 msys2安装以后，每次启动都需要等待很久，查了一下，配置如下： $ mkpasswd -c &amp;gt; /etc/passwd # 修改 /etc/nsswitch.conf， passwd所在行进行如下修改： passwd: files db &amp;lt;- files</description>
     </item>
     

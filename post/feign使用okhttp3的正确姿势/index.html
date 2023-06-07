@@ -31,7 +31,7 @@
 <meta property="og:title" content="Feign使用okhttp3的正确姿势" />
 <meta name="twitter:title" content="Feign使用okhttp3的正确姿势" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://leejoker.top/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/" /><meta property="og:description" content="首先来吐槽一波(╯‵□′)╯︵┻━┻
+<meta property="og:url" content="https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/" /><meta property="og:description" content="首先来吐槽一波(╯‵□′)╯︵┻━┻
 本来呢，我是想加一层feign的interceptor处理feign里request请求的返回信息的，比如只提取ResponseBody中的data啥的。后来想起来feign默认使用的是jdk的HttpURLConnection，而且feign本身是支持替换okhttp的，于是打算搞起~
 可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻
 最后，还是自己操刀，从源码看吧。
@@ -42,9 +42,9 @@
 可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻
 最后，还是自己操刀，从源码看吧。
 遂有此文~
-百毒，淦！" /><meta property="og:image" content="http://leejoker.top/img/og.png" />
+百毒，淦！" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://leejoker.top/img/og.png" /><meta property="article:published_time" content="2021-04-06T09:42:23+08:00" /><meta property="article:modified_time" content="2021-04-06T09:42:23+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2021-04-06T09:42:23+08:00" /><meta property="article:modified_time" content="2021-04-06T09:42:23+08:00" />
 
 
 <style>
@@ -62,7 +62,7 @@
 
 
 
-<link rel="stylesheet" href="http://leejoker.top/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+<link rel="stylesheet" href="https://leejoker.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
 
 
 
@@ -106,7 +106,7 @@
     <header>
     <div class="container-lg clearfix">
         <div class="col-12 header">
-            <a class="title-main" href="http://leejoker.top/">ESPIER</a>
+            <a class="title-main" href="https://leejoker.github.io/">ESPIER</a>
             
             <span class="title-sub">一只JAVA程序猿的日常</span>
             
@@ -122,7 +122,7 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="http://leejoker.top/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Feign使用okhttp3的正确姿势</a>
+        <a href="https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/">Feign使用okhttp3的正确姿势</a>
     </h2>
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-04-06</span>
@@ -831,7 +831,7 @@ public class OkHttpFeignConfiguration {
         <div class="col-12 footer">
             
             <span>&copy; 2016-2023
-                <a href="http://leejoker.top/">leejoker</a>
+                <a href="https://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
                    target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
