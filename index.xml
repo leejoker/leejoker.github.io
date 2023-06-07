@@ -6,7 +6,6 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-<<<<<<< HEAD
     <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Msys2启动加速</title>
@@ -17,9 +16,6 @@
       <description>msys2启动加速 msys2安装以后，每次启动都需要等待很久，查了一下，配置如下： $ mkpasswd -c &amp;gt; /etc/passwd # 修改 /etc/nsswitch.conf， passwd所在行进行如下修改： passwd: files db &amp;lt;- files</description>
     </item>
     
-=======
-    <lastBuildDate>Wed, 11 Aug 2021 10:27:10 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> be0b0d36c3ff3fd389bdbf6a0efe6ac39ad654c7
     <item>
       <title>关于运动减肥的一些经验之谈</title>
       <link>https://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</link>
@@ -604,7 +600,7 @@ sudo apt-get install atom
       
       <guid>https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/</guid>
       <description>&lt;h3 id=&#34;为什么要写这个&#34;&gt;为什么要写这个&lt;/h3&gt;
-&lt;p&gt;最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&#39; - &amp;lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。&lt;/p&gt;
+&lt;p&gt;最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&amp;rsquo; - &amp;lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。&lt;/p&gt;
 &lt;h3 id=&#34;指针概念解析&#34;&gt;指针概念解析&lt;/h3&gt;
 &lt;p&gt;指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main

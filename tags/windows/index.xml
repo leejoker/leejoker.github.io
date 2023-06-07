@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
     <title>Windows on ESPIER</title>
     <link>https://leejoker.github.io/tags/windows/</link>
     <description>Recent content in Windows on ESPIER</description>
@@ -17,14 +16,6 @@
       <description>msys2启动加速 msys2安装以后，每次启动都需要等待很久，查了一下，配置如下： $ mkpasswd -c &amp;gt; /etc/passwd # 修改 /etc/nsswitch.conf， passwd所在行进行如下修改： passwd: files db &amp;lt;- files</description>
     </item>
     
-=======
-    <title>windows on ESPIER</title>
-    <link>https://leejoker.github.io/tags/windows/</link>
-    <description>Recent content in windows on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 11 Jan 2021 12:57:25 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> be0b0d36c3ff3fd389bdbf6a0efe6ac39ad654c7
     <item>
       <title>Windows端口转发</title>
       <link>https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
