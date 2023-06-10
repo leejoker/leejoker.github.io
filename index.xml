@@ -6,7 +6,17 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 22:08:25 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MacOS运行app提示&#34;已损坏，无法打开&#34;</title>
+      <link>https://leejoker.github.io/post/macos%E8%BF%90%E8%A1%8Capp%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80/</link>
+      <pubDate>Sat, 10 Jun 2023 22:08:25 +0800</pubDate>
+      
+      <guid>https://leejoker.github.io/post/macos%E8%BF%90%E8%A1%8Capp%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80/</guid>
+      <description>&lt;p&gt;今天安装fpcupdeluxe，发现下载下来的app运行提示&amp;quot;已损坏，无法打开&amp;quot;。&lt;br&gt;
+查了一些资料，发现需要进行如下操作：&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Msys2启动加速</title>
       <link>https://leejoker.github.io/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</link>
