@@ -141,7 +141,7 @@
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-04</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;274 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;352 字</span>
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
 
@@ -164,6 +164,7 @@
 <p>7-10行的内容放在project.clj文件的最后，主要用于关闭高版本lein的严格仓库检查（非必需）。</p>
 <p>感谢<a href="https://www.cnblogs.com/uturobako/" target="_blank">音无麻里亚</a>在<a href="https://www.cnblogs.com/uturobako/p/clojure-lein-repository-config.html" target="_blank">Blog</a>中提供的解决方案~~</p>
 <h2 id="配置全局国内仓库">配置全局国内仓库</h2>
+<p>在home目录下的 <strong>.lein</strong> 目录中创建文件profiles.clj，内容如下:</p>
 <pre><code class="language-clojure">{:user
  {:mirrors      {
                  &quot;central&quot;   {:name &quot;aliyun&quot;
@@ -182,6 +183,8 @@
 }
 </code></pre>
 <p>感谢<a href="https://www.jianshu.com/u/e8427a7d80bd" target="_blank">onedam</a>在<a href="https://www.jianshu.com/p/c2a25c301acd" target="_blank">Blog</a>中提供的解决方案~~</p>
+<h2 id="关于使用jdk17的说明">关于使用jdk17的说明</h2>
+<p>如果你使用的是jdk17+，请升级midje版本到1.10.9</p>
 <h2 id="特别说明">特别说明</h2>
 <p>本文内容基本上都是转自网络，也附上了作者的地址和原文，感兴趣的同学可以去看看。</p>
 <p>我这里只是做个笔记，方便内容的整理和查询。</p>
@@ -426,6 +429,7 @@
   <ul>
     <li><a href="#在项目中设置国内仓库">在项目中设置国内仓库</a></li>
     <li><a href="#配置全局国内仓库">配置全局国内仓库</a></li>
+    <li><a href="#关于使用jdk17的说明">关于使用jdk17的说明</a></li>
     <li><a href="#特别说明">特别说明</a></li>
   </ul>
 </nav></div>
@@ -647,6 +651,7 @@
   <ul>
     <li><a href="#在项目中设置国内仓库">在项目中设置国内仓库</a></li>
     <li><a href="#配置全局国内仓库">配置全局国内仓库</a></li>
+    <li><a href="#关于使用jdk17的说明">关于使用jdk17的说明</a></li>
     <li><a href="#特别说明">特别说明</a></li>
   </ul>
 </nav>
