@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.114.1">
+<meta name="generator" content="Hugo 0.115.0">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/tags/linux/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-03-08T10:29:00+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-04T08:53:04+08:00" />
 
 
 <style>
@@ -123,6 +123,40 @@
 </div>
 
 
+
+<div class="post">
+  <h2 class="post-item post-title">
+    <a href="https://leejoker.github.io/post/centos7.9%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85docker/">CentOS7.9离线安装Docker</a>
+  </h2>
+  <div class="post-item post-meta">
+    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-07-04</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;452 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/docker">docker</a>&nbsp;<a href="/tags/centos">CentOS</a>&nbsp;</span>
+
+  </div>
+  <div class="post-item post-summary markdown-body">
+    <ol>
+<li>
+<p>需要下载<a href="https://download.docker.com/linux/static/stable/x86_64/" target="_blank">docker离线包</a>, 我使用的是 docker-19.03.9.tgz 这个版本。</p>
+</li>
+<li>
+<p>然后执行解压命令：</p>
+<pre><code class="language-shell">tar xvfz docker-19.03.09.tgz
+</code></pre>
+</li>
+<li>
+<p>安装 docker 及服务</p>
+<pre><code class="language-shell">cp docker/* /usr/bin/
+touch /etc/systemd/system/docker.socket
+touch /etc/systemd/system/docker.service
+touch /etc/systemd/system/containerd.service
+</code></pre>
+</li>
+</ol>
+  </div>
+</div>
 
 <div class="post">
   <h2 class="post-item post-title">
@@ -320,11 +354,19 @@ sudo apt-get install atom
             </span>
             
             <span>
+                <a href="/tags/centos/">CentOS</a>
+            </span>
+            
+            <span>
                 <a href="/tags/clojure/">clojure</a>
             </span>
             
             <span>
                 <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
             </span>
             
             <span>
@@ -532,11 +574,19 @@ sudo apt-get install atom
             </span>
             
             <span>
+                <a href="/tags/centos/">CentOS</a>
+            </span>
+            
+            <span>
                 <a href="/tags/clojure/">clojure</a>
             </span>
             
             <span>
                 <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
             </span>
             
             <span>

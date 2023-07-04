@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.114.1">
+<meta name="generator" content="Hugo 0.115.0">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2023-06-10T22:08:25+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-04T08:53:04+08:00" />
 
 
 <style>
@@ -119,6 +119,26 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/js%E6%95%B4%E5%9E%8B%E7%9A%84%E5%9D%91/">Js整型的坑</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-09-05</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;773 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">java</a>&nbsp;<a href="/tags/javascript">javascript</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="js整型的坑">JS整型的坑</h2>
+<p>昨天同事跟我说js在整型长度支持上有坑，我去查了一下确实是有些坑的。js对于数值的保存遵循<a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format" target="_blank">IEEE 754 双精度浮点格式</a>规范，采用了双精度存储，占用64bit。如图所示：</p>
+<p><img class="img-zoomable" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/IEEE_754_Double_Floating_Point_Format.svg/1236px-IEEE_754_Double_Floating_Point_Format.svg.png" alt="存储格式示意图，取自wiki" />
+</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -330,40 +350,6 @@ nil
         配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。 本方法在linux
     </div>
 </div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/clojure%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%85%B6%E4%BA%8C/">clojure学习笔记其二</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-01-07</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1561 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">学习笔记</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h1 id="今天的主题是function">今天的主题是Function</h1>
-<p>正如标题所言，今天这篇笔记的主题是function，当然也就是lisp语言中的一等公民，&ldquo;函数&quot;啦XD</p>
-<h2 id="那么直入主题首先来看一下怎么定义一个函数">那么直入主题，首先来看一下怎么定义一个函数：</h2>
-<pre><code class="language-clojure">;;    name   params         body
-;;    -----  ------  -------------------
-(defn greet  [name]  (str &quot;Hello, &quot; name) )
-</code></pre>
-<p>这里我引用了<a href="https://www.clojure.org/guides/learn/functions" target="_blank">官方文档</a>中的说明。</p>
-<p>那么这个函数的使用就可以像上一篇中所说的那样：</p>
-<pre><code class="language-clojure">user=&gt; (greet &quot;小明&quot;)
-&quot;Hello, 小明&quot;
-</code></pre>
-<h2 id="你也可以给你的方法增加方法说明">你也可以给你的方法增加方法说明：</h2>
-<pre><code class="language-clojure">(defn greet  
-  &quot;this is the greet function for you&quot;
-  [name]  
-  (str &quot;Hello, &quot; name))
-</code></pre>
-    </div>
-</div>
 <div class="pagination"><div class="pag-first">
     <a href="/post/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
   </div><div class="pag-previous">
@@ -435,11 +421,19 @@ nil
             </span>
             
             <span>
+                <a href="/tags/centos/">CentOS</a>
+            </span>
+            
+            <span>
                 <a href="/tags/clojure/">clojure</a>
             </span>
             
             <span>
                 <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
             </span>
             
             <span>
@@ -647,11 +641,19 @@ nil
             </span>
             
             <span>
+                <a href="/tags/centos/">CentOS</a>
+            </span>
+            
+            <span>
                 <a href="/tags/clojure/">clojure</a>
             </span>
             
             <span>
                 <a href="/tags/css/">CSS</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
             </span>
             
             <span>
