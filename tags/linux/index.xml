@@ -13,24 +13,17 @@
       <pubDate>Tue, 04 Jul 2023 08:53:04 +0800</pubDate>
       
       <guid>https://leejoker.github.io/post/centos7.9%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85docker/</guid>
-      <description>&lt;ol&gt;
-&lt;li&gt;
+      <description>&lt;h3 id=&#34;安装docker服务&#34;&gt;安装Docker服务&lt;/h3&gt;
 &lt;p&gt;需要下载&lt;a href=&#34;https://download.docker.com/linux/static/stable/x86_64/&#34; target=&#34;_blank&#34;&gt;docker离线包&lt;/a&gt;, 我使用的是 docker-19.03.9.tgz 这个版本。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;然后执行解压命令：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;tar xvfz docker-19.03.09.tgz
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;安装 docker 及服务&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;cp docker/* /usr/bin/
 touch /etc/systemd/system/docker.socket
 touch /etc/systemd/system/docker.service
 touch /etc/systemd/system/containerd.service
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
