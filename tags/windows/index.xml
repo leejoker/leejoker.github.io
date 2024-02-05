@@ -6,33 +6,28 @@
     <description>Recent content in Windows on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Jun 2023 17:24:58 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2024 13:33:47 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将任意可执行程序注册成系统服务(Windows)</title>
+      <link>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</link>
+      <pubDate>Sun, 04 Feb 2024 13:33:47 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</guid>
+      <description>基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W</description>
+    </item>
     <item>
       <title>Msys2启动加速</title>
       <link>https://leejoker.github.io/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</link>
       <pubDate>Wed, 07 Jun 2023 17:24:58 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/msys2%E5%90%AF%E5%8A%A8%E5%8A%A0%E9%80%9F/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows端口转发</title>
       <link>https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
       <pubDate>Mon, 11 Jan 2021 12:57:25 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
-      <description>&lt;h2 id=&#34;windows下转发虚拟机中的服务&#34;&gt;windows下转发虚拟机中的服务&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PC C:\Users\leejoker&amp;gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;这个命令即可实现将虚拟机中的服务映射出去。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务&lt;/li&gt;
-&lt;li&gt;listenaddress：物理机监听的地址，本机ip&lt;/li&gt;
-&lt;li&gt;connectport：虚拟机中服务暴露给本机的端口&lt;/li&gt;
-&lt;li&gt;connect address：虚拟机映射到本机的ip地址&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;windows下转发虚拟机中的服务&#34;&gt;windows下转发虚拟机中的服务&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;PC C:\Users\leejoker&amp;gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;这个命令即可实现将虚拟机中的服务映射出去。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务&lt;/li&gt;&#xA;&lt;li&gt;listenaddress：物理机监听的地址，本机ip&lt;/li&gt;&#xA;&lt;li&gt;connectport：虚拟机中服务暴露给本机的端口&lt;/li&gt;&#xA;&lt;li&gt;connect address：虚拟机映射到本机的ip地址&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

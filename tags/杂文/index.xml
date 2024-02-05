@@ -6,48 +6,35 @@
     <description>Recent content in 杂文 on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Aug 2021 10:27:10 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/%E6%9D%82%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Feb 2024 13:33:47 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/%E6%9D%82%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将任意可执行程序注册成系统服务(Windows)</title>
+      <link>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</link>
+      <pubDate>Sun, 04 Feb 2024 13:33:47 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</guid>
+      <description>基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W</description>
+    </item>
     <item>
       <title>关于运动减肥的一些经验之谈</title>
       <link>https://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</link>
       <pubDate>Wed, 11 Aug 2021 10:27:10 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/%E5%85%B3%E4%BA%8E%E8%BF%90%E5%8A%A8%E5%87%8F%E8%82%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/</guid>
-      <description>&lt;h1 id=&#34;篇首语&#34;&gt;篇首语&lt;/h1&gt;
-&lt;p&gt;　　好久没写博客了，最近公司的事情搞得我一个头两个大，不禁感慨，PM真的不是人干的活啊（当PM的小伙伴别打我 XD）。&lt;/p&gt;
-&lt;p&gt;　　算了，闲话少叙，还是说说为啥写减肥吧。&lt;/p&gt;
-&lt;p&gt;　　说到减肥，其实应该是不少小伙伴们比较关心的话题（当然，如果你不关心这个话题也请关注一下自己的体重，和体重带给自己的外貌、身体状况、求偶等多方面的影响，以及这些影响是正面的？还是负面的？），尤其是在工作以后，别的先不说，小肚子肯定有的。我身边的同事有的也很瘦，但是小肚子真的是一个比一个大。随之而来的，就是脂肪肝等等一堆肥胖带来的并发症。。。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;篇首语&#34;&gt;篇首语&lt;/h1&gt;&#xA;&lt;p&gt;　　好久没写博客了，最近公司的事情搞得我一个头两个大，不禁感慨，PM真的不是人干的活啊（当PM的小伙伴别打我 XD）。&lt;/p&gt;&#xA;&lt;p&gt;　　算了，闲话少叙，还是说说为啥写减肥吧。&lt;/p&gt;&#xA;&lt;p&gt;　　说到减肥，其实应该是不少小伙伴们比较关心的话题（当然，如果你不关心这个话题也请关注一下自己的体重，和体重带给自己的外貌、身体状况、求偶等多方面的影响，以及这些影响是正面的？还是负面的？），尤其是在工作以后，别的先不说，小肚子肯定有的。我身边的同事有的也很瘦，但是小肚子真的是一个比一个大。随之而来的，就是脂肪肝等等一堆肥胖带来的并发症。。。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>少侠与剑</title>
       <link>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
       <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;
-&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;
-&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;
-&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;
-&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;
-&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;&#xA;&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;&#xA;&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;&#xA;&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;&#xA;&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;&#xA;&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>26岁的细思极恐</title>
       <link>https://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</link>
       <pubDate>Fri, 17 Mar 2017 21:53:54 +0000</pubDate>
-      
       <guid>https://leejoker.github.io/post/26%E5%B2%81%E7%9A%84%E7%BB%86%E6%80%9D%E6%9E%81%E6%81%90/</guid>
-      <description>&lt;h3 id=&#34;班车上的感慨人总是莫名伤感233333&#34;&gt;&lt;strong&gt;班车上的感慨（人总是莫名伤感233333）&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;　　转眼间已经快工作3年了，年龄也逐渐到达了26岁，我不知道我会在IT这个行业坚持多久，或许是几年也或许是一辈子。人们总是说时光荏苒，白驹过隙。但不仔细回头想想，真的不会发现时间就这样在每天匆忙的上下班中从自己的身后溜走了。
-　　回想过去两年的工作（我是在传统开发行业工作的，互联网接触的不多，主要还是学了没地方用QAQ），虽然在技术上逐渐成熟，也学了很多的东西（想想自己从刚毕业什么都不会，到现在当个开发组的小组长内心还是颇为自豪的23333），框架的，前端的，后端的，也踩了各种坑，但是看看前沿的论坛新闻，感觉自己离这个时代要求的能力还是有不小差距的。不能沉迷于所得的成就，人总是得向前看。
-　　30而立，但看着自己离30岁越来越近，事业上，爱情上都是毫无建树（单身狗。。。哇的一声哭了出来），不禁心里有了些触动，这也是我写这篇博文的动机（估计没什么人愿意看我发牢骚）。&lt;/p&gt;
-&lt;hr&gt;</description>
+      <description>&lt;h3 id=&#34;班车上的感慨人总是莫名伤感233333&#34;&gt;&lt;strong&gt;班车上的感慨（人总是莫名伤感233333）&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;　　转眼间已经快工作3年了，年龄也逐渐到达了26岁，我不知道我会在IT这个行业坚持多久，或许是几年也或许是一辈子。人们总是说时光荏苒，白驹过隙。但不仔细回头想想，真的不会发现时间就这样在每天匆忙的上下班中从自己的身后溜走了。&#xA;　　回想过去两年的工作（我是在传统开发行业工作的，互联网接触的不多，主要还是学了没地方用QAQ），虽然在技术上逐渐成熟，也学了很多的东西（想想自己从刚毕业什么都不会，到现在当个开发组的小组长内心还是颇为自豪的23333），框架的，前端的，后端的，也踩了各种坑，但是看看前沿的论坛新闻，感觉自己离这个时代要求的能力还是有不小差距的。不能沉迷于所得的成就，人总是得向前看。&#xA;　　30而立，但看着自己离30岁越来越近，事业上，爱情上都是毫无建树（单身狗。。。哇的一声哭了出来），不禁心里有了些触动，这也是我写这篇博文的动机（估计没什么人愿意看我发牢骚）。&lt;/p&gt;&#xA;&lt;hr&gt;</description>
     </item>
-    
   </channel>
 </rss>

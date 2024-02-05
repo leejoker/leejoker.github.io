@@ -6,26 +6,14 @@
     <description>Recent content in ubuntu on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ubuntu添加vscode源</title>
       <link>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>
       <pubDate>Mon, 08 Mar 2021 10:29:00 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo echo &amp;quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;添加gpg公钥&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &amp;gt; /etc/apt/trusted.gpg.d/microsoft.gpg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;添加apt源到/etc/apt/sources.list文件&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo echo &amp;quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;添加gpg公钥&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &amp;gt; /etc/apt/trusted.gpg.d/microsoft.gpg&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

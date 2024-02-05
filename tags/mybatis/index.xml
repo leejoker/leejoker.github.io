@@ -6,19 +6,14 @@
     <description>Recent content in mybatis on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2020 23:48:01 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/mybatis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mybatis中使用序列自动插入主键</title>
       <link>https://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</link>
       <pubDate>Fri, 10 Jan 2020 23:48:01 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/</guid>
-      <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;
-&lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;mapper中的使用&#34;&gt;Mapper中的使用&lt;/h2&gt;&#xA;&lt;p&gt;在insert中增加下面两个属性，useGeneratedKeys和keyProperty&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;useGeneratedKeys=&amp;quot;true&amp;quot; keyProperty=&amp;quot;id&amp;quot;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

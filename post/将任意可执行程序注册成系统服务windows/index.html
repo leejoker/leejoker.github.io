@@ -16,7 +16,7 @@
 
 
 
-<title>ubuntu - ESPIER</title>
+<title>将任意可执行程序注册成系统服务(Windows) - ESPIER</title>
 
 
 <meta name="author" content="leejoker" />
@@ -25,14 +25,16 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://leejoker.github.io/tags/ubuntu/index.xml" title="ESPIER" />
+<meta name="keywords" content="Windows, 杂文" />
 
-<meta property="og:title" content="ubuntu" />
-<meta name="twitter:title" content="ubuntu" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://leejoker.github.io/tags/ubuntu/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
+
+<meta property="og:title" content="将任意可执行程序注册成系统服务(Windows)" />
+<meta name="twitter:title" content="将任意可执行程序注册成系统服务(Windows)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/" /><meta property="og:description" content="基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W" />
+<meta name="twitter:description" content="基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-03-08T10:29:00+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2024-02-04T13:33:47+08:00" /><meta property="article:modified_time" content="2024-02-04T13:33:47+08:00" />
 
 
 <style>
@@ -116,41 +118,87 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/">将任意可执行程序注册成系统服务(Windows)</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-02-04</span>
 
-<div class="page-info">
-  <span>拥有标签 ubuntu 的文章：</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;567 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/windows">Windows</a>&nbsp;<a href="/tags/%E6%9D%82%E6%96%87">杂文</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <h2 id="基本说明">基本说明</h2>
+<p>Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。</p>
+<p>在Windows系统中，可以使用<code>sc.exe</code>命令来注册服务。具体用法可以参考Windows官方文档或者使用<code>sc.exe /?</code>命令获取帮助信息。</p>
+<p>不过，可执行程序想在Windows系统中注册成服务，必须是一个Service Provider(需要包含符合Windows API的接口)。也就是说，程序必须提供一个服务提供者，以便Windows系统可以调用该提供者来启动和停止服务。</p>
+<p>因此，本文提供了一个基于<a href="https://github.com/birkett/srvany-ng" target="_blank"><code>srvany-ng</code></a>的通用解决方案。</p>
+<h2 id="编写服务注册脚本">编写服务注册脚本</h2>
+<p>示例脚本<code>regist_service.bat</code>如下：</p>
+<pre><code class="language-bat">@echo off
+cd /d %~dp0
+set serviceName=DemoService
+set appName=demo.exe
+sc delete %serviceName%
+sc create %serviceName% binPath= %cd%\srvany-ng.exe start= auto
+sc description %serviceName% &quot;demo service&quot;
+@echo on
+echo &quot;register service success&quot;
+reg import regist.reg
+reg add &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\%serviceName%\Parameters&quot; /v &quot;Application&quot; /t &quot;REG_SZ&quot; /d &quot;%cd%\%appName%&quot; /f
+reg add &quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\%serviceName%\Parameters&quot; /v &quot;AppDirectory&quot; /t &quot;REG_SZ&quot; /d &quot;%cd%&quot; /f
+pause
+</code></pre>
+<p>regist.reg内容如下：</p>
+<pre><code class="language-reg">Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DemoService\Parameters]
+</code></pre>
+<p>将<code>regist_service.bat</code>、<code>regist.reg</code>以及<code>srvany-ng.exe</code>放在<code>demo.exe</code>文件同目录下执行<code>regist_service.bat</code>即可。</p>
+<p>PS：脚本需要管理员权限才能执行，该方法适用于<code>Windows XP</code>及以上版本，如果是<code>XP</code>，<code>srvany-ng</code>记得使用32位版本。</p>
+
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
 </div>
 
 
-
-<div class="post">
-  <h2 class="post-item post-title">
-    <a href="https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/">Ubuntu添加vscode源</a>
-  </h2>
-  <div class="post-item post-meta">
-    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-08</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;134 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/ubuntu">ubuntu</a>&nbsp;<a href="/tags/vscode">vscode</a>&nbsp;</span>
-
-  </div>
-  <div class="post-item post-summary markdown-body">
-    <ul>
-<li>
-<p>添加apt源到/etc/apt/sources.list文件</p>
-<pre><code class="language-shell">$ sudo echo &quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&quot; &gt;&gt; /etc/apt/sources.list
-</code></pre>
-</li>
-<li>
-<p>添加gpg公钥</p>
-<pre><code class="language-shell">$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; /etc/apt/trusted.gpg.d/microsoft.gpg
-</code></pre>
-</li>
-</ul>
-  </div>
+<div class="post-comment" data-comment="utterances">
+    <span class="post-comment-notloaded">
+        <i class="iconfont icon-chatbox-ellipses-sharp"></i>&nbsp;查看评论
+    </span>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var utterancesTheme = document.body.getAttribute('data-theme');
+            if (utterancesTheme === 'auto') {
+                utterancesTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'photon-dark' :
+                    'github-light';
+            } else {
+                utterancesTheme = utterancesTheme === 'dark' ? 'photon-dark' : 'github-light';
+            }
+            var s = document.createElement('script');
+            s.src = 'https://utteranc.es/client.js';
+            s.setAttribute('repo', 'leejoker\/blog_comm');
+            s.setAttribute('issue-term', 'title');
+            s.setAttribute('theme', utterancesTheme);
+            s.setAttribute('crossorigin', 'anonymous');
+            s.setAttribute('async', '');
+            document.querySelector('.post-comment').appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
 </div>
-
 
 
             </div>
@@ -356,9 +404,13 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本说明">基本说明</a></li>
+    <li><a href="#编写服务注册脚本">编写服务注册脚本</a></li>
+  </ul>
+</nav></div>
 </aside>
 
         </div>
@@ -575,6 +627,18 @@
             </span>
             
         </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本说明">基本说明</a></li>
+    <li><a href="#编写服务注册脚本">编写服务注册脚本</a></li>
+  </ul>
+</nav>
     </div>
     
     

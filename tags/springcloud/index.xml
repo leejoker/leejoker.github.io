@@ -6,20 +6,14 @@
     <description>Recent content in springcloud on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Apr 2021 09:42:23 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/springcloud/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Apr 2021 09:42:23 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/springcloud/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Feign使用okhttp3的正确姿势</title>
       <link>https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</link>
       <pubDate>Tue, 06 Apr 2021 09:42:23 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/feign%E4%BD%BF%E7%94%A8okhttp3%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</guid>
-      <description>&lt;h2 id=&#34;首先来吐槽一波&#34;&gt;首先来吐槽一波(╯‵□′)╯︵┻━┻&lt;/h2&gt;
-&lt;p&gt;本来呢，我是想加一层feign的interceptor处理feign里request请求的返回信息的，比如只提取ResponseBody中的data啥的。后来想起来feign默认使用的是jdk的HttpURLConnection，而且feign本身是支持替换okhttp的，于是打算搞起~&lt;/p&gt;
-&lt;p&gt;可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻&lt;/p&gt;
-&lt;p&gt;最后，还是自己操刀，从源码看吧。&lt;/p&gt;
-&lt;p&gt;遂有此文~&lt;/p&gt;
-&lt;p&gt;百毒，淦！&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;首先来吐槽一波&#34;&gt;首先来吐槽一波(╯‵□′)╯︵┻━┻&lt;/h2&gt;&#xA;&lt;p&gt;本来呢，我是想加一层feign的interceptor处理feign里request请求的返回信息的，比如只提取ResponseBody中的data啥的。后来想起来feign默认使用的是jdk的HttpURLConnection，而且feign本身是支持替换okhttp的，于是打算搞起~&lt;/p&gt;&#xA;&lt;p&gt;可是，百毒到的都是什么鬼啊，按照别人写的文档配好，各种问题，什么springboot注解不行啦，需要使用feign默认注解，什么负载均衡失效啦，无语。(╯‵□′)╯︵┻━┻&lt;/p&gt;&#xA;&lt;p&gt;最后，还是自己操刀，从源码看吧。&lt;/p&gt;&#xA;&lt;p&gt;遂有此文~&lt;/p&gt;&#xA;&lt;p&gt;百毒，淦！&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

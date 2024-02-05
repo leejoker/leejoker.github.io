@@ -6,30 +6,14 @@
     <description>Recent content in ruby on ESPIER</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate><atom:link href="https://leejoker.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
+    <atom:link href="https://leejoker.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装Ruby on Rails</title>
       <link>https://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</link>
       <pubDate>Fri, 10 Jan 2020 23:50:01 +0800</pubDate>
-      
       <guid>https://leejoker.github.io/post/%E5%AE%89%E8%A3%85ruby-on-rails/</guid>
-      <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 安装gnupg2
-$ sudo apt install gnupg2
-# 安装rvm
-$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-$ \curl -sSL https://get.rvm.io | bash -s stable
-$ source ~/.bashrc
-
-# 替换ruby-china源
-$ echo &amp;quot;ruby_url=https://cache.ruby-china.com/pub/ruby&amp;quot; &amp;gt; ~/.rvm/user/db
-# 替换gem源
-$ gem sources -l
-$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
-# 更新缓存
-$ gem sources -u 
-&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>&lt;h2 id=&#34;安装rvm&#34;&gt;安装rvm&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;# 安装gnupg2&#xD;&#xA;$ sudo apt install gnupg2&#xD;&#xA;# 安装rvm&#xD;&#xA;$ gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB&#xD;&#xA;$ \curl -sSL https://get.rvm.io | bash -s stable&#xD;&#xA;$ source ~/.bashrc&#xD;&#xA;&#xD;&#xA;# 替换ruby-china源&#xD;&#xA;$ echo &amp;quot;ruby_url=https://cache.ruby-china.com/pub/ruby&amp;quot; &amp;gt; ~/.rvm/user/db&#xD;&#xA;# 替换gem源&#xD;&#xA;$ gem sources -l&#xD;&#xA;$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/&#xD;&#xA;# 更新缓存&#xD;&#xA;$ gem sources -u &#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
-    
   </channel>
 </rss>
