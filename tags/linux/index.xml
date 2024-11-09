@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on ESPIER</title>
+    <title>Linux on ESPIER</title>
     <link>https://leejoker.github.io/tags/linux/</link>
-    <description>Recent content in linux on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Linux on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Jul 2023 08:53:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2024 16:17:39 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一些Docker清理的命令</title>
+      <link>https://leejoker.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9Bdocker%E6%B8%85%E7%90%86%E7%9A%84%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 09 Nov 2024 16:17:39 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9Bdocker%E6%B8%85%E7%90%86%E7%9A%84%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;h2 id=&#34;查看磁盘占用&#34;&gt;查看磁盘占用&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&#xD;&#xA;# 切换到docker文件的目录&#xD;&#xA;$ cd /path/to/docker&#xD;&#xA;&#xD;&#xA;# 查看磁盘占用情况&#xD;&#xA;$ du --max-depth=1 -h .&#xD;&#xA;&#xD;&#xA;# 查看整体磁盘使用情况&#xD;&#xA;$ df -h&#xD;&#xA;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>CentOS7.9离线安装Docker</title>
       <link>https://leejoker.github.io/post/centos7.9%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85docker/</link>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>clojure on ESPIER</title>
+    <title>Clojure on ESPIER</title>
     <link>https://leejoker.github.io/tags/clojure/</link>
-    <description>Recent content in clojure on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Clojure on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 04 Mar 2021 09:34:40 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />

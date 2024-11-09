@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>springboot on ESPIER</title>
+    <title>Springboot on ESPIER</title>
     <link>https://leejoker.github.io/tags/springboot/</link>
-    <description>Recent content in springboot on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Springboot on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Jan 2020 23:45:38 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
       <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
       <guid>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
-      <description>今天在开发过程中遇到一个文件上传的问题 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。 百度了一下，找到如下配置，问题得以解决，记录一下 spring:</description>
+      <description>&lt;p&gt;今天在开发过程中遇到一个文件上传的问题&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。&lt;/p&gt;&#xA;&lt;p&gt;百度了一下，找到如下配置，问题得以解决，记录一下&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;spring:&#xD;&#xA;  servlet:&#xD;&#xA;    multipart:&#xD;&#xA;     # 文件最大限制&#xD;&#xA;      max-file-size: 1024MB&#xD;&#xA;      # 请求最大限制&#xD;&#xA;      max-request-size: 1024MB&#xD;&#xA;      enabled: true&#xD;&#xA;      # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存&#xD;&#xA;      file-size-threshold: 0&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
   </channel>
 </rss>

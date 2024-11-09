@@ -4,7 +4,7 @@
     <title>Windows on ESPIER</title>
     <link>https://leejoker.github.io/tags/windows/</link>
     <description>Recent content in Windows on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Feb 2024 13:33:47 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</link>
       <pubDate>Sun, 04 Feb 2024 13:33:47 +0800</pubDate>
       <guid>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</guid>
-      <description>基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W</description>
+      <description>&lt;h2 id=&#34;基本说明&#34;&gt;基本说明&lt;/h2&gt;&#xA;&lt;p&gt;Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。&lt;/p&gt;&#xA;&lt;p&gt;在Windows系统中，可以使用&lt;code&gt;sc.exe&lt;/code&gt;命令来注册服务。具体用法可以参考Windows官方文档或者使用&lt;code&gt;sc.exe /?&lt;/code&gt;命令获取帮助信息。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Msys2启动加速</title>

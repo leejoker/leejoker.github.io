@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.122.0">
+<meta name="generator" content="Hugo 0.138.0">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-02-04T13:33:47+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-09T16:17:39+08:00" />
 
 
 <style>
@@ -121,6 +121,28 @@
 
 <div class="post">
     <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8Cdocker%E5%91%BD%E4%BB%A4/">普通用户直接运行docker命令</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-12-29</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;122 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="具体操作">具体操作</h2>
+<ol>
+<li>添加docker group</li>
+</ol>
+<pre><code class="language-shell">$ sudo groupadd docker
+</code></pre>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-item post-title">
         <a href="https://leejoker.github.io/post/idea%E5%8D%87%E7%BA%A72020.3%E5%90%8Elombok%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99/">IDEA升级2020.3后lombok编译报错</a>
     </h2>
     <div class="post-item post-meta">
@@ -201,7 +223,12 @@
 
     </div>
     <div class="post-item post-summary markdown-body">
-        这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。 $ cd $YOUR_PROJECT_DIR $ git rm -r --cached . $ git add . $ git commit -m 'update
+        <p>这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。</p>
+<pre><code class="language-shell">$ cd $YOUR_PROJECT_DIR
+$ git rm -r --cached .
+$ git add .
+$ git commit -m 'update .gitignore'
+</code></pre>
     </div>
 </div>
 
@@ -271,7 +298,22 @@ $ gem sources -u
 
     </div>
     <div class="post-item post-summary markdown-body">
-        今天在开发过程中遇到一个文件上传的问题 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。 百度了一下，找到如下配置，问题得以解决，记录一下 spring:
+        <p>今天在开发过程中遇到一个文件上传的问题</p>
+<pre><code class="language-text">io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760
+</code></pre>
+<p>Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。</p>
+<p>百度了一下，找到如下配置，问题得以解决，记录一下</p>
+<pre><code class="language-yaml">spring:
+  servlet:
+    multipart:
+     # 文件最大限制
+      max-file-size: 1024MB
+      # 请求最大限制
+      max-request-size: 1024MB
+      enabled: true
+      # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存
+      file-size-threshold: 0
+</code></pre>
     </div>
 </div>
 
@@ -322,30 +364,6 @@ $ npm install
 <p>因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
 然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
 找到了崭新的db文件。</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/spacemacs%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F/">Spacemacs配置国内镜像</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;429 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/emacs">emacs</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="使用spacemacs国内镜像">使用Spacemacs国内镜像</h2>
-<p>最近开始使用emacs写一些clojure的代码，但是不挂梯子的话，源的更新确实不快，因此决定到网上搜索一下怎么配置国内镜像，不过搜索结果大概都是下面这个样子：</p>
-<pre><code class="language-text"># 基于emacs26
-cd ~
-git clone https://github.com/syl20bnr/spacemacs .emacs.d
-修改
-vim .emacs.d/core/templates/.spacemacs.template
-</code></pre>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">
@@ -413,11 +431,11 @@ vim .emacs.d/core/templates/.spacemacs.template
         <div>
             
             <span>
-                <a href="/tags/atom/">atom</a>
+                <a href="/tags/atom/">Atom</a>
             </span>
             
             <span>
-                <a href="/tags/bilibili/">bilibili</a>
+                <a href="/tags/bilibili/">Bilibili</a>
             </span>
             
             <span>
@@ -425,7 +443,7 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/clojure/">clojure</a>
+                <a href="/tags/clojure/">Clojure</a>
             </span>
             
             <span>
@@ -433,51 +451,51 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/docker/">docker</a>
+                <a href="/tags/docker/">Docker</a>
             </span>
             
             <span>
-                <a href="/tags/emacs/">emacs</a>
+                <a href="/tags/emacs/">Emacs</a>
             </span>
             
             <span>
-                <a href="/tags/feign/">feign</a>
+                <a href="/tags/feign/">Feign</a>
             </span>
             
             <span>
-                <a href="/tags/go/">go</a>
+                <a href="/tags/go/">Go</a>
             </span>
             
             <span>
-                <a href="/tags/gradle/">gradle</a>
+                <a href="/tags/gradle/">Gradle</a>
             </span>
             
             <span>
-                <a href="/tags/hexo/">hexo</a>
+                <a href="/tags/hexo/">Hexo</a>
             </span>
             
             <span>
-                <a href="/tags/idea/">idea</a>
+                <a href="/tags/idea/">Idea</a>
             </span>
             
             <span>
-                <a href="/tags/java/">java</a>
+                <a href="/tags/java/">Java</a>
             </span>
             
             <span>
-                <a href="/tags/javascript/">javascript</a>
+                <a href="/tags/javascript/">Javascript</a>
             </span>
             
             <span>
-                <a href="/tags/jdbc/">jdbc</a>
+                <a href="/tags/jdbc/">Jdbc</a>
             </span>
             
             <span>
-                <a href="/tags/lein/">lein</a>
+                <a href="/tags/lein/">Lein</a>
             </span>
             
             <span>
-                <a href="/tags/linux/">linux</a>
+                <a href="/tags/linux/">Linux</a>
             </span>
             
             <span>
@@ -485,51 +503,55 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/msys2/">msys2</a>
+                <a href="/tags/msys2/">Msys2</a>
             </span>
             
             <span>
-                <a href="/tags/mybatis/">mybatis</a>
+                <a href="/tags/mybatis/">Mybatis</a>
             </span>
             
             <span>
-                <a href="/tags/mysql/">mysql</a>
+                <a href="/tags/mysql/">Mysql</a>
             </span>
             
             <span>
-                <a href="/tags/nexus/">nexus</a>
+                <a href="/tags/nexus/">Nexus</a>
             </span>
             
             <span>
-                <a href="/tags/rails/">rails</a>
+                <a href="/tags/rails/">Rails</a>
             </span>
             
             <span>
-                <a href="/tags/ruby/">ruby</a>
+                <a href="/tags/ruby/">Ruby</a>
             </span>
             
             <span>
-                <a href="/tags/rust/">rust</a>
+                <a href="/tags/rust/">Rust</a>
             </span>
             
             <span>
-                <a href="/tags/springboot/">springboot</a>
+                <a href="/tags/springboot/">Springboot</a>
             </span>
             
             <span>
-                <a href="/tags/springcloud/">springcloud</a>
+                <a href="/tags/springcloud/">Springcloud</a>
             </span>
             
             <span>
-                <a href="/tags/ubuntu/">ubuntu</a>
+                <a href="/tags/ubuntu/">Ubuntu</a>
             </span>
             
             <span>
-                <a href="/tags/vscode/">vscode</a>
+                <a href="/tags/vscode/">Vscode</a>
             </span>
             
             <span>
                 <a href="/tags/windows/">Windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">“Java&#34;</a>
             </span>
             
             <span>
@@ -633,11 +655,11 @@ vim .emacs.d/core/templates/.spacemacs.template
         <div>
             
             <span>
-                <a href="/tags/atom/">atom</a>
+                <a href="/tags/atom/">Atom</a>
             </span>
             
             <span>
-                <a href="/tags/bilibili/">bilibili</a>
+                <a href="/tags/bilibili/">Bilibili</a>
             </span>
             
             <span>
@@ -645,7 +667,7 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/clojure/">clojure</a>
+                <a href="/tags/clojure/">Clojure</a>
             </span>
             
             <span>
@@ -653,51 +675,51 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/docker/">docker</a>
+                <a href="/tags/docker/">Docker</a>
             </span>
             
             <span>
-                <a href="/tags/emacs/">emacs</a>
+                <a href="/tags/emacs/">Emacs</a>
             </span>
             
             <span>
-                <a href="/tags/feign/">feign</a>
+                <a href="/tags/feign/">Feign</a>
             </span>
             
             <span>
-                <a href="/tags/go/">go</a>
+                <a href="/tags/go/">Go</a>
             </span>
             
             <span>
-                <a href="/tags/gradle/">gradle</a>
+                <a href="/tags/gradle/">Gradle</a>
             </span>
             
             <span>
-                <a href="/tags/hexo/">hexo</a>
+                <a href="/tags/hexo/">Hexo</a>
             </span>
             
             <span>
-                <a href="/tags/idea/">idea</a>
+                <a href="/tags/idea/">Idea</a>
             </span>
             
             <span>
-                <a href="/tags/java/">java</a>
+                <a href="/tags/java/">Java</a>
             </span>
             
             <span>
-                <a href="/tags/javascript/">javascript</a>
+                <a href="/tags/javascript/">Javascript</a>
             </span>
             
             <span>
-                <a href="/tags/jdbc/">jdbc</a>
+                <a href="/tags/jdbc/">Jdbc</a>
             </span>
             
             <span>
-                <a href="/tags/lein/">lein</a>
+                <a href="/tags/lein/">Lein</a>
             </span>
             
             <span>
-                <a href="/tags/linux/">linux</a>
+                <a href="/tags/linux/">Linux</a>
             </span>
             
             <span>
@@ -705,51 +727,55 @@ vim .emacs.d/core/templates/.spacemacs.template
             </span>
             
             <span>
-                <a href="/tags/msys2/">msys2</a>
+                <a href="/tags/msys2/">Msys2</a>
             </span>
             
             <span>
-                <a href="/tags/mybatis/">mybatis</a>
+                <a href="/tags/mybatis/">Mybatis</a>
             </span>
             
             <span>
-                <a href="/tags/mysql/">mysql</a>
+                <a href="/tags/mysql/">Mysql</a>
             </span>
             
             <span>
-                <a href="/tags/nexus/">nexus</a>
+                <a href="/tags/nexus/">Nexus</a>
             </span>
             
             <span>
-                <a href="/tags/rails/">rails</a>
+                <a href="/tags/rails/">Rails</a>
             </span>
             
             <span>
-                <a href="/tags/ruby/">ruby</a>
+                <a href="/tags/ruby/">Ruby</a>
             </span>
             
             <span>
-                <a href="/tags/rust/">rust</a>
+                <a href="/tags/rust/">Rust</a>
             </span>
             
             <span>
-                <a href="/tags/springboot/">springboot</a>
+                <a href="/tags/springboot/">Springboot</a>
             </span>
             
             <span>
-                <a href="/tags/springcloud/">springcloud</a>
+                <a href="/tags/springcloud/">Springcloud</a>
             </span>
             
             <span>
-                <a href="/tags/ubuntu/">ubuntu</a>
+                <a href="/tags/ubuntu/">Ubuntu</a>
             </span>
             
             <span>
-                <a href="/tags/vscode/">vscode</a>
+                <a href="/tags/vscode/">Vscode</a>
             </span>
             
             <span>
                 <a href="/tags/windows/">Windows</a>
+            </span>
+            
+            <span>
+                <a href="/tags/java/">“Java&#34;</a>
             </span>
             
             <span>
@@ -795,7 +821,7 @@ vim .emacs.d/core/templates/.spacemacs.template
     
     <div class="sidebar-item sidebar-toc">
         <h3>目录</h3>
-        
+        <nav id="TableOfContents"></nav>
     </div>
     
     

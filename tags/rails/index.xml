@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rails on ESPIER</title>
+    <title>Rails on ESPIER</title>
     <link>https://leejoker.github.io/tags/rails/</link>
-    <description>Recent content in rails on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Rails on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Jan 2020 23:50:01 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/rails/index.xml" rel="self" type="application/rss+xml" />

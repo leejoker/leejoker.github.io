@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ubuntu on ESPIER</title>
+    <title>Ubuntu on ESPIER</title>
     <link>https://leejoker.github.io/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ubuntu on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />

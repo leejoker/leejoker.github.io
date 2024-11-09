@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>feign on ESPIER</title>
+    <title>Feign on ESPIER</title>
     <link>https://leejoker.github.io/tags/feign/</link>
-    <description>Recent content in feign on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Feign on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Apr 2021 09:42:23 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/feign/index.xml" rel="self" type="application/rss+xml" />

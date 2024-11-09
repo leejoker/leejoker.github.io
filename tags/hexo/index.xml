@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hexo on ESPIER</title>
+    <title>Hexo on ESPIER</title>
     <link>https://leejoker.github.io/tags/hexo/</link>
-    <description>Recent content in hexo on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Hexo on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 11 Oct 2017 00:09:08 +0000</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />

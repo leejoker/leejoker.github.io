@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rust on ESPIER</title>
+    <title>Rust on ESPIER</title>
     <link>https://leejoker.github.io/tags/rust/</link>
-    <description>Recent content in rust on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Rust on ESPIER</description>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 28 Jan 2020 22:45:00 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />

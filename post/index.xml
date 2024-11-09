@@ -4,16 +4,23 @@
     <title>Posts on ESPIER</title>
     <link>https://leejoker.github.io/post/</link>
     <description>Recent content in Posts on ESPIER</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Feb 2024 13:33:47 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2024 16:17:39 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录一些Docker清理的命令</title>
+      <link>https://leejoker.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9Bdocker%E6%B8%85%E7%90%86%E7%9A%84%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 09 Nov 2024 16:17:39 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9Bdocker%E6%B8%85%E7%90%86%E7%9A%84%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;h2 id=&#34;查看磁盘占用&#34;&gt;查看磁盘占用&lt;/h2&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&#xD;&#xA;# 切换到docker文件的目录&#xD;&#xA;$ cd /path/to/docker&#xD;&#xA;&#xD;&#xA;# 查看磁盘占用情况&#xD;&#xA;$ du --max-depth=1 -h .&#xD;&#xA;&#xD;&#xA;# 查看整体磁盘使用情况&#xD;&#xA;$ df -h&#xD;&#xA;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>将任意可执行程序注册成系统服务(Windows)</title>
       <link>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</link>
       <pubDate>Sun, 04 Feb 2024 13:33:47 +0800</pubDate>
       <guid>https://leejoker.github.io/post/%E5%B0%86%E4%BB%BB%E6%84%8F%E5%8F%AF%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E6%B3%A8%E5%86%8C%E6%88%90%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1windows/</guid>
-      <description>基本说明 Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。 在W</description>
+      <description>&lt;h2 id=&#34;基本说明&#34;&gt;基本说明&lt;/h2&gt;&#xA;&lt;p&gt;Windows系统支持将可执行程序注册成系统服务，以便在系统启动时自动运行。但是，对于一些第三方程序，可能无法直接使用系统提供的注册工具。因此，需要编写脚本或使用其他方法来实现程序的注册。&lt;/p&gt;&#xA;&lt;p&gt;在Windows系统中，可以使用&lt;code&gt;sc.exe&lt;/code&gt;命令来注册服务。具体用法可以参考Windows官方文档或者使用&lt;code&gt;sc.exe /?&lt;/code&gt;命令获取帮助信息。&lt;/p&gt;</description>
     </item>
     <item>
       <title>CentOS7.9离线安装Docker</title>
@@ -104,7 +111,7 @@
       <link>https://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</link>
       <pubDate>Tue, 28 Jan 2020 22:42:42 +0800</pubDate>
       <guid>https://leejoker.github.io/post/idea%E4%B8%AD%E7%9A%84git%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E5%BF%BD%E7%95%A5.gitignore%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</guid>
-      <description>这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。 $ cd $YOUR_PROJECT_DIR $ git rm -r --cached . $ git add . $ git commit -m &#39;update</description>
+      <description>&lt;p&gt;这两天发现我在.gitignore文件中添加忽略后，每次提交已经被忽略的文件还是会出现在我的提交列表里，查了一下，应该是git缓存的问题，只要清理一下缓存就ok了。&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ cd $YOUR_PROJECT_DIR&#xD;&#xA;$ git rm -r --cached .&#xD;&#xA;$ git add .&#xD;&#xA;$ git commit -m &#39;update .gitignore&#39;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
       <title>安装Ruby on Rails</title>
@@ -125,7 +132,7 @@
       <link>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</link>
       <pubDate>Fri, 10 Jan 2020 23:45:38 +0800</pubDate>
       <guid>https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/</guid>
-      <description>今天在开发过程中遇到一个文件上传的问题 io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760 Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。 百度了一下，找到如下配置，问题得以解决，记录一下 spring:</description>
+      <description>&lt;p&gt;今天在开发过程中遇到一个文件上传的问题&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。&lt;/p&gt;&#xA;&lt;p&gt;百度了一下，找到如下配置，问题得以解决，记录一下&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;spring:&#xD;&#xA;  servlet:&#xD;&#xA;    multipart:&#xD;&#xA;     # 文件最大限制&#xD;&#xA;      max-file-size: 1024MB&#xD;&#xA;      # 请求最大限制&#xD;&#xA;      max-request-size: 1024MB&#xD;&#xA;      enabled: true&#xD;&#xA;      # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存&#xD;&#xA;      file-size-threshold: 0&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     <item>
       <title>Yapi的安装和使用</title>
@@ -223,7 +230,7 @@
       <link>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</link>
       <pubDate>Mon, 15 Jan 2018 15:48:19 +0000</pubDate>
       <guid>https://leejoker.github.io/post/atom%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E6%BA%90/</guid>
-      <description>配置国内插件源 atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。 本方法在linux</description>
+      <description>&lt;h4 id=&#34;配置国内插件源&#34;&gt;配置国内插件源&lt;/h4&gt;&#xA;&lt;p&gt;atom这个编辑器确实很好用，但是她的插件安装的速度实在是让人难受，没有梯子的话会让人抓狂w(ﾟДﾟ)w，在网上查了一下，找到了一个比较靠谱的方案，记下来方便以后使用。&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;本方法在linux和windows下都是可用的&lt;/li&gt;&#xA;&lt;li&gt;在**$HOME/.atom&lt;strong&gt;目录下新建&lt;/strong&gt;.atomrc**文件&lt;/li&gt;&#xA;&lt;li&gt;在文件内添加如下内容：&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;registry=https://registry.npm.taobao.org/  &#xD;&#xA;strict-ssl=false&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Over !&lt;/p&gt;</description>
     </item>
     <item>
       <title>clojure学习笔记其二</title>
