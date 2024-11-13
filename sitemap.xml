@@ -2,11 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://leejoker.github.io/tags/clojure/</loc>
+    <lastmod>2024-11-13T10:38:53+08:00</lastmod>
+  </url><url>
+    <loc>https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/</loc>
+    <lastmod>2024-11-13T10:38:53+08:00</lastmod>
+  </url><url>
     <loc>https://leejoker.github.io/</loc>
-    <lastmod>2024-11-13T09:39:05+00:00</lastmod>
+    <lastmod>2024-11-13T10:38:53+08:00</lastmod>
   </url><url>
     <loc>https://leejoker.github.io/post/</loc>
-    <lastmod>2024-11-13T09:39:05+00:00</lastmod>
+    <lastmod>2024-11-13T10:38:53+08:00</lastmod>
   </url><url>
     <loc>https://leejoker.github.io/tags/docker/</loc>
     <lastmod>2024-11-09T16:17:39+08:00</lastmod>
@@ -64,9 +70,6 @@
   </url><url>
     <loc>https://leejoker.github.io/tags/vscode/</loc>
     <lastmod>2021-03-08T10:29:00+08:00</lastmod>
-  </url><url>
-    <loc>https://leejoker.github.io/tags/clojure/</loc>
-    <lastmod>2021-03-04T09:34:40+08:00</lastmod>
   </url><url>
     <loc>https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/</loc>
     <lastmod>2021-03-04T09:34:40+08:00</lastmod>

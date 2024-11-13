@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T09:39:05+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -118,6 +118,48 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/">Clojure&#43;Java使用deps.edn混合构建</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-11-13</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;614 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="简述">简述</h2>
+<p>　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了<a href="https://leiningen.org/" target="_blank">Leiningen</a>，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用<a href="https://clojure.org/reference/deps_edn" target="_blank">deps.edn</a>管理项目。</p>
+<h2 id="环境准备包含开发工具相关的包">环境准备(包含开发工具相关的包)</h2>
+<ul>
+<li>windows: 建议使用<a href="https://scoop.sh" target="_blank">scoop</a>进行软件的安装</li>
+<li>linux: 建议使用<a href="https://github.com/jdx/mise" target="_blank">mise</a></li>
+<li>macos: 那肯定是使用brew啦， 当然也可以用mise</li>
+</ul>
+<pre><code class="language-shell">
+# windows
+PS&gt; scoop install openjdk
+PS&gt; scoop install clojure
+PS&gt; scoop install clojure-lsp
+PS&gt; scoop install clj-deps
+
+# mise
+$ mise install java
+$ mise install clojure
+$ sudo bash &lt; &lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)
+
+# macos
+$ brew install openjdk
+$ brew install clojure
+$ brew install clojure-lsp/brew/clojure-lsp-native
+
+</code></pre>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -324,32 +366,6 @@ touch /etc/systemd/system/containerd.service
 (cemerick.pomegranate.aether/register-wagon-factory!
  &quot;http&quot; #(org.apache.maven.wagon.providers.http.HttpWagon.))
 </code></pre>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">Windows端口转发</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-11</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;342 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/windows">windows</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="windows下转发虚拟机中的服务">windows下转发虚拟机中的服务</h2>
-<pre><code class="language-powershell">PC C:\Users\leejoker&gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
-</code></pre>
-<p>这个命令即可实现将虚拟机中的服务映射出去。</p>
-<ul>
-<li>listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务</li>
-<li>listenaddress：物理机监听的地址，本机ip</li>
-<li>connectport：虚拟机中服务暴露给本机的端口</li>
-<li>connect address：虚拟机映射到本机的ip地址</li>
-</ul>
     </div>
 </div>
 <div class="pagination"><div class="pag-item pag-current">

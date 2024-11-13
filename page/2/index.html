@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T09:39:05+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -118,6 +118,32 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/windows%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">Windows端口转发</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-11</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;342 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/windows">windows</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="windows下转发虚拟机中的服务">windows下转发虚拟机中的服务</h2>
+<pre><code class="language-powershell">PC C:\Users\leejoker&gt; netsh interface portproxy add v4tov4 listenport=8080 listenaddress=10.10.1.233 connectport=8080 connectaddress=192.168.0.233
+</code></pre>
+<p>这个命令即可实现将虚拟机中的服务映射出去。</p>
+<ul>
+<li>listenport：物理机监听端口，其他局域网内的机器通过这个端口访问虚拟机中的服务</li>
+<li>listenaddress：物理机监听的地址，本机ip</li>
+<li>connectport：虚拟机中服务暴露给本机的端口</li>
+<li>connect address：虚拟机映射到本机的ip地址</li>
+</ul>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -339,31 +365,6 @@ $ gem sources -u
 $ npm install
 </code></pre>
 <p>这样准备工作就完成了一半了，接下来安装mongodb。</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/">配置sqlite的相对路径</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;680 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">“java&#34;</a>&nbsp;<a href="/tags/jdbc">jdbc</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <p>一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
-项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
-因此对jdbc配置文件进行了修改：</p>
-<pre><code class="language-properties">    jdbc.url=jdbc:sqlite:blog.db
-</code></pre>
-<p>db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ</p>
-<p>因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
-然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
-找到了崭新的db文件。</p>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">

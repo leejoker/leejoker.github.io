@@ -16,7 +16,7 @@
 
 
 
-<title>Posts - ESPIER</title>
+<title>Clojure&#43;Java使用deps.edn混合构建 - ESPIER</title>
 
 
 <meta name="author" content="leejoker" />
@@ -25,14 +25,66 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://leejoker.github.io/post/index.xml" title="ESPIER" />
+<meta name="keywords" content="clojure" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
+
+<meta property="og:title" content="Clojure&#43;Java使用deps.edn混合构建" />
+<meta name="twitter:title" content="Clojure&#43;Java使用deps.edn混合构建" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/" /><meta property="og:description" content="简述
+　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了Leiningen，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用deps.edn管理项目。
+环境准备(包含开发工具相关的包)
+
+windows: 建议使用scoop进行软件的安装
+linux: 建议使用mise
+macos: 那肯定是使用brew啦， 当然也可以用mise
+
+
+# windows
+PS&gt; scoop install openjdk
+PS&gt; scoop install clojure
+PS&gt; scoop install clojure-lsp
+PS&gt; scoop install clj-deps
+
+# mise
+$ mise install java
+$ mise install clojure
+$ sudo bash &lt; &lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)
+
+# macos
+$ brew install openjdk
+$ brew install clojure
+$ brew install clojure-lsp/brew/clojure-lsp-native
+
+" />
+<meta name="twitter:description" content="简述
+　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了Leiningen，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用deps.edn管理项目。
+环境准备(包含开发工具相关的包)
+
+windows: 建议使用scoop进行软件的安装
+linux: 建议使用mise
+macos: 那肯定是使用brew啦， 当然也可以用mise
+
+
+# windows
+PS&gt; scoop install openjdk
+PS&gt; scoop install clojure
+PS&gt; scoop install clojure-lsp
+PS&gt; scoop install clj-deps
+
+# mise
+$ mise install java
+$ mise install clojure
+$ sudo bash &lt; &lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)
+
+# macos
+$ brew install openjdk
+$ brew install clojure
+$ brew install clojure-lsp/brew/clojure-lsp-native
+
+" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2024-11-13T10:38:53+08:00" /><meta property="article:modified_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -116,107 +168,179 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a>
+        <a href="https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/">Clojure&#43;Java使用deps.edn混合构建</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-27</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-11-13</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;501 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;614 字</span>
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
-        <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
-<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
-<pre><code class="language-go">    package main
+    
+    <div class="post-content markdown-body">
+        <h2 id="简述">简述</h2>
+<p>　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了<a href="https://leiningen.org/" target="_blank">Leiningen</a>，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用<a href="https://clojure.org/reference/deps_edn" target="_blank">deps.edn</a>管理项目。</p>
+<h2 id="环境准备包含开发工具相关的包">环境准备(包含开发工具相关的包)</h2>
+<ul>
+<li>windows: 建议使用<a href="https://scoop.sh" target="_blank">scoop</a>进行软件的安装</li>
+<li>linux: 建议使用<a href="https://github.com/jdx/mise" target="_blank">mise</a></li>
+<li>macos: 那肯定是使用brew啦， 当然也可以用mise</li>
+</ul>
+<pre><code class="language-shell">
+# windows
+PS&gt; scoop install openjdk
+PS&gt; scoop install clojure
+PS&gt; scoop install clojure-lsp
+PS&gt; scoop install clj-deps
 
-    import (
-        &quot;github.com/go-playground/log&quot;
-        &quot;github.com/whiteblue/bilibili-go/service&quot;
-    )
+# mise
+$ mise install java
+$ mise install clojure
+$ sudo bash &lt; &lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)
 
-    func main() {
-        app, err := service.NewApplication(&quot;conf.json&quot;)
-        if err != nil {
-            log.Fatal(err)
+# macos
+$ brew install openjdk
+$ brew install clojure
+$ brew install clojure-lsp/brew/clojure-lsp-native
+
+</code></pre>
+<h2 id="添加depsedn文件">添加deps.edn文件</h2>
+<p>添加deps.edn文件，并添加<a href="https://github.com/clojure/tools.build" target="_blank">tools.build</a>依赖</p>
+<pre><code class="language-clojure">
+{:deps      {org.clojure/clojure    {:mvn/version &quot;1.11.3&quot;}}
+
+ :paths     [&quot;src/main/clojure&quot;, &quot;src/main/java&quot;, &quot;src/main/resources&quot;, &quot;src/test/clojure&quot;]
+
+ :aliases   {:build {:deps       {io.github.clojure/tools.build {:mvn/version &quot;0.10.5&quot;}}
+                     :ns-default build}}}
+
+</code></pre>
+<h2 id="添加buildclj文件">添加build.clj文件</h2>
+<p>在项目根目录添加<strong>build.clj</strong>用于项目构建</p>
+<pre><code class="language-clojure">
+(ns build
+  (:require [clojure.tools.build.api :as b])
+  (:import java.io.File))
+
+
+(def lib 'io.github.leejoker/your-package-name)
+(def version &quot;1.0.0&quot;)
+(def class-dir &quot;target/classes&quot;)
+(def basis (delay (b/create-basis {:project &quot;deps.edn&quot;})))
+(def jar-file (format &quot;target/%s-%s.jar&quot; (name lib) version))
+(def uber-file (format &quot;target/%s-%s-standalone.jar&quot; (name lib) version))
+
+(defn clean [_]
+  (b/delete {:path &quot;target&quot;}))
+
+(defn copy-src [_]
+  (b/copy-dir {:src-dirs   [&quot;src/main/clojure&quot; &quot;src/main/resources&quot;]
+               :target-dir class-dir}))
+
+(defn compile-java [_]
+  (if (not-empty (.listFiles (File. &quot;src/main/java&quot;)))
+    (b/javac {:src-dirs   [&quot;src/main/java&quot;]
+              :class-dir  class-dir
+              :basis      @basis
+              :javac-opts [&quot;--release&quot; &quot;11&quot;]})
+    (println &quot;java file not found&quot;)))
+
+(defn compile-clojure [_]
+  (b/compile-clj {:basis      @basis
+                  :ns-compile '[io.github.leejoker.app] ;; 需要暴露的ns，用于生成提供static方法的类
+                  :class-dir  class-dir}))
+
+(defn compile-all [_]
+  (clean nil)
+  (b/write-pom {:class-dir class-dir
+                :lib       lib
+                :version   version
+                :basis     @basis
+                :src-dirs  [&quot;src/main/clojure&quot;]})
+  (copy-src nil)
+  (compile-java nil)
+  (compile-clojure nil))
+
+(defn jar [_]
+  (compile-all nil)
+  (b/jar {:class-dir class-dir
+          :jar-file  jar-file}))
+
+(defn uber [_]
+  (compile-all nil)
+  (b/uber {:class-dir class-dir
+           :uber-file uber-file
+           :basis     @basis
+           :main      'io.github.leejoker.app})) ;; 向jar包中添加main-class信息，如果是SDK其实可以没有
+
+</code></pre>
+<p>这样就基本上完成了。</p>
+<h2 id="使用clj命令进行编译">使用clj命令进行编译</h2>
+<pre><code class="language-shell">
+# 清理 target 目录
+$ clj -T:build clean
+
+# 编译java文件
+$ clj -T:build compile-java
+
+# 编译clojure文件
+$ clj -T:build compile-clojure
+
+# 编译所有文件
+$ clj -T:build compile-all
+
+# 编译不含依赖的jar
+$ clj -T:build jar
+
+# 编译fat jar
+$ clj -T:build uber
+
+</code></pre>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+<div class="post-comment" data-comment="utterances">
+    <span class="post-comment-notloaded">
+        <i class="iconfont icon-chatbox-ellipses-sharp"></i>&nbsp;查看评论
+    </span>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var utterancesTheme = document.body.getAttribute('data-theme');
+            if (utterancesTheme === 'auto') {
+                utterancesTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'photon-dark' :
+                    'github-light';
+            } else {
+                utterancesTheme = utterancesTheme === 'dark' ? 'photon-dark' : 'github-light';
+            }
+            var s = document.createElement('script');
+            s.src = 'https://utteranc.es/client.js';
+            s.setAttribute('repo', 'leejoker\/blog_comm');
+            s.setAttribute('issue-term', 'title');
+            s.setAttribute('theme', utterancesTheme);
+            s.setAttribute('crossorigin', 'anonymous');
+            s.setAttribute('async', '');
+            document.querySelector('.post-comment').appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
         }
-
-        app.Router.Run(&quot;:8080&quot;)
-    }
-</code></pre>
-<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>
-    </div>
+    </script>
 </div>
 
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E5%AF%B9%E4%BA%8Ego%E8%AF%AD%E8%A8%80%E4%B8%AD%E6%8C%87%E9%92%88%E7%9A%84%E6%80%9D%E8%B7%AF%E6%95%B4%E7%90%86/">对于Go语言中指针的思路整理</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-21</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;514 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h3 id="为什么要写这个">为什么要写这个</h3>
-<p>最近对go语言萌生了不小的学习欲望，因而找了一本书开始看，看到指针一节，不禁再次想起了那些被c语言支配的恐怖日子（这也是我选择java的原因啊，（╯&rsquo; - &lsquo;)╯︵ ┻━┻ ）。不过，经过再次整理之后发现其实指针这个概念还是蛮好理解的，也希望这篇小文章能给那些难以理解指针的童鞋一点帮助（没帮倒忙就好，o(╯□╰)o），下面就来详细说明一番。</p>
-<h3 id="指针概念解析">指针概念解析</h3>
-<p>指针的概念其实主要分为两个部分，一个是内存地址，另一个则是内存地址指向的值。举个栗子：</p>
-<pre><code class="language-go">package main
-
-import (
-	&quot;fmt&quot;
-)
-
-func main() {
-	a := 3
-	b := 5
-	fmt.Println(a, b) //输出值：3 5
-}
-</code></pre>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/">如何创建六边形按钮</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-21</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;581 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/css">CSS</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="div旋转">div旋转﻿</h2>
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/post/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/post/page/4/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/post/">1</a>
-  </div><div class="pag-item">
-    <a href="/post/page/2/">2</a>
-  </div><div class="pag-item">
-    <a href="/post/page/3/">3</a>
-  </div><div class="pag-item">
-    <a href="/post/page/4/">4</a>
-  </div><div class="pag-item pag-current">
-    <a href="/post/page/5/">5</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -424,9 +548,16 @@ func main() {
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简述">简述</a></li>
+    <li><a href="#环境准备包含开发工具相关的包">环境准备(包含开发工具相关的包)</a></li>
+    <li><a href="#添加depsedn文件">添加deps.edn文件</a></li>
+    <li><a href="#添加buildclj文件">添加build.clj文件</a></li>
+    <li><a href="#使用clj命令进行编译">使用clj命令进行编译</a></li>
+  </ul>
+</nav></div>
 </aside>
 
         </div>
@@ -653,7 +784,15 @@ func main() {
     
     <div class="sidebar-item sidebar-toc">
         <h3>目录</h3>
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简述">简述</a></li>
+    <li><a href="#环境准备包含开发工具相关的包">环境准备(包含开发工具相关的包)</a></li>
+    <li><a href="#添加depsedn文件">添加deps.edn文件</a></li>
+    <li><a href="#添加buildclj文件">添加build.clj文件</a></li>
+    <li><a href="#使用clj命令进行编译">使用clj命令进行编译</a></li>
+  </ul>
+</nav>
     </div>
     
     

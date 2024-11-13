@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T09:39:05+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -118,6 +118,26 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">配置lein的私有依赖仓库</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-01</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;902 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/lein">lein</a>&nbsp;<a href="/tags/nexus">nexus</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="lein与私有仓库">lein与私有仓库</h2>
+<p>lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。</p>
+<h2 id="创建profilesclj">创建profiles.clj</h2>
+<p>在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -351,41 +371,6 @@ sudo apt-get install atom
     LIVE_INDEX_CACHE   = &quot;live_index&quot;   //直播rank
 )
 </code></pre>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-27</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;501 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
-<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
-<pre><code class="language-go">    package main
-
-    import (
-        &quot;github.com/go-playground/log&quot;
-        &quot;github.com/whiteblue/bilibili-go/service&quot;
-    )
-
-    func main() {
-        app, err := service.NewApplication(&quot;conf.json&quot;)
-        if err != nil {
-            log.Fatal(err)
-        }
-
-        app.Router.Run(&quot;:8080&quot;)
-    }
-</code></pre>
-<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">

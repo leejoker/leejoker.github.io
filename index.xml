@@ -6,8 +6,15 @@
     <description>Recent content on ESPIER</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Nov 2024 16:17:39 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2024 10:38:53 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure&#43;Java使用deps.edn混合构建</title>
+      <link>https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/</link>
+      <pubDate>Wed, 13 Nov 2024 10:38:53 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/</guid>
+      <description>&lt;h2 id=&#34;简述&#34;&gt;简述&lt;/h2&gt;&#xA;&lt;p&gt;　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了&lt;a href=&#34;https://leiningen.org/&#34; target=&#34;_blank&#34;&gt;Leiningen&lt;/a&gt;，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用&lt;a href=&#34;https://clojure.org/reference/deps_edn&#34; target=&#34;_blank&#34;&gt;deps.edn&lt;/a&gt;管理项目。&lt;/p&gt;&#xA;&lt;h2 id=&#34;环境准备包含开发工具相关的包&#34;&gt;环境准备(包含开发工具相关的包)&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;windows: 建议使用&lt;a href=&#34;https://scoop.sh&#34; target=&#34;_blank&#34;&gt;scoop&lt;/a&gt;进行软件的安装&lt;/li&gt;&#xA;&lt;li&gt;linux: 建议使用&lt;a href=&#34;https://github.com/jdx/mise&#34; target=&#34;_blank&#34;&gt;mise&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;macos: 那肯定是使用brew啦， 当然也可以用mise&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;&#xD;&#xA;# windows&#xD;&#xA;PS&amp;gt; scoop install openjdk&#xD;&#xA;PS&amp;gt; scoop install clojure&#xD;&#xA;PS&amp;gt; scoop install clojure-lsp&#xD;&#xA;PS&amp;gt; scoop install clj-deps&#xD;&#xA;&#xD;&#xA;# mise&#xD;&#xA;$ mise install java&#xD;&#xA;$ mise install clojure&#xD;&#xA;$ sudo bash &amp;lt; &amp;lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)&#xD;&#xA;&#xD;&#xA;# macos&#xD;&#xA;$ brew install openjdk&#xD;&#xA;$ brew install clojure&#xD;&#xA;$ brew install clojure-lsp/brew/clojure-lsp-native&#xD;&#xA;&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     <item>
       <title>记录一些Docker清理的命令</title>
       <link>https://leejoker.github.io/post/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9Bdocker%E6%B8%85%E7%90%86%E7%9A%84%E5%91%BD%E4%BB%A4/</link>

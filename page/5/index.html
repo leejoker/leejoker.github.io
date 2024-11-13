@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T09:39:05+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -118,6 +118,41 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">bilibili-go项目源码学习笔记_1</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-27</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;501 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h4 id="bilibili-go服务加载流程浅析">bilibili-go服务加载流程浅析</h4>
+<p>main.go中使用了service包中的application.go创建了新的应用，进而开启了bilibili-go服务，并监听了8080端口。代码如下：</p>
+<pre><code class="language-go">    package main
+
+    import (
+        &quot;github.com/go-playground/log&quot;
+        &quot;github.com/whiteblue/bilibili-go/service&quot;
+    )
+
+    func main() {
+        app, err := service.NewApplication(&quot;conf.json&quot;)
+        if err != nil {
+            log.Fatal(err)
+        }
+
+        app.Router.Run(&quot;:8080&quot;)
+    }
+</code></pre>
+<p>在application.go中，使用了gin作为web框架，并依次执行了以下操作：</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">

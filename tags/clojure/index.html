@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/tags/clojure/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2021-03-04T09:34:40+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -122,6 +122,48 @@
 </div>
 
 
+
+<div class="post">
+  <h2 class="post-item post-title">
+    <a href="https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/">Clojure&#43;Java使用deps.edn混合构建</a>
+  </h2>
+  <div class="post-item post-meta">
+    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-11-13</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;614 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
+
+  </div>
+  <div class="post-item post-summary markdown-body">
+    <h2 id="简述">简述</h2>
+<p>　　公司有一个项目我用clojure写了一个数据处理的SDK，里面混合了Java和Clojure的代码，之前用习惯了<a href="https://leiningen.org/" target="_blank">Leiningen</a>，不过慢慢的感觉Leiningen越来越慢了（不知道是不是错觉），这次打算使用<a href="https://clojure.org/reference/deps_edn" target="_blank">deps.edn</a>管理项目。</p>
+<h2 id="环境准备包含开发工具相关的包">环境准备(包含开发工具相关的包)</h2>
+<ul>
+<li>windows: 建议使用<a href="https://scoop.sh" target="_blank">scoop</a>进行软件的安装</li>
+<li>linux: 建议使用<a href="https://github.com/jdx/mise" target="_blank">mise</a></li>
+<li>macos: 那肯定是使用brew啦， 当然也可以用mise</li>
+</ul>
+<pre><code class="language-shell">
+# windows
+PS&gt; scoop install openjdk
+PS&gt; scoop install clojure
+PS&gt; scoop install clojure-lsp
+PS&gt; scoop install clj-deps
+
+# mise
+$ mise install java
+$ mise install clojure
+$ sudo bash &lt; &lt;(curl -s https://raw.githubusercontent.com/clojure-lsp/clojure-lsp/master/install)
+
+# macos
+$ brew install openjdk
+$ brew install clojure
+$ brew install clojure-lsp/brew/clojure-lsp-native
+
+</code></pre>
+  </div>
+</div>
 
 <div class="post">
   <h2 class="post-item post-title">

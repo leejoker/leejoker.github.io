@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T09:39:05+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
 
 
 <style>
@@ -118,6 +118,31 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEsqlite%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/">配置sqlite的相对路径</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;680 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">“java&#34;</a>&nbsp;<a href="/tags/jdbc">jdbc</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>一般在使用sqlite的时候都是配置url为绝对路径，但是今天在测试代码的时候想到如果将
+项目不到tomcat上之后，db文件总不能一直配置成绝对路径，肯定是项目中的某个位置，
+因此对jdbc配置文件进行了修改：</p>
+<pre><code class="language-properties">    jdbc.url=jdbc:sqlite:blog.db
+</code></pre>
+<p>db文件放在WEB-INF/classes下，运行后发现貌似没有问题，然而事实并不是这样QAQ</p>
+<p>因为测试中初始化代码会自动根据bean创建表格，我想是不是生成了一个新的db文件呢，
+然后我把初始化关掉之后，果然报错了。。。。。。ORZ，然后我在tomcat的bin目录中
+找到了崭新的db文件。</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -331,26 +356,6 @@ vim .emacs.d/core/templates/.spacemacs.template
 <p>程序=算法+数据结构</p>
 </blockquote>
 <p>虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AElein%E7%9A%84%E7%A7%81%E6%9C%89%E4%BE%9D%E8%B5%96%E4%BB%93%E5%BA%93/">配置lein的私有依赖仓库</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2018-11-01</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;902 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;<a href="/tags/lein">lein</a>&nbsp;<a href="/tags/nexus">nexus</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="lein与私有仓库">lein与私有仓库</h2>
-<p>lein在new一个新的项目的时候都会从maven或者clojars上下载对应的依赖，但是一旦你离开了互联网环境只有一个maven私服的时候，这一切就变得不是那么美好了。因此，我们需要配置一下lein，让它能够从我们指定的位置下载依赖。</p>
-<h2 id="创建profilesclj">创建profiles.clj</h2>
-<p>在$HOME/.lein/下创建profiles.clj文件，在其中添加如下内容：</p>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">
