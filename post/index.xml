@@ -6,8 +6,15 @@
     <description>Recent content in Posts on ESPIER</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Nov 2024 10:38:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Dec 2024 10:15:24 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Ubuntu24.04下idea闪退</title>
+      <link>https://leejoker.github.io/post/%E8%A7%A3%E5%86%B3ubuntu24.04%E4%B8%8Bidea%E9%97%AA%E9%80%80/</link>
+      <pubDate>Wed, 11 Dec 2024 10:15:24 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E8%A7%A3%E5%86%B3ubuntu24.04%E4%B8%8Bidea%E9%97%AA%E9%80%80/</guid>
+      <description>&lt;h2 id=&#34;问题说明&#34;&gt;问题说明&lt;/h2&gt;&#xA;&lt;p&gt;在非root用户下预计不会存在这个问题, 只有在root用户的图形化界面中, 打开jetbrains系列软件后, 不到几秒就会闪退。&lt;/p&gt;&#xA;&lt;h2 id=&#34;问题原因&#34;&gt;问题原因&lt;/h2&gt;&#xA;&lt;p&gt;jetbrains下的软件基本都使用了jcef，这个和基于Chromium浏览器在root用户下无法启动是一样的，都是由于无法使用沙盒造成的，因此只要将沙盒禁用就好。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Clojure&#43;Java使用deps.edn混合构建</title>
       <link>https://leejoker.github.io/post/clojure-java%E4%BD%BF%E7%94%A8deps.edn%E6%B7%B7%E5%90%88%E6%9E%84%E5%BB%BA/</link>

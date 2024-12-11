@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.138.0">
+<meta name="generator" content="Hugo 0.139.4">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-12-11T10:15:24+08:00" />
 
 
 <style>
@@ -118,6 +118,35 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E9%85%8D%E7%BD%AEclojure%E5%9B%BD%E5%86%85%E4%BB%93%E5%BA%93/">配置Clojure国内仓库</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-04</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;352 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/clojure">clojure</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="在项目中设置国内仓库">在项目中设置国内仓库</h2>
+<p>修改project.clj，参考如下内容进行设置</p>
+<pre><code class="language-clojure">(defproject project-name 
+  :dependencies [[org.clojure/clojure &quot;1.10.0&quot;]]
+  
+  :repositories [[&quot;central&quot; &quot;http://maven.aliyun.com/nexus/content/groups/public&quot;]
+                 [&quot;clojars&quot; &quot;https://mirrors.tuna.tsinghua.edu.cn/clojars/&quot;]])
+ 
+;; 这个是官方的启用非严格检查方案
+(require 'cemerick.pomegranate.aether)
+(cemerick.pomegranate.aether/register-wagon-factory!
+ &quot;http&quot; #(org.apache.maven.wagon.providers.http.HttpWagon.))
+</code></pre>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -340,31 +369,6 @@ $ gem sources -u
       # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存
       file-size-threshold: 0
 </code></pre>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/yapi%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">Yapi的安装和使用</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1123 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7">工具</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h2 id="获取yapi源码">获取Yapi源码</h2>
-<p>在github上获取最新的<a href="https://github.com/YMFE/yapi" target="_blank">yapi源码</a>：</p>
-<pre><code class="language-shell">$ git clone https://github.com/YMFE/yapi.git ~/yapi
-</code></pre>
-<p>通过npm或cnpm安装依赖：</p>
-<pre><code class="language-shell">$ cd ~/yapi
-$ npm install
-</code></pre>
-<p>这样准备工作就完成了一半了，接下来安装mongodb。</p>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">

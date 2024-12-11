@@ -6,8 +6,15 @@
     <description>Recent content in Ubuntu on ESPIER</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Mar 2021 10:29:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Dec 2024 10:15:24 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Ubuntu24.04下idea闪退</title>
+      <link>https://leejoker.github.io/post/%E8%A7%A3%E5%86%B3ubuntu24.04%E4%B8%8Bidea%E9%97%AA%E9%80%80/</link>
+      <pubDate>Wed, 11 Dec 2024 10:15:24 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E8%A7%A3%E5%86%B3ubuntu24.04%E4%B8%8Bidea%E9%97%AA%E9%80%80/</guid>
+      <description>&lt;h2 id=&#34;问题说明&#34;&gt;问题说明&lt;/h2&gt;&#xA;&lt;p&gt;在非root用户下预计不会存在这个问题, 只有在root用户的图形化界面中, 打开jetbrains系列软件后, 不到几秒就会闪退。&lt;/p&gt;&#xA;&lt;h2 id=&#34;问题原因&#34;&gt;问题原因&lt;/h2&gt;&#xA;&lt;p&gt;jetbrains下的软件基本都使用了jcef，这个和基于Chromium浏览器在root用户下无法启动是一样的，都是由于无法使用沙盒造成的，因此只要将沙盒禁用就好。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ubuntu添加vscode源</title>
       <link>https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/</link>

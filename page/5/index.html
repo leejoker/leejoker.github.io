@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.138.0">
+<meta name="generator" content="Hugo 0.139.4">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-11-13T10:38:53+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-12-11T10:15:24+08:00" />
 
 
 <style>
@@ -118,6 +118,35 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/bilibili-go%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/">bilibili-go项目源码学习笔记_2</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-28</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;977 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/go">go</a>&nbsp;<a href="/tags/bilibili">bilibili</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>这一篇主要说明application.go的主要构成和其中用到方法的主要作用。</p>
+<h3 id="参数定义">参数定义</h3>
+<p>application.go中定义了初始化时需要用到的常量和变量</p>
+<h4 id="常量定义">常量定义：</h4>
+<pre><code class="language-go">const (
+    INDEX_CACHE        = &quot;index&quot;        //各类别下rank
+    ALL_RANK_CACHE     = &quot;all_rank&quot;     //总的rank
+    BANGUMI_CACHE      = &quot;bangumi&quot;      //番剧
+    BANGUMI_LIST_CACHE = &quot;bangumi_list&quot; //新番放松表
+    SORT_TOP_CACHE     = &quot;sort-&quot;        //具体某个类别rank(这个在index_cache中要用到)
+    LIVE_INDEX_CACHE   = &quot;live_index&quot;   //直播rank
+)
+</code></pre>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
