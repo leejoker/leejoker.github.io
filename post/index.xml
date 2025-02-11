@@ -6,8 +6,15 @@
     <description>Recent content in Posts on ESPIER</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Dec 2024 10:15:24 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2024 09:13:35 +0800</lastBuildDate>
     <atom:link href="https://leejoker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一种实现后端截图的思路</title>
+      <link>https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Thu, 26 Dec 2024 09:13:35 +0800</pubDate>
+      <guid>https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;&#xA;&lt;p&gt;公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>解决Ubuntu24.04下idea闪退</title>
       <link>https://leejoker.github.io/post/%E8%A7%A3%E5%86%B3ubuntu24.04%E4%B8%8Bidea%E9%97%AA%E9%80%80/</link>
@@ -174,7 +181,7 @@
       <link>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</link>
       <pubDate>Wed, 30 Oct 2019 17:49:04 +0800</pubDate>
       <guid>https://leejoker.github.io/post/%E5%B0%91%E4%BE%A0%E4%B8%8E%E5%89%91/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;&#xA;&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;&#xA;&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;&#xA;&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;&#xA;&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;&#xA;&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;十年磨一剑，霜刃未曾试&lt;/p&gt;&#xA;&lt;p&gt;　　　　　　　　　　　——贾岛&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;亮剑&#34;&gt;亮剑&lt;/h3&gt;&#xA;&lt;p&gt;　　少侠们刚从师门中出来，准备闯荡江湖时，难免被前辈指导：”少侠，亮剑吧！“&lt;/p&gt;&#xA;&lt;p&gt;　　此时，少侠们之间的差别就显现出来了。有的在师门勤奋磨剑，精于技艺。有的就是做做样子，整日浑浑噩噩，过着自以为快乐的生活，好吧，其实快乐也挺重要的。&lt;/p&gt;&#xA;&lt;p&gt;　　我们回到前面亮剑的问题，作为一名剑客，在被挑战的时候，拿不出手就很羞耻了，当然，大部分初出茅庐的少侠都是拿不出手或者剑磨得并不怎么样的吧。&lt;/p&gt;&#xA;&lt;p&gt;　　当然，对于大多数人来说，闯江湖的路，一开始都是这个样子。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Js整型的坑</title>
@@ -223,7 +230,7 @@
       <link>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</link>
       <pubDate>Sun, 03 Feb 2019 21:17:44 +0000</pubDate>
       <guid>https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%B8%80/</guid>
-      <description>&lt;h2 id=&#34;关于新坑和旧坑的说明&#34;&gt;关于新坑和旧坑的说明&lt;/h2&gt;&#xA;&lt;p&gt;我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是算法&#34;&gt;什么是算法&lt;/h2&gt;&#xA;&lt;p&gt;算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;程序=算法+数据结构&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;关于新坑和旧坑的说明&#34;&gt;关于新坑和旧坑的说明&lt;/h2&gt;&#xA;&lt;p&gt;我又开了一个新的坑，迫于近期一些方面的压力，我又把数据结构和算法这个东西捡起来了，至于之前Clojure学习笔记系列的坑，咳咳，虽然还会更新下去，但是估计会延后很多了，因为学了Clojure蛮久的时间了，没有太多的实践机会，也没有对Clojure理解的足够深，因此这个系列估计会稍微放一放，等我理解足够深刻了在继续下去（对不起，还是因为懒XD）。&lt;/p&gt;&#xA;&lt;h2 id=&#34;什么是算法&#34;&gt;什么是算法&lt;/h2&gt;&#xA;&lt;p&gt;算法，这个东西其实是思路的体现，也可以说是问题的解决方案。相信大家也都看到过这句话：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;程序=算法+数据结构&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;虽然这么说或许不够准确，但是算法对于程序本身而言意义是十分重大的。也是影响程序性能的一个关键因素。大多时候算法都是一个由实际问题转化而成的数学模型，因此，像写出一个好的算法的话首先要能充分理解问题，然后就是将问题转化成一个高效的数学模型。所以说啊，学好数学还是很关键滴~&lt;/p&gt;</description>
     </item>
     <item>
       <title>配置lein的私有依赖仓库</title>

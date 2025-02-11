@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.140.1">
+<meta name="generator" content="Hugo 0.143.1">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -118,6 +118,24 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/">一种实现后端截图的思路</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-12-26</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;534 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="背景">背景</h2>
+<p>公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -329,34 +347,6 @@ touch /etc/systemd/system/containerd.service
 <p>最后，还是自己操刀，从源码看吧。</p>
 <p>遂有此文~</p>
 <p>百毒，淦！</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/">Ubuntu添加vscode源</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-08</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;134 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/ubuntu">ubuntu</a>&nbsp;<a href="/tags/vscode">vscode</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <ul>
-<li>
-<p>添加apt源到/etc/apt/sources.list文件</p>
-<pre><code class="language-shell">$ sudo echo &quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&quot; &gt;&gt; /etc/apt/sources.list
-</code></pre>
-</li>
-<li>
-<p>添加gpg公钥</p>
-<pre><code class="language-shell">$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; /etc/apt/trusted.gpg.d/microsoft.gpg
-</code></pre>
-</li>
-</ul>
     </div>
 </div>
 <div class="pagination"><div class="pag-item pag-current">
@@ -815,7 +805,7 @@ touch /etc/systemd/system/containerd.service
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2024
+            <span>&copy; 2016-2025
                 <a href="https://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"

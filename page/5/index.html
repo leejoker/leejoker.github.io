@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.140.1">
+<meta name="generator" content="Hugo 0.143.1">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -118,6 +118,33 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/ubuntu%E4%B8%8B%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0ppa%E4%BB%93%E5%BA%93/">Ubuntu下如何添加ppa仓库</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-10-11</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;598 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h4 id="ubuntu下添加ppa仓库">Ubuntu下添加ppa仓库</h4>
+<p>此处以安装atom为例，命令如下：</p>
+<pre><code class="language-shell">sudo add-apt-repository ppa:webupd8team/atom  
+sudo apt-get update  
+sudo apt-get install atom 
+</code></pre>
+<p>这样就把atom的仓库添加并安装完成了。</p>
+<p>然而，并没有这么简单</p>
+<pre><code class="language-shell">sudo: add-apt-repository : command not found
+</code></pre>
+<p>mdzz 这是怎么回事，不应该是这样的(╯‵□′)╯︵┻━┻</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -687,7 +714,7 @@ func main() {
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2024
+            <span>&copy; 2016-2025
                 <a href="https://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"

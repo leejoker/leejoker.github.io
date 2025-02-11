@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.140.1">
+<meta name="generator" content="Hugo 0.143.1">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -180,7 +180,7 @@ $ docker rmi $docker_image_id
 <h3 id="清理未使用的镜像">清理未使用的镜像</h3>
 <pre><code class="language-shell">
 # 一般用于再多次部署之后，清理旧的无用镜像
-$ docker image pure -a
+$ docker image prune -a
 
 </code></pre>
 <h2 id="清理volume">清理volume</h2>
@@ -741,7 +741,7 @@ $ chattr +a /var/log/messages
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2024
+            <span>&copy; 2016-2025
                 <a href="https://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"

@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.140.1">
+<meta name="generator" content="Hugo 0.143.1">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -118,6 +118,34 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/ubuntu%E6%B7%BB%E5%8A%A0vscode%E6%BA%90/">Ubuntu添加vscode源</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-08</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;134 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/ubuntu">ubuntu</a>&nbsp;<a href="/tags/vscode">vscode</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <ul>
+<li>
+<p>添加apt源到/etc/apt/sources.list文件</p>
+<pre><code class="language-shell">$ sudo echo &quot;deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main&quot; &gt;&gt; /etc/apt/sources.list
+</code></pre>
+</li>
+<li>
+<p>添加gpg公钥</p>
+<pre><code class="language-shell">$ sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor &gt; /etc/apt/trusted.gpg.d/microsoft.gpg
+</code></pre>
+</li>
+</ul>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -337,38 +365,6 @@ $ gem sources -u
 <pre><code class="language-xml">useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;
 </code></pre>
 <p>如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：</p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/springboot%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E9%99%90%E5%88%B6%E5%A4%84%E7%90%86/">Springboot上传文件大小限制处理</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;163 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">java</a>&nbsp;<a href="/tags/springboot">springboot</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <p>今天在开发过程中遇到一个文件上传的问题</p>
-<pre><code class="language-text">io.undertow.server.RequestTooBigException: UT000020: Connection terminated as request was larger than 10485760
-</code></pre>
-<p>Servlet容器使用的是undertow，看异常信息应该是默认存在10MB的文件大小限制。</p>
-<p>百度了一下，找到如下配置，问题得以解决，记录一下</p>
-<pre><code class="language-yaml">spring:
-  servlet:
-    multipart:
-     # 文件最大限制
-      max-file-size: 1024MB
-      # 请求最大限制
-      max-request-size: 1024MB
-      enabled: true
-      # 设置文件缓存的临界点,超过则先保存到临时目录,默认为0,所有文件都会进行缓存
-      file-size-threshold: 0
-</code></pre>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">
@@ -831,7 +827,7 @@ $ gem sources -u
     <div class="container-lg clearfix">
         <div class="col-12 footer">
             
-            <span>&copy; 2016-2024
+            <span>&copy; 2016-2025
                 <a href="https://leejoker.github.io/">leejoker</a>
                  | <a href="https://github.com/itsme/my_blog">Source code</a> 
                 | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"

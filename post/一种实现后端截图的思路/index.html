@@ -16,7 +16,7 @@
 
 
 
-<title>如何创建六边形按钮 - ESPIER</title>
+<title>一种实现后端截图的思路 - ESPIER</title>
 
 
 <meta name="author" content="leejoker" />
@@ -25,16 +25,18 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<meta name="keywords" content="CSS" />
+<meta name="keywords" content="Java" />
 
 
-<meta property="og:title" content="如何创建六边形按钮" />
-<meta name="twitter:title" content="如何创建六边形按钮" />
+<meta property="og:title" content="一种实现后端截图的思路" />
+<meta name="twitter:title" content="一种实现后端截图的思路" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/" /><meta property="og:description" content="div旋转﻿" />
-<meta name="twitter:description" content="div旋转﻿" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
+<meta property="og:url" content="https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/" /><meta property="og:description" content="背景
+公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。" />
+<meta name="twitter:description" content="背景
+公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2016-09-21T12:55:14+00:00" /><meta property="article:modified_time" content="2016-09-21T12:55:14+00:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2024-12-26T09:13:35+08:00" /><meta property="article:modified_time" content="2024-12-26T09:13:35+08:00" />
 
 
 <style>
@@ -121,194 +123,40 @@
 <article>
     
     <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%85%AD%E8%BE%B9%E5%BD%A2%E6%8C%89%E9%92%AE/">如何创建六边形按钮</a>
+        <a href="https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/">一种实现后端截图的思路</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2016-09-21</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-12-26</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;581 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;534 字</span>
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/css">CSS</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
 
     </div>
     
     <div class="post-content markdown-body">
-        <h2 id="div旋转">div旋转﻿</h2>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;meta charset=&quot;utf-8&quot; /&gt;
-		&lt;title&gt;&lt;/title&gt;
-		&lt;style&gt;
-			.hexHead {
-				width:80px;
-				height:138px;
-				background-color: chartreuse;
-				-webkit-transform: rotate(60deg); &lt;!--这里旋转60度--&gt;
-				margin-left: 48px;
-			}
-			
-			.hexCenter {
-				width:80px;
-				height:138px;
-				background-color: chartreuse;
-				margin-left: 48px;
-				margin-top:-138px;
-			}
-			
-			.hexBottom {
-				width:80px;
-				height:138px;
-				background-color: chartreuse;
-				-webkit-transform: rotate(-60deg);
-				margin-left: 48px;
-				margin-top:-138px;
-			}
-		&lt;/style&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;div&gt;
-			&lt;div class=&quot;hexHead&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;hexCenter&quot;&gt;&lt;/div&gt;
-			&lt;div class=&quot;hexBottom&quot;&gt;&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h2 id="控制边框">控制边框</h2>
-<pre><code class="language-html">&lt;html&gt;
+        <h2 id="背景">背景</h2>
+<p>公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。</p>
+<h2 id="技术选型">技术选型</h2>
+<p>在这个功能规划初期我做了不少开源组件的调研，首先我放弃了前端方案，因为不少数据是需要翻页或者页面滚动的，如果在前端去做，交互体验会很迷惑。</p>
+<p>那么就只有考虑后端方案，大概有几种思路：</p>
+<ol>
+<li>
+<p>Java原生的页面渲染生成图片</p>
+<p>这个方案首先被我放弃了，首先目前市面上大部分的浏览器都是基于Chrome的（咱们先不谈火狐和Safari哈），渲染效果如果需要和浏览器保持一致，Java原生的库几乎就不可能达到要求。</p>
+<p>此外，样式的渲染和一些脚本的执行，通过Java原生库也不太可能做到，毕竟不少页面不都是单纯的静态数据。</p>
+</li>
+<li>
+<p>基于ChromeDriver的自动测试工具</p>
+<p>其实如果需求简单，这是一个不错的选择，selenium很强大，而且接口也做了优秀的封装。不过本身过于笨重了，启动周期也相对较长。</p>
+</li>
+<li>
+<p>CEF</p>
+<p>这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 <a href="https://bitbucket.org/chromiumembedded/java-cef" target="_blank"><strong>JCEF</strong></a> 库可以用。</p>
+</li>
+</ol>
+<h2 id="实现方案">实现方案</h2>
 
-	&lt;head&gt;
-		&lt;title&gt;Draw Hive&lt;/title&gt;
-	&lt;/head&gt;
-	&lt;style type=&quot;text/css&quot;&gt;
-		.hiveTop {
-			width: 0;
-			border: 30px solid #6C6;
-			border-top: none;
-			border-bottom: 30px solid #6C6;
-			border-left: 52px solid transparent;
-			border-right: 52px solid transparent;
-		}
-		
-		.hiveCenter {
-			width: 104px;
-			height: 60px;
-			background-color: #6C6;
-		}
-		
-		.hiveBottom {
-			width: 0;
-			border: 30px solid #6C6;
-			border-bottom: none;
-			border-top: 30px solid #6C6;
-			border-left: 52px solid transparent;
-			border-right: 52px solid transparent;
-		}
-	&lt;/style&gt;
-
-	&lt;body&gt;
-		&lt;div&gt;
-			&lt;div class=&quot;hiveTop&quot;&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;hiveCenter&quot;&gt;
-			&lt;/div&gt;
-			&lt;div class=&quot;hiveBottom&quot;&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre>
-<h2 id="css实现">css实现</h2>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-	&lt;head&gt;
-		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-		&lt;title&gt;六边形&lt;/title&gt;
-		&lt;style&gt;
-			.wrap {
-				margin: 100px;
-				width: 303px;
-			}
-			
-			.nav {
-				width: 100px;
-				height: 58px;
-				background: #339933;
-				display: inline-block;
-				position: relative;
-				line-height: 58px;
-				text-align: center;
-				color: #ffffff;
-				font-size: 14px;
-				text-decoration: none;
-				float: left;
-				margin-top: 31px;
-				margin-right: 1px;
-			}
-			
-			.nav s {
-				width: 0;
-				height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				border-left: 50px dotted transparent;
-				border-right: 50px dotted transparent;
-				border-bottom: 30px solid #339933;
-				left: 0px;
-				top: -30px;
-			}
-			
-			.nav b {
-				width: 0;
-				height: 0;
-				display: block;
-				overflow: hidden;
-				position: absolute;
-				border-left: 50px dotted transparent;
-				border-right: 50px dotted transparent;
-				border-top: 30px solid #339933;
-				bottom: -30px;
-				left: 0px;
-			}
-			
-			.a0 {
-				margin-left: 100px;
-			}
-			
-			.a1 {
-				margin-left: 50px;
-			}
-			
-			.nav:hover {
-				background: #8CBF26;
-				color: #333333;
-			}
-			
-			.nav:hover s {
-				border-bottom-color: #8CBF26;
-			}
-			
-			.nav:hover b {
-				border-top-color: #8CBF26;
-			}
-		&lt;/style&gt;
-	&lt;/head&gt;
-
-	&lt;body&gt;
-		&lt;div class=&quot;wrap&quot;&gt;
-			&lt;a class=&quot;nav a0&quot; target=&quot;_blank&quot; href=&quot;#&quot;&gt;&lt;s&gt;&lt;/s&gt;广播&lt;b&gt;&lt;/b&gt;&lt;/a&gt;
-		&lt;/div&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<p>图就不展示了，就结果而言，三者都可以产生六边形的按钮，但是显而易见第三种更适合用来做为按钮使用。</p>
-<p>第一种：要用到三个div，需添加多个相同超链接才能够达到覆盖整个六边形的目的
-第二种：上下两个div宽度全是0，且也是三个div
-第三种：方便易用，但是是用绝对定位处理的，这可能在后期调整上对于像我这种前端苦手而言或许会带来一些苦难QAQ</p>
     </div>
 </article>
 
@@ -559,9 +407,9 @@
     <div class="sidebar-item sidebar-toc">
         <h3>目录</h3><nav id="TableOfContents">
   <ul>
-    <li><a href="#div旋转">div旋转﻿</a></li>
-    <li><a href="#控制边框">控制边框</a></li>
-    <li><a href="#css实现">css实现</a></li>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#技术选型">技术选型</a></li>
+    <li><a href="#实现方案">实现方案</a></li>
   </ul>
 </nav></div>
 </aside>
@@ -792,9 +640,9 @@
         <h3>目录</h3>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#div旋转">div旋转﻿</a></li>
-    <li><a href="#控制边框">控制边框</a></li>
-    <li><a href="#css实现">css实现</a></li>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#技术选型">技术选型</a></li>
+    <li><a href="#实现方案">实现方案</a></li>
   </ul>
 </nav>
     </div>
