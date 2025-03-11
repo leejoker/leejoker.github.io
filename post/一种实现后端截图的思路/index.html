@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.143.1">
+<meta name="generator" content="Hugo 0.145.0">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,9 +32,45 @@
 <meta name="twitter:title" content="一种实现后端截图的思路" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leejoker.github.io/post/%E4%B8%80%E7%A7%8D%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E6%88%AA%E5%9B%BE%E7%9A%84%E6%80%9D%E8%B7%AF/" /><meta property="og:description" content="背景
-公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。" />
+公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。
+技术选型
+在这个功能规划初期我做了不少开源组件的调研，首先我放弃了前端方案，因为不少数据是需要翻页或者页面滚动的，如果在前端去做，交互体验会很迷惑。
+那么就只有考虑后端方案，大概有几种思路：
+
+
+Java原生的页面渲染生成图片
+这个方案首先被我放弃了，首先目前市面上大部分的浏览器都是基于Chrome的（咱们先不谈火狐和Safari哈），渲染效果如果需要和浏览器保持一致，Java原生的库几乎就不可能达到要求。
+此外，样式的渲染和一些脚本的执行，通过Java原生库也不太可能做到，毕竟不少页面不都是单纯的静态数据。
+
+
+基于ChromeDriver的自动测试工具
+其实如果需求简单，这是一个不错的选择，selenium很强大，而且接口也做了优秀的封装。不过本身过于笨重了，启动周期也相对较长。
+
+
+CEF
+最后我选择的是这个方案，这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 JCEF 库可以用。
+
+" />
 <meta name="twitter:description" content="背景
-公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
+公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。
+技术选型
+在这个功能规划初期我做了不少开源组件的调研，首先我放弃了前端方案，因为不少数据是需要翻页或者页面滚动的，如果在前端去做，交互体验会很迷惑。
+那么就只有考虑后端方案，大概有几种思路：
+
+
+Java原生的页面渲染生成图片
+这个方案首先被我放弃了，首先目前市面上大部分的浏览器都是基于Chrome的（咱们先不谈火狐和Safari哈），渲染效果如果需要和浏览器保持一致，Java原生的库几乎就不可能达到要求。
+此外，样式的渲染和一些脚本的执行，通过Java原生库也不太可能做到，毕竟不少页面不都是单纯的静态数据。
+
+
+基于ChromeDriver的自动测试工具
+其实如果需求简单，这是一个不错的选择，selenium很强大，而且接口也做了优秀的封装。不过本身过于笨重了，启动周期也相对较长。
+
+
+CEF
+最后我选择的是这个方案，这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 JCEF 库可以用。
+
+" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="article:published_time" content="2024-12-26T09:13:35+08:00" /><meta property="article:modified_time" content="2024-12-26T09:13:35+08:00" />
 
@@ -128,7 +164,7 @@
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-12-26</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;534 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1956 字</span>
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
 
@@ -152,11 +188,449 @@
 </li>
 <li>
 <p>CEF</p>
-<p>这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 <a href="https://bitbucket.org/chromiumembedded/java-cef" target="_blank"><strong>JCEF</strong></a> 库可以用。</p>
+<p>最后我选择的是这个方案，这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 <a href="https://bitbucket.org/chromiumembedded/java-cef" target="_blank"><strong>JCEF</strong></a> 库可以用。</p>
 </li>
 </ol>
 <h2 id="实现方案">实现方案</h2>
+<h3 id="1-创建cef启动类并添加截图任务处理逻辑">1. 创建CEF启动类并添加截图任务处理逻辑</h3>
+<pre><code class="language-java">
+@Data
+public class CefApplication implements Runnable {
 
+  private String cefDir;
+  private CefSettings settings;
+  private CefApp cefApp;
+  public static CefBrowser browser;
+  private CefClient cefClient;
+  private String[] commandArgs = { &quot;--no-sandbox&quot;, &quot;--disable-gpu&quot;, &quot;--hide-scrollbars&quot;,
+      &quot;--no-zygote&quot;, &quot;--disable-gpu-compositing&quot;, &quot;--disable-gpu-rasterization&quot; };
+  private ConsoleMessageHandler handler;
+  private HeaderHandler headerHandler;
+  public static final ConcurrentLinkedQueue&lt;CaptureTask&gt; taskQueue = new ConcurrentLinkedQueue&lt;&gt;();
+  public static final ConcurrentHashMap&lt;String, CaptureResult&gt; taskResult = new ConcurrentHashMap&lt;&gt;();
+  public static final AtomicBoolean requestFlag = new AtomicBoolean(true);
+
+  private Boolean runStatus = true;
+
+  public CefApplication(String cefDir, String loadDataOverSignature) {
+    this.cefDir = cefDir;
+    this.settings = new CefSettings();
+    this.settings.windowless_rendering_enabled = true;
+    this.settings.log_severity = LogSeverity.LOGSEVERITY_INFO;
+    this.settings.log_file = &quot;/home/cef/cef.log&quot;;
+    this.settings.root_cache_path = &quot;/tmp/cef&quot;;
+
+    try {
+      cefApp = CefInitializer.initialize(new File(this.cefDir), List.of(this.commandArgs),
+          this.settings);
+      CefApp.addAppHandler(new MavenCefAppHandlerAdapter() {
+        @Override
+        public void stateHasChanged(CefAppState state) {
+          if (state == CefAppState.TERMINATED || state == CefAppState.SHUTTING_DOWN) {
+            runStatus = false;
+          }
+        }
+      });
+    } catch (UnsupportedPlatformException | CefInitializationException e) {
+      throw new RuntimeException(e);
+    }
+    this.handler = new ConsoleMessageHandler();
+    this.handler.setLoadDataOver(loadDataOverSignature);
+    this.cefClient = cefApp.createClient();
+    this.cefClient.addDisplayHandler(this.handler);
+
+    browser = createBrowser();
+    browser.setWindowVisibility(true);
+
+    this.headerHandler = new HeaderHandler();
+    var requestHandler = new CaptureRequestHandler();
+    requestHandler.setHeaderHandler(headerHandler);
+    this.cefClient.addRequestHandler(requestHandler);
+  }
+
+  public CefBrowser createBrowser() {
+    return cefClient.createBrowser(&quot;about:blank&quot;, true, false);
+  }
+
+  @Override
+  public void run() {
+    while (runStatus) {
+      var task = taskQueue.poll();
+      if (task != null) {
+        browser.loadURL(&quot;about:blank&quot;);
+        System.out.println(&quot;taskInfo: &quot; + JSON.toJSONString(task));
+        if (task.getTaskId() != null &amp;&amp; !task.getTaskId().isEmpty()) {
+          // init handler inner value
+          this.handler.setImageList(null);
+          this.handler.setInitScroll(0);
+          this.handler.setFirstScroll(true);
+          this.handler.setInitY(0);
+          this.handler.setTaskId(null);
+          this.handler.setCaptureRegion(null);
+          CefApplication.requestFlag.set(true);
+
+          // init taskId
+          this.handler.setTaskId(task.getTaskId());
+        } else {
+          continue;
+        }
+        var defaultHeader = new HashMap&lt;String, String&gt;();
+        defaultHeader.put(&quot;Cache-Control&quot;, &quot;no-cache&quot;);
+        if (task.getHeaders() != null) {
+          defaultHeader.putAll(task.getHeaders());
+          this.headerHandler.setHeaderMap(defaultHeader);
+        }
+        if (task.getRegion() != null) {
+          this.handler.setCaptureRegion(task.getRegion());
+        }
+        if (task.getCaptureDelay() != null) {
+          this.handler.setCaptureDelay(task.getCaptureDelay());
+        }
+        var url = task.getUrl();
+        if (url != null &amp;&amp; !url.isEmpty()) {
+          browser.loadURL(url);
+
+          while (true) {
+            if (!requestFlag.get()) {
+              break;
+            }
+          }
+        }
+      }
+    }
+    if (browser != null) {
+      browser.close(true);
+    }
+    if (cefApp != null) {
+      cefApp.dispose();
+    }
+  }
+}
+
+</code></pre>
+<h3 id="2-创建启动窗口">2. 创建启动窗口</h3>
+<pre><code class="language-java">
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class CaptureFrame extends JFrame {
+
+  private Component cefUI;
+
+  private int width;
+
+  private int height;
+
+  private boolean exitFlag = false;
+
+  public CaptureFrame(int width, int height, Component ui) {
+    this.width = width;
+    this.height = height;
+    this.cefUI = ui;
+  }
+
+  public void createFrame() {
+    this.setBackground(Color.WHITE);
+    this.setUndecorated(true);
+    this.getContentPane().add(cefUI, BorderLayout.CENTER);
+    this.setSize(width, height);
+    this.setLocation(0, 0);
+    this.setVisible(true);
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosing(WindowEvent e) {
+        CefApp.getInstance().dispose();
+        System.exit(0);
+      }
+    });
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    var gd = ge.getDefaultScreenDevice();
+    gd.setFullScreenWindow(this);
+  }
+}
+
+</code></pre>
+<h3 id="3-在springboot启动时自动运行">3. 在springboot启动时自动运行</h3>
+<pre><code class="language-java">
+@Component
+public class CefRunner implements CommandLineRunner {
+
+  @Value(&quot;${capture.cef-dir}&quot;)
+  private String cefDir;
+
+  @Value(&quot;${capture.signature}&quot;)
+  private String loadDataOver;
+
+  @Override
+  public void run(String... args) throws Exception {
+    Thread browserThread = new Thread(new CefApplication(cefDir, loadDataOver));
+    browserThread.start();
+
+    Thread frameThread = new Thread(() -&gt; {
+      while (CefApplication.browser == null) {
+      }
+      SwingUtilities.invokeLater(() -&gt; {
+        var frame = new CaptureFrame(1920, 1080, CefApplication.browser.getUIComponent());
+        frame.createFrame();
+      });
+    });
+    frameThread.start();
+  }
+}
+
+</code></pre>
+<h3 id="4-处理截图请求的header">4. 处理截图请求的header</h3>
+<pre><code class="language-java">
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class HeaderHandler extends CefResourceRequestHandlerAdapter {
+
+  private Map&lt;String, String&gt; headerMap;
+
+  @Override
+  public boolean onBeforeResourceLoad(CefBrowser browser, CefFrame frame, CefRequest request) {
+    request.getHeaderMap(headerMap);
+    if (headerMap != null) {
+      var requestHeaderMap = new HashMap&lt;&gt;(headerMap);
+      request.setHeaderMap(requestHeaderMap);
+    }
+    return super.onBeforeResourceLoad(browser, frame, request);
+  }
+}
+
+</code></pre>
+<h3 id="5-基于console信息进行滚动截图">5. 基于console信息进行滚动截图</h3>
+<pre><code class="language-java">
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class ConsoleMessageHandler extends CefDisplayHandlerAdapter {
+
+  private String taskId;
+  private CaptureRegion captureRegion;
+  private int initScroll = 0;
+  private int initY;
+  private int initX;
+  private int initBottom;
+  private boolean firstScroll = true;
+  private Long captureDelay;
+  private String loadDataOver;
+
+  private List&lt;BufferedImage&gt; imageList;
+
+  @Override
+  public boolean onConsoleMessage(CefBrowser browser, LogSeverity level, String message,
+      String source, int line) {
+    System.out.println(message);
+    if (message.contains(loadDataOver) || message.startsWith(&quot;Scroll Over&quot;)) {
+      try {
+        if (captureRegion != null) {
+          if (captureRegion.getScroll() &gt; 0) {
+            initY = captureRegion.getY();
+            initX = captureRegion.getX();
+            initBottom = captureRegion.getBottom();
+
+            captureRegion.setX(0);
+            captureRegion.setY(0);
+            captureRegion.setBottom(0);
+            captureRegion.setScroll(0);
+
+            runScroll(browser, 0, true);
+            return true;
+          }
+          if (message.startsWith(&quot;Scroll Over&quot;)) {
+            var scrollInfo = message.replace(&quot;Scroll Over:&quot;, &quot;&quot;).trim();
+            var array = scrollInfo.split(&quot;,&quot;);
+            var captureTimes = Integer.parseInt(array[0]);
+            var lastPageHeight = Integer.parseInt(array[1]);
+
+            if (imageList == null) {
+              imageList = new ArrayList&lt;&gt;();
+            }
+            if (captureTimes == 1) {
+              if (captureRegion.getHeight() &gt;= lastPageHeight) {
+                captureRegion.setY(1080 - lastPageHeight);
+                captureRegion.setHeight(lastPageHeight);
+              }
+              var bufferedImage = CaptureTool.captureImage(browser, captureRegion);
+              imageList.add(bufferedImage);
+
+              var image = CaptureTool.mergeVertically(imageList);
+              image = image.getSubimage(initX, initY, captureRegion.getWidth() - initX,
+                  image.getHeight() - initY - initBottom);
+              var imageHeight = image.getHeight();
+              var result = CaptureResult.builder().taskId(taskId)
+                  .base64Image(CaptureTool.imageToBase64(image)).imageHeight(imageHeight)
+                  .status(&quot;success&quot;).build();
+              CefApplication.taskResult.put(taskId, result);
+
+              imageList = null;
+              initScroll = 0;
+              firstScroll = true;
+              initY = 0;
+              this.taskId = null;
+              this.captureRegion = null;
+              return true;
+            } else {
+              captureRegion.setHeight(1080);
+              var bufferedImage = CaptureTool.captureImage(browser, captureRegion);
+              imageList.add(bufferedImage);
+              initScroll = initScroll + 1080;
+              runScroll(browser, initScroll, false);
+            }
+            return true;
+          }
+        }
+
+        var image = CaptureTool.captureImage(browser, captureRegion);
+        var imageHeight = image.getHeight();
+        var result = CaptureResult.builder().taskId(taskId)
+            .base64Image(CaptureTool.imageToBase64(image)).imageHeight(imageHeight)
+            .status(&quot;success&quot;).build();
+        CefApplication.taskResult.put(taskId, result);
+        return true;
+      } catch (Exception e) {
+        System.out.println(e.getMessage());
+        var result = CaptureResult.builder().taskId(taskId).base64Image(null).status(&quot;error&quot;)
+            .build();
+        CefApplication.taskResult.put(taskId, result);
+      }
+      this.taskId = null;
+      this.captureRegion = null;
+    }
+    return true;
+  }
+
+  private void runScroll(CefBrowser browser, int scroll, boolean enableTimeout) {
+    var scrollTo = &quot;&quot;&quot;
+        \n
+        function captureScrollTo(offset, enableTimeout) {
+            // get document total height
+            const fullDocumentHeight = document.documentElement.scrollHeight;
+            var restHeight = fullDocumentHeight - offset;
+            var captureTimes = Number.parseInt(String(restHeight / 1080));
+            var lastPageHeight = 0;
+            if (restHeight % 1080 &gt; 0) {
+              lastPageHeight = restHeight - (1080 * captureTimes);
+              captureTimes = captureTimes + 1;
+            }
+            console.log('offset:' + offset + ', restHeight: ' + restHeight);
+            if(offset == 0 &amp;&amp; enableTimeout) {
+              setTimeout(() =&gt; {
+                 console.log('Scroll Over:' + captureTimes + ',' + lastPageHeight);
+              }, {captureDelay});
+            } else {
+              let offsetValue = Number.parseInt(String(offset));
+              const fixedOffset = offsetValue.toFixed();
+              const listener = function () {
+                  let current = window.scrollY + 1080;
+                  if ((window.scrollY.toFixed() === fixedOffset) || (current.toFixed() === fullDocumentHeight.toFixed())) {
+                      if(enableTimeout){
+                        setTimeout(() =&gt; {
+                           console.log('Scroll Over:' + captureTimes + ',' + lastPageHeight);
+                        }, {captureDelay});
+                      } else {
+                        console.log('Scroll Over:' + captureTimes + ',' + lastPageHeight);
+                      }
+                      window.removeEventListener('scroll', listener);
+                  }
+              }
+              window.addEventListener('scroll', listener);
+              window.scrollTo({
+                  top: offset,
+                  behavior: 'smooth'
+              });
+            }
+        }
+        &quot;&quot;&quot;.replace(&quot;{captureDelay}&quot;, String.valueOf(captureDelay));
+    var script = scrollTo + &quot;\n&quot; + &quot;captureScrollTo(&quot; + scroll + &quot;, &quot; + enableTimeout + &quot;);&quot;;
+    browser.getMainFrame().executeJavaScript(script, browser.getMainFrame().getURL(), 0);
+  }
+}
+
+</code></pre>
+<h3 id="6-部署镜像">6. 部署镜像</h3>
+<h4 id="61-dockerfile">6.1 Dockerfile</h4>
+<pre><code class="language-Dockerfile">
+FROM ubuntu:22.04
+
+ADD docker/start.sh /
+
+ADD docker/cef-linux/ /cef-linux/
+
+ADD docker/jdk17 /usr/local/jdk-17
+
+ENV JAVA_HOME=/usr/local/jdk-17
+
+ENV PATH=/usr/local/jdk-17/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/lsiopy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+ADD docker/Shanghai /usr/share/zoneinfo/Asia/
+
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    &amp;&amp; echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone
+
+RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list &amp;&amp; apt update &amp;&amp; apt upgrade -y \
+    &amp;&amp; apt install -y libgbm-dev weston socat net-tools sudo fonts-liberation libasound2-dev \
+    libatspi2.0-0 libcurl4 libgtk-4-1 libnspr4 libu2f-udev libxdamage1 libxcomposite1 libxkbcommon0 xdg-utils libgl1-mesa-dev \
+    mesa-utils freeglut3-dev libasound2 libcairo2 libpango-1.0-0 libxkbcommon0 \
+    libgbm1 libxdamage1 libxcomposite1 libcups2 libatk-bridge2.0-0 libatk1.0-0 libdbus-1-3 libglib2.0-0 libnss3 \
+    fontconfig xfonts-utils xvfb libxrandr2 &amp;&amp; apt clean
+
+RUN mkdir -p /usr/share/fonts/chinese/
+ADD docker/*.ttf /usr/share/fonts/chinese/
+
+RUN useradd -m -s /bin/bash cef
+RUN usermod -a -G sudo cef
+RUN echo &quot;cef ALL=(ALL:ALL) NOPASSWD: ALL&quot; | tee &quot;/etc/sudoers.d/dont-prompt-cef-for-sudo-password&quot;
+
+# Clean up
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN fc-cache -fv
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+USER cef
+
+ARG JAR_FILE
+ADD target/capture-server-0.0.1-SNAPSHOT.jar /app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT [&quot;sh&quot;, &quot;/start.sh&quot;]
+
+</code></pre>
+<h4 id="62-startsh">6.2 start.sh</h4>
+<pre><code class="language-shell">
+#!/bin/bash
+
+export LD_LIBRARY_PATH=/usr/local/jdk-17/lib:${LD_LIBRARY_PATH}
+
+export DISPLAY=:99
+
+export JAVA_OPTS=&quot;-XX:ErrorFile=/var/log/hs_err_pid&lt;pid&gt;.log -Duser.timezone=Asia/Shanghai -Djava.security.egd=file:/dev/./urandom --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports java.base/java.lang=ALL-UNNAMED --add-exports java.desktop/sun.java2d=ALL-UNNAMED --add-exports=java.desktop/sun.awt.X11=ALL-UNNAMED&quot;
+
+cd /home/cef
+
+sudo rm -f /tmp/.X99-lock
+
+nohup Xvfb $DISPLAY -screen 0 1920x1080x24 &amp;
+
+touch /home/cef/.Xauthority
+
+sleep 2
+
+xauth generate $DISPLAY . trusted
+
+sudo service dbus start
+
+java -server $JAVA_OPTS -jar /app.jar
+
+</code></pre>
+<h2 id="后话">后话</h2>
+<p>其实功能实现对有过CEF开发经验的同学来说不算难，最坑的部分其实是服务部署，刚开始我打算使用类似Chrome的headless模式的，但是我发现CEF好像不能这么用，最后还是使用Xvfb的方式，模拟了一个虚拟显示器，然后在上面显示浏览器截图(反正是在Docker里跑，别人也看不到XD)。</p>
+<p>哦，对了。记得修改shm的大小(这个就是Chome多进程渲染的锅了，多进程共享内存)，不然会崩溃哦~~~</p>
     </div>
 </article>
 
@@ -409,7 +883,17 @@
   <ul>
     <li><a href="#背景">背景</a></li>
     <li><a href="#技术选型">技术选型</a></li>
-    <li><a href="#实现方案">实现方案</a></li>
+    <li><a href="#实现方案">实现方案</a>
+      <ul>
+        <li><a href="#1-创建cef启动类并添加截图任务处理逻辑">1. 创建CEF启动类并添加截图任务处理逻辑</a></li>
+        <li><a href="#2-创建启动窗口">2. 创建启动窗口</a></li>
+        <li><a href="#3-在springboot启动时自动运行">3. 在springboot启动时自动运行</a></li>
+        <li><a href="#4-处理截图请求的header">4. 处理截图请求的header</a></li>
+        <li><a href="#5-基于console信息进行滚动截图">5. 基于console信息进行滚动截图</a></li>
+        <li><a href="#6-部署镜像">6. 部署镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#后话">后话</a></li>
   </ul>
 </nav></div>
 </aside>
@@ -642,7 +1126,17 @@
   <ul>
     <li><a href="#背景">背景</a></li>
     <li><a href="#技术选型">技术选型</a></li>
-    <li><a href="#实现方案">实现方案</a></li>
+    <li><a href="#实现方案">实现方案</a>
+      <ul>
+        <li><a href="#1-创建cef启动类并添加截图任务处理逻辑">1. 创建CEF启动类并添加截图任务处理逻辑</a></li>
+        <li><a href="#2-创建启动窗口">2. 创建启动窗口</a></li>
+        <li><a href="#3-在springboot启动时自动运行">3. 在springboot启动时自动运行</a></li>
+        <li><a href="#4-处理截图请求的header">4. 处理截图请求的header</a></li>
+        <li><a href="#5-基于console信息进行滚动截图">5. 基于console信息进行滚动截图</a></li>
+        <li><a href="#6-部署镜像">6. 部署镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#后话">后话</a></li>
   </ul>
 </nav>
     </div>

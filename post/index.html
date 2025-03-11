@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.143.1">
+<meta name="generator" content="Hugo 0.145.0">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -126,7 +126,7 @@
     <div class="post-item post-meta">
         <span><i class="iconfont icon-today-sharp"></i>&nbsp;2024-12-26</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;534 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1956 字</span>
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
 
@@ -134,6 +134,24 @@
     <div class="post-item post-summary markdown-body">
         <h2 id="背景">背景</h2>
 <p>公司项目涉及到不少PDF导出的需求，其中不乏列表数据、复杂报表的导出，而用户往往希望在PDF中保留页面中看到的布局和图表样式。因此，我初步考虑通过截图的形式保留页面效果，然后基于flying-saucer-pdf这个Java库去生成PDF。</p>
+<h2 id="技术选型">技术选型</h2>
+<p>在这个功能规划初期我做了不少开源组件的调研，首先我放弃了前端方案，因为不少数据是需要翻页或者页面滚动的，如果在前端去做，交互体验会很迷惑。</p>
+<p>那么就只有考虑后端方案，大概有几种思路：</p>
+<ol>
+<li>
+<p>Java原生的页面渲染生成图片</p>
+<p>这个方案首先被我放弃了，首先目前市面上大部分的浏览器都是基于Chrome的（咱们先不谈火狐和Safari哈），渲染效果如果需要和浏览器保持一致，Java原生的库几乎就不可能达到要求。</p>
+<p>此外，样式的渲染和一些脚本的执行，通过Java原生库也不太可能做到，毕竟不少页面不都是单纯的静态数据。</p>
+</li>
+<li>
+<p>基于ChromeDriver的自动测试工具</p>
+<p>其实如果需求简单，这是一个不错的选择，selenium很强大，而且接口也做了优秀的封装。不过本身过于笨重了，启动周期也相对较长。</p>
+</li>
+<li>
+<p>CEF</p>
+<p>最后我选择的是这个方案，这个其实和ChromeDriver的方式类似，不过大部分功能都需要自己实现handler去处理，不过启动快，资源占用也更少，有官方的 <a href="https://bitbucket.org/chromiumembedded/java-cef" target="_blank"><strong>JCEF</strong></a> 库可以用。</p>
+</li>
+</ol>
     </div>
 </div>
 
