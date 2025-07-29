@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.145.0">
+<meta name="generator" content="Hugo 0.147.1">
 
 
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
@@ -32,7 +32,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leejoker.github.io/post/" /><meta property="og:image" content="https://leejoker.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2024-12-26T09:13:35+08:00" />
+<meta name="twitter:image" content="https://leejoker.github.io/img/og.png" /><meta property="og:updated_time" content="2025-07-29T15:47:07+08:00" />
 
 
 <style>
@@ -118,6 +118,27 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://leejoker.github.io/post/mybatis%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%BA%8F%E5%88%97%E8%87%AA%E5%8A%A8%E6%8F%92%E5%85%A5%E4%B8%BB%E9%94%AE/">Mybatis中使用序列自动插入主键</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-01-10</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;267 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/mybatis">mybatis</a>&nbsp;<a href="/tags/java">java</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <h2 id="mapper中的使用">Mapper中的使用</h2>
+<p>在insert中增加下面两个属性，useGeneratedKeys和keyProperty</p>
+<pre><code class="language-xml">useGeneratedKeys=&quot;true&quot; keyProperty=&quot;id&quot;
+</code></pre>
+<p>如果数据库支持自增主键，这样就可以了。如果不行，需要自己创建序列，然后通过序列获取主键值(使用的是postgresql中的函数，其他数据库视具体情况而定)：</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -325,40 +346,6 @@ vim .emacs.d/core/templates/.spacemacs.template
 <p>互为主从模式需要配置两个vip（虚拟ip）进行负载，因此是需要负载均衡支持的哟~</p>
 <p><img class="img-zoomable" src="https://i.loli.net/2018/03/20/5ab0b2be2b782.png" alt="image" />
 </p>
-    </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://leejoker.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%B3%BB%E5%88%97%E4%BA%8C/">数据结构与算法学习系列(二)</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2019-02-05</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1518 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95">算法</a>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a>&nbsp;<a href="/tags/java">Java</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <h1 id="线性表">线性表</h1>
-<p>线性表是一个存储相同类型数据元素的有限序列。<br>
-这里面需要关注的两个点就是，相同类型的数据、有限序列。</p>
-<p>线性表包含两种类型：</p>
-<ul>
-<li>顺序表。使用一段地址连续的存储单元依次存储线性表的数据元素。</li>
-<li>链表。使用一组任意的存储单元存放线性表的元素。</li>
-</ul>
-<hr>
-<h1 id="顺序表">顺序表</h1>
-<h2 id="顺序表的特性">顺序表的特性</h2>
-<ol>
-<li>顺序表使用的一段连续的存储空间，因此只要知道存储顺序表的起始地址，就可以计算表中任意位置元素的地址。所以，<strong>计算任意一个元素的存储地址的时间是相等的</strong></li>
-<li>由于上述特性，顺序表具有随机存取的特性。</li>
-<li>顺序表存取操作的时间复杂度为O(1)。</li>
-</ol>
-<h2 id="顺序表的实现">顺序表的实现</h2>
-<p>下面就是一个简单的顺序表的实现：</p>
     </div>
 </div>
 <div class="pagination"><div class="pag-first">
